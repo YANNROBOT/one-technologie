@@ -73,6 +73,7 @@
       if (ready) {
         link.href = item[1];
         link.removeAttribute('aria-disabled');
+        link.removeAttribute('tabindex');
         if (item[2]) link.setAttribute('download', '');
       } else {
         link.setAttribute('aria-disabled', 'true');
