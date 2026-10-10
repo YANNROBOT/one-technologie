@@ -81,6 +81,13 @@
 }
 
 html {
+  /* Rien ne dépasse sur les côtés : pas de défilement de gauche à droite sur téléphone */
+  overflow-x: clip;
+  /* Pas de rectangle bleu au toucher, pas de zoom en pinçant ou en touchant deux fois */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
@@ -95,7 +102,7 @@ body {
   font-size: 16.5px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,
@@ -167,7 +174,11 @@ a {
 .bar::before {
   content: '';
   position: absolute;
-  inset: 0 -100vw;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   z-index: -1;
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   backdrop-filter: blur(10px);
