@@ -1,11 +1,11 @@
 {
-  "version": "0.15.0",
-  "notes": "{\"fr\":[\"Horaires de travail : la page sépare les horaires de l'établissement et les horaires personnalisés.\",\"Un horaire personnalisé se donne à une personne dès sa création ; son nom et sa photo s'affichent sur la carte.\",\"Une pause dans la journée peut être indiquée, et les horaires s'impriment.\"],\"en\":[\"Working hours: the page separates the school's working hours from custom ones.\",\"Custom working hours are given to a person as soon as they are created; their name and photo appear on the card.\",\"A break during the day can be set, and the working hours can be printed.\"]}",
-  "pub_date": "2026-10-12T19:49:10.540Z",
+  "version": "0.16.0",
+  "notes": "{\"fr\":[\"Fermetures : les jours fériés de Côte d'Ivoire s'ajoutent en un clic.\",\"Chaque fermeture a un type (jour férié, vacances scolaires, exceptionnelle) et peut ne concerner que les professeurs ou que l'administration.\",\"Nouvelle vue « Année », impression du calendrier des fermetures, et liste qui défile dans sa carte.\"],\"en\":[\"Closures: the public holidays of Côte d'Ivoire can be added in one click.\",\"Each closure has a type (public holiday, school holidays, exceptional) and can apply to teachers only or to the administration only.\",\"New “Year” view, printing of the closures calendar, and a list that scrolls inside its card.\"]}",
+  "pub_date": "2026-10-12T20:18:46.689Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdlUVduWXdpUlBDR1Z0VjVxNnNFVG9pZFJ0RmJJQlZsNm5mdDdkMmFRZ05GWmlQZiswT05meGhhY3Brd0l2YVlsZ2ZzS0hIWlZ2eWkvM2ZVVHZjQmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM0NTQ5CWZpbGU6R2VzU2Nob29sXzAuMTUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNS4wCmEyZHlpOFlzclVhTlMyc29iVzBoRXBUTWNBbnlFblJaTmdVYmVqV0tvQUl5S2xTeTNjS1FHKzZKN05FZldsQXpaQ3NjcldTeXRmSGQ0NDdHU0d6eEN3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.15.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXU1SWw0YjJpdHE1Z0xPeGpLdjRibjRCTmJhUFhtbWRMTUIwaC9SZXhONFl0T2JDU3VHUXQ0QndxSDdsNWNwQkFBMmJ5dGxYOEI3dmE1WFNPWU1xbkFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM2MzI0CWZpbGU6R2VzU2Nob29sXzAuMTYuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNi4wCkJmZy9aOTlOTEhGWHR1S0RzMWgwazFDcW5lTHBPcnBsV0c5OFZkb1ArekZrbTVoWkZMRWJEMnh1OGJGS1lEWURlV3dKKy85eEtmTXlqS3NpNEVtNkJBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.16.0"
     }
   }
 }
