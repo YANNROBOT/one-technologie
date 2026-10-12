@@ -1,11 +1,11 @@
 {
-  "version": "0.17.0",
-  "notes": "{\"fr\":[\"Congés et permissions : deux absences qui se recouvrent pour la même personne sont refusées.\",\"Une absence peut ne durer qu'une demi-journée (matin ou après-midi) ; l'autre moitié se pointe normalement.\",\"Solde de jours par personne, vue « Année », impression de la liste, et rappel des personnes en congé sur l'accueil.\"],\"en\":[\"Leave and permissions: two absences that overlap for the same person are refused.\",\"An absence can last only half a day (morning or afternoon); the other half is clocked as usual.\",\"Days balance per person, “Year” view, printing of the list, and a reminder of people on leave on the home page.\"]}",
-  "pub_date": "2026-10-12T20:48:24.098Z",
+  "version": "0.18.0",
+  "notes": "{\"fr\":[\"Journal : chaque action montre la photo de son auteur, et un clic ouvre son détail (ce qui a changé, avant et après).\",\"Filtres par dates, par personne et par gravité ; les actions sensibles ressortent.\",\"Export Excel et impression du journal ; la liste défile dans sa carte.\"],\"en\":[\"Log: each action shows its author's photo, and a click opens its details (what changed, before and after).\",\"Filters by date, by person and by severity; sensitive actions stand out.\",\"Excel export and printing of the log; the list scrolls inside its card.\"]}",
+  "pub_date": "2026-10-12T21:06:10.351Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWpkVkhYU3UzSE5IUkhRbjZmU1dlTENhYWt4VGMrNEZpeTdjRklweS9PQW45Z3N0d0o5MkJ2b2luaFdvMk02VkNRU0dBSGZrQ05ucXNEelZyQmlZS1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM4MTAzCWZpbGU6R2VzU2Nob29sXzAuMTcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNy4wClROUDdvaW1sUWdTRU1OeHVBMERud3RZQ0dkUGNaRHFqamVTb3NMbG90WXM2bUUyN2hBdzNBOS8wem5lVjdBQy9LR2NJNFlWMFZIWVVLN2NLUjhaZER3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.17.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdObUJMSXI1TTVXSGZkMVk3QWd2ckNLVWJVUnZmSU5uUXFmMFpmQ1FDZ3Jvd2FkM1FyOFhDamxJVWxvQnNDVVJCZ1I3L2kraFJpUFo2ZWFZeTllQVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM5MTY5CWZpbGU6R2VzU2Nob29sXzAuMTguMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xOC4wCkQwV0ZXM0NUZlEwOTU2eGVNZk5iUzJ2YUZXTXorWTcwaElPU2w2K1FIM1oycENvSmR2dmlVUnlMcHozUzAzY2tIVUNpL3llb1FvTlVCYVJveVowTEJ3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.18.0"
     }
   }
 }
