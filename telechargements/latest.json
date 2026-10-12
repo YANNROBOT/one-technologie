@@ -1,11 +1,11 @@
 {
-  "version": "0.11.0",
-  "notes": "{\"fr\":[\"Un écran de démarrage animé s'affiche à l'ouverture du logiciel.\"],\"en\":[\"An animated start-up screen is shown when the software opens.\"]}",
-  "pub_date": "2026-10-12T12:08:35.184Z",
+  "version": "0.12.0",
+  "notes": "{\"fr\":[\"Nouvelles icônes, dessinées pour GesSchool : un trait arrondi et une touche du bleu des cartes, dans tout le logiciel.\"],\"en\":[\"New icons, drawn for GesSchool: a rounded line and a touch of the cards’ blue, throughout the software.\"]}",
+  "pub_date": "2026-10-12T13:51:51.375Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW8rV1U1TFBKNWl0WDJiWjk2alhKTFUvSmFTakUvZ0w1U051aXltR3FBTXMxbnN0SExMTzF4dkh0OUtmN0RxcWM3UlA1K0loamNtNHA5bHhmNTVua3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODA2OTE0CWZpbGU6R2VzU2Nob29sXzAuMTEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMS4wCndGZ2VnMUFyYzdiS1pYQXRxc1pOa3BsRTd2ODZlbzlVOVE3S0lHdG5XZU4rUTFNRlVHM1FwRytMQ3FsR2x5SnRIdnpkVG9EM0JkQlJBRmVmQjNkc0RBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.11.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW81K1RTNURCWUxWMlpTSk9BaElqK3BscTBkTnFGVVppc2VwQVRzV2tYSDNPL25Ydkp4anBCY3kwTGV4T3BLeHBYOWhsUFRBZ1BqNTlWR0V0cWdweWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODEzMTEwCWZpbGU6R2VzU2Nob29sXzAuMTIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMi4wCisxclQ3YnMxY2xpMVNodzdRWjZoRHc3cjlXTW5PSUJGd0drNEFRbHhqa01RU2sxMGoyZTlJbmR4dUpmOHd1ZHhkNStFWGw1dUUxT3ErcVhjekEwTkFBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.12.0"
     }
   }
 }
