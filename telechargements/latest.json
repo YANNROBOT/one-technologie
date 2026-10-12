@@ -1,11 +1,11 @@
 {
-  "version": "0.14.1",
-  "notes": "{\"fr\":[\"Deux employés ne peuvent plus avoir le même numéro de téléphone, la même adresse e-mail ou le même matricule.\",\"Feuilles imprimées agrandies, photos plus grandes dans les listes, fenêtre des codes d'activation plus large.\",\"Fiche de l'employé : « Supprimer » devient bien rouge au survol.\"],\"en\":[\"Two employees can no longer share the same phone number, email address or staff number.\",\"Larger printed sheets, larger photos in the lists, wider activation codes window.\",\"Employee record: “Delete” now turns red on hover.\"]}",
-  "pub_date": "2026-10-12T17:27:31.207Z",
+  "version": "0.15.0",
+  "notes": "{\"fr\":[\"Horaires de travail : la page sépare les horaires de l'établissement et les horaires personnalisés.\",\"Un horaire personnalisé se donne à une personne dès sa création ; son nom et sa photo s'affichent sur la carte.\",\"Une pause dans la journée peut être indiquée, et les horaires s'impriment.\"],\"en\":[\"Working hours: the page separates the school's working hours from custom ones.\",\"Custom working hours are given to a person as soon as they are created; their name and photo appear on the card.\",\"A break during the day can be set, and the working hours can be printed.\"]}",
+  "pub_date": "2026-10-12T19:49:10.540Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9RZWdZVmQrc0ZYeUpWTXJ6ZmU3amR5V0g3Mmc4RlV4eHN3aGRjNmpTRVFkdkZmaVFJME4rSk9QKzQwazd4V2RwdkFVY0M5RkpveU5pWi9UY0M1VVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI2MDUwCWZpbGU6R2VzU2Nob29sXzAuMTQuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNC4xCmVPam1WcDdYQ21qQ1hLQWFpOXl3TDNKQUFGUERRUzZxSDlKMHpkZVJHRUlCMDdsV2x3Z0lEMGY3bjhucXIreTF6dlRDR0pmYVF3aENFUHVUNndaWkJnPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.14.1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdlUVduWXdpUlBDR1Z0VjVxNnNFVG9pZFJ0RmJJQlZsNm5mdDdkMmFRZ05GWmlQZiswT05meGhhY3Brd0l2YVlsZ2ZzS0hIWlZ2eWkvM2ZVVHZjQmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM0NTQ5CWZpbGU6R2VzU2Nob29sXzAuMTUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNS4wCmEyZHlpOFlzclVhTlMyc29iVzBoRXBUTWNBbnlFblJaTmdVYmVqV0tvQUl5S2xTeTNjS1FHKzZKN05FZldsQXpaQ3NjcldTeXRmSGQ0NDdHU0d6eEN3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.15.0"
     }
   }
 }
