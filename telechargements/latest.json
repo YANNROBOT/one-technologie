@@ -1,11 +1,11 @@
 {
-  "version": "0.9.0",
-  "notes": "{\"fr\":[\"Support : dans Paramètres → Support, écrivez à One Technologie (question, problème, suggestion) et suivez la réponse.\",\"Si votre établissement est suspendu, le logiciel en affiche maintenant le motif.\"],\"en\":[\"Support: under Settings → Support, write to One Technologie (question, problem, suggestion) and follow the answer.\",\"If your school is suspended, the software now shows the reason.\"]}",
-  "pub_date": "2026-10-12T08:38:09.221Z",
+  "version": "0.10.0",
+  "notes": "{\"fr\":[\"Paramètres → Connexion : changez votre mot de passe, voyez les appareils où votre compte est ouvert et déconnectez-en un, ou tous les autres.\",\"Vous pouvez aussi faire oublier les appareils reconnus, pour qu'un code soit redemandé à la connexion.\"],\"en\":[\"Settings → Sign-in: change your password, see the devices where your account is open and sign one out, or all the others.\",\"You can also forget the recognised devices, so that a code is requested again at sign-in.\"]}",
+  "pub_date": "2026-10-12T09:50:56.940Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW44ZzNMbmQ5ZmdTOEhxZGpsOUpBZ2ZKcWhkL0ViZHR4V0dMTG9yeHdrTnhOcXUxdVZwd21wdjRScEtyUHVVSjlodWxHd1Ywc1VOY05HWERWdmtxdVE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzk0Mjg4CWZpbGU6R2VzU2Nob29sXzAuOS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjkuMAp6bGNvc1oyek5GSERvdEw2WEwwbDQvblFRTSswbTR1TytOdkFtdkF3amg5WjVPZ0puQTlkSzQzYlB5N2dSUlNjaFFNUUR5SS9BUTdyZnBDb2RqRnpEQT09Cg==",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.9.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWp2cU1lNEtMZHA3OW1xZkZIZ2ZuZTgwbG8vQ3pCdU5mSXJsbHJWeDJCOFZadXpLN0R3RFREUHpoUVpXdnZBZnpwendhTGNsOGxjUUdKSHJDR0RUY3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzk4NjU1CWZpbGU6R2VzU2Nob29sXzAuMTAuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMC4wCndZQUZ0NjQ2bVkwSEFtRXMwbnJ2aUs0L3ZWNXlaYldBcVhneVZTVUdLNUg1YjJ1b2pBU0VMdFNCMlFmQm43SzFpY3g5VWtDd1RBekZqUTFJV0VIVkJnPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.10.0"
     }
   }
 }
