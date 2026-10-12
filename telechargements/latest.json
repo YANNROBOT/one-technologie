@@ -1,11 +1,11 @@
 {
-  "version": "0.14.0",
-  "notes": "{\"fr\":[\"Emploi du temps : impression de l'emploi du temps d'une classe, ou de tous les professeurs d'un coup ; un cours peut être répété sur d'autres jours à l'ajout.\",\"QR codes : chaque point indique ses pointages du jour, et un écran d'affichage éteint est signalé.\",\"Employés : les codes d'activation ne s'impriment plus, ils s'affichent dans une fenêtre.\"],\"en\":[\"Timetable: print the timetable of a class, or of all teachers at once; a lesson can be repeated on other days when adding it.\",\"QR codes: each point shows its clock-ins of the day, and a display screen that is off is flagged.\",\"Employees: activation codes are no longer printed, they are shown in a window.\"]}",
-  "pub_date": "2026-10-12T17:01:02.443Z",
+  "version": "0.14.1",
+  "notes": "{\"fr\":[\"Deux employés ne peuvent plus avoir le même numéro de téléphone, la même adresse e-mail ou le même matricule.\",\"Feuilles imprimées agrandies, photos plus grandes dans les listes, fenêtre des codes d'activation plus large.\",\"Fiche de l'employé : « Supprimer » devient bien rouge au survol.\"],\"en\":[\"Two employees can no longer share the same phone number, email address or staff number.\",\"Larger printed sheets, larger photos in the lists, wider activation codes window.\",\"Employee record: “Delete” now turns red on hover.\"]}",
+  "pub_date": "2026-10-12T17:27:31.207Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9SYjBjRU1tR21JTDVFeDJBUnRhNWZjeVhmNndyWU1BeVRmM1VJbGd4anhPaFN0NUVMai94VE4rV3liYXJJN2x5blFETG9ma2drNm1ab1p0aUREK1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI0NDYxCWZpbGU6R2VzU2Nob29sXzAuMTQuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNC4wCjNyR1lXcTJ6Z3d4QlN6dlF5VnNGa2dZUGhMT0Z4d29IUmtOL0pWdFIxOVQxTWk4YlRjTEZJL21PaUVlMVNBalBmVkhZdWh0VGtUY2NmbUxXRm9qU0FBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.14.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9RZWdZVmQrc0ZYeUpWTXJ6ZmU3amR5V0g3Mmc4RlV4eHN3aGRjNmpTRVFkdkZmaVFJME4rSk9QKzQwazd4V2RwdkFVY0M5RkpveU5pWi9UY0M1VVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI2MDUwCWZpbGU6R2VzU2Nob29sXzAuMTQuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNC4xCmVPam1WcDdYQ21qQ1hLQWFpOXl3TDNKQUFGUERRUzZxSDlKMHpkZVJHRUlCMDdsV2x3Z0lEMGY3bjhucXIreTF6dlRDR0pmYVF3aENFUHVUNndaWkJnPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.14.1"
     }
   }
 }
