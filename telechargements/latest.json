@@ -1,11 +1,11 @@
 {
-  "version": "0.13.0",
-  "notes": "{\"fr\":[\"Accueil : la carte « Le personnel aujourd'hui » a une liste déroulante (non arrivés, retards, arrivées, cours manqués).\",\"Présences et Employés : la liste défile dans sa carte, avec des textes et des photos plus grands.\",\"Feuilles imprimées refaites, toujours en paysage, avec la photo de chaque personne ; le bouton d'impression de la page Employés imprime la liste des employés.\",\"Employés : le matricule est donné automatiquement, les matières se choisissent dans une petite fenêtre, et l'administration a le choix entre les horaires de l'établissement et un horaire personnalisé.\",\"Nouvelle fiche de l'employé, et emploi du temps imprimé sous forme de grille.\"],\"en\":[\"Home: the “Staff today” card has a drop-down list (not arrived, late, arrivals, missed lessons).\",\"Attendance and Employees: the list scrolls inside its card, with larger text and photos.\",\"Printed sheets redesigned, always in landscape, with each person's photo; the print button on the Employees page prints the list of employees.\",\"Employees: the staff number is given automatically, subjects are chosen in a small window, and administrative staff choose between the school's working hours and custom ones.\",\"New employee record, and a printed timetable laid out as a grid.\"]}",
-  "pub_date": "2026-10-12T16:45:49.998Z",
+  "version": "0.14.0",
+  "notes": "{\"fr\":[\"Emploi du temps : impression de l'emploi du temps d'une classe, ou de tous les professeurs d'un coup ; un cours peut être répété sur d'autres jours à l'ajout.\",\"QR codes : chaque point indique ses pointages du jour, et un écran d'affichage éteint est signalé.\",\"Employés : les codes d'activation ne s'impriment plus, ils s'affichent dans une fenêtre.\"],\"en\":[\"Timetable: print the timetable of a class, or of all teachers at once; a lesson can be repeated on other days when adding it.\",\"QR codes: each point shows its clock-ins of the day, and a display screen that is off is flagged.\",\"Employees: activation codes are no longer printed, they are shown in a window.\"]}",
+  "pub_date": "2026-10-12T17:01:02.443Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5sQnRZelVkVFJTWEpIcW5DM295OXkza3ZMQU1tdjhnSmhsUVBvMnhITGFvWmw4VWRhZ0lJb2FjcmxNbDRaMC94dXludUxxN0lzbHhudUU3Z0c1a0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODIzNTQ5CWZpbGU6R2VzU2Nob29sXzAuMTMuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMy4wClBxQkM4M1EyRmc1eGNEWktsS0U4ZWZjMmU1TjNCTGUxWUU4RkVXS1JvSSt1TWNKUHZPOTI5VUNrWW1WeXFaNzRVYzZla240U2FaTDA1OHhabVVvTkNRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.13.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9SYjBjRU1tR21JTDVFeDJBUnRhNWZjeVhmNndyWU1BeVRmM1VJbGd4anhPaFN0NUVMai94VE4rV3liYXJJN2x5blFETG9ma2drNm1ab1p0aUREK1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODI0NDYxCWZpbGU6R2VzU2Nob29sXzAuMTQuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNC4wCjNyR1lXcTJ6Z3d4QlN6dlF5VnNGa2dZUGhMT0Z4d29IUmtOL0pWdFIxOVQxTWk4YlRjTEZJL21PaUVlMVNBalBmVkhZdWh0VGtUY2NmbUxXRm9qU0FBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.14.0"
     }
   }
 }
