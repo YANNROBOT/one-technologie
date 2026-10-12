@@ -1,11 +1,11 @@
 {
-  "version": "0.5.0",
-  "notes": "{\"fr\":[\"Le code reçu par e-mail n'est demandé qu'à la première connexion sur un ordinateur : ensuite, ce poste est reconnu pendant 90 jours.\",\"Un code reçu par e-mail confirme le changement de mot de passe et l'ajout d'un administrateur.\"],\"en\":[\"The code received by e-mail is only requested the first time you sign in on a computer: this computer is then recognised for 90 days.\",\"A code received by e-mail confirms a password change and the addition of an administrator.\"]}",
-  "pub_date": "2026-10-11T19:48:45.884Z",
+  "version": "0.6.0",
+  "notes": "{\"fr\":[\"GesSchool change de serveur : il est maintenant sur gesschool.onetechnologie.com, plus rapide et toujours disponible.\",\"Après cette mise à jour, reconnectez-vous. Le nouveau serveur repart d'une base vide : un établissement créé pendant les essais est à recréer.\"],\"en\":[\"GesSchool is moving to a new server: it is now on gesschool.onetechnologie.com, faster and always available.\",\"After this update, sign in again. The new server starts from an empty database: a school created during the trials must be created again.\"]}",
+  "pub_date": "2026-10-12T01:05:01.137Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXJPZzF3WHc4c0hNZWk1RVdxbDVoR2tteEVYL1MzSlc4QlN6QzRNV3NSTEJUcWMxL0VndDlqQ0ZVZXFGTnNGWE5yNTd6VjFSTjV6Z0I3bDg1b3psYVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzQ4MTI1CWZpbGU6R2VzU2Nob29sXzAuNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjUuMAo5eDlDYlh4U1JTRndSMy9ZVCtiVjd5TnBQbC9PTUVrYzB2VHhSTEpSS2Rxb0hJeEVxZUNqUlptRHpENWpHV3pCL2Fha1FuWTJmSVZEL3Zhc1dCZ0dEdz09Cg==",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.5.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWpBRVV4OGl4Qng4R3J6bCtnMG1sQ2xBblRkdmp0Z2FHeXRKSGNXbmRhVUZXTW9aeTI0K1FBVi9vcWFRdThtbzlyRUVJbk45YmdVZUxvVzJMUVBSSUFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzY3MDk5CWZpbGU6R2VzU2Nob29sXzAuNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjYuMApLUjVHcVVMeGJWSUF0VEVYTDBUK3lUNThqb1I5Z0xGQitiZkR5d2dJa05SY3l1aEtXbW1NMWRCQWlpWVR1ODBRN3lRZWQ2Rm9ISVl0a1VzU2hmWHZBUT09Cg==",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.6.0"
     }
   }
 }

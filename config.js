@@ -4,7 +4,7 @@ window.ONE_SITE = {
   // (VITE_API_URL), jamais avec localhost ; construire.mjs le copie depuis le dossier installateur/.
   installer: 'telechargements/GesSchool-installation.exe',
   // Adresse de l'application sur téléphone : c'est celle du serveur.
-  appUrl: 'https://gesschool.onrender.com',
+  appUrl: 'https://gesschool.onetechnologie.com',
   // Où partent les demandes du formulaire de contact.
   email: 'konannsikanyannyvan@gmail.com',
   whatsapp: '2250142905825',
