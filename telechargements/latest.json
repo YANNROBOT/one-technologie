@@ -1,11 +1,11 @@
 {
-  "version": "0.18.0",
-  "notes": "{\"fr\":[\"Journal : chaque action montre la photo de son auteur, et un clic ouvre son détail (ce qui a changé, avant et après).\",\"Filtres par dates, par personne et par gravité ; les actions sensibles ressortent.\",\"Export Excel et impression du journal ; la liste défile dans sa carte.\"],\"en\":[\"Log: each action shows its author's photo, and a click opens its details (what changed, before and after).\",\"Filters by date, by person and by severity; sensitive actions stand out.\",\"Excel export and printing of the log; the list scrolls inside its card.\"]}",
-  "pub_date": "2026-10-12T21:06:10.351Z",
+  "version": "0.19.0",
+  "notes": "{\"fr\":[\"Paramètres : les classes se créent par niveau (6e, 5e… 2nde A, Tle D), d'après le système ivoirien, avec une salle par classe si on le veut.\",\"Logo de l'établissement sur les feuilles imprimées, année scolaire, et résumé du jour par e-mail chaque soir.\",\"Un compte en lecture seule ne voit plus les boutons de modification ; le mot de passe provisoire doit être remplacé avant toute autre action.\"],\"en\":[\"Settings: classes are created by level (6e, 5e… 2nde A, Tle D), following the Ivorian system, with a room per class if wanted.\",\"School logo on printed sheets, school year, and a daily summary by email every evening.\",\"A read-only account no longer sees the edit buttons; a temporary password must be replaced before any other action.\"]}",
+  "pub_date": "2026-10-12T21:46:52.328Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdObUJMSXI1TTVXSGZkMVk3QWd2ckNLVWJVUnZmSU5uUXFmMFpmQ1FDZ3Jvd2FkM1FyOFhDamxJVWxvQnNDVVJCZ1I3L2kraFJpUFo2ZWFZeTllQVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM5MTY5CWZpbGU6R2VzU2Nob29sXzAuMTguMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xOC4wCkQwV0ZXM0NUZlEwOTU2eGVNZk5iUzJ2YUZXTXorWTcwaElPU2w2K1FIM1oycENvSmR2dmlVUnlMcHozUzAzY2tIVUNpL3llb1FvTlVCYVJveVowTEJ3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.18.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5SU1ZRQmlENW00MXdGZUNNOWRXKytlVkRJNjExWXp4c28yRHl1TkI5U1dNU0dpZTdxWW9ybU5vOThQYzI1WkVYejFtUHJHWGNMMG1Ob09HRTh3TEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODQxNjExCWZpbGU6R2VzU2Nob29sXzAuMTkuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xOS4wCmhkUWw4Sm44azQ3ZmlRMGlIMmw4UzZMOSs4UnJZTFEwbzFqMVZ5bzdYOGExY2NIOWdINE9VaW0zUWNneTVwMGp6aG9sMHBhZlBiU01ZbW5senBZMEFnPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.19.0"
     }
   }
 }
