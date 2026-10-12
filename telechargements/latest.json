@@ -1,11 +1,11 @@
 {
-  "version": "0.12.1",
-  "notes": "{\"fr\":[\"Les icônes des boutons ronds (recherche, filtres, calendrier, impression…) ne sont plus grises : elles ont la même touche de bleu que les autres.\"],\"en\":[\"The icons of the round buttons (search, filters, calendar, print…) are no longer grey: they have the same touch of blue as the others.\"]}",
-  "pub_date": "2026-10-12T14:07:36.266Z",
+  "version": "0.13.0",
+  "notes": "{\"fr\":[\"Accueil : la carte « Le personnel aujourd'hui » a une liste déroulante (non arrivés, retards, arrivées, cours manqués).\",\"Présences et Employés : la liste défile dans sa carte, avec des textes et des photos plus grands.\",\"Feuilles imprimées refaites, toujours en paysage, avec la photo de chaque personne ; le bouton d'impression de la page Employés imprime la liste des employés.\",\"Employés : le matricule est donné automatiquement, les matières se choisissent dans une petite fenêtre, et l'administration a le choix entre les horaires de l'établissement et un horaire personnalisé.\",\"Nouvelle fiche de l'employé, et emploi du temps imprimé sous forme de grille.\"],\"en\":[\"Home: the “Staff today” card has a drop-down list (not arrived, late, arrivals, missed lessons).\",\"Attendance and Employees: the list scrolls inside its card, with larger text and photos.\",\"Printed sheets redesigned, always in landscape, with each person's photo; the print button on the Employees page prints the list of employees.\",\"Employees: the staff number is given automatically, subjects are chosen in a small window, and administrative staff choose between the school's working hours and custom ones.\",\"New employee record, and a printed timetable laid out as a grid.\"]}",
+  "pub_date": "2026-10-12T16:45:49.998Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXZYWVhJSXN3SXdENXdYa3lNeUlHZ2I1UG4wS3hnUW1sQUdvcUxjdm4xQ1lZV3ZtUWYwYndiL015NDYxTGp1enVXY3h2K0ZqVEhScCtOUFJpOGZSc0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODE0MDU1CWZpbGU6R2VzU2Nob29sXzAuMTIuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMi4xCkxhU2Z1NXdyaEdWdi9oWGRvL3pzZHN1NzFqWkpzS2xVV3lHaFZsVVo1enJYOFV6L0N2aTlrVTE2Q3Uva2w3TTd6ZGZraGtiYnV1TnlJQ1RvcGNiWkJRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.12.1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5sQnRZelVkVFJTWEpIcW5DM295OXkza3ZMQU1tdjhnSmhsUVBvMnhITGFvWmw4VWRhZ0lJb2FjcmxNbDRaMC94dXludUxxN0lzbHhudUU3Z0c1a0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODIzNTQ5CWZpbGU6R2VzU2Nob29sXzAuMTMuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMy4wClBxQkM4M1EyRmc1eGNEWktsS0U4ZWZjMmU1TjNCTGUxWUU4RkVXS1JvSSt1TWNKUHZPOTI5VUNrWW1WeXFaNzRVYzZla240U2FaTDA1OHhabVVvTkNRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.13.0"
     }
   }
 }
