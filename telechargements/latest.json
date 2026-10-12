@@ -1,11 +1,11 @@
 {
-  "version": "0.16.0",
-  "notes": "{\"fr\":[\"Fermetures : les jours fériés de Côte d'Ivoire s'ajoutent en un clic.\",\"Chaque fermeture a un type (jour férié, vacances scolaires, exceptionnelle) et peut ne concerner que les professeurs ou que l'administration.\",\"Nouvelle vue « Année », impression du calendrier des fermetures, et liste qui défile dans sa carte.\"],\"en\":[\"Closures: the public holidays of Côte d'Ivoire can be added in one click.\",\"Each closure has a type (public holiday, school holidays, exceptional) and can apply to teachers only or to the administration only.\",\"New “Year” view, printing of the closures calendar, and a list that scrolls inside its card.\"]}",
-  "pub_date": "2026-10-12T20:18:46.689Z",
+  "version": "0.17.0",
+  "notes": "{\"fr\":[\"Congés et permissions : deux absences qui se recouvrent pour la même personne sont refusées.\",\"Une absence peut ne durer qu'une demi-journée (matin ou après-midi) ; l'autre moitié se pointe normalement.\",\"Solde de jours par personne, vue « Année », impression de la liste, et rappel des personnes en congé sur l'accueil.\"],\"en\":[\"Leave and permissions: two absences that overlap for the same person are refused.\",\"An absence can last only half a day (morning or afternoon); the other half is clocked as usual.\",\"Days balance per person, “Year” view, printing of the list, and a reminder of people on leave on the home page.\"]}",
+  "pub_date": "2026-10-12T20:48:24.098Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXU1SWw0YjJpdHE1Z0xPeGpLdjRibjRCTmJhUFhtbWRMTUIwaC9SZXhONFl0T2JDU3VHUXQ0QndxSDdsNWNwQkFBMmJ5dGxYOEI3dmE1WFNPWU1xbkFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM2MzI0CWZpbGU6R2VzU2Nob29sXzAuMTYuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNi4wCkJmZy9aOTlOTEhGWHR1S0RzMWgwazFDcW5lTHBPcnBsV0c5OFZkb1ArekZrbTVoWkZMRWJEMnh1OGJGS1lEWURlV3dKKy85eEtmTXlqS3NpNEVtNkJBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.16.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWpkVkhYU3UzSE5IUkhRbjZmU1dlTENhYWt4VGMrNEZpeTdjRklweS9PQW45Z3N0d0o5MkJ2b2luaFdvMk02VkNRU0dBSGZrQ05ucXNEelZyQmlZS1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODM4MTAzCWZpbGU6R2VzU2Nob29sXzAuMTcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xNy4wClROUDdvaW1sUWdTRU1OeHVBMERud3RZQ0dkUGNaRHFqamVTb3NMbG90WXM2bUUyN2hBdzNBOS8wem5lVjdBQy9LR2NJNFlWMFZIWVVLN2NLUjhaZER3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.17.0"
     }
   }
 }
