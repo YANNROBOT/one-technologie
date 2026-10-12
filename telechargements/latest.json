@@ -1,11 +1,11 @@
 {
-  "version": "0.12.0",
-  "notes": "{\"fr\":[\"Nouvelles icônes, dessinées pour GesSchool : un trait arrondi et une touche du bleu des cartes, dans tout le logiciel.\"],\"en\":[\"New icons, drawn for GesSchool: a rounded line and a touch of the cards’ blue, throughout the software.\"]}",
-  "pub_date": "2026-10-12T13:51:51.375Z",
+  "version": "0.12.1",
+  "notes": "{\"fr\":[\"Les icônes des boutons ronds (recherche, filtres, calendrier, impression…) ne sont plus grises : elles ont la même touche de bleu que les autres.\"],\"en\":[\"The icons of the round buttons (search, filters, calendar, print…) are no longer grey: they have the same touch of blue as the others.\"]}",
+  "pub_date": "2026-10-12T14:07:36.266Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW81K1RTNURCWUxWMlpTSk9BaElqK3BscTBkTnFGVVppc2VwQVRzV2tYSDNPL25Ydkp4anBCY3kwTGV4T3BLeHBYOWhsUFRBZ1BqNTlWR0V0cWdweWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODEzMTEwCWZpbGU6R2VzU2Nob29sXzAuMTIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMi4wCisxclQ3YnMxY2xpMVNodzdRWjZoRHc3cjlXTW5PSUJGd0drNEFRbHhqa01RU2sxMGoyZTlJbmR4dUpmOHd1ZHhkNStFWGw1dUUxT3ErcVhjekEwTkFBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.12.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXZYWVhJSXN3SXdENXdYa3lNeUlHZ2I1UG4wS3hnUW1sQUdvcUxjdm4xQ1lZV3ZtUWYwYndiL015NDYxTGp1enVXY3h2K0ZqVEhScCtOUFJpOGZSc0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODE0MDU1CWZpbGU6R2VzU2Nob29sXzAuMTIuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xMi4xCkxhU2Z1NXdyaEdWdi9oWGRvL3pzZHN1NzFqWkpzS2xVV3lHaFZsVVo1enJYOFV6L0N2aTlrVTE2Q3Uva2w3TTd6ZGZraGtiYnV1TnlJQ1RvcGNiWkJRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.12.1"
     }
   }
 }
