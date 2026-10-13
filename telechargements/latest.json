@@ -1,11 +1,11 @@
 {
-  "version": "0.21.0",
-  "notes": "{\"fr\":[\"Paramètres : nouvelle rubrique « À propos », avec la politique de confidentialité, les mentions légales et les conditions d'utilisation.\",\"Sur téléphone : chaque employé a un QR code personnel, que l'administration scanne pour pointer sa présence.\"],\"en\":[\"Settings: new “About” section, with the privacy policy, legal notices and terms of use.\",\"On the phone: each employee has a personal QR code that the administration scans to record their attendance.\"]}",
-  "pub_date": "2026-10-13T05:14:42.209Z",
+  "version": "0.21.1",
+  "notes": "{\"fr\":[\"À propos : la nouvelle adresse de One Technologie, contact@onetechnologie.com.\"],\"en\":[\"About: One Technologie’s new address, contact@onetechnologie.com.\"]}",
+  "pub_date": "2026-10-13T07:10:59.367Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdraFd1Q1dHRGg2eWFyMDJOQ204UENmdUROWEN0bVpnblJUWmo2NldrTXk4VTZNaWdsTFY4Z0RDTEZ0ZS9VbzQ4OVMyNnNjN3ZXbXkzdkR6V1ZKSHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY4NDgxCWZpbGU6R2VzU2Nob29sXzAuMjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMS4wCjRadWdiaWIvS1phVS95akh2TTZINUQyNGQvUHEzbyt6TEF2SmJRb3JmcWUwZzYvN0Vsakh3c3VnRTh3MWFjMjI3UkpiZGFMK2R4QWFOVE5xNkxZaEF3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.21.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5zNWdZcGVMUGtWdmNTSXdGZktJVmhZLzlrMlNlZlovaHBLREhCN2w0cTZHNi9ZY1RBSCtkWXI4K0NzNTB6cjh6SlBhd3RrUXV2U1U4cE1BazZrOWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODc1NDU3CWZpbGU6R2VzU2Nob29sXzAuMjEuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMS4xCi82U3N3dTFvcktYanMycGpLYUFxK2xiMldYQ25CSXk5RDh2aDBER1BiWjB5ZStaK0VpMzl0MTNIdzIxQ0cxc2JJc29zbEdqaWRFYm5KbXVQZXpFbURBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.21.1"
     }
   }
 }

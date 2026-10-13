@@ -6,6 +6,6 @@ window.ONE_SITE = {
   // Adresse de l'application sur téléphone : c'est celle du serveur.
   appUrl: 'https://gesschool.onetechnologie.com',
   // Où partent les demandes du formulaire de contact.
-  email: 'konannsikanyannyvan@gmail.com',
+  email: 'contact@onetechnologie.com',
   whatsapp: '2250142905825',
 };
