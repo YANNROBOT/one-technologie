@@ -1,11 +1,11 @@
 {
-  "version": "0.20.0",
-  "notes": "{\"fr\":[\"Paramètres : nouvel accueil en tuiles, une par rubrique ; chaque rubrique s'ouvre en grand, avec un retour et des raccourcis vers les autres.\",\"Un employé ajouté en cours de journée n'est plus compté absent pour ce qui commençait avant son inscription.\",\"Les niveaux s'écrivent 6ème, 5ème, 4ème, 3ème et 1ère dans la création des classes.\"],\"en\":[\"Settings: new home page with one tile per section; each section opens full width, with a way back and shortcuts to the others.\",\"An employee added during the day is no longer counted absent for what started before they were registered.\",\"Levels are written 6ème, 5ème, 4ème, 3ème and 1ère when creating classes.\"]}",
-  "pub_date": "2026-10-13T03:50:31.070Z",
+  "version": "0.20.1",
+  "notes": "{\"fr\":[\"Messages d'erreur réécrits : plus de termes techniques, une phrase claire et quoi faire.\",\"L'écran de démarrage dure 2 secondes.\"],\"en\":[\"Error messages rewritten: no more technical terms, a clear sentence and what to do.\",\"The start-up screen lasts 2 seconds.\"]}",
+  "pub_date": "2026-10-13T04:08:36.313Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW13enNHUGsrY0VTMjB0TEgyQ0t2enlZaWo0MTdJcEllNXpIQjBCSkFkaE96N2JWeVpVQS9rcVoxUXYzZGc1QTMvbUoybC80aXB5UnJkMEg3ZU50VmdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODYzNDMwCWZpbGU6R2VzU2Nob29sXzAuMjAuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4wCnFNTlVXMEk2Tk9oZUM5clBqaHUxdkp4ZXoyVFJ1dUZ0OGR0Q1JreHlhb25rZ3NDamNSMXA1R1l4bVlwcUhGclA1U3BaZktzVlhBNGVrTTlCNmhGd0R3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWxjV2dtem5qeUZtT3h2b3ZVK29JcW9hMytGSGhObUtrdFQxTmlwN3lhQWluNTZsZFZRb3ZsZVdzR0J3RkgxakQ5OFFLazlOZnJsZVJwQmpYTE02YXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY0NTE1CWZpbGU6R2VzU2Nob29sXzAuMjAuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4xCnV4NjRFL3JQMVl6MlRnRG1xUkNQMGswKzVNREJ4UGVkdVdvcEN5V0RqSmNXSzFZNnlNSGtEaWVaTzQyZXZIV0U5RzFBKzVzaUx6aWpOdStEdEdVTkRRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.1"
     }
   }
 }
