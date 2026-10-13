@@ -38,6 +38,7 @@
     });
     root.lang = lang;
     document.title = TITLES[lang];
+    syncPicks();
     var button = document.getElementById('lang');
     // Le bouton montre la langue vers laquelle on bascule.
     button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
@@ -118,6 +119,98 @@
       seen.observe(el);
     });
   }
+
+  // ---------- Listes de choix : un bouton et un panneau au dessin du site, à la place de la liste du navigateur ----------
+  var picks = [].slice.call(document.querySelectorAll('[data-pick]'));
+  function syncPicks() {
+    (picks || []).forEach(function (pick) {
+      var chosen = pick.querySelector('[aria-selected="true"] span');
+      if (chosen) pick.querySelector('.pick-value').textContent = chosen.textContent;
+    });
+  }
+  picks.forEach(function (pick) {
+    var button = pick.querySelector('.pick-btn');
+    var list = pick.querySelector('.pick-list');
+    var input = pick.querySelector('input');
+    var options = [].slice.call(list.querySelectorAll('[role="option"]'));
+    var active = 0;
+    function mark(index) {
+      active = (index + options.length) % options.length;
+      options.forEach(function (option, i) {
+        option.classList.toggle('is-active', i === active);
+      });
+    }
+    function setOpen(open) {
+      list.hidden = !open;
+      pick.classList.toggle('open', open);
+      button.setAttribute('aria-expanded', String(open));
+      if (open) {
+        mark(
+          Math.max(
+            0,
+            options.findIndex(function (o) {
+              return o.getAttribute('aria-selected') === 'true';
+            }),
+          ),
+        );
+        list.focus();
+      }
+    }
+    function choose(option) {
+      options.forEach(function (o) {
+        o.setAttribute('aria-selected', String(o === option));
+      });
+      input.value = option.dataset.value;
+      syncPicks();
+      setOpen(false);
+      button.focus();
+    }
+    button.addEventListener('click', function () {
+      setOpen(list.hidden);
+    });
+    button.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        setOpen(true);
+      }
+    });
+    options.forEach(function (option, i) {
+      option.addEventListener('click', function () {
+        choose(option);
+      });
+      option.addEventListener('mousemove', function () {
+        mark(i);
+      });
+    });
+    list.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown') mark(active + 1);
+      else if (event.key === 'ArrowUp') mark(active - 1);
+      else if (event.key === 'Home') mark(0);
+      else if (event.key === 'End') mark(options.length - 1);
+      else if (event.key === 'Enter' || event.key === ' ') choose(options[active]);
+      else if (event.key === 'Escape') {
+        setOpen(false);
+        button.focus();
+      } else if (event.key === 'Tab') {
+        setOpen(false);
+        return;
+      } else return;
+      event.preventDefault();
+    });
+    document.addEventListener('click', function (event) {
+      if (!pick.contains(event.target)) setOpen(false);
+    });
+  });
+  syncPicks();
+
+  // « Haut de page » : la barre du haut reste collée à l'écran, un simple lien vers elle ne remonterait donc pas la page.
+  [].forEach.call(document.querySelectorAll('.top-link'), function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' });
+    });
+  });
 
   // Menu sur petit écran : le bouton ouvre le panneau, Échap ou un clic ailleurs le referme.
   var menu = document.getElementById('menu');

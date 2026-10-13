@@ -2228,3 +2228,363 @@ button.btn {
     transform: none;
   }
 }
+
+/* ---------- Mise à jour d'octobre 2026 : icônes « One » du logiciel, nouveaux blocs ---------- */
+
+/* Une icône One : son trait prend la couleur du texte, sa partie teintée le bleu de la marque */
+.one-icon {
+  display: block;
+  flex: none;
+  overflow: visible;
+}
+
+.one-icon .icon-tint {
+  fill: var(--icon-tint, var(--blue));
+  opacity: var(--icon-tint-opacity, 0.3);
+}
+
+/* Sur un bouton ou un fond coloré, la teinte suit le texte */
+.btn .one-icon {
+  width: 22px;
+  height: 22px;
+  --icon-tint: currentColor;
+  --icon-tint-opacity: 0.28;
+}
+
+/* La pastille jaune « autocollant » du logiciel, qui porte une icône */
+.oi,
+.value-icon,
+.dl-icon {
+  --icon-tint: #2d43ed;
+  --icon-tint-opacity: 0.34;
+}
+
+.oi {
+  display: grid;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1.5px solid #212121;
+  border-radius: 15px;
+  background: var(--marker);
+  color: #212121;
+  box-shadow: 3px 4px 0 0 var(--night);
+  transform: rotate(-4deg);
+  transition: transform 400ms var(--ease);
+}
+
+.value-icon .one-icon,
+.dl-icon .one-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Grille des fonctions de GesSchool */
+.feats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feats.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.feat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 22px 20px 24px;
+  border: 1.5px solid var(--blue);
+  border-radius: 28px;
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    opacity 700ms ease,
+    transform 500ms var(--ease),
+    box-shadow 300ms ease;
+}
+
+.feat h3 {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.feat p {
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+
+a.feat.in:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.feat:hover .oi,
+.contact-links a:hover .oi,
+.foot-col a:hover .oi {
+  transform: rotate(5deg) scale(1.08);
+}
+
+/* Coordonnées : la pastille à gauche, le libellé et la valeur à droite */
+.contact-links a,
+.contact-links div {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-links a > span:last-child,
+.contact-links div > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+/* Pied de page : quatre colonnes, de petites pastilles devant les liens */
+.foot {
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.foot-col a {
+  gap: 12px;
+}
+
+.foot-col .oi {
+  width: 32px;
+  height: 32px;
+  border-radius: 11px;
+  box-shadow: 2px 3px 0 0 var(--night);
+}
+
+.foot-col .oi .one-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Bandeau des pages légales : une grande pastille à la place de l'illustration */
+.hero-oi {
+  display: grid;
+  place-items: center;
+}
+
+.hero-oi .one-icon {
+  width: clamp(120px, 16vw, 190px);
+  height: auto;
+  padding: 26px;
+  border: 2px solid #212121;
+  border-radius: 44px;
+  background: var(--marker);
+  color: #212121;
+  box-shadow: 8px 10px 0 0 var(--night);
+  transform: rotate(-6deg);
+  --icon-tint: #2d43ed;
+  --icon-tint-opacity: 0.34;
+}
+
+/* Textes légaux : une colonne de lecture dans une carte */
+.legal {
+  max-width: 860px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1.5px solid var(--blue);
+  border-radius: 32px;
+  background: var(--surface);
+}
+
+.legal section + section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hair);
+}
+
+.legal h2 {
+  font-size: clamp(21px, 2.2vw, 26px);
+}
+
+.legal p {
+  margin-top: 10px;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+.legal .legal-contact {
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: var(--blue-soft);
+  color: var(--ink);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.legal-contact a {
+  color: var(--blue-text);
+  font-weight: 600;
+}
+
+@media (max-width: 1080px) {
+  .feats,
+  .feats.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .foot {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-oi {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .feats,
+  .feats.four,
+  .foot {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oi,
+  .feat {
+    transition: none !important;
+  }
+}
+
+/* Liste de choix du formulaire : le bouton, puis le panneau « popup » du logiciel */
+.form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.pick {
+  position: relative;
+}
+
+.pick-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  border: 1.5px solid var(--hair);
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 200ms ease;
+}
+
+.pick-btn:focus-visible,
+.pick.open .pick-btn {
+  border-color: var(--blue-text);
+  outline: none;
+}
+
+.pick-btn .one-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--ink-2);
+  transition: transform 250ms var(--ease);
+}
+
+.pick.open .pick-btn .one-icon {
+  transform: rotate(180deg);
+}
+
+.pick-list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border: 1.5px solid var(--blue);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  list-style: none;
+  outline: none;
+  animation: pick-in 180ms var(--ease) both;
+}
+
+.pick-list[hidden] {
+  display: none;
+}
+
+@keyframes pick-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+}
+
+.pick-list li {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px 8px 14px;
+  border-radius: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pick-list li.is-active {
+  background: var(--blue-soft);
+}
+
+.pick-list li[aria-selected='true'] {
+  color: var(--blue-text);
+  font-weight: 600;
+}
+
+/* Le rond de droite : vide, ou bleu avec sa coche pour le choix retenu */
+.pick-list li i {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  place-items: center;
+  border: 1.5px solid var(--hair);
+  border-radius: 999px;
+  color: transparent;
+}
+
+.pick-list li[aria-selected='true'] i {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.pick-list li i .one-icon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+  --icon-tint-opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pick-list {
+    animation: none;
+  }
+}
