@@ -1,11 +1,11 @@
 {
-  "version": "0.20.2",
-  "notes": "{\"fr\":[\"Paramètres : quatre rubriques par ligne sur l'accueil.\",\"Listes : « Créer plusieurs salles » numérote les salles toutes seules (Salle 1, Salle 2…).\",\"Le menu du compte s'ouvre de nouveau sous l'avatar.\"],\"en\":[\"Settings: four sections per row on the home page.\",\"Lists: “Create several rooms” numbers the rooms automatically (Salle 1, Salle 2…).\",\"The account menu opens under the avatar again.\"]}",
-  "pub_date": "2026-10-13T04:30:57.269Z",
+  "version": "0.21.0",
+  "notes": "{\"fr\":[\"Paramètres : nouvelle rubrique « À propos », avec la politique de confidentialité, les mentions légales et les conditions d'utilisation.\",\"Sur téléphone : chaque employé a un QR code personnel, que l'administration scanne pour pointer sa présence.\"],\"en\":[\"Settings: new “About” section, with the privacy policy, legal notices and terms of use.\",\"On the phone: each employee has a personal QR code that the administration scans to record their attendance.\"]}",
+  "pub_date": "2026-10-13T05:14:42.209Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWpodzB6UGZNbXI2am9va0xwVjBOdnorUmVWSWFud29HNUpPSEc2aUI4NlRuTXdlNG9qcTNJbXVGUkFydklyTEExMm5BZS9HOGhhWWFlM0tJbGQxSHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY1ODU2CWZpbGU6R2VzU2Nob29sXzAuMjAuMl94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4yCmhHVW1pcy9Fa3BUVk9zM0FYZzBYMnlpeXZhU0l6QWhpa2wwcmJnYVNzeWt6K1NIcHpiZUFiR3B3dHMxRDVBdmpLN3NqM2MvbjlINVcvN2puUlY2L0F3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.2"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWdraFd1Q1dHRGg2eWFyMDJOQ204UENmdUROWEN0bVpnblJUWmo2NldrTXk4VTZNaWdsTFY4Z0RDTEZ0ZS9VbzQ4OVMyNnNjN3ZXbXkzdkR6V1ZKSHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY4NDgxCWZpbGU6R2VzU2Nob29sXzAuMjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMS4wCjRadWdiaWIvS1phVS95akh2TTZINUQyNGQvUHEzbyt6TEF2SmJRb3JmcWUwZzYvN0Vsakh3c3VnRTh3MWFjMjI3UkpiZGFMK2R4QWFOVE5xNkxZaEF3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.21.0"
     }
   }
 }
