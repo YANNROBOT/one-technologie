@@ -1,11 +1,11 @@
 {
-  "version": "0.20.1",
-  "notes": "{\"fr\":[\"Messages d'erreur réécrits : plus de termes techniques, une phrase claire et quoi faire.\",\"L'écran de démarrage dure 2 secondes.\"],\"en\":[\"Error messages rewritten: no more technical terms, a clear sentence and what to do.\",\"The start-up screen lasts 2 seconds.\"]}",
-  "pub_date": "2026-10-13T04:08:36.313Z",
+  "version": "0.20.2",
+  "notes": "{\"fr\":[\"Paramètres : quatre rubriques par ligne sur l'accueil.\",\"Listes : « Créer plusieurs salles » numérote les salles toutes seules (Salle 1, Salle 2…).\",\"Le menu du compte s'ouvre de nouveau sous l'avatar.\"],\"en\":[\"Settings: four sections per row on the home page.\",\"Lists: “Create several rooms” numbers the rooms automatically (Salle 1, Salle 2…).\",\"The account menu opens under the avatar again.\"]}",
+  "pub_date": "2026-10-13T04:30:57.269Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWxjV2dtem5qeUZtT3h2b3ZVK29JcW9hMytGSGhObUtrdFQxTmlwN3lhQWluNTZsZFZRb3ZsZVdzR0J3RkgxakQ5OFFLazlOZnJsZVJwQmpYTE02YXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY0NTE1CWZpbGU6R2VzU2Nob29sXzAuMjAuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4xCnV4NjRFL3JQMVl6MlRnRG1xUkNQMGswKzVNREJ4UGVkdVdvcEN5V0RqSmNXSzFZNnlNSGtEaWVaTzQyZXZIV0U5RzFBKzVzaUx6aWpOdStEdEdVTkRRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWpodzB6UGZNbXI2am9va0xwVjBOdnorUmVWSWFud29HNUpPSEc2aUI4NlRuTXdlNG9qcTNJbXVGUkFydklyTEExMm5BZS9HOGhhWWFlM0tJbGQxSHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY1ODU2CWZpbGU6R2VzU2Nob29sXzAuMjAuMl94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4yCmhHVW1pcy9Fa3BUVk9zM0FYZzBYMnlpeXZhU0l6QWhpa2wwcmJnYVNzeWt6K1NIcHpiZUFiR3B3dHMxRDVBdmpLN3NqM2MvbjlINVcvN2puUlY2L0F3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.2"
     }
   }
 }
