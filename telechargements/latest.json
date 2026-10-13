@@ -1,11 +1,11 @@
 {
-  "version": "0.19.0",
-  "notes": "{\"fr\":[\"Paramètres : les classes se créent par niveau (6e, 5e… 2nde A, Tle D), d'après le système ivoirien, avec une salle par classe si on le veut.\",\"Logo de l'établissement sur les feuilles imprimées, année scolaire, et résumé du jour par e-mail chaque soir.\",\"Un compte en lecture seule ne voit plus les boutons de modification ; le mot de passe provisoire doit être remplacé avant toute autre action.\"],\"en\":[\"Settings: classes are created by level (6e, 5e… 2nde A, Tle D), following the Ivorian system, with a room per class if wanted.\",\"School logo on printed sheets, school year, and a daily summary by email every evening.\",\"A read-only account no longer sees the edit buttons; a temporary password must be replaced before any other action.\"]}",
-  "pub_date": "2026-10-12T21:46:52.328Z",
+  "version": "0.20.0",
+  "notes": "{\"fr\":[\"Paramètres : nouvel accueil en tuiles, une par rubrique ; chaque rubrique s'ouvre en grand, avec un retour et des raccourcis vers les autres.\",\"Un employé ajouté en cours de journée n'est plus compté absent pour ce qui commençait avant son inscription.\",\"Les niveaux s'écrivent 6ème, 5ème, 4ème, 3ème et 1ère dans la création des classes.\"],\"en\":[\"Settings: new home page with one tile per section; each section opens full width, with a way back and shortcuts to the others.\",\"An employee added during the day is no longer counted absent for what started before they were registered.\",\"Levels are written 6ème, 5ème, 4ème, 3ème and 1ère when creating classes.\"]}",
+  "pub_date": "2026-10-13T03:50:31.070Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5SU1ZRQmlENW00MXdGZUNNOWRXKytlVkRJNjExWXp4c28yRHl1TkI5U1dNU0dpZTdxWW9ybU5vOThQYzI1WkVYejFtUHJHWGNMMG1Ob09HRTh3TEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODQxNjExCWZpbGU6R2VzU2Nob29sXzAuMTkuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xOS4wCmhkUWw4Sm44azQ3ZmlRMGlIMmw4UzZMOSs4UnJZTFEwbzFqMVZ5bzdYOGExY2NIOWdINE9VaW0zUWNneTVwMGp6aG9sMHBhZlBiU01ZbW5senBZMEFnPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.19.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW13enNHUGsrY0VTMjB0TEgyQ0t2enlZaWo0MTdJcEllNXpIQjBCSkFkaE96N2JWeVpVQS9rcVoxUXYzZGc1QTMvbUoybC80aXB5UnJkMEg3ZU50VmdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODYzNDMwCWZpbGU6R2VzU2Nob29sXzAuMjAuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMC4wCnFNTlVXMEk2Tk9oZUM5clBqaHUxdkp4ZXoyVFJ1dUZ0OGR0Q1JreHlhb25rZ3NDamNSMXA1R1l4bVlwcUhGclA1U3BaZktzVlhBNGVrTTlCNmhGd0R3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.20.0"
     }
   }
 }
