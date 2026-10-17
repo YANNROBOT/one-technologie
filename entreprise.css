@@ -1,26 +1,29 @@
 /* Site de One Technologie — partie entreprise.
    Dessin repris, pour la mise en page et les couleurs, du modèle « Overtake » choisi par l'utilisateur (octobre 2026),
    avec les polices du site (Outfit pour les titres, Inter pour le texte) et le contenu de One Technologie.
-   Blanc, gris clair, noir, vert très sombre ; trois couleurs vives : vert citron, rose et jaune pâle.
+   Couleurs : la palette C de One Technologie, « noir et or », choisie par l'utilisateur le 17 octobre 2026 (après
+   un essai en orange refusé) : noir #111111, or #E9B10A et blanc ; bronze #8A5A12, crème #FBF5E6, sable #EDE3CF et
+   gris #F0F0F0. Les noms des variables restent ceux du modèle : --lime est l'or, --pine un noir chaud (#1C1914 : le
+   bronze, essayé en grandes surfaces, tirait sur le marron), --pink le sable, --butter le crème. Sur l'or, le texte est noir (le blanc n'y est pas lisible).
    Le bleu reste réservé à One Technologie Éducation (style.css), qui garde son propre dessin. */
 :root {
   --page: #ffffff;
   --mist: #f0f0f0;
   --mist-2: #e6e6e6;
   --card: #ffffff;
-  --ink: #0b0b0b;
+  --ink: #111111;
   --ink-2: #5f5f5f;
   --ink-3: #8b8b8b;
   --line: #e2e2e2;
-  --night: #0b0b0b;
+  --night: #111111;
   --night-2: #161616;
   --night-line: rgba(255, 255, 255, 0.08);
-  --pine: #122020;
-  --pine-2: #1b2b2b;
-  --lime: #9efd65;
-  --lime-ink: #0b0b0b;
-  --pink: #febcfc;
-  --butter: #fde689;
+  --pine: #1c1914;
+  --pine-2: #2a251e;
+  --lime: #e9b10a;
+  --lime-ink: #111111;
+  --pink: #ede3cf;
+  --butter: #fbf5e6;
   --on-dark: #f4f4f4;
   --on-dark-2: rgba(244, 244, 244, 0.68);
   --logo-ink: #000000;
@@ -37,7 +40,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --page: #0b0b0b;
+    --page: #111111;
     --mist: #161616;
     --mist-2: #202020;
     --card: #1c1c1c;
@@ -55,7 +58,7 @@
 }
 
 :root[data-theme='dark'] {
-  --page: #0b0b0b;
+  --page: #111111;
   --mist: #161616;
   --mist-2: #202020;
   --card: #1c1c1c;
@@ -372,27 +375,27 @@ main {
 
 .pill-btn.dark .arrow {
   background: #ffffff;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 :root[data-theme='dark'] .pill-btn.dark {
   background: #f4f4f4;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 :root[data-theme='dark'] .pill-btn.dark .arrow {
-  background: #0b0b0b;
+  background: #111111;
   color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) .pill-btn.dark {
     background: #f4f4f4;
-    color: #0b0b0b;
+    color: #111111;
   }
 
   :root:not([data-theme='light']) .pill-btn.dark .arrow {
-    background: #0b0b0b;
+    background: #111111;
     color: #ffffff;
   }
 }
@@ -400,18 +403,18 @@ main {
 .pill-btn.lime {
   background: var(--lime);
   color: var(--lime-ink);
-  box-shadow: 0 0 34px -4px rgba(158, 253, 101, 0.55);
+  box-shadow: 0 0 34px -4px rgba(233, 177, 10, 0.55);
 }
 
 .pill-btn.lime .arrow,
 .pill-btn.white .arrow {
-  background: #0b0b0b;
+  background: #111111;
   color: #ffffff;
 }
 
 .pill-btn.white {
   background: #ffffff;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .pill-btn.line {
@@ -704,7 +707,7 @@ main {
   place-items: center;
   border-radius: 999px;
   background: var(--lime);
-  box-shadow: 0 0 0 0.05em rgba(158, 253, 101, 0.35);
+  box-shadow: 0 0 0 0.05em rgba(233, 177, 10, 0.35);
 }
 
 .title-pill .mark svg {
@@ -719,7 +722,7 @@ main {
 
 .title-pill .mark svg path[fill='black'],
 .title-pill .mark svg path[stroke='black'] {
-  fill: #0b0b0b;
+  fill: #111111;
 }
 
 .title-pill .chev {
@@ -772,7 +775,7 @@ main {
 
 .hl.pink {
   background: var(--pink);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .hl.white {
@@ -786,19 +789,19 @@ main {
 
 :root[data-theme='dark'] .hl.dark {
   background: #f4f4f4;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) .hl.dark {
     background: #f4f4f4;
-    color: #0b0b0b;
+    color: #111111;
   }
 }
 
 .hl.lime {
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 /* Les deux cartes sous le titre : nos travaux, et la carte sombre aux points. */
@@ -842,7 +845,7 @@ main {
   right: 6%;
   bottom: -8%;
   width: 24%;
-  border: 6px solid #0b0b0b;
+  border: 6px solid #111111;
   border-radius: 26px;
   box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.6);
   transform: rotate(6deg);
@@ -868,7 +871,7 @@ main {
   padding: 8px 14px;
   border-radius: 999px;
   background: #ffffff;
-  color: #0b0b0b;
+  color: #111111;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -1008,7 +1011,7 @@ main {
   place-items: center;
   border: 2px solid var(--page);
   border-radius: 999px;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .trust-text .stack span:first-child {
@@ -1094,7 +1097,7 @@ main {
   height: 88px;
   place-items: center;
   border-radius: 20px;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .team-row .tile .one-icon {
@@ -1217,7 +1220,7 @@ main {
   place-items: center;
   overflow: hidden;
   border-radius: 18px;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .tab-visual .one-icon {
@@ -1275,7 +1278,7 @@ main {
 }
 
 .band .marquee-track span {
-  color: #0b0b0b;
+  color: #111111;
   opacity: 1;
 }
 
@@ -1348,7 +1351,7 @@ main {
 
 .bento-card.butter {
   background: var(--butter);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .bento-card.wide {
@@ -1366,7 +1369,7 @@ main {
   align-self: flex-start;
   padding: 5px 11px;
   border-radius: 999px;
-  background: #0b0b0b;
+  background: #111111;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
@@ -1637,7 +1640,7 @@ main {
 }
 
 .how-card .tile .crown {
-  fill: #0b0b0b;
+  fill: #111111;
 }
 
 .how-card .count {
@@ -1695,7 +1698,7 @@ main {
   padding: 26px 22px;
   border-radius: 24px;
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
   text-align: center;
 }
 
@@ -1771,13 +1774,13 @@ main {
 
 .compare-head.us {
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .compare-head.us .brand-logo {
   width: 170px;
   height: auto;
-  --logo-ink: #0b0b0b;
+  --logo-ink: #111111;
   --logo-fill: transparent;
 }
 
@@ -1968,7 +1971,7 @@ main {
 
 .jump a:hover {
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .jump .one-icon {
@@ -2013,7 +2016,7 @@ main {
   height: 64px;
   place-items: center;
   border-radius: 18px;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .svc-top .tile .one-icon {
@@ -2099,13 +2102,13 @@ main {
 
 :root[data-theme='dark'] .filters button[aria-pressed='true'] {
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) .filters button[aria-pressed='true'] {
     background: var(--lime);
-    color: #0b0b0b;
+    color: #111111;
   }
 }
 
@@ -2254,7 +2257,7 @@ main {
 
 .value:nth-child(1) {
   background: var(--butter);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .value:nth-child(4) {
@@ -2313,7 +2316,7 @@ main {
   flex: none;
   place-items: center;
   border-radius: 14px;
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .contact-cards .tile .one-icon {
@@ -2456,7 +2459,7 @@ main {
   place-items: center;
   border-radius: 22px;
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .form-done .tile .one-icon {
@@ -2561,7 +2564,7 @@ main {
 .pick-list li[aria-selected='true'] i {
   border-color: var(--lime);
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .pick-list li i .one-icon {
@@ -2590,7 +2593,7 @@ main {
 
 .faq details[open] {
   background: var(--butter);
-  color: #0b0b0b;
+  color: #111111;
 }
 
 .faq summary {
@@ -2776,12 +2779,12 @@ main {
   padding: 12px 18px 12px 14px;
   border-radius: 999px;
   background: var(--lime);
-  color: #0b0b0b;
+  color: #111111;
   font-family: var(--display);
   font-size: 15.5px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 0 30px -6px rgba(158, 253, 101, 0.7), 0 14px 28px -14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px -6px rgba(233, 177, 10, 0.7), 0 14px 28px -14px rgba(0, 0, 0, 0.5);
   transition: transform 220ms var(--ease);
 }
 
