@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une tablette posée à l'horizontale, une application à l'écran.">
+  <title>Tablette — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-5 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="22" y="50" width="152" height="104" rx="14"/></g>
+    <rect x="22" y="50" width="152" height="104" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="34" y="62" width="128" height="80" rx="6" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <path d="M34 76V68A6 6 0 0 1 40 62H156A6 6 0 0 1 162 68V76Z" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <rect x="44" y="84" width="48" height="50" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <circle cx="68" cy="101" r="9" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <rect x="52" y="117" width="32" height="5" rx="2.5" fill="#111111"/>
+    <rect x="56" y="126" width="24" height="4" rx="2" fill="#DDD5CB"/>
+    <rect x="100" y="84" width="54" height="22" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="106" y="91" width="32" height="6" rx="3" fill="#111111"/>
+    <rect x="100" y="112" width="54" height="22" rx="5" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <rect x="106" y="119" width="24" height="6" rx="3" fill="#111111"/>
+    <circle cx="168" cy="102" r="2.6" fill="#111111"/>
+  </g>
+</svg>

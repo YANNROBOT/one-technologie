@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une boîte de craies de couleur.">
+  <title>Boîte de craies — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float" transform="rotate(5 100 110)">
+    <rect x="62" y="52" width="14" height="52" rx="4" transform="rotate(-10 69 78)" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="84" y="44" width="14" height="60" rx="4" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="106" y="50" width="14" height="54" rx="4" transform="rotate(6 113 77)" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="126" y="58" width="14" height="46" rx="4" transform="rotate(12 133 81)" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <g transform="translate(6 6)" fill="#111111"><rect x="48" y="90" width="108" height="76" rx="8"/></g>
+    <rect x="48" y="90" width="108" height="76" rx="8" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="64" y="110" width="76" height="34" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="74" y="120" width="44" height="6" rx="3" fill="#111111"/>
+    <rect x="74" y="131" width="30" height="5" rx="2.5" fill="#DDD5CB"/>
+  </g>
+</svg>

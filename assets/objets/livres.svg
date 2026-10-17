@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une pile de livres et une toque de diplômé.">
+  <title>Livres et toque — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M168 40 l9 -9"/>
+  </g>
+
+  <g class="a-float">
+    <rect x="36" y="144" width="140" height="28" rx="6" fill="#111111"/>
+    <rect x="30" y="138" width="140" height="28" rx="6" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="148" y="143" width="16" height="18" rx="2" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="40" y="149" width="40" height="6" rx="3" fill="#EDE3CF"/>
+    <rect x="42" y="112" width="122" height="26" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="48" y="117" width="14" height="16" rx="2" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="118" y="122" width="36" height="6" rx="3" fill="#111111"/>
+    <rect x="36" y="88" width="126" height="24" rx="6" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="142" y="92" width="14" height="16" rx="2" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="46" y="97" width="44" height="6" rx="3" fill="#E9B10A"/>
+  </g>
+  <g class="a-bob">
+    <path d="M70 66 V82 Q100 96 130 82 V66 Z" fill="#111111"/>
+    <path d="M100 34 L162 56 L100 78 L38 56 Z" fill="#111111"/>
+    <path d="M100 56 L148 66 L148 84" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M142 84 H154 L157 98 H139 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="100" cy="56" r="4" fill="#EDE3CF"/>
+  </g>
+</svg>

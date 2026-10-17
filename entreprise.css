@@ -195,6 +195,15 @@ h3 {
   stroke: var(--logo-ink);
 }
 
+/* Demandé par l'utilisateur (17 octobre 2026) : le « n », le « e », le contour du rond, la couronne et la bouche en or. */
+.brand-logo path.logo-gold {
+  fill: var(--lime);
+}
+
+.brand-logo path.logo-gold-line {
+  stroke: var(--lime);
+}
+
 .on-dark .brand-logo {
   --logo-ink: #f4f4f4;
   --logo-fill: transparent;
@@ -340,7 +349,6 @@ main {
   cursor: pointer;
   transition:
     transform 250ms var(--ease),
-    box-shadow 250ms var(--ease),
     background-color 200ms ease;
 }
 
@@ -370,7 +378,6 @@ main {
 .pill-btn.dark {
   background: var(--night);
   color: #ffffff;
-  box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.45);
 }
 
 .pill-btn.dark .arrow {
@@ -403,7 +410,6 @@ main {
 .pill-btn.lime {
   background: var(--lime);
   color: var(--lime-ink);
-  box-shadow: 0 0 34px -4px rgba(233, 177, 10, 0.55);
 }
 
 .pill-btn.lime .arrow,
@@ -458,14 +464,14 @@ main {
   justify-content: center;
 }
 
-/* ---------- Barre du haut : le logo, le bouton noir, le menu ---------- */
+/* ---------- Barre du haut : le logo, les liens au centre, puis « Éducation », la langue et le thème ---------- */
 .top {
   position: sticky;
   top: 0;
   z-index: 40;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 14px clamp(14px, 2vw, 30px);
   transition: padding 250ms var(--ease);
@@ -505,7 +511,108 @@ main {
 .top-actions {
   display: flex;
   align-items: center;
+  justify-self: end;
   gap: 10px;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--mist);
+}
+
+.top-nav a {
+  position: relative;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-family: var(--display);
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.top-nav a:hover {
+  color: var(--ink);
+}
+
+.top-nav a[aria-current] {
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Le petit point d'or sous la page ouverte */
+.top-nav a[aria-current]::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 999px;
+  background: var(--lime);
+}
+
+.top-tools {
+  display: flex;
+  gap: 6px;
+}
+
+.top-tools .round {
+  width: 44px;
+  height: 44px;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.top-tools .round:hover {
+  background: var(--mist);
+}
+
+/* Le bouton du menu ne sert que quand les liens ne tiennent plus dans la barre. */
+@media (min-width: 1181px) {
+  .menu-btn,
+  .menu-panel {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1320px) {
+  .top-nav a {
+    padding-inline: 11px;
+    font-size: 15px;
+  }
+
+  .brand {
+    width: 170px;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-tools {
+    display: none;
+  }
 }
 
 .menu-btn {
@@ -2784,7 +2891,6 @@ main {
   font-size: 15.5px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 0 30px -6px rgba(233, 177, 10, 0.7), 0 14px 28px -14px rgba(0, 0, 0, 0.5);
   transition: transform 220ms var(--ease);
 }
 
@@ -2996,7 +3102,6 @@ main {
 .pill-btn.edu-pill {
   background: #2d43ed;
   color: #ffffff;
-  box-shadow: 0 14px 28px -12px rgba(45, 67, 237, 0.6);
 }
 
 .pill-btn.edu-pill .arrow {
@@ -3129,4 +3234,718 @@ main {
   .top .pill-btn.edu-pill span:first-child {
     font-size: 13.5px;
   }
+}
+
+/* ---------- Demander un devis : la page en quatre étapes ---------- */
+/* À gauche, les objets dessinés (docs/illustrations), posés sur la page, qui changent avec l'étape ;
+   à droite, le formulaire, une étape à la fois. */
+.quote {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--wide);
+  margin: clamp(4px, 1vw, 12px) auto 0;
+}
+
+.quote-art {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  min-height: min(760px, calc(100vh - 120px));
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 3vw, 40px) clamp(8px, 1.5vw, 24px);
+}
+
+.quote-art .tag {
+  background: var(--mist);
+  white-space: nowrap;
+}
+
+.quote-art-title {
+  max-width: 18ch;
+  margin-top: 16px;
+  font-family: var(--display);
+  font-size: clamp(28px, 2.8vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+/* La scène : trois objets, sans fond. */
+.quote-stage {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.quote-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9) rotate(-4deg);
+  transition:
+    opacity 450ms ease,
+    transform 650ms var(--ease),
+    visibility 0s linear 450ms;
+}
+
+.quote-stage[data-active='1'] [data-scene='1'],
+.quote-stage[data-active='2'] [data-scene='2'],
+.quote-stage[data-active='3'] [data-scene='3'],
+.quote-stage[data-active='4'] [data-scene='4'],
+.quote-stage[data-active='5'] [data-scene='5'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 450ms ease 120ms,
+    transform 650ms var(--ease) 120ms,
+    visibility 0s;
+}
+
+.quote-scene .objet {
+  position: absolute;
+  height: auto;
+}
+
+.quote-scene .big {
+  top: 17%;
+  left: 15%;
+  width: 70%;
+  animation: quote-float 5s ease-in-out infinite;
+}
+
+.quote-scene .sa {
+  top: 0;
+  left: 0;
+  width: 34%;
+  animation: quote-float 4.2s ease-in-out 0.6s infinite;
+}
+
+.quote-scene .sb {
+  right: 0;
+  bottom: 0;
+  width: 36%;
+  animation: quote-float 4.6s ease-in-out 1.2s infinite;
+}
+
+@keyframes quote-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.quote-promises {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.quote-promises li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.quote-promises svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: #111111;
+}
+
+/* Le formulaire */
+.quote-form {
+  display: flex;
+  min-height: min(760px, calc(100vh - 120px));
+  flex-direction: column;
+  padding: clamp(24px, 3.5vw, 44px);
+  border-radius: var(--radius);
+}
+
+.quote-form .form-body {
+  flex: 1;
+  gap: 0;
+}
+
+.quote-progress {
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+.quote-count {
+  margin-bottom: 12px;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quote-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quote-bar li {
+  color: var(--ink-3);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.quote-bar li::before {
+  content: '';
+  display: block;
+  height: 6px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: var(--mist-2);
+  transition: background-color 300ms ease;
+}
+
+.quote-bar li.done {
+  color: var(--ink-2);
+}
+
+.quote-bar li.done::before {
+  background: var(--ink);
+}
+
+.quote-bar li.on {
+  color: var(--ink);
+}
+
+.quote-bar li.on::before {
+  background: var(--lime);
+}
+
+.quote-step {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.quote-step[hidden] {
+  display: none;
+}
+
+.quote-step.enter {
+  animation: quote-step-in 450ms var(--ease);
+}
+
+@keyframes quote-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.quote-step legend {
+  padding: 0;
+}
+
+.quote-step h1 {
+  font-size: clamp(30px, 3.2vw, 44px);
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+  outline: none;
+}
+
+.quote-step .note {
+  margin: 10px 0 22px;
+}
+
+.quote-step > label + .form-pair,
+.quote-step > .form-pair + .quote-recap {
+  margin-top: 16px;
+}
+
+/* Étape 1 : les services en tuiles */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quote-form .choice {
+  position: relative;
+  display: flex;
+  min-height: 118px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  background: var(--card);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    transform 250ms var(--ease);
+}
+
+.quote-form .choice:hover {
+  transform: translateY(-2px);
+}
+
+.quote-form .choice input,
+.quote-form .chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-ico {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--mist);
+  color: var(--ink);
+  transition: background-color 200ms ease;
+}
+
+.choice-ico .one-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.quote-form .choice:has(input:checked) {
+  border-color: var(--ink);
+}
+
+.quote-form .choice:has(input:checked) .choice-ico {
+  background: var(--lime);
+  color: #111111;
+}
+
+/* La pastille cochée, en haut à droite de la tuile choisie */
+.quote-form .choice::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.quote-form .choice:has(input:checked)::after {
+  border-color: var(--ink);
+  background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23e9b10a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+
+.quote-form .choice:has(input:focus-visible),
+.quote-form .chip:has(input:focus-visible) {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Étape 2 : budget et délai en pastilles */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-group + .chip-group {
+  margin-top: 26px;
+}
+
+.chip-title {
+  width: 100%;
+  margin-bottom: 4px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.quote-form .chip {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 18px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.quote-form .chip:hover {
+  border-color: var(--line);
+}
+
+.quote-form .chip:has(input:checked) {
+  background: var(--ink);
+  color: var(--page);
+}
+
+/* Étape 3 */
+.quote-hint {
+  margin-top: 8px;
+  color: var(--ink-3);
+  font-size: 13.5px;
+}
+
+/* Étape 4 : le rappel des choix */
+.quote-recap {
+  margin: 0 0 14px;
+  padding: 4px 18px;
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.quote-recap div {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.quote-recap div + div {
+  border-top: 1px dashed var(--line);
+}
+
+.quote-recap dt {
+  color: var(--ink-3);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.quote-recap dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.recap-edit {
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.recap-edit:hover {
+  color: var(--ink);
+}
+
+.quote-form .form-error {
+  margin-top: 18px;
+}
+
+.quote-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.quote-nav #devis-suivant {
+  margin-left: auto;
+}
+
+.quote-nav [hidden] {
+  display: none;
+}
+
+.quote-form .form-fallback {
+  margin-top: 18px;
+}
+
+.quote-form .form-done {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Pied de page sans l'appel « Prêt à lancer votre projet ? » (pages Contact et Demander un devis) */
+.end:not(:has(.end-cta)) {
+  padding-top: clamp(40px, 5vw, 64px);
+}
+
+.end:not(:has(.end-cta)) .end-grid {
+  margin-top: 0;
+}
+
+/* Contact : la section « Demander un devis ? », sous les coordonnées */
+.contact {
+  display: block;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quote-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: var(--text);
+  margin: calc(clamp(90px, 11vw, 150px) * -0.55) auto 0;
+  padding: clamp(28px, 5vw, 60px);
+  border-radius: var(--radius);
+  background: var(--pink);
+  color: #111111;
+}
+
+.quote-cta h2 {
+  font-size: clamp(34px, 4.4vw, 58px);
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.quote-cta p {
+  max-width: 52ch;
+  margin: 14px 0 26px;
+  color: #3c3a36;
+  font-size: 17px;
+}
+
+.pill-btn.ink {
+  background: #111111;
+  color: #ffffff;
+}
+
+.pill-btn.ink .arrow {
+  background: var(--lime);
+  color: #111111;
+}
+
+.quote-cta-art {
+  position: relative;
+  width: min(100%, 300px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.quote-cta-art img {
+  position: absolute;
+  height: auto;
+}
+
+.quote-cta-art .big {
+  top: 4%;
+  left: 4%;
+  width: 78%;
+  animation: quote-float 5s ease-in-out infinite;
+}
+
+.quote-cta-art .small {
+  right: 0;
+  bottom: 0;
+  width: 44%;
+  animation: quote-float 4.4s ease-in-out 0.8s infinite;
+}
+
+@media (max-width: 1080px) {
+  .quote {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quote-art {
+    position: relative;
+    top: 0;
+    display: grid;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+  }
+
+  .quote-art-head {
+    grid-row: 1;
+  }
+
+  .quote-stage {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+  }
+
+  .quote-form {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quote-art {
+    grid-template-columns: minmax(0, 1fr) 132px;
+    gap: 16px;
+  }
+
+  .quote-art-title {
+    font-size: 24px;
+  }
+
+  .quote-promises {
+    grid-column: 1 / -1;
+    font-size: 14px;
+  }
+
+  .quote-bar li span {
+    display: none;
+  }
+
+  .quote-cta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quote-cta-art {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quote-promises {
+    display: none;
+  }
+
+  .quote-art {
+    padding: 20px;
+  }
+
+  .quote-form .choice {
+    min-height: 104px;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .quote-recap div {
+    grid-template-columns: 70px minmax(0, 1fr) auto;
+  }
+
+  .quote-nav .pill-btn {
+    padding-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-scene .objet,
+  .quote-cta-art img,
+  .quote-step.enter {
+    animation: none;
+  }
+
+  .quote-scene {
+    transition: none;
+  }
+}
+
+/* ---------- Textes : animés la première fois qu'ils apparaissent ---------- */
+/* Les titres arrivent mot par mot (le script les découpe en .w), les pastilles et les sous-titres en fondu. */
+.js .split .w {
+  display: inline-block;
+}
+
+.js .split .w,
+.js .split .w-el {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(0.45em);
+  transition:
+    opacity 600ms ease calc(var(--i, 0) * 55ms),
+    filter 600ms ease calc(var(--i, 0) * 55ms),
+    transform 800ms var(--ease) calc(var(--i, 0) * 55ms);
+}
+
+.js .split.in-text .w,
+.js .split.in-text .w-el {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.js .fade-text {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms ease 250ms,
+    transform 900ms var(--ease) 250ms;
+}
+
+.js .fade-text.in-text {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .split .w,
+  .js .split .w-el,
+  .js .fade-text {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Les objets dessinés posés sur la page : en thème sombre, chacun prend un fin liseré blanc tout autour, comme un
+   autocollant découpé, pour que ses traits et son ombre noirs restent visibles sur le fond sombre. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .objet {
+    filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+  }
+}
+
+:root[data-theme='dark'] .objet {
+  filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
 }

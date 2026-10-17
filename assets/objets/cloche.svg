@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une cloche d'école qui sonne.">
+  <title>Cloche d'école — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M40 92 l-14 -4"/>
+    <path d="M44 116 h-16"/>
+    <path d="M160 92 l14 -4"/>
+    <path d="M156 116 h16"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(-10 100 100)">
+    <rect x="90" y="18" width="20" height="40" rx="8" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="82" y="54" width="36" height="11" rx="4" fill="#DCCDAF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <g transform="translate(6 6)" fill="#111111"><path d="M100 62 C70 62 64 92 62 120 C60 140 50 146 44 150 H156 C150 146 140 140 138 120 C136 92 130 62 100 62 Z"/><rect x="40" y="146" width="120" height="13" rx="6.5"/></g>
+    <path d="M100 62 C70 62 64 92 62 120 C60 140 50 146 44 150 H156 C150 146 140 140 138 120 C136 92 130 62 100 62 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M82 86 Q74 104 74 126" fill="none" stroke="#111111" stroke-width="7.4" stroke-linecap="round"/>
+    <path d="M82 86 Q74 104 74 126" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="100" cy="166" r="9" fill="#111111"/>
+    <rect x="40" y="146" width="120" height="13" rx="6.5" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+</svg>

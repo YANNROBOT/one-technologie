@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un sablier qui mesure le temps.">
+  <title>Sablier — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 50 l10 -8"/>
+    <path d="M174 74 l13 -1"/>
+    <path d="M160 32 l3 -12"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(8 100 100)">
+    <path d="M78 40 Q78 82 100 100 Q122 82 122 40 Z M78 160 Q78 118 100 100 Q122 118 122 160 Z" fill="#111111" transform="translate(6 6)"/>
+    <path d="M78 40 Q78 82 100 100 Q122 82 122 40 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M78 160 Q78 118 100 100 Q122 118 122 160 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M88 66 Q100 74 112 66 Q108 84 100 92 Q92 84 88 66 Z" fill="#EDE3CF"/>
+    <path d="M82 157 Q86 132 100 128 Q114 132 118 157 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <path d="M100 98 V128" stroke="#DCCDAF" stroke-width="3" stroke-linecap="round"/>
+    <rect x="66" y="166" width="68" height="14" rx="5" fill="#111111"/>
+    <rect x="60" y="22" width="80" height="16" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="60" y="160" width="80" height="16" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un ordinateur portable ouvert, un tableau de bord à l'écran.">
+  <title>Ordinateur portable — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 48 l12 -3"/>
+    <path d="M160 18 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 100)">
+    <rect x="42" y="46" width="128" height="86" rx="10" fill="#111111"/>
+    <rect x="36" y="40" width="128" height="86" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M36 62V50A10 10 0 0 1 46 40H154A10 10 0 0 1 164 50V62Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="49" cy="51" r="3" fill="#FFFFFF"/><circle cx="59" cy="51" r="3" fill="#FFFFFF"/><circle cx="69" cy="51" r="3" fill="#FFFFFF"/>
+    <rect x="48" y="72" width="44" height="24" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="54" y="78" width="26" height="5" rx="2.5" fill="#111111"/>
+    <rect x="54" y="87" width="16" height="4" rx="2" fill="#DDD5CB"/>
+    <rect x="48" y="103" width="44" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="48" y="112" width="30" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="104" y="98" width="9" height="17" rx="2" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <rect x="118" y="86" width="9" height="29" rx="2" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <rect x="132" y="92" width="9" height="23" rx="2" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <rect x="146" y="76" width="9" height="39" rx="2" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <path d="M100 115.5H160" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M30 134H182L194 154A6 6 0 0 1 189 162H23A6 6 0 0 1 18 154Z" fill="#111111"/>
+    <path d="M24 128H176L188 148A6 6 0 0 1 183 156H17A6 6 0 0 1 12 148Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="84" y="139" width="32" height="8" rx="4" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+</svg>

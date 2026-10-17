@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une ampoule allumée : une idée.">
+  <title>Ampoule — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M100 14 v-10"/>
+    <path d="M150 30 l8 -8"/>
+    <path d="M50 30 l-8 -8"/>
+    <path d="M170 74 h12"/>
+    <path d="M30 74 h-12"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><path d="M100 24 C134 24 152 48 152 76 C152 98 136 110 128 124 V138 H72 V124 C64 110 48 98 48 76 C48 48 66 24 100 24 Z"/></g>
+    <path d="M100 24 C134 24 152 48 152 76 C152 98 136 110 128 124 V138 H72 V124 C64 110 48 98 48 76 C48 48 66 24 100 24 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M70 64 Q74 48 88 42" fill="none" stroke="#111111" stroke-width="7.4" stroke-linecap="round"/>
+    <path d="M70 64 Q74 48 88 42" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M84 120 Q84 92 92 92 Q100 92 100 106 Q100 92 108 92 Q116 92 116 120" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="72" y="138" width="56" height="12" rx="4" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="76" y="150" width="48" height="11" rx="4" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="88" y="161" width="24" height="10" rx="5" fill="#111111"/>
+  </g>
+</svg>

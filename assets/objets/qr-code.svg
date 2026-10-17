@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une affiche avec un grand QR code, prête à être scannée.">
+  <title>QR code — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-6 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="46" y="24" width="108" height="148" rx="14"/></g>
+    <rect x="46" y="24" width="108" height="148" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="24" r="7" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="58" y="40" width="84" height="84" rx="8" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <g fill="#111111">
+      <rect x="66" y="48" width="22" height="22" rx="4"/><rect x="112" y="48" width="22" height="22" rx="4"/><rect x="66" y="94" width="22" height="22" rx="4"/>
+      <rect x="97" y="52" width="7" height="7" rx="1"/><rect x="97" y="64" width="7" height="7" rx="1"/><rect x="84" y="74" width="7" height="7" rx="1"/><rect x="104" y="76" width="7" height="7" rx="1"/><rect x="116" y="72" width="7" height="7" rx="1"/><rect x="97" y="90" width="7" height="7" rx="1"/><rect x="110" y="92" width="7" height="7" rx="1"/><rect x="122" y="98" width="7" height="7" rx="1"/><rect x="124" y="84" width="7" height="7" rx="1"/><rect x="72" y="80" width="7" height="7" rx="1"/>
+    </g>
+    <g fill="#FBF5E6"><rect x="71" y="53" width="12" height="12" rx="2"/><rect x="117" y="53" width="12" height="12" rx="2"/><rect x="71" y="99" width="12" height="12" rx="2"/></g>
+    <g fill="#111111"><rect x="74.5" y="56.5" width="5" height="5"/><rect x="120.5" y="56.5" width="5" height="5"/><rect x="74.5" y="102.5" width="5" height="5"/></g>
+    <rect x="64" y="134" width="72" height="7" rx="3.5" fill="#111111"/>
+    <rect x="74" y="148" width="52" height="5" rx="2.5" fill="#DDD5CB"/>
+  </g>
+  <g fill="none" stroke="#E9B10A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="a-pop">
+    <path d="M48 52 V38 H62"/><path d="M152 52 V38 H138"/><path d="M48 128 V142 H62"/><path d="M152 128 V142 H138"/>
+  </g>
+</svg>

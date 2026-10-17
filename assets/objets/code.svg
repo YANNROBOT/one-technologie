@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une fenêtre de code et le symbole des balises : le développement.">
+  <title>Code informatique — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-3 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="24" y="36" width="152" height="124" rx="12"/></g>
+    <rect x="24" y="36" width="152" height="124" rx="12" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M24 58V48A12 12 0 0 1 36 36H164A12 12 0 0 1 176 48V58Z" fill="#111111" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="47" r="3.6" fill="#E9B10A"/><circle cx="49" cy="47" r="3.6" fill="#EDE3CF"/><circle cx="60" cy="47" r="3.6" fill="#FFFFFF"/>
+    <rect x="40" y="72" width="34" height="6" rx="3" fill="#E9B10A"/><rect x="40" y="84" width="52" height="6" rx="3" fill="#EDE3CF"/><rect x="52" y="96" width="40" height="6" rx="3" fill="#FBF5E6"/><rect x="52" y="108" width="30" height="6" rx="3" fill="#E9B10A"/><rect x="40" y="120" width="46" height="6" rx="3" fill="#EDE3CF"/><rect x="52" y="132" width="36" height="6" rx="3" fill="#FBF5E6"/>
+  </g>
+  <g class="a-pop">
+    <g transform="translate(6 6)" fill="#111111"><rect x="116" y="104" width="62" height="54" rx="12"/></g>
+    <rect x="116" y="104" width="62" height="54" rx="12" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M136 118 L126 131 L136 144 M158 118 L168 131 L158 144 M151 114 L143 148" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

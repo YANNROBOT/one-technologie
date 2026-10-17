@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une enveloppe avec une lettre et une pastille de nouveau message.">
+  <title>E-mail — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 110)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="30" y="70" width="140" height="92" rx="10"/></g>
+    <rect x="30" y="70" width="140" height="92" rx="10" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="50" y="40" width="100" height="74" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="62" y="54" width="52" height="7" rx="3.5" fill="#111111"/>
+    <rect x="62" y="68" width="74" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="62" y="78" width="60" height="5" rx="2.5" fill="#DDD5CB"/>
+    <path d="M30 80 L100 124 L170 80 V152 A10 10 0 0 1 160 162 H40 A10 10 0 0 1 30 152 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M34 158 L84 116 M166 158 L116 116" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g class="a-pop">
+    <circle cx="164" cy="62" r="16" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M160 56 L165 52 V71" fill="none" stroke="#FFFFFD" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

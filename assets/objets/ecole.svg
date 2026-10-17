@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un bâtiment d'école avec son drapeau et son horloge.">
+  <title>École — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M176 70 l10 -6"/>
+    <path d="M180 92 h13"/>
+    <path d="M168 50 l6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <path d="M54 96 H158 V178 H54 Z" fill="#111111" transform="translate(6 6)"/>
+    <path d="M100 18 V44" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M100 18 L122 24 L100 31 Z" fill="#E9B10A" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+    <rect x="48" y="96" width="104" height="80" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M40 98 L100 52 L160 98 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="80" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.4"/>
+    <path d="M100 74 V80 L104 83" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+    <rect x="62" y="106" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M71 106 V122 M62 114 H80" stroke="#111111" stroke-width="1.6"/>
+    <rect x="62" y="134" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M71 134 V150 M62 142 H80" stroke="#111111" stroke-width="1.6"/>
+    <rect x="120" y="106" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M129 106 V122 M120 114 H138" stroke="#111111" stroke-width="1.6"/>
+    <rect x="120" y="134" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M129 134 V150 M120 142 H138" stroke="#111111" stroke-width="1.6"/>
+    <path d="M90 176 V150 A10 10 0 0 1 110 150 V176 Z" fill="#8A5A12" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="36" y="174" width="128" height="10" rx="4" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+</svg>

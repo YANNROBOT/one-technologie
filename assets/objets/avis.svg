@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une carte d'avis avec cinq étoiles.">
+  <title>Avis client — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="24" y="48" width="152" height="106" rx="14"/></g>
+    <rect x="24" y="48" width="152" height="106" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="56" cy="82" r="17" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="56" cy="77" r="6" fill="#111111"/>
+    <path d="M44 92 Q56 82 68 92" fill="#111111"/>
+    <rect x="82" y="72" width="64" height="8" rx="4" fill="#111111"/>
+    <rect x="82" y="86" width="42" height="5" rx="2.5" fill="#DDD5CB"/>
+    <path d="M50.0 118.0 L52.7 124.3 L59.5 124.9 L54.4 129.4 L55.9 136.1 L50.0 132.6 L44.1 136.1 L45.6 129.4 L40.5 124.9 L47.3 124.3 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/><path d="M75.0 118.0 L77.7 124.3 L84.5 124.9 L79.4 129.4 L80.9 136.1 L75.0 132.6 L69.1 136.1 L70.6 129.4 L65.5 124.9 L72.3 124.3 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/><path d="M100.0 118.0 L102.7 124.3 L109.5 124.9 L104.4 129.4 L105.9 136.1 L100.0 132.6 L94.1 136.1 L95.6 129.4 L90.5 124.9 L97.3 124.3 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/><path d="M125.0 118.0 L127.7 124.3 L134.5 124.9 L129.4 129.4 L130.9 136.1 L125.0 132.6 L119.1 136.1 L120.6 129.4 L115.5 124.9 L122.3 124.3 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/><path d="M150.0 118.0 L152.7 124.3 L159.5 124.9 L154.4 129.4 L155.9 136.1 L150.0 132.6 L144.1 136.1 L145.6 129.4 L140.5 124.9 L147.3 124.3 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/>
+  </g>
+</svg>

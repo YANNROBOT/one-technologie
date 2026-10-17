@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un nuage avec une flèche qui monte : la sauvegarde en ligne.">
+  <title>Sauvegarde en ligne — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><path d="M58 144 C34 144 28 110 50 102 C48 72 80 60 98 76 C108 52 148 56 148 88 C174 90 176 144 148 144 Z"/></g>
+    <path d="M58 144 C34 144 28 110 50 102 C48 72 80 60 98 76 C108 52 148 56 148 88 C174 90 176 144 148 144 Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="102" cy="112" r="21" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M102 123 V101 M93 109 L102 100 L111 109" fill="none" stroke="#FFFFFD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

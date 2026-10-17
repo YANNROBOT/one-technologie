@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une toque de diplômé et un diplôme roulé.">
+  <title>Toque et diplôme — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(-18 100 128)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="40" y="112" width="122" height="28" rx="14"/></g>
+    <rect x="40" y="112" width="122" height="28" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <ellipse cx="44" cy="126" rx="7" ry="14" fill="#FBF5E6" stroke="#111111" stroke-width="2.5"/>
+    <rect x="96" y="112" width="14" height="28" fill="#E9B10A" stroke="#111111" stroke-width="2.4"/>
+    <path d="M103 140 L96 158 L103 154 L110 158 Z" fill="#E9B10A" stroke="#111111" stroke-width="2.2" stroke-linejoin="round"/>
+  </g>
+  <g class="a-float">
+    <path d="M64 62 V82 Q100 98 136 82 V62 Z" fill="#111111"/>
+    <path d="M100 26 L172 52 L100 78 L28 52 Z" fill="#111111" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M100 52 L154 64 L154 88" fill="none" stroke="#E9B10A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M148 88 H160 L163 102 H145 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="100" cy="52" r="4.5" fill="#E9B10A"/>
+  </g>
+</svg>

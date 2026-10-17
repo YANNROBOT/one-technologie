@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un appareil photo.">
+  <title>Appareil photo — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-6 100 100)">
+    <rect x="40" y="46" width="22" height="10" rx="3" fill="#111111"/>
+    <path d="M66 62 L78 40 H116 L128 62 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(6 6)" fill="#111111"><rect x="26" y="58" width="148" height="100" rx="16"/></g>
+    <rect x="26" y="58" width="148" height="100" rx="16" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="26" y="80" width="148" height="56" fill="#C9940A"/>
+    <rect x="26" y="58" width="148" height="100" rx="16" fill="none" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="108" r="36" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="108" r="25" fill="#111111"/>
+    <circle cx="100" cy="108" r="14" fill="#8A5A12"/>
+    <circle cx="92" cy="100" r="5" fill="#FFFFFF"/>
+    <rect x="140" y="68" width="22" height="12" rx="3" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un calendrier, un jour coché.">
+  <title>Calendrier — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M26 76 l-12 -5"/>
+    <path d="M22 98 h-13"/>
+    <path d="M32 56 l-8 -9"/>
+  </g>
+
+  <g class="a-float" transform="rotate(4 100 100)">
+    <rect x="44" y="46" width="124" height="124" rx="16" fill="#111111"/>
+    <rect x="38" y="40" width="124" height="124" rx="16" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M38 74V56A16 16 0 0 1 54 40H146A16 16 0 0 1 162 56V74Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="56" y="53" width="48" height="8" rx="4" fill="#111111"/>
+    <rect x="62" y="28" width="10" height="22" rx="5" fill="#111111"/>
+    <rect x="128" y="28" width="10" height="22" rx="5" fill="#111111"/>
+    <rect x="50" y="84" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="76" y="84" width="20" height="18" rx="5" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <rect x="102" y="84" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="128" y="84" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="50" y="108" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="76" y="108" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="102" y="108" width="20" height="18" rx="5" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <path d="M104.5 117.5l5.5 5.5 10.5 -12" fill="none" stroke="#FFFFFD" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="128" y="108" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="50" y="132" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="76" y="132" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="102" y="132" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+    <rect x="128" y="132" width="20" height="18" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+  </g>
+</svg>

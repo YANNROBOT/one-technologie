@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une horloge murale.">
+  <title>Horloge — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><circle cx="100" cy="100" r="68"/></g>
+    <circle cx="100" cy="100" r="68" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="100" r="55" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M100.0 60.0 L100.0 50.0" stroke="#111111" stroke-width="3.4" stroke-linecap="round"/><path d="M122.0 61.9 L125.0 56.7" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M138.1 78.0 L143.3 75.0" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M140.0 100.0 L150.0 100.0" stroke="#111111" stroke-width="3.4" stroke-linecap="round"/><path d="M138.1 122.0 L143.3 125.0" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M122.0 138.1 L125.0 143.3" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M100.0 140.0 L100.0 150.0" stroke="#111111" stroke-width="3.4" stroke-linecap="round"/><path d="M78.0 138.1 L75.0 143.3" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M61.9 122.0 L56.7 125.0" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M60.0 100.0 L50.0 100.0" stroke="#111111" stroke-width="3.4" stroke-linecap="round"/><path d="M61.9 78.0 L56.7 75.0" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/><path d="M78.0 61.9 L75.0 56.7" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M100 100 L100 66" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+    <path d="M100 100 L132 116" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="6.5" fill="#EDE3CF" stroke="#111111" stroke-width="2.5"/>
+  </g>
+</svg>

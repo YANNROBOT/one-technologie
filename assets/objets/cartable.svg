@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un cartable d'écolier.">
+  <title>Cartable — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 50 l9 -9"/>
+    <path d="M176 72 l12 -2"/>
+    <path d="M30 60 l-10 -7"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(5 100 110)">
+    <path d="M80 44 V34 A12 12 0 0 1 92 22 H108 A12 12 0 0 1 120 34 V44" fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+    <rect x="56" y="46" width="100" height="134" rx="30" fill="#111111"/>
+    <rect x="50" y="40" width="100" height="134" rx="30" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M50 80 Q50 46 82 44 H118 Q150 46 150 80 Q100 96 50 80 Z" fill="#C9940A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="66" y="112" width="68" height="50" rx="14" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M74 126 H126" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="94" y="80" width="12" height="20" rx="4" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M58 70 V150 M142 70 V150" stroke="#8A5A12" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

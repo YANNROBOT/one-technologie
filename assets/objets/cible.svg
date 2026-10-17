@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une cible et sa flèche plantée au centre : l'objectif atteint.">
+  <title>Cible — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><circle cx="94" cy="106" r="62"/></g>
+    <circle cx="94" cy="106" r="62" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="46" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="30" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="14" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="5" fill="#111111"/>
+  </g>
+  <g class="a-pop">
+    <path d="M98 102 L166 34" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M156 34 L166 20 L170 30 L180 26 L172 42 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
+</svg>

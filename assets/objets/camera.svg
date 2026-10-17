@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une caméra de tournage avec ses deux bobines.">
+  <title>Caméra de tournage — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M176 50 l9 -9"/>
+    <path d="M182 72 l12 -2"/>
+    <path d="M168 34 l1 -12"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 110)">
+    <circle cx="66" cy="62" r="24" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="66" cy="62" r="6" fill="#111111"/>
+    <g fill="#111111"><circle cx="66" cy="48" r="4"/><circle cx="78" cy="66" r="4"/><circle cx="54" cy="66" r="4"/></g>
+    <circle cx="116" cy="58" r="20" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="116" cy="58" r="5" fill="#111111"/>
+    <g fill="#111111"><circle cx="116" cy="47" r="3.5"/><circle cx="126" cy="62" r="3.5"/><circle cx="106" cy="62" r="3.5"/></g>
+    <path d="M148 110 L184 94 L184 150 L148 134 Z" fill="#111111" transform="translate(6 6)"/>
+    <path d="M148 110 L184 94 L184 150 L148 134 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="40" y="94" width="112" height="66" rx="14" fill="#111111"/>
+    <rect x="34" y="88" width="112" height="66" rx="14" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="48" y="100" width="38" height="24" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M62 105.5 L74 112 L62 118.5 Z" fill="#E9B10A" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="128" cy="106" r="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M90 154 V166 M78 180 L90 166 L102 180" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

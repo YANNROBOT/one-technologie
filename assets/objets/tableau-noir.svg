@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un tableau de classe avec une opération écrite à la craie.">
+  <title>Tableau noir — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-3 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="22" y="34" width="156" height="108" rx="8"/></g>
+    <rect x="22" y="34" width="156" height="108" rx="8" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="32" y="44" width="136" height="88" rx="4" fill="#8A5A12" stroke="#111111" stroke-width="2.5"/>
+    <g fill="none" stroke="#FFFFFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M48 64 L54 60 V86"/>
+      <path d="M66 74 H78 M72 68 V80"/>
+      <path d="M88 64 Q94 58 100 64 Q102 70 88 86 H102"/>
+      <path d="M112 70 H124 M112 78 H124"/>
+      <path d="M134 62 Q143 59 143 67 Q143 73 136 73 Q145 74 144 81 Q142 88 133 86"/>
+      <path d="M48 110 q8 -6 16 0 t16 0 t16 0"/>
+      <path d="M128 120 L142 98 L156 120 Z"/>
+    </g>
+    <rect x="28" y="140" width="144" height="9" rx="3" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="52" y="132" width="20" height="8" rx="3" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="118" y="130" width="28" height="11" rx="3" fill="#E9B10A" stroke="#111111" stroke-width="2.2"/>
+  </g>
+</svg>

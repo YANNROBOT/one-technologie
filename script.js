@@ -46,6 +46,8 @@
       button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
     });
     updateDownloads();
+    // Pour les textes construits par le script (le formulaire de devis).
+    document.dispatchEvent(new Event('one-lang'));
   }
 
   document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
@@ -125,6 +127,64 @@
       seen.observe(el);
     });
   }
+
+  // ---------- Textes de l'entreprise : animés la première fois qu'ils apparaissent ----------
+  // Les titres sont découpés en mots (.w), qui arrivent l'un après l'autre ; les pastilles et les sous-titres
+  // arrivent en fondu. Un changement de langue remet le texte d'un bloc : il s'affiche alors simplement.
+  (function () {
+    if (still || !('IntersectionObserver' in window) || !document.body.classList.contains('company')) return;
+    var split = function (el) {
+      var i = 0;
+      var walk = function (node) {
+        [].slice.call(node.childNodes).forEach(function (child) {
+          if (child.nodeType === 3) {
+            // On ne coupe qu'aux espaces ordinaires : « projet ? » (espace insécable) reste d'un seul tenant.
+            var parts = child.textContent.split(/([ \t\n\r]+)/);
+            var frag = document.createDocumentFragment();
+            parts.forEach(function (part) {
+              if (!part) return;
+              if (/^[ \t\n\r]+$/.test(part)) return frag.appendChild(document.createTextNode(part));
+              var word = document.createElement('span');
+              word.className = 'w';
+              word.style.setProperty('--i', i++);
+              word.textContent = part;
+              frag.appendChild(word);
+            });
+            node.replaceChild(frag, child);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+            // Un dessin glissé dans le titre (la pastille de l'accueil) arrive comme un mot.
+            if (child.getAttribute('aria-hidden') === 'true') {
+              child.classList.add('w-el');
+              child.style.setProperty('--i', i++);
+            } else {
+              walk(child);
+            }
+          }
+        });
+      };
+      walk(el);
+      el.classList.add('split');
+    };
+    var watch = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in-text');
+          watch.unobserve(entry.target);
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.15 },
+    );
+    [].forEach.call(document.querySelectorAll('main h1, main h2, .end h2, .quote-art-title'), function (el) {
+      if (el.closest('.quote-form')) return;
+      split(el);
+      watch.observe(el);
+    });
+    [].forEach.call(document.querySelectorAll('main .hero-sub, main .tag'), function (el) {
+      el.classList.add('fade-text');
+      watch.observe(el);
+    });
+  })();
 
   // ---------- Listes de choix : un bouton et un panneau au dessin du site, à la place de la liste du navigateur ----------
   var picks = [].slice.call(document.querySelectorAll('[data-pick]'));
@@ -267,28 +327,32 @@
     });
   }
 
-  // ---------- Demande de devis : envoyée au serveur, qui la transmet par e-mail à One Technologie ----------
+  // ---------- Demande de devis : quatre étapes, puis l'envoi au serveur, qui la transmet par e-mail à One Technologie ----------
+  // Dans sa propre fonction : ses noms (steps, stage, next…) ne doivent pas croiser ceux des autres parties.
   var form = document.getElementById('devis');
-  if (form) {
-    // Arrivée depuis un service (« Demander un devis pour un site web ») : le service est déjà choisi.
-    var wantedService = new URLSearchParams(location.search).get('service');
-    if (wantedService) {
-      var option = form.querySelector('[data-pick] [data-value="' + wantedService.replace(/[^a-z-]/g, '') + '"]');
-      if (option) {
-        [].forEach.call(option.parentElement.children, function (o) {
-          o.setAttribute('aria-selected', String(o === option));
-        });
-        option.closest('[data-pick]').querySelector('input').value = option.dataset.value;
-        syncPicks();
-      }
-    }
-
+  if (form) (function () {
+    var STEPS = 4;
+    var step = 1;
+    var steps = [].slice.call(form.querySelectorAll('.quote-step'));
+    var bar = [].slice.call(form.querySelectorAll('.quote-bar li'));
+    var stage = document.querySelector('.quote-stage');
+    var count = form.querySelector('[data-step-label]');
     var error = document.getElementById('form-error');
     var fallback = document.getElementById('form-fallback');
-    var sendButton = document.getElementById('devis-envoyer');
+    var back = document.getElementById('devis-retour');
+    var next = document.getElementById('devis-suivant');
+    var nextLabel = form.querySelector('[data-step-next]');
+    var message = form.querySelector('textarea[name="message"]');
+    var messageCount = document.getElementById('message-count');
     var t = function (fr, english) {
       return lang === 'en' ? english : fr;
     };
+
+    // Arrivée depuis un service (« Demander un devis pour un site web ») : le service est déjà choisi.
+    var wantedService = (new URLSearchParams(location.search).get('service') || '').replace(/[^a-z-]/g, '');
+    var wanted = wantedService && form.querySelector('input[name="service"][value="' + wantedService + '"]');
+    if (wanted) wanted.checked = true;
+
     var values = function () {
       var data = new FormData(form);
       var out = {};
@@ -297,14 +361,91 @@
       });
       return out;
     };
+    // Le libellé affiché du choix (dans la langue de la page).
     var labelOf = function (name, value) {
-      var item = form.querySelector('input[name="' + name + '"] ~ .pick-list [data-value="' + value + '"] span');
-      return item ? item.textContent : value;
+      var input = form.querySelector('input[name="' + name + '"][value="' + value + '"]');
+      var spans = input ? input.parentElement.querySelectorAll('span') : [];
+      return spans.length ? spans[spans.length - 1].textContent : value;
     };
+    var countMessage = function () {
+      var n = message.value.trim().length;
+      messageCount.textContent = n < 10 ? t('Encore quelques mots…', 'A few more words…') : n + ' ' + t('caractères', 'characters');
+    };
+    message.addEventListener('input', countMessage);
     var showError = function (text) {
       error.textContent = text;
       error.hidden = !text;
     };
+
+    // Ce qu'il manque pour quitter une étape (rien : on peut avancer).
+    var problemAt = function (n) {
+      var v = values();
+      if (n === 1 && !v.service) return t('Choisissez le type de projet.', 'Choose the type of project.');
+      if (n === 3 && v.message.length < 10) return t('Décrivez votre projet en quelques mots.', 'Describe your project in a few words.');
+      if (n === 4) {
+        if (!v.name) return t('Indiquez votre nom ou celui de votre entreprise.', 'Please enter your name or your company’s name.');
+        if (!v.phone && !v.email) return t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.');
+        if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) return t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.');
+      }
+      return '';
+    };
+
+    // Les textes qui dépendent de l'étape : refaits à chaque étape et au changement de langue.
+    var labels = function () {
+      count.textContent = t('Étape ' + step + ' sur ' + STEPS, 'Step ' + step + ' of ' + STEPS);
+      nextLabel.textContent = step === STEPS ? t('Envoyer ma demande', 'Send my request') : t('Continuer', 'Continue');
+      var v = values();
+      [].forEach.call(form.querySelectorAll('[data-recap]'), function (dd) {
+        dd.textContent = labelOf(dd.dataset.recap, v[dd.dataset.recap]);
+      });
+      countMessage();
+    };
+    document.addEventListener('one-lang', labels);
+
+    var show = function (n, focus) {
+      step = n;
+      steps.forEach(function (fieldset, i) {
+        var on = i + 1 === n;
+        fieldset.hidden = !on;
+        fieldset.classList.toggle('enter', on);
+      });
+      bar.forEach(function (item, i) {
+        item.classList.toggle('done', i + 1 < n);
+        item.classList.toggle('on', i + 1 === n);
+      });
+      if (stage) stage.dataset.active = String(n);
+      back.hidden = n === 1;
+      labels();
+      showError('');
+      if (focus) {
+        var title = steps[n - 1].querySelector('h1');
+        title.focus({ preventScroll: true });
+        var top = form.getBoundingClientRect().top;
+        if (top < 80) window.scrollBy({ top: top - 100, behavior: 'smooth' });
+      }
+    };
+
+    back.addEventListener('click', function () {
+      show(step - 1, true);
+    });
+    [].forEach.call(form.querySelectorAll('[data-goto]'), function (button) {
+      button.addEventListener('click', function () {
+        show(Number(button.dataset.goto), true);
+      });
+    });
+    // Un service choisi fait passer tout seul à l'étape suivante, la première fois.
+    var autoAdvanced = false;
+    [].forEach.call(form.querySelectorAll('input[name="service"]'), function (input) {
+      input.addEventListener('change', function () {
+        showError('');
+        if (autoAdvanced) return;
+        autoAdvanced = true;
+        setTimeout(function () {
+          if (step === 1) show(2, true);
+        }, 260);
+      });
+    });
+
     // Le même message, prêt à partir par WhatsApp ou par e-mail, si l'envoi direct échoue.
     var messageText = function (v) {
       var lines = [t('Bonjour One Technologie,', 'Hello One Technologie,'), '', t('Demande de devis : ', 'Quote request: ') + labelOf('service', v.service), t('Nom : ', 'Name: ') + v.name];
@@ -325,17 +466,17 @@
       });
     });
 
+    // « Continuer » (ou Entrée dans un champ) passe à l'étape suivante ; à la dernière, la demande part.
     form.addEventListener('submit', function (event) {
       event.preventDefault();
+      var problem = problemAt(step);
+      if (problem) return showError(problem);
+      if (step < STEPS) return show(step + 1, true);
       var v = values();
-      if (!v.name) return showError(t('Indiquez votre nom ou celui de votre entreprise.', 'Please enter your name or your company’s name.'));
-      if (!v.phone && !v.email) return showError(t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.'));
-      if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) return showError(t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.'));
-      if (v.message.length < 10) return showError(t('Décrivez votre projet en quelques mots.', 'Describe your project in a few words.'));
       showError('');
       fallback.hidden = true;
-      sendButton.disabled = true;
-      sendButton.classList.add('busy');
+      next.disabled = true;
+      next.classList.add('busy');
       v.lang = lang;
       fetch(config.quoteUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v) })
         .then(function (response) {
@@ -351,6 +492,7 @@
         })
         .then(function () {
           form.querySelector('.form-body').hidden = true;
+          if (stage) stage.dataset.active = '5';
           var done = document.getElementById('form-done');
           done.hidden = false;
           done.focus();
@@ -361,11 +503,13 @@
           fallback.hidden = false;
         })
         .then(function () {
-          sendButton.disabled = false;
-          sendButton.classList.remove('busy');
+          next.disabled = false;
+          next.classList.remove('busy');
         });
     });
-  }
+
+    show(1, false);
+  })();
 
   // ---------- Onglets des services (accueil) : un clic ou les flèches du clavier changent de service ----------
   [].forEach.call(document.querySelectorAll('[data-tabs]'), function (box) {

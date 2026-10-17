@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un contrat signé et tamponné, avec un stylo.">
+  <title>Contrat signé — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g transform="rotate(-6 100 100)">
+    <rect x="52" y="26" width="104" height="150" rx="12" fill="#111111"/>
+    <rect x="46" y="20" width="104" height="150" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="60" y="36" width="52" height="8" rx="4" fill="#111111"/>
+    <rect x="60" y="50" width="30" height="5" rx="2.5" fill="#E9B10A"/>
+    <rect x="60" y="66" width="76" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="80" width="68" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="94" width="76" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="108" width="50" height="6" rx="3" fill="#DDD5CB"/>
+    <path d="M60 142q5 -14 10 -2t10 0 10 -4 10 2" fill="none" stroke="#E9B10A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 152H104" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+    <g class="a-pop">
+      <circle cx="128" cy="140" r="15" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="128" cy="140" r="9.5" fill="none" stroke="#111111" stroke-width="2"/>
+      <path d="M121 140l5.5 5.5 10.5 -12" fill="none" stroke="#111111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="rotate(32 164 104)">
+    <rect x="160" y="62" width="15" height="76" rx="6" fill="#111111"/>
+    <rect x="156" y="58" width="15" height="76" rx="6" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="156" y="58" width="15" height="18" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M156 134H171L163.5 151Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M161 145H166L163.5 151Z" fill="#111111"/>
+  </g>
+</svg>

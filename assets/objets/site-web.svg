@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="La fenêtre d'un site web, avec son titre, son image et son bouton.">
+  <title>Écran de site web — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float" transform="rotate(3 100 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="28" y="34" width="144" height="118" rx="12"/></g>
+    <rect x="28" y="34" width="144" height="118" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M28 58V46A12 12 0 0 1 40 34H160A12 12 0 0 1 172 46V58Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="41" cy="46" r="3.6" fill="#E9B10A"/><circle cx="52" cy="46" r="3.6" fill="#EDE3CF" stroke="#111111" stroke-width="1.5"/><circle cx="63" cy="46" r="3.6" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="76" y="41" width="84" height="10" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="40" y="70" width="60" height="8" rx="4" fill="#111111"/>
+    <rect x="40" y="84" width="44" height="8" rx="4" fill="#111111"/>
+    <rect x="40" y="100" width="56" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="40" y="110" width="46" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="40" y="124" width="40" height="14" rx="7" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <rect x="50" y="129" width="20" height="4" rx="2" fill="#FFFFFF"/>
+    <rect x="110" y="68" width="50" height="72" rx="8" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <circle cx="143" cy="84" r="7" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <path d="M112 138 L127 112 L138 126 L146 116 L158 130 V138 Z" fill="#E9B10A" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <path d="M148 142 V172 L155 165 L161 177 L167 174 L161 162 L171 162 Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+</svg>

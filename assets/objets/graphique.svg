@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un tableau avec des barres qui montent et une flèche.">
+  <title>Graphique qui monte — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M26 64 l-12 -5"/>
+    <path d="M22 86 h-13"/>
+    <path d="M32 44 l-8 -9"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 100)">
+    <rect x="40" y="40" width="130" height="124" rx="16" fill="#111111"/>
+    <rect x="34" y="34" width="130" height="124" rx="16" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="48" y="48" width="44" height="7" rx="3.5" fill="#111111"/>
+    <rect x="48" y="60" width="28" height="5" rx="2.5" fill="#DDD5CB"/>
+    <path d="M48 140 H150" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="52" y="112" width="16" height="28" rx="3" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="76" y="98" width="16" height="42" rx="3" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="100" y="104" width="16" height="36" rx="3" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="124" y="78" width="16" height="62" rx="3" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M54 102 L80 84 L104 92 L138 62" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M126 60 L140 60 L140 74" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="a-pop">
+    <circle cx="166" cy="40" r="17" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M166 49 V31 M158 38 L166 30 L174 38" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

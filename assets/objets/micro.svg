@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Un micro de studio sur son pied.">
+  <title>Micro — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M40 70 q-12 20 -6 42"/>
+    <path d="M24 56 q-18 32 -8 66"/>
+    <path d="M160 70 q12 20 6 42"/>
+    <path d="M176 56 q18 32 8 66"/>
+  </g>
+
+  <g class="a-bob">
+    <path d="M64 92 Q64 140 100 140 Q136 140 136 92" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+    <path d="M100 140 V170" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+    <rect x="68" y="166" width="64" height="13" rx="6.5" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(6 6)" fill="#111111"><rect x="74" y="26" width="52" height="98" rx="26"/></g>
+    <rect x="74" y="26" width="52" height="98" rx="26" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M80 46 H120 M76 60 H124 M76 74 H124" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M90 30 V80 M110 30 V80" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="74" y="84" width="52" height="13" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+</svg>
