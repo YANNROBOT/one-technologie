@@ -5,7 +5,9 @@ window.ONE_SITE = {
   installer: 'telechargements/GesSchool-installation.exe',
   // Adresse de l'application sur téléphone : c'est celle du serveur.
   appUrl: 'https://gesschool.onetechnologie.com',
-  // Où partent les demandes du formulaire de contact.
+  // Le serveur qui reçoit les demandes de devis et les envoie par e-mail à One Technologie.
+  quoteUrl: 'https://gesschool.onetechnologie.com/api/public/quote',
+  // Adresse et numéro proposés si l'envoi direct échoue.
   email: 'contact@onetechnologie.com',
   whatsapp: '2250142905825',
 };

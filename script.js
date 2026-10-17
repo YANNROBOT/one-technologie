@@ -18,7 +18,7 @@
   };
 
   // ---------- Langue : le français est dans la page, l'anglais dans les attributs data-en ----------
-  var ATTRS = ['alt', 'aria-label'];
+  var ATTRS = ['alt', 'aria-label', 'placeholder'];
   var lang = store.get('one-site.lang') || (/^en\b/i.test(navigator.language || '') ? 'en' : 'fr');
   var french = new Map();
   var TITLES = { fr: document.title, en: root.dataset.titleEn || document.title };
@@ -230,28 +230,131 @@
     if (event.key === 'Escape') setMenu(false);
   });
 
-  // Demande de démonstration : le message est préparé, puis ouvert dans WhatsApp ou dans la messagerie.
-  var form = document.getElementById('demande');
+  // ---------- Réalisations : les filtres n'affichent que la catégorie choisie ----------
+  var filters = document.querySelector('[data-filters]');
+  if (filters) {
+    var works = [].slice.call(document.querySelectorAll('[data-works] .work'));
+    var empty = document.querySelector('[data-works-empty]');
+    filters.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-filter]');
+      if (!button) return;
+      var wanted = button.dataset.filter;
+      [].forEach.call(filters.querySelectorAll('[data-filter]'), function (b) {
+        b.setAttribute('aria-pressed', String(b === button));
+      });
+      var shown = 0;
+      works.forEach(function (work) {
+        var match = wanted === 'tout' || (' ' + work.dataset.cats + ' ').indexOf(' ' + wanted + ' ') >= 0;
+        work.hidden = !match;
+        if (match) {
+          shown++;
+          work.classList.add('in');
+        }
+      });
+      if (empty) {
+        empty.hidden = shown > 0;
+        if (!empty.hidden) empty.classList.add('in');
+      }
+    });
+  }
+
+  // ---------- Demande de devis : envoyée au serveur, qui la transmet par e-mail à One Technologie ----------
+  var form = document.getElementById('devis');
   if (form) {
+    // Arrivée depuis un service (« Demander un devis pour un site web ») : le service est déjà choisi.
+    var wantedService = new URLSearchParams(location.search).get('service');
+    if (wantedService) {
+      var option = form.querySelector('[data-pick] [data-value="' + wantedService.replace(/[^a-z-]/g, '') + '"]');
+      if (option) {
+        [].forEach.call(option.parentElement.children, function (o) {
+          o.setAttribute('aria-selected', String(o === option));
+        });
+        option.closest('[data-pick]').querySelector('input').value = option.dataset.value;
+        syncPicks();
+      }
+    }
+
+    var error = document.getElementById('form-error');
+    var fallback = document.getElementById('form-fallback');
+    var sendButton = document.getElementById('devis-envoyer');
+    var t = function (fr, english) {
+      return lang === 'en' ? english : fr;
+    };
+    var values = function () {
+      var data = new FormData(form);
+      var out = {};
+      ['name', 'phone', 'email', 'service', 'budget', 'deadline', 'message', 'website'].forEach(function (key) {
+        out[key] = String(data.get(key) || '').trim();
+      });
+      return out;
+    };
+    var labelOf = function (name, value) {
+      var item = form.querySelector('input[name="' + name + '"] ~ .pick-list [data-value="' + value + '"] span');
+      return item ? item.textContent : value;
+    };
+    var showError = function (text) {
+      error.textContent = text;
+      error.hidden = !text;
+    };
+    // Le même message, prêt à partir par WhatsApp ou par e-mail, si l'envoi direct échoue.
+    var messageText = function (v) {
+      var lines = [t('Bonjour One Technologie,', 'Hello One Technologie,'), '', t('Demande de devis : ', 'Quote request: ') + labelOf('service', v.service), t('Nom : ', 'Name: ') + v.name];
+      if (v.phone) lines.push(t('Téléphone : ', 'Phone: ') + v.phone);
+      if (v.email) lines.push('E-mail : ' + v.email);
+      lines.push(t('Budget : ', 'Budget: ') + labelOf('budget', v.budget), t('Délai : ', 'Deadline: ') + labelOf('deadline', v.deadline), '', v.message);
+      return lines.join('\n');
+    };
+    [].forEach.call(form.querySelectorAll('[data-send]'), function (button) {
+      button.addEventListener('click', function () {
+        var v = values();
+        var text = encodeURIComponent(messageText(v));
+        if (button.dataset.send === 'email') {
+          window.location.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent(t('Demande de devis — ', 'Quote request — ') + v.name) + '&body=' + text;
+        } else {
+          window.open('https://wa.me/' + config.whatsapp + '?text=' + text, '_blank', 'noopener');
+        }
+      });
+    });
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      var data = new FormData(form);
-      var value = function (name) {
-        return String(data.get(name) || '').trim();
-      };
-      var error = document.getElementById('form-error');
-      error.hidden = Boolean(value('nom') && value('ecole'));
-      if (!error.hidden) return;
-      var en = lang === 'en';
-      var lines = [en ? 'Hello One Technologie,' : 'Bonjour One Technologie,', '', (en ? 'Name: ' : 'Nom : ') + value('nom'), (en ? 'School: ' : 'Établissement : ') + value('ecole')];
-      if (value('telephone')) lines.push((en ? 'Phone: ' : 'Téléphone : ') + value('telephone'));
-      lines.push((en ? 'Interested in: ' : 'Intérêt : ') + value('sujet'));
-      if (value('message')) lines.push('', value('message'));
-      var text = encodeURIComponent(lines.join('\n'));
-      var subject = encodeURIComponent((en ? 'Demo request — ' : 'Demande de démonstration — ') + value('ecole'));
-      var byMail = event.submitter && event.submitter.value === 'email';
-      if (byMail) window.location.href = 'mailto:' + config.email + '?subject=' + subject + '&body=' + text;
-      else window.open('https://wa.me/' + config.whatsapp + '?text=' + text, '_blank', 'noopener');
+      var v = values();
+      if (!v.name) return showError(t('Indiquez votre nom ou celui de votre entreprise.', 'Please enter your name or your company’s name.'));
+      if (!v.phone && !v.email) return showError(t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.'));
+      if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) return showError(t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.'));
+      if (v.message.length < 10) return showError(t('Décrivez votre projet en quelques mots.', 'Describe your project in a few words.'));
+      showError('');
+      fallback.hidden = true;
+      sendButton.disabled = true;
+      sendButton.classList.add('busy');
+      v.lang = lang;
+      fetch(config.quoteUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v) })
+        .then(function (response) {
+          if (response.ok) return null;
+          return response
+            .json()
+            .catch(function () {
+              return {};
+            })
+            .then(function (body) {
+              throw new Error((lang === 'fr' && body && body.error) || t('Votre demande n’a pas pu partir.', 'Your request could not be sent.'));
+            });
+        })
+        .then(function () {
+          form.querySelector('.form-body').hidden = true;
+          var done = document.getElementById('form-done');
+          done.hidden = false;
+          done.focus();
+        })
+        .catch(function (problem) {
+          var offline = problem instanceof TypeError;
+          showError(offline ? t('Votre demande n’a pas pu partir : vérifiez votre connexion internet, puis réessayez.', 'Your request could not be sent: check your internet connection, then try again.') : problem.message);
+          fallback.hidden = false;
+        })
+        .then(function () {
+          sendButton.disabled = false;
+          sendButton.classList.remove('busy');
+        });
     });
   }
 
