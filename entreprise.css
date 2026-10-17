@@ -1906,6 +1906,11 @@ main {
   line-height: 1;
 }
 
+.numbers b i {
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+
 .numbers b em {
   color: var(--pink);
   font-style: normal;
@@ -4165,4 +4170,46 @@ main {
 
 :root[data-theme='dark'] .objet {
   filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+}
+
+/* La flèche des boutons : la flèche « One », tournée vers le haut à droite ; elle se redresse au survol. */
+.arrow-icon {
+  transform: rotate(-45deg);
+  stroke-width: 2.2;
+}
+
+.i-moon,
+.i-sun {
+  line-height: 0;
+}
+
+.i-moon .one-icon,
+.i-sun .one-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* Accueil : les réalisations s'empilent. Chaque carte reste collée en haut de l'écran pendant que la suivante
+   monte par-dessus ; celle du dessous recule un peu (--s et --o, posés par le script). */
+@media (min-width: 761px) {
+  .cases.stack {
+    gap: 28px;
+  }
+
+  .cases.stack .case {
+    position: sticky;
+    top: calc(96px + var(--k, 0) * 18px);
+    transform-origin: 50% 0;
+    box-shadow: 0 -24px 50px -30px rgba(0, 0, 0, 0.45);
+  }
+
+  .js .cases.stack .case.reveal.in {
+    transform: scale(var(--s, 1));
+    transition: opacity 700ms ease;
+  }
+
+  .cases.stack .case-shot img,
+  .cases.stack .case-info {
+    opacity: var(--o, 1);
+  }
 }

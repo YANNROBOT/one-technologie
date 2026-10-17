@@ -3830,3 +3830,20 @@ body.edu .logo {
     font-size: 14px;
   }
 }
+
+/* La flèche des boutons : la flèche « One », tournée vers le haut à droite ; elle se redresse au survol. */
+.arrow-icon {
+  transform: rotate(-45deg);
+  stroke-width: 2.2;
+}
+
+.i-moon,
+.i-sun {
+  line-height: 0;
+}
+
+.i-moon .one-icon,
+.i-sun .one-icon {
+  width: 19px;
+  height: 19px;
+}

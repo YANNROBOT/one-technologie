@@ -511,6 +511,79 @@
     show(1, false);
   })();
 
+  // ---------- Les chiffres de l'accueil : ils comptent jusqu'à leur valeur quand ils apparaissent ----------
+  (function () {
+    var counters = [].slice.call(document.querySelectorAll('[data-count]'));
+    if (!counters.length || still || !('IntersectionObserver' in window)) return;
+    var run = function (el) {
+      var to = Number(el.dataset.count);
+      var from = Number(el.dataset.from || 0);
+      var start = null;
+      var step = function (time) {
+        if (start === null) start = time;
+        var t = Math.min((time - start) / 1600, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = String(Math.round(from + (to - from) * eased));
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    counters.forEach(function (el) {
+      el.textContent = el.dataset.from || '0';
+    });
+    var watch = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          watch.unobserve(entry.target);
+          run(entry.target);
+        });
+      },
+      { threshold: 0.6 },
+    );
+    counters.forEach(function (el) {
+      watch.observe(el);
+    });
+  })();
+
+  // ---------- Les réalisations de l'accueil s'empilent : la carte recouverte recule un peu ----------
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('.cases.stack .case'));
+    if (cards.length < 2) return;
+    cards.forEach(function (card, k) {
+      card.style.setProperty('--k', k);
+    });
+    if (still) return;
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      cards.forEach(function (card, k) {
+        var next = cards[k + 1];
+        var progress = 0;
+        if (next) {
+          var a = card.getBoundingClientRect();
+          var b = next.getBoundingClientRect();
+          // 0 quand la suivante est encore sous la carte, 1 quand elle l'a entièrement recouverte.
+          progress = Math.min(Math.max((a.bottom - b.top) / a.height, 0), 1);
+        }
+        card.style.setProperty('--s', String(1 - progress * 0.06));
+        card.style.setProperty('--o', String(1 - progress * 0.45));
+      });
+    };
+    window.addEventListener(
+      'scroll',
+      function () {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', update);
+    update();
+  })();
+
   // ---------- Onglets des services (accueil) : un clic ou les flèches du clavier changent de service ----------
   [].forEach.call(document.querySelectorAll('[data-tabs]'), function (box) {
     var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
