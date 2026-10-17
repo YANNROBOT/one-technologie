@@ -1304,6 +1304,19 @@ main {
   background: #ffffff;
 }
 
+.team-illus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-illus .objet {
+  width: clamp(72px, 9vw, 124px);
+  height: auto;
+  filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+}
+
 .team-row p {
   max-width: 300px;
   margin-left: 18px;
@@ -1437,18 +1450,11 @@ main {
   font-size: 14px;
 }
 
-.tab-panel .more {
+.tab-panel .pill-btn {
   align-self: flex-start;
-  color: var(--lime);
-  font-weight: 600;
-  text-decoration: none;
 }
 
-.tab-panel .more:hover {
-  text-decoration: underline;
-}
-
-/* La bande rose qui ferme la section sombre */
+/* La bande sable qui ferme la section sombre : les outils avec lesquels nous travaillons, avec leur logo. */
 .band {
   overflow: hidden;
   margin-top: clamp(60px, 7vw, 90px);
@@ -1459,23 +1465,41 @@ main {
   background: var(--pink);
 }
 
-.band .marquee-track span {
+.band .marquee-track {
+  gap: 34px;
+  animation-name: band-slide;
+  animation-duration: 70s;
+}
+
+/* Deux fois la même liste : un demi-tour, plus la moitié de l'écart, et la bande reprend sans saut. */
+@keyframes band-slide {
+  to {
+    transform: translateX(calc(-50% - 17px));
+  }
+}
+
+.band .tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: #111111;
+  font-size: 20px;
   opacity: 1;
 }
 
-.band .marquee-track i {
+.band .tech i {
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 42px;
+  height: 42px;
+  flex: none;
   place-items: center;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  background: #ffffff;
 }
 
-.band .marquee-track i svg {
-  width: 20px;
-  height: auto;
+.band .tech svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* ---------- Titres de section centrés ---------- */
@@ -2387,10 +2411,12 @@ main {
   color: var(--on-dark-2);
 }
 
-.duo-card .more {
+.duo-card .pill-btn {
   margin-top: auto;
-  color: var(--lime);
-  font-weight: 600;
+}
+
+.duo-card .pill-btn.edu-pill .arrow {
+  color: #2d43ed;
 }
 
 .duo-card.edu {
@@ -2414,9 +2440,6 @@ main {
   color: var(--ink-2);
 }
 
-.duo-card.edu .more {
-  color: #2d43ed;
-}
 
 .values {
   display: grid;
@@ -3926,6 +3949,14 @@ main {
 }
 
 @media (max-width: 560px) {
+  .team-illus {
+    gap: 2px;
+  }
+
+  .team-illus .objet {
+    width: calc((100vw - 90px) / 4);
+  }
+
   .contact-cards {
     grid-template-columns: minmax(0, 1fr);
   }
