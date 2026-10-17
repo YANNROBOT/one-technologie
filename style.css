@@ -3807,3 +3807,26 @@ body.edu .logo {
     display: none;
   }
 }
+
+/* Sur téléphone, le logo de l'Éducation prend la même place que celui de One Technologie (132 px),
+   pour que le bouton « One Technologie » tienne à côté sans sortir de l'écran. */
+@media (max-width: 560px) {
+  body.edu .bar .logo {
+    width: 132px;
+  }
+
+  body.edu .bar {
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 340px) {
+  body.edu .bar .logo {
+    width: 116px;
+  }
+
+  .pill-btn.back-one {
+    padding: 5px 13px;
+    font-size: 14px;
+  }
+}

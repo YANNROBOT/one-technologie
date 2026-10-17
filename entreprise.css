@@ -3107,3 +3107,23 @@ main {
     transition: none;
   }
 }
+
+/* Très petits téléphones (320 px) : le logo et le bouton « Éducation » se resserrent pour tenir sur une ligne. */
+@media (max-width: 340px) {
+  .brand {
+    width: 112px;
+  }
+
+  .top-actions {
+    gap: 6px;
+  }
+
+  .top .pill-btn.edu-pill {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .top .pill-btn.edu-pill span:first-child {
+    font-size: 13.5px;
+  }
+}
