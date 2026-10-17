@@ -3529,3 +3529,281 @@ body.edu .logo {
   padding-bottom: 0.24em;
   margin-bottom: -0.1em;
 }
+
+/* ---------- One Technologie Éducation : l'en-tête et le pied de page repris de One Technologie ----------
+   Demandé le 17 octobre 2026 : pas de menu sur l'Éducation, seulement le bouton « One Technologie » pour revenir à
+   l'entreprise ; le grand pied de page arrondi, en bleu nuit quadrillé avec le bouton jaune. Le reste des pages
+   garde le dessin de l'Éducation. */
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 6px 6px 6px 20px;
+  border-radius: 999px;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 250ms var(--ease),
+    box-shadow 250ms var(--ease);
+}
+
+.pill-btn .arrow {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  transition: transform 300ms var(--ease);
+}
+
+.pill-btn .arrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.pill-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Le bouton « One Technologie » : le noir de l'entreprise, avec son symbole à la couronne. */
+.pill-btn.back-one {
+  background: #0b0b0b;
+  color: #ffffff;
+  box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.45);
+}
+
+.pill-btn.back-one .arrow {
+  background: #ffffff;
+}
+
+.pill-btn.back-one .arrow svg {
+  width: 62%;
+  height: auto;
+  margin-top: -8%;
+}
+
+.pill-btn.back-one .arrow svg path[fill='white'] {
+  fill: transparent;
+}
+
+.pill-btn.back-one:hover .arrow {
+  transform: scale(1.08);
+}
+
+.pill-btn.yellow {
+  background: var(--marker);
+  color: #212121;
+  box-shadow: 0 0 34px -6px rgba(255, 224, 102, 0.7);
+}
+
+.pill-btn.yellow .arrow {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.pill-btn.yellow:hover .arrow {
+  transform: rotate(45deg);
+}
+
+:root[data-theme='dark'] .pill-btn.back-one {
+  background: #f4f4f4;
+  color: #0b0b0b;
+}
+
+:root[data-theme='dark'] .pill-btn.back-one .arrow {
+  background: #0b0b0b;
+}
+
+:root[data-theme='dark'] .pill-btn.back-one .arrow svg path[fill='black'] {
+  fill: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .pill-btn.back-one {
+    background: #f4f4f4;
+    color: #0b0b0b;
+  }
+
+  :root:not([data-theme='light']) .pill-btn.back-one .arrow {
+    background: #0b0b0b;
+  }
+
+  :root:not([data-theme='light']) .pill-btn.back-one .arrow svg path[fill='black'] {
+    fill: #ffffff;
+  }
+}
+
+/* Le pied de page : un grand bloc arrondi bleu nuit, quadrillé comme le cahier. */
+.end {
+  margin: clamp(80px, 10vw, 128px) clamp(8px, 1vw, 16px) clamp(8px, 1vw, 16px);
+  padding: clamp(56px, 7vw, 100px) clamp(20px, 4vw, 60px) 28px;
+  border-radius: 32px;
+  background-color: #0f0a2b;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: #ffffff;
+}
+
+.end-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.end-cta h2 {
+  max-width: 900px;
+  font-family: var(--display);
+  font-size: clamp(40px, 6.4vw, 92px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.end-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: clamp(56px, 7vw, 96px);
+}
+
+.end-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.end-brand .brand-logo {
+  width: 210px;
+  height: auto;
+}
+
+/* Sur le bleu nuit, le logo passe en blanc, « Éducation » en jaune. */
+.end .brand-logo path[fill='black'],
+.end .brand-logo path[fill='#2D43ED'] {
+  fill: #ffffff;
+}
+
+.end .brand-logo path[fill='white'] {
+  fill: transparent;
+}
+
+.end .brand-logo text[fill='#2D43ED'] {
+  fill: var(--marker);
+}
+
+.end-brand p,
+.end-col a,
+.end-bottom,
+.end-tools {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.end-brand p {
+  max-width: 34ch;
+  font-size: 15px;
+}
+
+.end-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.end-col b {
+  margin-bottom: 4px;
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.end-col a {
+  font-size: 15px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.end-col a:hover {
+  color: var(--marker);
+}
+
+.end-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 46px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 14px;
+}
+
+.end-bottom a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* La langue et le thème, en bas de page : seulement sur téléphone, où la barre du haut manque de place. */
+.end-tools {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 14px;
+}
+
+.end-tools span:first-child {
+  margin-right: auto;
+}
+
+.end-tools .round {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #ffffff;
+}
+
+@media (max-width: 1080px) {
+  .end-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .end-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .top-actions .round {
+    display: none;
+  }
+
+  .end-tools {
+    display: flex;
+  }
+
+  .pill-btn.back-one {
+    min-height: 44px;
+    padding: 5px 16px;
+    font-size: 14.5px;
+  }
+
+  .pill-btn.back-one .arrow {
+    display: none;
+  }
+}

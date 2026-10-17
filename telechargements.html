@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="style.css?v=mvc76ucb">
+    <link rel="stylesheet" href="style.css?v=mvcf7tdn">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -35,7 +35,8 @@
   <body class="edu">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
 
-    <header class="bar" id="haut">
+    <!-- One Technologie Éducation : pas de menu, seulement le chemin du retour vers One Technologie. -->
+    <header class="top bar" id="haut">
       <a class="logo" href="education.html" aria-label="One Technologie Éducation, présentation" data-en-aria-label="One Technologie Éducation, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Éducation">
 <path d="M21.3794 52.8593C9.833 52.8593 0.439697 43.466 0.439697 31.9196C0.439697 20.3732 9.833 10.9799 21.3794 10.9799C32.9257 10.9799 42.319 20.3732 42.319 31.9196C42.319 43.466 32.9257 52.8593 21.3794 52.8593Z" fill="white"/>
 <path d="M21.3794 11.4197C26.8553 11.4197 32.0023 13.5517 35.874 17.4233C39.7456 21.295 41.8776 26.4437 41.8776 31.9179C41.8776 37.392 39.7456 42.5407 35.874 46.4124C32.0023 50.284 26.8536 52.416 21.3794 52.416C15.9053 52.416 10.7566 50.284 6.8849 46.4124C3.01324 42.5407 0.879522 37.3955 0.879522 31.9196C0.879522 26.4437 3.01148 21.2968 6.88314 17.4251C10.7548 13.5534 15.9035 11.4215 21.3777 11.4215M21.3794 10.5402C9.57096 10.5402 0 20.1129 0 31.9196C0 43.7263 9.57096 53.299 21.3794 53.299C33.1879 53.299 42.7589 43.7281 42.7589 31.9196C42.7589 20.1112 33.1879 10.5402 21.3794 10.5402Z" fill="#2D43ED"/>
@@ -64,32 +65,25 @@
 <path d="M77.9309 36.3647H68.1471C68.2209 36.8238 68.3617 37.2214 68.5727 37.5609C68.7838 37.9004 69.0406 38.1801 69.3414 38.3999C69.644 38.6198 69.9729 38.7852 70.33 38.8942C70.6871 39.0033 71.0495 39.0596 71.4154 39.0596C72.0205 39.0596 72.5834 38.9136 73.1058 38.6198C73.6282 38.3278 73.9888 37.9056 74.1911 37.3551L77.9291 37.3269C77.9291 38.261 77.7409 39.0807 77.3662 39.7861C76.9898 40.4914 76.4867 41.0825 75.8552 41.5592C75.2237 42.0359 74.5078 42.3982 73.7109 42.6445C72.9141 42.8925 72.0838 43.0157 71.2236 43.0157C70.2896 43.0157 69.3678 42.8644 68.4619 42.5618C67.5543 42.2593 66.7398 41.8072 66.0151 41.2021C65.2921 40.597 64.7099 39.8283 64.2701 38.8925C63.8304 37.9584 63.6105 36.859 63.6105 35.5943C63.6105 34.3295 63.8251 33.2618 64.256 32.3365C64.687 31.4113 65.2552 30.6461 65.9606 30.041C66.6659 29.4358 67.4628 28.982 68.3511 28.6812C69.2394 28.3787 70.1418 28.2274 71.0583 28.2274C71.8833 28.2274 72.6889 28.347 73.477 28.5845C74.265 28.8219 74.9704 29.179 75.5931 29.6557C76.2158 30.1324 76.7382 30.7235 77.1586 31.4288C77.5808 32.1342 77.8271 32.9539 77.9009 33.888H77.9291V36.3612L77.9309 36.3647ZM73.973 33.8915C73.9361 33.5626 73.8305 33.2635 73.6564 32.9979C73.4822 32.7323 73.2711 32.5124 73.0249 32.3383C72.7769 32.1641 72.5024 32.0269 72.1999 31.9267C71.8973 31.8264 71.5807 31.7754 71.2518 31.7754C70.666 31.7754 70.0978 31.9442 69.5472 32.2837C68.9967 32.6232 68.5938 33.158 68.3388 33.8915H73.973Z" fill="#2D43ED"/>
 <text class="logo-sub" x="144.4" y="57.6" text-anchor="middle" fill="#2D43ED" font-family="Outfit, 'Segoe UI', sans-serif" font-size="9.6" font-weight="600" letter-spacing="2.4">Éducation</text>
 </svg></a>
-      <nav class="menu" id="menu" aria-label="Menu principal" data-en-aria-label="Main menu">
-        <a href="index.html" data-en="Home">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="realisations.html" data-en="Our work">Réalisations</a>
-        <a href="education.html" aria-current="page" class="menu-edu" data-en="Education">Éducation</a>
-        <a href="a-propos.html" data-en="About">À propos</a>
-        <a href="contact.html">Contact</a>
-        <a class="menu-cta" href="contact.html#devis" data-en="Request a quote">Demander un devis</a>
-      </nav>
-      <div class="bar-tools">
+      <div class="top-actions">
+        <a class="pill-btn back-one" href="index.html"><span>One Technologie</span><span class="arrow" aria-hidden="true"><svg viewBox="-6 -6 356 403" xmlns="http://www.w3.org/2000/svg">
+<path fill="black" d="M1419,253.05h-56.78c.43,2.65,1.25,4.97,2.47,6.94,1.22,1.96,2.71,3.59,4.47,4.86,1.76,1.28,3.67,2.23,5.74,2.87,2.08.64,4.18.96,6.3.96,3.51,0,6.78-.85,9.81-2.55,3.03-1.7,5.13-4.15,6.3-7.34l21.69-.16c0,5.43-1.09,10.18-3.27,14.28-2.18,4.1-5.1,7.52-8.77,10.29-3.67,2.76-7.82,4.86-12.44,6.3-4.62,1.44-9.44,2.16-14.43,2.16-5.43,0-10.77-.88-16.03-2.64-5.27-1.76-10-4.39-14.2-7.9-4.2-3.5-7.57-7.97-10.12-13.4-2.55-5.42-3.83-11.8-3.83-19.14s1.25-13.53,3.75-18.9c2.49-5.37,5.79-9.81,9.88-13.32,4.09-3.51,8.72-6.14,13.87-7.9,5.16-1.76,10.39-2.63,15.71-2.63,4.79,0,9.47.69,14.04,2.07,4.57,1.38,8.66,3.46,12.28,6.22,3.61,2.77,6.64,6.2,9.09,10.29,2.45,4.09,3.88,8.85,4.31,14.27h.16v14.36ZM1396.03,238.69c-.22-1.91-.83-3.64-1.83-5.18-1.01-1.54-2.23-2.82-3.67-3.83-1.44-1.01-3.03-1.8-4.79-2.39-1.76-.59-3.59-.88-5.51-.88-3.4,0-6.7.99-9.88,2.95-3.19,1.97-5.53,5.08-7.02,9.33h32.7Z"/>
+<path fill="white" d="M144,388.5c-78.02,0-141.5-63.48-141.5-141.5S65.98,105.5,144,105.5s141.5,63.48,141.5,141.5-63.48,141.5-141.5,141.5Z"/>
+<path fill="black" d="M144,108c37.13,0,72.03,14.46,98.29,40.71s40.71,61.16,40.71,98.29-14.46,72.03-40.71,98.29-61.16,40.71-98.29,40.71-72.03-14.46-98.29-40.71S5,284.13,5,247s14.46-72.03,40.71-98.29,61.16-40.71,98.29-40.71M144,103C64.47,103,0,167.47,0,247s64.47,144,144,144,144-64.47,144-144S223.53,103,144,103h0Z"/>
+<path fill="white" d="M153,382.5c-73.06,0-132.5-61.68-132.5-137.5S79.94,107.5,153,107.5s132.5,61.68,132.5,137.5-59.44,137.5-132.5,137.5Z"/>
+<path fill="black" d="M153,110c34.69,0,67.31,14.02,91.86,39.48,24.59,25.51,38.14,59.43,38.14,95.52s-13.54,70.02-38.14,95.52c-24.55,25.46-57.17,39.48-91.86,39.48s-67.31-14.02-91.86-39.48c-24.59-25.51-38.14-59.43-38.14-95.52s13.54-70.02,38.14-95.52c24.55-25.46,57.17-39.48,91.86-39.48M153,105c-74.56,0-135,62.68-135,140s60.44,140,135,140,135-62.68,135-140-60.44-140-135-140h0Z"/>
+<path fill="white" stroke="black" stroke-width="8" stroke-miterlimit="10" d="M83.5,301.5s69.74,52,136.37,0"/>
+<path fill="black" d="M211,291s11,7,15,18"/>
+<path fill="black" d="M93,292s-11,7-15,18"/>
+<path class="crown" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
+</svg></span></a>
         <button class="round" type="button" id="lang" aria-label="Switch to English"><span>EN</span></button>
         <button class="round" type="button" id="theme" aria-label="Changer de thème" data-en-aria-label="Switch theme">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="i-moon" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/><g class="i-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></g></svg>
         </button>
-        <button class="round burger" type="button" id="burger" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu" data-en-aria-label="Open the menu">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
       </div>
     </header>
-    <nav class="subnav" aria-label="One Technologie Éducation">
-      <a href="education.html" data-en="Overview">Présentation</a>
-      <a href="gesschool.html">GesSchool</a>
-      <a href="education.html#vacataire">Vacataire Pro</a>
-      <a href="education.html#sites" data-en="School websites">Sites d’école</a>
-      <a aria-current="page" class="sub-cta" href="telechargements.html" data-en="Download GesSchool">Télécharger GesSchool</a>
-    </nav>
+
     <main id="contenu">
       <section class="page-hero">
         <div class="hero-text">
@@ -190,14 +184,19 @@
 
     </main>
 
-    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%2C" rel="noopener" target="_blank" aria-label="Écrire à One Technologie sur WhatsApp" data-en-aria-label="Write to One Technologie on WhatsApp">
+    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Écrire à One Technologie Éducation sur WhatsApp" data-en-aria-label="Write to One Technologie Éducation on WhatsApp">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 9.1c.2 2.4 2.5 4.9 5.6 5.7l1.2-1.3-1.7-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-1.7Z" fill="currentColor" stroke="none"/></svg>
       <span>WhatsApp</span>
     </a>
 
-    <footer class="foot">
-      <div class="foot-brand">
-        <span class="logo" role="img" aria-label="One Technologie"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Éducation">
+    <footer class="end">
+      <div class="end-cta">
+        <h2 data-en="Ready to try GesSchool?">Prêt à essayer GesSchool ?</h2>
+        <a class="pill-btn yellow" href="telechargements.html"><span data-en="Download GesSchool">Télécharger GesSchool</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6.5 5H11v4.5"/></svg></span></a>
+      </div>
+      <div class="end-grid">
+        <div class="end-brand">
+          <svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Éducation">
 <path d="M21.3794 52.8593C9.833 52.8593 0.439697 43.466 0.439697 31.9196C0.439697 20.3732 9.833 10.9799 21.3794 10.9799C32.9257 10.9799 42.319 20.3732 42.319 31.9196C42.319 43.466 32.9257 52.8593 21.3794 52.8593Z" fill="white"/>
 <path d="M21.3794 11.4197C26.8553 11.4197 32.0023 13.5517 35.874 17.4233C39.7456 21.295 41.8776 26.4437 41.8776 31.9179C41.8776 37.392 39.7456 42.5407 35.874 46.4124C32.0023 50.284 26.8536 52.416 21.3794 52.416C15.9053 52.416 10.7566 50.284 6.8849 46.4124C3.01324 42.5407 0.879522 37.3955 0.879522 31.9196C0.879522 26.4437 3.01148 21.2968 6.88314 17.4251C10.7548 13.5534 15.9035 11.4215 21.3777 11.4215M21.3794 10.5402C9.57096 10.5402 0 20.1129 0 31.9196C0 43.7263 9.57096 53.299 21.3794 53.299C33.1879 53.299 42.7589 43.7281 42.7589 31.9196C42.7589 20.1112 33.1879 10.5402 21.3794 10.5402Z" fill="#2D43ED"/>
 <path d="M22.7145 51.9692C11.9052 51.9692 3.11169 42.8415 3.11169 31.6241C3.11169 20.4067 11.9052 11.279 22.7145 11.279C33.5238 11.279 42.3173 20.4067 42.3173 31.6241C42.3173 42.8415 33.5238 51.9692 22.7145 51.9692Z" fill="white"/>
@@ -224,35 +223,42 @@
 <path d="M47.8636 34.8537C47.8636 33.7174 48.0695 32.7235 48.4828 31.8721C48.8962 31.0207 49.4362 30.3101 50.1047 29.7419C50.7731 29.1737 51.5383 28.7481 52.4002 28.4649C53.2604 28.1816 54.1417 28.0392 55.0388 28.0392C55.9359 28.0392 56.8119 28.1816 57.6633 28.4649C58.5147 28.7498 59.2746 29.1755 59.9448 29.7419C60.6132 30.3101 61.1532 31.019 61.5666 31.8721C61.9782 32.7253 62.1858 33.7191 62.1858 34.8537V42.7694H57.9817V34.91C57.9817 34.4157 57.8937 33.9795 57.7213 33.6048C57.5472 33.2301 57.3185 32.9188 57.0335 32.6707C56.7486 32.4245 56.4284 32.2415 56.0714 32.1219C55.7143 32.0023 55.3519 31.9442 54.986 31.9442C54.6201 31.9442 54.2613 32.004 53.9148 32.1219C53.5665 32.2415 53.2604 32.4245 52.9948 32.6707C52.7292 32.9188 52.5128 33.2213 52.3492 33.5784C52.1839 33.9355 52.1012 34.3612 52.1012 34.8555V42.7712H47.8689V34.8555L47.8636 34.8537Z" fill="#2D43ED"/>
 <path d="M77.9309 36.3647H68.1471C68.2209 36.8238 68.3617 37.2214 68.5727 37.5609C68.7838 37.9004 69.0406 38.1801 69.3414 38.3999C69.644 38.6198 69.9729 38.7852 70.33 38.8942C70.6871 39.0033 71.0495 39.0596 71.4154 39.0596C72.0205 39.0596 72.5834 38.9136 73.1058 38.6198C73.6282 38.3278 73.9888 37.9056 74.1911 37.3551L77.9291 37.3269C77.9291 38.261 77.7409 39.0807 77.3662 39.7861C76.9898 40.4914 76.4867 41.0825 75.8552 41.5592C75.2237 42.0359 74.5078 42.3982 73.7109 42.6445C72.9141 42.8925 72.0838 43.0157 71.2236 43.0157C70.2896 43.0157 69.3678 42.8644 68.4619 42.5618C67.5543 42.2593 66.7398 41.8072 66.0151 41.2021C65.2921 40.597 64.7099 39.8283 64.2701 38.8925C63.8304 37.9584 63.6105 36.859 63.6105 35.5943C63.6105 34.3295 63.8251 33.2618 64.256 32.3365C64.687 31.4113 65.2552 30.6461 65.9606 30.041C66.6659 29.4358 67.4628 28.982 68.3511 28.6812C69.2394 28.3787 70.1418 28.2274 71.0583 28.2274C71.8833 28.2274 72.6889 28.347 73.477 28.5845C74.265 28.8219 74.9704 29.179 75.5931 29.6557C76.2158 30.1324 76.7382 30.7235 77.1586 31.4288C77.5808 32.1342 77.8271 32.9539 77.9009 33.888H77.9291V36.3612L77.9309 36.3647ZM73.973 33.8915C73.9361 33.5626 73.8305 33.2635 73.6564 32.9979C73.4822 32.7323 73.2711 32.5124 73.0249 32.3383C72.7769 32.1641 72.5024 32.0269 72.1999 31.9267C71.8973 31.8264 71.5807 31.7754 71.2518 31.7754C70.666 31.7754 70.0978 31.9442 69.5472 32.2837C68.9967 32.6232 68.5938 33.158 68.3388 33.8915H73.973Z" fill="#2D43ED"/>
 <text class="logo-sub" x="144.4" y="57.6" text-anchor="middle" fill="#2D43ED" font-family="Outfit, 'Segoe UI', sans-serif" font-size="9.6" font-weight="600" letter-spacing="2.4">Éducation</text>
-</svg></span>
-        <p data-en="Websites, software, apps, video and visual identity, from Abidjan, Côte d’Ivoire. One Technologie Éducation builds tools for schools.">Sites web, logiciels, applications, vidéo et identité visuelle, depuis Abidjan, Côte d’Ivoire. One Technologie Éducation crée les outils des écoles.</p>
-        <a class="btn yellow small" href="contact.html#devis" data-en="Request a quote">Demander un devis</a>
+</svg>
+          <p data-en="Software, apps and websites for schools in Côte d’Ivoire. A branch of One Technologie, in Abidjan.">Logiciels, applications et sites web pour les écoles de Côte d’Ivoire. Une partie de One Technologie, à Abidjan.</p>
+        </div>
+        <nav class="end-col" aria-label="One Technologie Éducation">
+          <b data-en="For schools">Pour les écoles</b>
+          <a href="education.html" data-en="Overview">Présentation</a>
+          <a href="gesschool.html">GesSchool</a>
+          <a href="education.html#vacataire">Vacataire Pro</a>
+          <a href="education.html#sites" data-en="School websites">Sites d’école</a>
+          <a href="telechargements.html" data-en="Downloads">Téléchargements</a>
+        </nav>
+        <nav class="end-col" aria-label="One Technologie">
+          <b>One Technologie</b>
+          <a href="index.html" data-en="Back to One Technologie">Retour sur One Technologie</a>
+          <a href="contact.html?service=education#devis" data-en="Request a demo">Demander une démonstration</a>
+          <a href="confidentialite.html" data-en="Privacy">Confidentialité</a>
+          <a href="mentions-legales.html" data-en="Legal notices">Mentions légales</a>
+        </nav>
+        <div class="end-col">
+          <b>Contact</b>
+          <a href="tel:+2250142905825">01 42 90 58 25</a>
+          <a href="https://wa.me/2250142905825" rel="noopener">WhatsApp</a>
+          <a href="mailto:contact@onetechnologie.com">contact@onetechnologie.com</a>
+        </div>
       </div>
-      <nav class="foot-col" aria-label="One Technologie">
-        <b>One Technologie</b>
-        <a href="services.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M3.5 13V10A2.5 2.5 0 0 1 6 7.5h12a2.5 2.5 0 0 1 2.5 2.5v3z"/></g><rect x="3.5" y="7.5" width="17" height="12.5" rx="2.5"/><path d="M9 7.5V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2"/><path d="M3.5 13h17M12 12v2.2"/></svg></span><span>Services</span></a>
-        <a href="realisations.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="7.5" cy="11.5" r="1.5"/></g><rect x="3.5" y="7" width="13" height="13" rx="2.5"/><path d="M7 7V5.5A1.5 1.5 0 0 1 8.5 4h10a2 2 0 0 1 2 2v10a1.5 1.5 0 0 1-1.5 1.5h-2.5"/><path d="m3.8 17 3.2-3 3 3 2.2-2.2 4 4"/></svg></span><span data-en="Our work">Réalisations</span></a>
-        <a href="a-propos.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="8.5"/></g><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8h.01"/></svg></span><span data-en="About">À propos</span></a>
-        <a href="faq.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="8.5"/></g><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9M12 16.8h.01"/></svg></span><span data-en="Questions">Questions fréquentes</span></a>
-      </nav>
-      <nav class="foot-col" aria-label="One Technologie Éducation">
-        <b data-en="Education">Éducation</b>
-        <a href="education.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 5 2.5 9.5 12 14l9.5-4.5z"/></g><path d="M12 5 2.5 9.5 12 14l9.5-4.5z"/><path d="M6.5 11.5V16c1.4 1.6 3.3 2.5 5.5 2.5s4.1-.9 5.5-2.5v-4.5"/><path d="M21.5 9.5V15"/></svg></span><span>One Technologie Éducation</span></a>
-        <a href="gesschool.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><rect x="5.6" y="5.6" width="2.3" height="2.3" rx=".5"/><rect x="16.1" y="5.6" width="2.3" height="2.3" rx=".5"/><rect x="5.6" y="16.1" width="2.3" height="2.3" rx=".5"/></g><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.6"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.6"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.6"/><path d="M14 14h2.6v2.6M20.5 14v.01M14 20.5h.01M17.6 17.6h2.9v2.9"/></svg></span><span>GesSchool</span></a>
-        <a href="telechargements.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15z"/></g><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/></svg></span><span data-en="Downloads">Téléchargements</span></a>
-      </nav>
-      <div class="foot-col">
-        <b>Contact</b>
-        <a href="tel:+2250142905825"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/></g><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/></svg></span><span>01 42 90 58 25</span></a>
-        <a href="https://wa.me/2250142905825" rel="noopener"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M20.5 3.5 10.5 13.5l3.2 7z"/></g><path d="M20.5 3.5 3.5 10.3l7 3.2 3.2 7z"/><path d="M20.5 3.5 10.5 13.5"/></svg></span><span>WhatsApp</span></a>
-        <a href="mailto:contact@onetechnologie.com"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m3.5 7.5 8.5 6 8.5-6V7.5a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2z"/></g><rect x="3.5" y="5.5" width="17" height="13.5" rx="2"/><path d="m3.8 7.7 8.2 5.8 8.2-5.8"/></svg></span><span>contact@onetechnologie.com</span></a>
-        <a href="confidentialite.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/></g><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/><path d="m8.8 12 2.3 2.3 4.1-4.4"/></svg></span><span data-en="Privacy">Confidentialité</span></a>
-        <a href="mentions-legales.html"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 6.5c-1.8-1.3-4-2-7.5-2v13c3.5 0 5.7.7 7.5 2z"/></g><path d="M12 6.5c-1.8-1.3-4-2-7.5-2v13c3.5 0 5.7.7 7.5 2 1.8-1.3 4-2 7.5-2v-13c-3.5 0-5.7.7-7.5 2z"/><path d="M12 6.5v13"/></svg></span><span data-en="Legal notices">Mentions légales</span></a>
+      <div class="end-tools">
+        <span data-en="Language and theme">Langue et thème</span>
+        <button class="round" type="button" data-lang-btn aria-label="Switch to English"><span>EN</span></button>
+        <button class="round" type="button" data-theme-btn aria-label="Changer de thème" data-en-aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="i-moon" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/><g class="i-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></g></svg>
+        </button>
       </div>
-      <p class="foot-end"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
+      <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Toute votre école, au même endroit.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvc76ucb"></script>
-    <script src="script.js?v=mvc76ucb"></script>
+    <script src="config.js?v=mvcf7tdn"></script>
+    <script src="script.js?v=mvcf7tdn"></script>
   </body>
 </html>

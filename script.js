@@ -39,24 +39,30 @@
     root.lang = lang;
     document.title = TITLES[lang];
     syncPicks();
-    var button = document.getElementById('lang');
-    // Le bouton montre la langue vers laquelle on bascule.
-    button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
-    button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
+    // Le bouton montre la langue vers laquelle on bascule. Les pages de l'Éducation en ont un second
+    // dans le pied de page, pour les téléphones.
+    document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
+      button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
+      button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
+    });
     updateDownloads();
   }
 
-  document.getElementById('lang').addEventListener('click', function () {
-    lang = lang === 'en' ? 'fr' : 'en';
-    store.set('one-site.lang', lang);
-    applyLanguage();
+  document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      lang = lang === 'en' ? 'fr' : 'en';
+      store.set('one-site.lang', lang);
+      applyLanguage();
+    });
   });
 
   // ---------- Thème clair ou sombre ----------
-  document.getElementById('theme').addEventListener('click', function () {
-    var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    store.set('one-site.theme', root.dataset.theme);
+  document.querySelectorAll('#theme, [data-theme-btn]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      store.set('one-site.theme', root.dataset.theme);
+    });
   });
 
   // ---------- Téléchargements : les boutons s'activent quand config.js donne une adresse ----------
@@ -212,23 +218,26 @@
     });
   });
 
-  // Menu sur petit écran : le bouton ouvre le panneau, Échap ou un clic ailleurs le referme.
+  // Menu de l'entreprise : le bouton ouvre le panneau, Échap ou un clic ailleurs le referme.
+  // Les pages de One Technologie Éducation n'ont pas de menu.
   var menu = document.getElementById('menu');
   var burger = document.getElementById('burger');
-  function setMenu(open) {
-    menu.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
+  if (menu && burger) {
+    var setMenu = function (open) {
+      menu.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+    };
+    burger.addEventListener('click', function (event) {
+      event.stopPropagation();
+      setMenu(!menu.classList.contains('open'));
+    });
+    document.addEventListener('click', function (event) {
+      if (!menu.contains(event.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') setMenu(false);
+    });
   }
-  burger.addEventListener('click', function (event) {
-    event.stopPropagation();
-    setMenu(!menu.classList.contains('open'));
-  });
-  document.addEventListener('click', function (event) {
-    if (!menu.contains(event.target)) setMenu(false);
-  });
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') setMenu(false);
-  });
 
   // ---------- Réalisations : les filtres n'affichent que la catégorie choisie ----------
   var filters = document.querySelector('[data-filters]');

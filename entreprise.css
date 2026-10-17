@@ -2977,3 +2977,133 @@ main {
 .bento-photo {
   border-radius: 22px;
 }
+
+/* ---------- Bouton « Éducation » de la barre du haut, et l'aperçu qui s'ouvre au survol ---------- */
+.edu-mark {
+  display: block;
+  width: 92%;
+  height: auto;
+  margin: -10% 0 0 6%;
+}
+
+.peek {
+  position: relative;
+}
+
+.pill-btn.edu-pill {
+  background: #2d43ed;
+  color: #ffffff;
+  box-shadow: 0 14px 28px -12px rgba(45, 67, 237, 0.6);
+}
+
+.pill-btn.edu-pill .arrow {
+  background: #ffffff;
+}
+
+.pill-btn.edu-pill:hover .arrow,
+.pill-btn.back-one:hover .arrow {
+  transform: scale(1.08);
+}
+
+.peek-card {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 50;
+  display: flex;
+  width: 380px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 14px;
+  border: 1.5px solid #2d43ed;
+  border-radius: 24px;
+  background-color: #ffffff;
+  background-image: linear-gradient(rgba(45, 67, 237, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(45, 67, 237, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #141629;
+  text-decoration: none;
+  box-shadow: 0 30px 60px -24px rgba(15, 10, 43, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.97);
+  transform-origin: top right;
+  transition:
+    opacity 220ms ease,
+    transform 300ms var(--ease),
+    visibility 0s linear 300ms;
+}
+
+/* Un pont invisible entre le bouton et l'aperçu, pour que le survol ne se perde pas en chemin. */
+.peek-card::before {
+  content: '';
+  position: absolute;
+  inset: -16px 0 auto;
+  height: 16px;
+}
+
+.peek-card img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px rgba(15, 10, 43, 0.12);
+}
+
+.peek-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 6px;
+}
+
+.peek-text b {
+  color: #2d43ed;
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.peek-text span {
+  color: #4b4f66;
+  font-size: 14px;
+}
+
+@media (hover: hover) {
+  .peek:hover .peek-card,
+  .peek:focus-within .peek-card {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 220ms ease,
+      transform 300ms var(--ease),
+      visibility 0s;
+  }
+}
+
+@media (max-width: 760px) {
+  .peek-card {
+    display: none;
+  }
+}
+
+/* Sur téléphone, le bouton « Éducation » garde son nom. */
+@media (max-width: 560px) {
+  .top .pill-btn.edu-pill span:first-child {
+    display: inline;
+    font-size: 14.5px;
+  }
+
+  .top .pill-btn.edu-pill {
+    padding: 5px 5px 5px 14px;
+  }
+
+  .brand {
+    width: 132px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peek-card {
+    transform: none;
+    transition: none;
+  }
+}
