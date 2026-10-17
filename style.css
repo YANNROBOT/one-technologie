@@ -3610,7 +3610,7 @@ body.edu .logo {
 }
 
 .pill-btn.yellow .arrow {
-  background: var(--blue);
+  background: #0f0a2b;
   color: #ffffff;
 }
 
@@ -3646,13 +3646,13 @@ body.edu .logo {
   }
 }
 
-/* Le pied de page : un grand bloc arrondi bleu nuit, quadrillé comme le cahier. */
+/* Le pied de page : un grand bloc arrondi bleu, quadrillé comme le cahier (bleu demandé le 17 octobre 2026). */
 .end {
   margin: clamp(80px, 10vw, 128px) clamp(8px, 1vw, 16px) clamp(8px, 1vw, 16px);
   padding: clamp(56px, 7vw, 100px) clamp(20px, 4vw, 60px) 28px;
   border-radius: 32px;
-  background-color: #0f0a2b;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-color: var(--blue);
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
   background-size: 32px 32px;
   color: #ffffff;
 }
@@ -3693,7 +3693,7 @@ body.edu .logo {
   height: auto;
 }
 
-/* Sur le bleu nuit, le logo passe en blanc, « Éducation » en jaune. */
+/* Sur le bleu, le logo passe en blanc, « Éducation » en jaune. */
 .end .brand-logo path[fill='black'],
 .end .brand-logo path[fill='#2D43ED'] {
   fill: #ffffff;
@@ -3711,7 +3711,7 @@ body.edu .logo {
 .end-col a,
 .end-bottom,
 .end-tools {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .end-brand p {
@@ -3749,7 +3749,7 @@ body.edu .logo {
   gap: 10px;
   margin-top: 46px;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
   font-size: 14px;
 }
 
