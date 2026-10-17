@@ -233,7 +233,7 @@
   // ---------- Réalisations : les filtres n'affichent que la catégorie choisie ----------
   var filters = document.querySelector('[data-filters]');
   if (filters) {
-    var works = [].slice.call(document.querySelectorAll('[data-works] .work'));
+    var works = [].slice.call(document.querySelectorAll('[data-works] > *'));
     var empty = document.querySelector('[data-works-empty]');
     filters.addEventListener('click', function (event) {
       var button = event.target.closest('[data-filter]');
@@ -357,6 +357,70 @@
         });
     });
   }
+
+  // ---------- Onglets des services (accueil) : un clic ou les flèches du clavier changent de service ----------
+  [].forEach.call(document.querySelectorAll('[data-tabs]'), function (box) {
+    var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        panel.classList.toggle('show', on);
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        select(tab);
+      });
+      tab.addEventListener('keydown', function (event) {
+        var next = { ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[event.key];
+        if (next === undefined) return;
+        event.preventDefault();
+        select(tabs[(next + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+
+  // ---------- Les quatre étapes : elles défilent seules, les traits du bas permettent de choisir ----------
+  [].forEach.call(document.querySelectorAll('[data-steps]'), function (box) {
+    var cards = [].slice.call(box.querySelectorAll('.step-card'));
+    var dots = [].slice.call(box.querySelectorAll('.step-dots button'));
+    var current = 0;
+    var timer = null;
+    function show(index) {
+      current = (index + cards.length) % cards.length;
+      cards.forEach(function (card, i) {
+        card.hidden = i !== current;
+        card.classList.toggle('show', i === current);
+      });
+      dots.forEach(function (dot, i) {
+        dot.setAttribute('aria-current', String(i === current));
+      });
+    }
+    function start() {
+      if (still || timer) return;
+      timer = setInterval(function () {
+        show(current + 1);
+      }, 4500);
+    }
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        stop();
+        show(i);
+      });
+    });
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', start);
+    start();
+  });
 
   var bar = document.querySelector('.bar');
   var stage = document.querySelector('[data-parallax]');
