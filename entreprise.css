@@ -823,13 +823,32 @@ main {
   margin-top: -6%;
 }
 
+/* Demandé par l'utilisateur (17 octobre 2026) : sur le rond d'or, les contours, la bouche et la couronne en blanc. */
 .title-pill .mark svg path[fill='white'] {
   fill: transparent;
 }
 
-.title-pill .mark svg path[fill='black'],
+.title-pill .mark svg path[fill='black'] {
+  fill: #ffffff;
+}
+
 .title-pill .mark svg path[stroke='black'] {
-  fill: #111111;
+  stroke: #ffffff;
+}
+
+.title-pill .mark svg path.crown {
+  fill: #ffffff;
+}
+
+/* En thème sombre, le fond de la pastille passe au blanc (demandé le 17 octobre 2026). */
+:root[data-theme='dark'] .title-pill {
+  background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .title-pill {
+    background: #ffffff;
+  }
 }
 
 .title-pill .chev {
@@ -911,7 +930,7 @@ main {
   color: #111111;
 }
 
-/* Les deux cartes sous le titre : nos travaux, et la carte sombre aux points. */
+/* Les deux cartes sous le titre : nos travaux, et la carte sombre des services. */
 .hero-cards {
   display: grid;
   grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
@@ -984,85 +1003,141 @@ main {
   text-decoration: none;
 }
 
-.dots-card {
+/* La carte sombre : les six services, chacun sur une ligne qui mène à sa partie de la page Services. */
+.svc-card {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  padding: 34px;
+  gap: 18px;
+  padding: 30px;
   border-radius: 26px;
   background: var(--pine);
   color: var(--on-dark);
-  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.02);
 }
 
-.dots {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.dots i {
-  aspect-ratio: 1;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.dots i.on {
-  background: var(--lime);
-  animation: dot-on 600ms var(--ease) both;
-  animation-delay: calc(var(--n, 0) * 90ms + 400ms);
-}
-
-@keyframes dot-on {
-  from {
-    background: rgba(255, 255, 255, 0.09);
-    transform: scale(0.6);
-  }
-}
-
-.big-stat {
+.svc-card-head {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
   gap: 16px;
-  padding-bottom: 22px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--night-line);
 }
 
-.big-stat b {
+.svc-card-head b {
+  color: var(--lime);
   font-family: var(--display);
-  font-size: clamp(56px, 6vw, 80px);
+  font-size: clamp(64px, 6vw, 84px);
   font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 0.9;
+  line-height: 0.85;
 }
 
-.big-stat span,
-.dots-card .muted {
-  color: var(--on-dark-2);
-  font-size: 15px;
-  text-align: right;
-}
-
-.dots-card h3 {
-  color: var(--on-dark);
-  font-size: clamp(22px, 2vw, 27px);
+.svc-card-head p {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--display);
+  font-size: 24px;
   font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-.dots-row {
+.svc-card-head .muted {
+  color: var(--on-dark-2);
+  font-family: var(--body);
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.svc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.svc-list a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
+  padding: 7px 10px 7px 7px;
+  border-radius: 16px;
+  color: var(--on-dark);
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background-color 200ms ease;
 }
 
-.dots-row b {
-  color: var(--pink);
-  font-family: var(--display);
-  font-size: clamp(30px, 3vw, 42px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.svc-list .tile {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  place-items: center;
+  border-radius: 12px;
+  color: #111111;
+}
+
+.svc-list .tile .one-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.svc-list .go {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--on-dark-2);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 300ms var(--ease);
+}
+
+.svc-list .go svg {
+  width: 13px;
+  height: 13px;
+}
+
+.svc-list a:hover,
+.svc-list a:focus-visible {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.svc-list a:hover .go,
+.svc-list a:focus-visible .go {
+  background: var(--lime);
+  color: #111111;
+  transform: rotate(45deg);
+}
+
+/* Les lignes arrivent l'une après l'autre quand la carte apparaît. */
+.js .svc-card .svc-list li {
+  opacity: 0;
+  transform: translateX(14px);
+  transition:
+    opacity 500ms ease calc(var(--n, 0) * 80ms + 250ms),
+    transform 700ms var(--ease) calc(var(--n, 0) * 80ms + 250ms);
+}
+
+.js .svc-card.in .svc-list li {
+  opacity: 1;
+  transform: none;
+}
+
+.svc-card .pill-btn {
+  margin-top: auto;
 }
 
 .bars {
@@ -3032,8 +3107,8 @@ main {
     display: none;
   }
 
-  .dots-card {
-    padding: 24px;
+  .svc-card {
+    padding: 22px;
   }
 }
 
@@ -3043,7 +3118,8 @@ main {
     scroll-behavior: auto;
   }
 
-  .js .reveal {
+  .js .reveal,
+  .js .svc-card .svc-list li {
     opacity: 1;
     transform: none;
     transition: none;
@@ -3051,7 +3127,6 @@ main {
 
   .marquee-track,
   .chev path,
-  .dots i.on,
   .menu-panel.open,
   .tab-panel.show,
   .step-card.show,
