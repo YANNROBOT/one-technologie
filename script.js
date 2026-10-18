@@ -643,6 +643,41 @@
     var preview = dialog.querySelector('[data-testi-preview]');
     var removePhoto = dialog.querySelector('[data-testi-photo-remove]');
     var starsRow = dialog.querySelector('.testi-stars-row');
+    // Deux étapes : 1. vous (photo, nom, fonction), 2. votre avis (note, texte, accord), puis l'envoi.
+    var step = 1;
+    var stepBoxes = [].slice.call(dialog.querySelectorAll('[data-testi-step]'));
+    var stepBars = [].slice.call(dialog.querySelectorAll('.testi-bar li'));
+    var count = dialog.querySelector('[data-testi-count]');
+    var back = dialog.querySelector('[data-testi-back]');
+    var cancel = dialog.querySelector('[data-testi-cancel]');
+    var sendLabel = dialog.querySelector('[data-testi-send-label]');
+    var sendMore = dialog.querySelector('[data-testi-send-more]');
+    var stepLabels = function () {
+      count.textContent = t('Étape ' + step + ' sur 2', 'Step ' + step + ' of 2');
+      // « Envoyer mon témoignage » : la fin du libellé se cache sur les petits écrans.
+      sendLabel.textContent = step === 1 ? t('Continuer', 'Continue') : t('Envoyer', 'Send');
+      sendMore.textContent = step === 1 ? '' : t(' mon témoignage', ' my testimonial');
+    };
+    var showStep = function (n) {
+      step = n;
+      stepBoxes.forEach(function (box) {
+        box.hidden = Number(box.dataset.testiStep) !== n;
+      });
+      stepBars.forEach(function (bar, i) {
+        bar.classList.toggle('on', i + 1 === n);
+        bar.classList.toggle('done', i + 1 < n);
+      });
+      back.hidden = n === 1;
+      cancel.hidden = n !== 1;
+      stepLabels();
+      body.scrollTop = 0;
+      dialog.scrollTop = 0;
+    };
+    document.addEventListener('one-lang', stepLabels);
+    back.addEventListener('click', function () {
+      showError('');
+      showStep(1);
+    });
     var cameraIcon = preview.innerHTML;
     var photo = null;
     var showError = function (text) {
@@ -675,6 +710,7 @@
       body.hidden = false;
       done.hidden = true;
       showError('');
+      showStep(1);
       if (typeof dialog.showModal === 'function') dialog.showModal();
       else dialog.setAttribute('open', '');
       form.querySelector('input[name="name"]').focus();
@@ -740,7 +776,15 @@
         website: String(data.get('website') || ''),
         lang: lang,
       };
-      if (!v.name) return showError(t('Indiquez votre nom.', 'Please enter your name.'));
+      if (!v.name) {
+        showStep(1);
+        return showError(t('Indiquez votre nom.', 'Please enter your name.'));
+      }
+      if (step === 1) {
+        showError('');
+        showStep(2);
+        return;
+      }
       if (!v.rating) return showError(t('Choisissez une note.', 'Choose a rating.'));
       if (v.text.length < 20) return showError(t('Écrivez quelques mots de plus (20 caractères au moins).', 'Write a few more words (at least 20 characters).'));
       if (!v.consent) return showError(t('Cochez la case pour accepter la publication.', 'Tick the box to accept publication.'));

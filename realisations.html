@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mvd5b6nf">
+    <link rel="stylesheet" href="entreprise.css?v=mvd5vqqs">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -84,7 +84,7 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mvd5b6nf" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mvd5vqqs" width="1280" height="800" alt="" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="cases" data-works>
           <article class="case reveal" data-cats="logiciels education">
-            <figure class="case-shot"><img src="assets/captures/admin-presences.jpg?v=mvd5b6nf" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
+            <figure class="case-shot"><img src="assets/captures/admin-presences.jpg?v=mvd5vqqs" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
             <div class="case-info">
               <div class="case-tags"><span data-en="Software and mobile app">Logiciel et application mobile</span><span data-en="One Technologie project">Projet One Technologie</span></div>
               <h3>GesSchool</h3>
@@ -148,7 +148,7 @@
             </div>
           </article>
           <article class="case reveal" data-cats="web design">
-            <figure class="case-shot"><img src="assets/realisations/site-accueil.jpg?v=mvd5b6nf" loading="lazy" alt="Accueil du site de One Technologie." data-en-alt="One Technologie website home page."></figure>
+            <figure class="case-shot"><img src="assets/realisations/site-accueil.jpg?v=mvd5vqqs" loading="lazy" alt="Accueil du site de One Technologie." data-en-alt="One Technologie website home page."></figure>
             <div class="case-info">
               <div class="case-tags"><span data-en="Website">Site web</span><span data-en="One Technologie project">Projet One Technologie</span></div>
               <h3 data-en="One Technologie website">Site de One Technologie</h3>
@@ -230,33 +230,42 @@
             <button class="testi-close" type="button" aria-label="Fermer" data-en-aria-label="Close" data-testi-close><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m6 6 12 12M18 6 6 18"/></svg></button>
           </div>
           <div class="testi-form-body" data-testi-body>
-            <div class="testi-photo-row">
-              <label class="testi-photo-pick">
-                <input type="file" accept="image/*" data-testi-file>
-                <span class="testi-photo-preview" data-testi-preview aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="13" r="3.3"/></g><path d="M3.5 9A2.5 2.5 0 0 1 6 6.5h1.6L9 4.5h6l1.4 2H18A2.5 2.5 0 0 1 20.5 9v8.5A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5z"/><circle cx="12" cy="13" r="3.3"/></svg></span>
-                <span class="testi-photo-text"><b data-en="Your photo">Votre photo</b><small data-en="Optional, a square photo works best">Facultative, une photo carrée rend le mieux</small></span>
-              </label>
-              <button class="testi-photo-remove" type="button" data-testi-photo-remove hidden data-en="Remove">Retirer</button>
+            <div class="testi-progress">
+              <p class="testi-count" aria-live="polite" data-testi-count>Étape 1 sur 2</p>
+              <ol class="testi-bar" aria-hidden="true"><li class="on"><span data-en="You">Vous</span></li><li><span data-en="Your review">Votre avis</span></li></ol>
             </div>
-            <label><span><span data-en="Your name">Votre nom</span> <i class="req" aria-hidden="true">*</i></span><input name="name" type="text" autocomplete="name" maxlength="80" required></label>
-            <label><span data-en="Your role and company (optional)">Votre fonction et votre entreprise (facultatif)</span><input name="role" type="text" maxlength="120" placeholder="Par exemple : Directrice, Collège Les Palmiers" data-en-placeholder="For example: Principal, Les Palmiers School"></label>
-            <fieldset class="testi-stars-pick">
-              <legend><span data-en="Your rating">Votre note</span> <i class="req" aria-hidden="true">*</i></legend>
-              <div class="testi-stars-row">
-                <input type="radio" name="rating" value="1" id="note-1" aria-label="1 étoile sur 5" data-en-aria-label="1 star out of 5"><label for="note-1"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
-                <input type="radio" name="rating" value="2" id="note-2" aria-label="2 étoiles sur 5" data-en-aria-label="2 stars out of 5"><label for="note-2"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
-                <input type="radio" name="rating" value="3" id="note-3" aria-label="3 étoiles sur 5" data-en-aria-label="3 stars out of 5"><label for="note-3"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
-                <input type="radio" name="rating" value="4" id="note-4" aria-label="4 étoiles sur 5" data-en-aria-label="4 stars out of 5"><label for="note-4"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
-                <input type="radio" name="rating" value="5" id="note-5" aria-label="5 étoiles sur 5" data-en-aria-label="5 stars out of 5" checked><label for="note-5"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+            <div class="testi-step" data-testi-step="1">
+              <div class="testi-photo-row">
+                <label class="testi-photo-pick">
+                  <input type="file" accept="image/*" data-testi-file>
+                  <span class="testi-photo-preview" data-testi-preview aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="13" r="3.3"/></g><path d="M3.5 9A2.5 2.5 0 0 1 6 6.5h1.6L9 4.5h6l1.4 2H18A2.5 2.5 0 0 1 20.5 9v8.5A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5z"/><circle cx="12" cy="13" r="3.3"/></svg></span>
+                  <span class="testi-photo-text"><b data-en="Your photo">Votre photo</b><small data-en="Optional, a square photo works best">Facultative, une photo carrée rend le mieux</small></span>
+                </label>
+                <button class="testi-photo-remove" type="button" data-testi-photo-remove hidden data-en="Remove">Retirer</button>
               </div>
-            </fieldset>
-            <label><span><span data-en="Your testimonial">Votre témoignage</span> <i class="req" aria-hidden="true">*</i></span><textarea name="text" rows="5" maxlength="600" required placeholder="Ce que nous avons fait pour vous, et ce que vous en avez pensé." data-en-placeholder="What we did for you, and what you thought of it."></textarea></label>
-            <label class="testi-consent"><input type="checkbox" name="consent"><span data-en="I agree that my testimonial, my name and my photo are published on this website.">J’accepte que mon témoignage, mon nom et ma photo soient publiés sur ce site.</span></label>
+              <label><span><span data-en="Your name">Votre nom</span> <i class="req" aria-hidden="true">*</i></span><input name="name" type="text" autocomplete="name" maxlength="80" required></label>
+              <label><span data-en="Your role and company (optional)">Votre fonction et votre entreprise (facultatif)</span><input name="role" type="text" maxlength="120" placeholder="Par exemple : Directrice, Collège Les Palmiers" data-en-placeholder="For example: Principal, Les Palmiers School"></label>
+            </div>
+            <div class="testi-step" data-testi-step="2" hidden>
+              <fieldset class="testi-stars-pick">
+                <legend><span data-en="Your rating">Votre note</span> <i class="req" aria-hidden="true">*</i></legend>
+                <div class="testi-stars-row">
+                  <input type="radio" name="rating" value="1" id="note-1" aria-label="1 étoile sur 5" data-en-aria-label="1 star out of 5"><label for="note-1"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+                  <input type="radio" name="rating" value="2" id="note-2" aria-label="2 étoiles sur 5" data-en-aria-label="2 stars out of 5"><label for="note-2"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+                  <input type="radio" name="rating" value="3" id="note-3" aria-label="3 étoiles sur 5" data-en-aria-label="3 stars out of 5"><label for="note-3"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+                  <input type="radio" name="rating" value="4" id="note-4" aria-label="4 étoiles sur 5" data-en-aria-label="4 stars out of 5"><label for="note-4"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+                  <input type="radio" name="rating" value="5" id="note-5" aria-label="5 étoiles sur 5" data-en-aria-label="5 stars out of 5" checked><label for="note-5"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></g><path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></label>
+                </div>
+              </fieldset>
+              <label><span><span data-en="Your testimonial">Votre témoignage</span> <i class="req" aria-hidden="true">*</i></span><textarea name="text" rows="4" maxlength="600" required placeholder="Ce que nous avons fait pour vous, et ce que vous en avez pensé." data-en-placeholder="What we did for you, and what you thought of it."></textarea></label>
+              <label class="testi-consent"><input type="checkbox" name="consent"><span data-en="I agree that my testimonial, my name and my photo are published on this website.">J’accepte que mon témoignage, mon nom et ma photo soient publiés sur ce site.</span></label>
+            </div>
             <label class="trap" aria-hidden="true"><span>Site web</span><input name="website" type="text" tabindex="-1" autocomplete="off"></label>
             <p class="form-error" data-testi-error role="alert" hidden></p>
             <div class="testi-form-actions">
-              <button class="pill-btn line" type="button" data-testi-close data-en="Cancel">Annuler</button>
-              <button class="pill-btn dark" type="submit" data-testi-send><span data-en="Send my testimonial">Envoyer mon témoignage</span><span class="arrow" aria-hidden="true"><svg class="one-icon arrow-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></span></button>
+              <button class="pill-btn line" type="button" data-testi-back hidden data-en="Back">Retour</button>
+              <button class="pill-btn line" type="button" data-testi-close data-testi-cancel data-en="Cancel">Annuler</button>
+              <button class="pill-btn dark" type="submit" data-testi-send><span><span data-testi-send-label>Continuer</span><span class="testi-send-more" data-testi-send-more></span></span><span class="arrow" aria-hidden="true"><svg class="one-icon arrow-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></span></button>
             </div>
           </div>
           <div class="testi-done" data-testi-done hidden tabindex="-1">
@@ -353,7 +362,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5b6nf"></script>
-    <script src="script.js?v=mvd5b6nf"></script>
+    <script src="config.js?v=mvd5vqqs"></script>
+    <script src="script.js?v=mvd5vqqs"></script>
   </body>
 </html>

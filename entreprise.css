@@ -5064,3 +5064,151 @@ main {
     animation: none;
   }
 }
+
+/* La fenêtre du témoignage en deux étapes : l'avancement, comme le formulaire de devis. */
+.testi-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.testi-count {
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.testi-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.testi-bar li {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.testi-bar li::before {
+  content: '';
+  display: block;
+  height: 5px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  background: var(--mist-2);
+  transition: background-color 300ms ease;
+}
+
+.testi-bar li.on {
+  color: var(--ink);
+}
+
+.testi-bar li.on::before {
+  background: var(--lime);
+}
+
+.testi-bar li.done::before {
+  background: var(--ink);
+}
+
+.testi-step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: quote-step-in 400ms var(--ease);
+}
+
+.testi-step[hidden],
+.testi-form-actions [hidden] {
+  display: none;
+}
+
+.testi-form-actions [data-testi-back] {
+  margin-right: auto;
+}
+
+/* Les barres de défilement de la fenêtre et des listes : fines, arrondies, or au survol. */
+.testi-dialog::-webkit-scrollbar,
+.testi-faces::-webkit-scrollbar,
+.testi-form textarea::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.testi-dialog::-webkit-scrollbar-track,
+.testi-faces::-webkit-scrollbar-track,
+.testi-form textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.testi-dialog::-webkit-scrollbar-track {
+  margin: 26px 0;
+}
+
+.testi-dialog::-webkit-scrollbar-thumb,
+.testi-faces::-webkit-scrollbar-thumb,
+.testi-form textarea::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background: var(--ink-3) padding-box;
+}
+
+.testi-dialog::-webkit-scrollbar-thumb:hover,
+.testi-faces::-webkit-scrollbar-thumb:hover,
+.testi-form textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--lime) padding-box;
+}
+
+.testi-dialog::-webkit-scrollbar-button,
+.testi-form textarea::-webkit-scrollbar-button {
+  display: none;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .testi-dialog,
+  .testi-faces,
+  .testi-form textarea {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-3) transparent;
+  }
+}
+
+@media (max-width: 560px) {
+  .testi-form-head {
+    padding: 14px 16px;
+  }
+
+  .testi-form-illu,
+  .testi-form-head p {
+    display: none;
+  }
+
+  .testi-form-head h2 {
+    font-size: 21px;
+  }
+
+  .testi-form-body {
+    padding: 16px;
+  }
+
+  .testi-send-more {
+    display: none;
+  }
+
+  .testi-form-actions {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testi-step {
+    animation: none;
+  }
+}
