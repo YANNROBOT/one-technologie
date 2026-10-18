@@ -1,11 +1,11 @@
 {
-  "version": "0.22.0",
-  "notes": "{\"fr\":[\"Hors connexion : toutes les pages gardent leurs informations sur l'ordinateur et s'affichent sans Internet. L'accueil montre la dernière journée enregistrée.\",\"Un petit rond à côté de l'heure signale les modifications faites hors connexion ; un clic donne leur liste. Elles partent seules au retour de la connexion.\"],\"en\":[\"Offline: every page keeps its information on the computer and shows without the Internet. The home page shows the latest saved day.\",\"A small circle next to the clock shows changes made offline; click it to see the list. They are sent by themselves when the connection is back.\"]}",
-  "pub_date": "2026-10-14T08:58:18.325Z",
+  "version": "0.23.0",
+  "notes": "{\"fr\":[\"Employés : la liste s'exporte en fichier Excel, et la colonne des matières n'affiche plus « Prof - » devant chaque matière.\",\"Un employé qui a déjà pointé peut être supprimé. Le Journal garde sa fiche (filtre « Employés supprimés ») et permet de le rétablir.\",\"Paramètres : toutes les rubriques ont un nouveau dessin, avec un bandeau qui signale les modifications pas encore enregistrées.\"],\"en\":[\"Employees: the list can be exported to an Excel file, and the subjects column no longer shows “Prof -” before each subject.\",\"An employee who has already checked in can be deleted. The Log keeps their record (“Deleted employees” filter) and lets you restore them.\",\"Settings: every section has a new design, with a bar that shows changes not saved yet.\"]}",
+  "pub_date": "2026-10-18T10:39:10.229Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW83Z3NHaWRtTlVvTXFxVDdBRENROEthMnZRd2lDS3BzU2lCaEZHeUpUY0RMOVdtRHJ0eHBESXBhRWRGaFB3YVg1NGNiRkh2a1ZYYzhJK3lVK3pPQ1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTY4Mjk2CWZpbGU6R2VzU2Nob29sXzAuMjIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMi4wCnMxbmVlb05aYmc3bG1pUjZLb3hLUzd1dzg0aUhsL2pSd2xoR1BCV2ZYVnhOdDlJLzY0cEowNUpzSTN6cC9WQ1RhckxCWWg5Z2l3MGpFTHZLU0hQcEF3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.22.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXZyeTc3UTNQdGlRL2xiUTBpbkRqcXZQdUhmeDVoR0ZSRVNBUlFPNHpNMHdyWEg5UWdsNU5ma2QySFJocndRTFNEYXV1aE93UE9ocWYxcFd0Z3gvL3dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzE5OTQ5CWZpbGU6R2VzU2Nob29sXzAuMjMuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yMy4wCmJTd2JDY3h2YXNGY3cvampiVFQ5RE91SW14THJMUWtZMVpKdE15Y1ZYMXRSQ05OYndoSUxkZk1qaWNramJHZ3V2cnlOd0lxb3c0UEpoMVlUZ3ZhK0NRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.23.0"
     }
   }
 }
