@@ -204,6 +204,15 @@ h3 {
   stroke: var(--lime);
 }
 
+/* Sur un fond or (en-tête « One Technologie » du comparatif), les parties en or du logo repassent au noir. */
+.compare-head.us .brand-logo path.logo-gold {
+  fill: #111111;
+}
+
+.compare-head.us .brand-logo path.logo-gold-line {
+  stroke: #111111;
+}
+
 .on-dark .brand-logo {
   --logo-ink: #f4f4f4;
   --logo-fill: transparent;
@@ -1466,8 +1475,11 @@ main {
 }
 
 /* Le titre de la bande, comme un tampon penché posé à cheval entre le fond sombre et la bande sable. */
-.band-stamp {
+.band-stamp,
+.stamp {
   position: relative;
+  font-family: var(--display);
+  white-space: nowrap;
   z-index: 2;
   width: fit-content;
   margin: clamp(60px, 7vw, 90px) auto -27px;
@@ -1953,23 +1965,60 @@ main {
   text-align: right;
 }
 
-.how-card .tile {
-  display: grid;
+/* Le parcours, du premier échange à la livraison : trois objets sur un chemin en pointillé qui avance. */
+.how-illu {
+  position: relative;
   align-self: end;
+  width: 100%;
+  max-width: 300px;
   aspect-ratio: 4 / 5;
-  max-width: 280px;
-  place-items: center;
   border-radius: 24px;
-  overflow: hidden;
+  background: var(--pink);
 }
 
-.how-card .tile svg {
-  width: 58%;
+.how-path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #111111;
+  stroke-width: 2.5;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+  animation: how-march 1.2s linear infinite;
+}
+
+@keyframes how-march {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.how-illu .obj {
+  position: absolute;
+  width: 44%;
+  line-height: 0;
+}
+
+.how-illu .obj .objet {
+  width: 100%;
   height: auto;
 }
 
-.how-card .tile .crown {
-  fill: #111111;
+.how-illu .o1 {
+  top: 3%;
+  left: 3%;
+}
+
+.how-illu .o2 {
+  top: 31%;
+  right: 4%;
+}
+
+.how-illu .o3 {
+  bottom: 2%;
+  left: 12%;
 }
 
 .how-card .count {
@@ -2039,15 +2088,34 @@ main {
   animation: panel-in 500ms var(--ease) both;
 }
 
+.step-illu {
+  position: relative;
+  display: block;
+  width: 108px;
+  line-height: 0;
+}
+
+.step-illu .objet {
+  width: 100%;
+  height: auto;
+}
+
+.step-illu .num {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  box-shadow: 0 0 0 3px var(--lime);
+}
+
 .step-card .num {
   display: grid;
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   place-items: center;
   border-radius: 999px;
   background: #ffffff;
   font-family: var(--display);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -2146,12 +2214,15 @@ main {
 }
 
 .quote-card {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
   max-width: 690px;
-  margin: clamp(60px, 7vw, 90px) auto 0;
-  padding: 30px 40px;
+  margin: clamp(80px, 9vw, 110px) auto 0;
+  padding: 46px 40px 30px;
+  text-align: center;
   border-radius: 22px;
   background: var(--night-2);
 }
@@ -2165,9 +2236,18 @@ main {
   line-height: 1.3;
 }
 
+.quote-card .stamp {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%) rotate(-4deg);
+}
+
 .quote-card p {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   color: var(--on-dark-2);
   font-size: 14px;
@@ -4211,5 +4291,66 @@ main {
   .cases.stack .case-shot img,
   .cases.stack .case-info {
     opacity: var(--o, 1);
+  }
+}
+
+/* ---------- Objets dessinés animés (parcours et étapes de l'accueil) ---------- */
+.how-illu .a-float,
+.how-illu .a-bob,
+.step-illu .a-float,
+.step-illu .a-bob {
+  animation: obj-float 3.6s ease-in-out infinite;
+}
+
+.how-illu .a-burst,
+.step-illu .a-burst {
+  animation: obj-blink 1.8s ease-in-out infinite;
+}
+
+.how-illu .a-pop,
+.step-illu .a-pop {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: obj-beat 2.4s ease-in-out 0.8s infinite;
+}
+
+.how-illu .o2 .a-float {
+  animation-delay: 0.6s;
+}
+
+.how-illu .o3 .a-bob,
+.how-illu .o3 .a-float {
+  animation-delay: 1.2s;
+}
+
+@keyframes obj-float {
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+@keyframes obj-blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes obj-beat {
+  50% {
+    scale: 1.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how-path,
+  .how-illu .a-float,
+  .how-illu .a-bob,
+  .how-illu .a-burst,
+  .how-illu .a-pop,
+  .step-illu .a-float,
+  .step-illu .a-bob,
+  .step-illu .a-burst,
+  .step-illu .a-pop {
+    animation: none;
   }
 }
