@@ -7,6 +7,8 @@ window.ONE_SITE = {
   appUrl: 'https://gesschool.onetechnologie.com',
   // Le serveur qui reçoit les demandes de devis et les envoie par e-mail à One Technologie.
   quoteUrl: 'https://gesschool.onetechnologie.com/api/public/quote',
+  // Les témoignages : lus et envoyés sur le même serveur, publiés seulement après validation dans l'Espace One Technologie.
+  testimonialsUrl: 'https://gesschool.onetechnologie.com/api/public/testimonials',
   // Adresse et numéro proposés si l'envoi direct échoue.
   email: 'contact@onetechnologie.com',
   whatsapp: '2250142905825',

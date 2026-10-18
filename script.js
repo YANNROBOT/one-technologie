@@ -511,6 +511,272 @@
     show(1, false);
   })();
 
+  // ---------- Témoignages (page Réalisations) : ceux publiés, et la fenêtre pour en envoyer un ----------
+  // Un témoignage envoyé est gardé sur le serveur ; il n'apparaît ici qu'après validation dans l'Espace One Technologie.
+  (function () {
+    var section = document.querySelector('[data-testimonials]');
+    if (!section || !config.testimonialsUrl) return;
+    var t = function (fr, english) {
+      return lang === 'en' ? english : fr;
+    };
+    var stage = section.querySelector('[data-testi-stage]');
+    var faces = section.querySelector('[data-testi-faces]');
+    var card = section.querySelector('[data-testi-card]');
+    var empty = section.querySelector('[data-testi-empty]');
+    var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.5-4.2 6.1-.8z"/></svg>';
+    var initials = function (name) {
+      return name
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(function (part) {
+          return part.charAt(0).toUpperCase();
+        })
+        .join('');
+    };
+    // Une photo n'est acceptée que si c'est une image écrite en texte (data:image/…) : jamais une adresse extérieure.
+    var safePhoto = function (photo) {
+      return typeof photo === 'string' && /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(photo) ? photo : null;
+    };
+    var avatar = function (item) {
+      var box = document.createElement('span');
+      box.className = 'testi-face-img';
+      var photo = safePhoto(item.photo);
+      if (photo) {
+        var img = document.createElement('img');
+        img.src = photo;
+        img.alt = '';
+        box.appendChild(img);
+      } else {
+        box.textContent = initials(item.name);
+      }
+      return box;
+    };
+
+    var items = [];
+    var current = 0;
+    var show = function (index) {
+      current = index;
+      [].forEach.call(faces.children, function (button, i) {
+        button.setAttribute('aria-selected', String(i === index));
+        button.tabIndex = i === index ? 0 : -1;
+      });
+      var item = items[index];
+      card.textContent = '';
+      var stars = document.createElement('p');
+      stars.className = 'testi-card-stars';
+      stars.setAttribute('aria-label', t('Note : ' + item.rating + ' sur 5', 'Rating: ' + item.rating + ' out of 5'));
+      for (var n = 1; n <= 5; n++) {
+        var star = document.createElement('span');
+        star.innerHTML = STAR;
+        if (n <= item.rating) star.className = 'on';
+        stars.appendChild(star);
+      }
+      var quote = document.createElement('blockquote');
+      quote.textContent = '« ' + item.text + ' »';
+      var who = document.createElement('figcaption');
+      who.appendChild(avatar(item));
+      var name = document.createElement('b');
+      name.textContent = item.name;
+      who.appendChild(name);
+      if (item.role) {
+        var role = document.createElement('span');
+        role.textContent = item.role;
+        who.appendChild(role);
+      }
+      card.appendChild(stars);
+      card.appendChild(quote);
+      card.appendChild(who);
+      card.classList.remove('enter');
+      void card.offsetWidth;
+      card.classList.add('enter');
+    };
+    var render = function (list) {
+      items = list.filter(function (item) {
+        return item && typeof item.name === 'string' && typeof item.text === 'string';
+      });
+      if (!items.length) return;
+      faces.textContent = '';
+      items.forEach(function (item, i) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('role', 'tab');
+        button.className = 'testi-face';
+        button.setAttribute('aria-label', item.name);
+        button.appendChild(avatar(item));
+        button.addEventListener('click', function () {
+          show(i);
+        });
+        button.addEventListener('keydown', function (event) {
+          var next = { ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1 }[event.key];
+          if (next === undefined) return;
+          event.preventDefault();
+          var target = (next + items.length) % items.length;
+          show(target);
+          faces.children[target].focus();
+        });
+        faces.appendChild(button);
+      });
+      stage.hidden = false;
+      empty.hidden = true;
+      show(0);
+    };
+    fetch(config.testimonialsUrl)
+      .then(function (response) {
+        return response.ok ? response.json() : [];
+      })
+      .then(function (list) {
+        if (Array.isArray(list)) render(list);
+      })
+      .catch(function () {
+        // Sans connexion au serveur, la section garde son message d'attente.
+      });
+
+    // ----- La fenêtre « Ajouter un témoignage » -----
+    var dialog = document.querySelector('[data-testi-dialog]');
+    var form = dialog.querySelector('[data-testi-form]');
+    var body = dialog.querySelector('[data-testi-body]');
+    var done = dialog.querySelector('[data-testi-done]');
+    var error = dialog.querySelector('[data-testi-error]');
+    var send = dialog.querySelector('[data-testi-send]');
+    var file = dialog.querySelector('[data-testi-file]');
+    var preview = dialog.querySelector('[data-testi-preview]');
+    var removePhoto = dialog.querySelector('[data-testi-photo-remove]');
+    var starsRow = dialog.querySelector('.testi-stars-row');
+    var cameraIcon = preview.innerHTML;
+    var photo = null;
+    var showError = function (text) {
+      error.textContent = text;
+      error.hidden = !text;
+    };
+    var paintStars = function (value) {
+      starsRow.dataset.value = String(value);
+    };
+    var checkedRating = function () {
+      var checked = form.querySelector('input[name="rating"]:checked');
+      return checked ? Number(checked.value) : 0;
+    };
+    paintStars(checkedRating());
+    [].forEach.call(starsRow.querySelectorAll('input'), function (input) {
+      input.addEventListener('change', function () {
+        paintStars(checkedRating());
+      });
+    });
+    [].forEach.call(starsRow.querySelectorAll('label'), function (label, i) {
+      label.addEventListener('mouseenter', function () {
+        paintStars(i + 1);
+      });
+    });
+    starsRow.addEventListener('mouseleave', function () {
+      paintStars(checkedRating());
+    });
+
+    var open = function () {
+      body.hidden = false;
+      done.hidden = true;
+      showError('');
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+      form.querySelector('input[name="name"]').focus();
+    };
+    var close = function () {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    };
+    [].forEach.call(document.querySelectorAll('[data-testi-open]'), function (button) {
+      button.addEventListener('click', open);
+    });
+    [].forEach.call(dialog.querySelectorAll('[data-testi-close]'), function (button) {
+      button.addEventListener('click', close);
+    });
+    // Un clic sur le fond sombre, autour de la fenêtre, la ferme.
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) close();
+    });
+
+    // La photo : recadrée au centre en carré de 200 px, puis écrite en texte (JPEG), avant l'envoi.
+    var setPhoto = function (value) {
+      photo = value;
+      preview.innerHTML = value ? '<img src="' + value + '" alt="">' : cameraIcon;
+      removePhoto.hidden = !value;
+    };
+    file.addEventListener('change', function () {
+      var chosen = file.files && file.files[0];
+      file.value = '';
+      if (!chosen) return;
+      if (!/^image\//.test(chosen.type || 'image/')) return showError(t('Ce fichier n’est pas une image.', 'This file is not an image.'));
+      var url = URL.createObjectURL(chosen);
+      var img = new Image();
+      img.onload = function () {
+        var side = Math.min(img.naturalWidth, img.naturalHeight);
+        var canvas = document.createElement('canvas');
+        canvas.width = 200;
+        canvas.height = 200;
+        canvas.getContext('2d').drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, 200, 200);
+        URL.revokeObjectURL(url);
+        showError('');
+        setPhoto(canvas.toDataURL('image/jpeg', 0.82));
+      };
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        showError(t('Cette image ne peut pas être lue. Essayez une autre photo.', 'This image cannot be read. Try another photo.'));
+      };
+      img.src = url;
+    });
+    removePhoto.addEventListener('click', function () {
+      setPhoto(null);
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var data = new FormData(form);
+      var v = {
+        name: String(data.get('name') || '').trim(),
+        role: String(data.get('role') || '').trim(),
+        text: String(data.get('text') || '').trim(),
+        rating: checkedRating(),
+        photo: photo,
+        consent: data.get('consent') === 'on',
+        website: String(data.get('website') || ''),
+        lang: lang,
+      };
+      if (!v.name) return showError(t('Indiquez votre nom.', 'Please enter your name.'));
+      if (!v.rating) return showError(t('Choisissez une note.', 'Choose a rating.'));
+      if (v.text.length < 20) return showError(t('Écrivez quelques mots de plus (20 caractères au moins).', 'Write a few more words (at least 20 characters).'));
+      if (!v.consent) return showError(t('Cochez la case pour accepter la publication.', 'Tick the box to accept publication.'));
+      showError('');
+      send.disabled = true;
+      send.classList.add('busy');
+      fetch(config.testimonialsUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v) })
+        .then(function (response) {
+          if (response.ok) return null;
+          return response
+            .json()
+            .catch(function () {
+              return {};
+            })
+            .then(function (answer) {
+              throw new Error((lang === 'fr' && answer && answer.error) || t('Votre témoignage n’a pas pu partir. Réessayez dans quelques instants.', 'Your testimonial could not be sent. Try again in a moment.'));
+            });
+        })
+        .then(function () {
+          form.reset();
+          setPhoto(null);
+          paintStars(checkedRating());
+          body.hidden = true;
+          done.hidden = false;
+          done.focus();
+        })
+        .catch(function (problem) {
+          showError(problem instanceof TypeError ? t('Pas de connexion internet. Vérifiez votre réseau, puis réessayez.', 'No internet connection. Check your network, then try again.') : problem.message);
+        })
+        .then(function () {
+          send.disabled = false;
+          send.classList.remove('busy');
+        });
+    });
+  })();
+
   // ---------- Les chiffres de l'accueil : ils comptent jusqu'à leur valeur quand ils apparaissent ----------
   (function () {
     var counters = [].slice.call(document.querySelectorAll('[data-count]'));
