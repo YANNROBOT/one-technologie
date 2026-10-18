@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr" data-title-en="Downloads — One Technologie">
+<html lang="fr" data-alt-url="en/telechargements.html" data-title-en="Download GesSchool for Windows, Android and iPhone — One Technologie">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Téléchargements — One Technologie</title>
+    <title>Télécharger GesSchool pour Windows, Android et iPhone — One Technologie</title>
     <meta name="description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone.">
     <meta name="theme-color" content="#2d43ed">
     <link rel="canonical" href="https://onetechnologie.com/telechargements.html">
@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="Téléchargements — One Technologie">
+    <meta property="og:title" content="Télécharger GesSchool pour Windows, Android et iPhone — One Technologie">
     <meta property="og:description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone.">
     <meta property="og:url" content="https://onetechnologie.com/telechargements.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="style.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="style.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/telechargements.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/telechargements.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/telechargements.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"One Technologie Éducation","item":"https://onetechnologie.com/education.html"},{"@type":"ListItem","position":3,"name":"Téléchargements","item":"https://onetechnologie.com/telechargements.html"}]},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="edu">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -258,7 +266,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Toute votre école, au même endroit.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

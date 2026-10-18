@@ -2647,10 +2647,25 @@ main {
   color: var(--on-dark);
 }
 
-.value .one-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: auto;
+.value-illu {
+  display: block;
+  width: 124px;
+  margin: -10px 0 8px -10px;
+  line-height: 0;
+}
+
+.value-illu .objet {
+  width: 100%;
+  height: auto;
+}
+
+/* Sur la carte sombre, l'objet garde son liseré blanc ; sur la carte crème, il n'en a jamais besoin. */
+.value:nth-child(4) .value-illu .objet {
+  filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+}
+
+.value:nth-child(1) .value-illu .objet {
+  filter: none;
 }
 
 .value p {
@@ -3019,6 +3034,44 @@ main {
 .faq details p {
   padding-bottom: 22px;
   opacity: 0.8;
+}
+
+/* La réponse, et à droite l'objet qui l'illustre : il arrive quand la question s'ouvre. */
+.faq-a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: center;
+  gap: 18px;
+}
+
+.faq-illu {
+  display: block;
+  margin: -14px 0 8px;
+  line-height: 0;
+}
+
+.faq-illu .objet {
+  width: 100%;
+  height: auto;
+  filter: none;
+}
+
+.faq details[open] .faq-illu {
+  animation: faq-illu-in 600ms var(--ease) both;
+}
+
+@keyframes faq-illu-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) rotate(-8deg) scale(0.85);
+  }
+}
+
+@media (max-width: 560px) {
+  .faq-a {
+    grid-template-columns: minmax(0, 1fr) 76px;
+    gap: 10px;
+  }
 }
 
 /* Textes légaux */
@@ -4274,19 +4327,27 @@ main {
 .step-illu .a-float,
 .step-illu .a-bob,
 .svc-illu .a-float,
-.svc-illu .a-bob {
+.svc-illu .a-bob,
+.value-illu .a-float,
+.value-illu .a-bob,
+.faq-illu .a-float,
+.faq-illu .a-bob {
   animation: obj-float 3.6s ease-in-out infinite;
 }
 
 .how-illu .a-burst,
 .step-illu .a-burst,
-.svc-illu .a-burst {
+.svc-illu .a-burst,
+.value-illu .a-burst,
+.faq-illu .a-burst {
   animation: obj-blink 1.8s ease-in-out infinite;
 }
 
 .how-illu .a-pop,
 .step-illu .a-pop,
-.svc-illu .a-pop {
+.svc-illu .a-pop,
+.value-illu .a-pop,
+.faq-illu .a-pop {
   transform-box: fill-box;
   transform-origin: center;
   animation: obj-beat 2.4s ease-in-out 0.8s infinite;
@@ -4332,7 +4393,10 @@ main {
   .svc-illu .a-float,
   .svc-illu .a-bob,
   .svc-illu .a-burst,
-  .svc-illu .a-pop {
+  .svc-illu .a-pop,
+  .value-illu *,
+  .faq-illu,
+  .faq-illu * {
     animation: none;
   }
 }

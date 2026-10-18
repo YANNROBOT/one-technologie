@@ -17,13 +17,31 @@
     },
   };
 
-  // ---------- Langue : le français est dans la page, l'anglais dans les attributs data-en ----------
+  // ---------- Langue ----------
+  // Chaque page existe en français (à la racine) et en anglais (dossier en/) : data-alt-url donne l'adresse de
+  // l'autre langue, et le bouton FR / EN y mène. Sans elle (page ouverte hors du site fabriqué), le script traduit
+  // la page sur place avec les attributs data-en, comme avant.
   var ATTRS = ['alt', 'aria-label', 'placeholder'];
-  var lang = store.get('one-site.lang') || (/^en\b/i.test(navigator.language || '') ? 'en' : 'fr');
+  var altUrl = root.getAttribute('data-alt-url');
+  var lang = altUrl ? (root.lang === 'en' ? 'en' : 'fr') : store.get('one-site.lang') || (/^en\b/i.test(navigator.language || '') ? 'en' : 'fr');
   var french = new Map();
   var TITLES = { fr: document.title, en: root.dataset.titleEn || document.title };
 
   function applyLanguage() {
+    if (!altUrl) translatePage();
+    syncPicks();
+    // Le bouton montre la langue vers laquelle on bascule. Les pages de l'Éducation en ont un second
+    // dans le pied de page, pour les téléphones.
+    document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
+      button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
+      button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
+    });
+    updateDownloads();
+    // Pour les textes construits par le script (le formulaire de devis).
+    document.dispatchEvent(new Event('one-lang'));
+  }
+
+  function translatePage() {
     document.querySelectorAll('[data-en]').forEach(function (el) {
       if (!french.has(el)) french.set(el, el.textContent);
       el.textContent = lang === 'en' ? el.dataset.en : french.get(el);
@@ -38,22 +56,17 @@
     });
     root.lang = lang;
     document.title = TITLES[lang];
-    syncPicks();
-    // Le bouton montre la langue vers laquelle on bascule. Les pages de l'Éducation en ont un second
-    // dans le pied de page, pour les téléphones.
-    document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
-      button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
-      button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
-    });
-    updateDownloads();
-    // Pour les textes construits par le script (le formulaire de devis).
-    document.dispatchEvent(new Event('one-lang'));
   }
 
   document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
     button.addEventListener('click', function () {
-      lang = lang === 'en' ? 'fr' : 'en';
-      store.set('one-site.lang', lang);
+      var next = lang === 'en' ? 'fr' : 'en';
+      store.set('one-site.lang', next);
+      if (altUrl) {
+        window.location.href = altUrl + window.location.search + window.location.hash;
+        return;
+      }
+      lang = next;
       applyLanguage();
     });
   });
@@ -80,7 +93,8 @@
       var key = (ready ? 'stateReady' : 'stateSoon') + (lang === 'en' ? 'En' : '');
       label.textContent = label.dataset[key];
       if (ready) {
-        link.href = item[1];
+        // Une adresse du site (l'installateur) part de la racine, même depuis une page anglaise (data-base).
+        link.href = /^(https?:)?\/\//.test(item[1]) ? item[1] : (root.getAttribute('data-base') || '') + item[1];
         link.removeAttribute('aria-disabled');
         link.removeAttribute('tabindex');
         if (item[2]) link.setAttribute('download', '');

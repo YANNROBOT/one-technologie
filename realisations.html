@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="fr" data-title-en="Our work — One Technologie">
+<html lang="fr" data-alt-url="en/realisations.html" data-title-en="Our work: websites and software — One Technologie">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Nos réalisations — One Technologie</title>
-    <meta name="description" content="Les réalisations de One Technologie : sites web, logiciels, applications, identités visuelles, design graphique et vidéo. Chaque projet a sa page, avec les outils utilisés, et nos clients donnent leur avis.">
+    <title>Nos réalisations : sites web et logiciels — One Technologie</title>
+    <meta name="description" content="Les projets de One Technologie, agence digitale à Abidjan : GesSchool, logiciel pour les écoles, et notre site. Pour chacun, ce que nous avons créé et les outils utilisés.">
     <meta name="theme-color" content="#111111">
     <link rel="canonical" href="https://onetechnologie.com/realisations.html">
     <link rel="icon" href="assets/one-mark.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="Nos réalisations — One Technologie">
-    <meta property="og:description" content="Les réalisations de One Technologie : sites web, logiciels, applications, identités visuelles, design graphique et vidéo. Chaque projet a sa page, avec les outils utilisés, et nos clients donnent leur avis.">
+    <meta property="og:title" content="Nos réalisations : sites web et logiciels — One Technologie">
+    <meta property="og:description" content="Les projets de One Technologie, agence digitale à Abidjan : GesSchool, logiciel pour les écoles, et notre site. Pour chacun, ce que nous avons créé et les outils utilisés.">
     <meta property="og:url" content="https://onetechnologie.com/realisations.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="entreprise.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/realisations.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/realisations.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/realisations.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"Réalisations","item":"https://onetechnologie.com/realisations.html"}]},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="company">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -84,7 +92,7 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mvd5vqqs" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mvd7hpz3" width="1280" height="800" alt="" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
@@ -139,7 +147,7 @@
         </div>
         <div class="cases" data-works>
           <article class="case reveal" data-cats="logiciels education">
-            <figure class="case-shot"><img src="assets/captures/admin-presences.jpg?v=mvd5vqqs" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
+            <figure class="case-shot"><img src="assets/captures/admin-presences.jpg?v=mvd7hpz3" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
             <div class="case-info">
               <div class="case-tags"><span data-en="Software and mobile app">Logiciel et application mobile</span><span data-en="One Technologie project">Projet One Technologie</span></div>
               <h3>GesSchool</h3>
@@ -148,7 +156,7 @@
             </div>
           </article>
           <article class="case reveal" data-cats="web design">
-            <figure class="case-shot"><img src="assets/realisations/site-accueil.jpg?v=mvd5vqqs" loading="lazy" alt="Accueil du site de One Technologie." data-en-alt="One Technologie website home page."></figure>
+            <figure class="case-shot"><img src="assets/realisations/site-accueil.jpg?v=mvd7hpz3" loading="lazy" alt="Accueil du site de One Technologie." data-en-alt="One Technologie website home page."></figure>
             <div class="case-info">
               <div class="case-tags"><span data-en="Website">Site web</span><span data-en="One Technologie project">Projet One Technologie</span></div>
               <h3 data-en="One Technologie website">Site de One Technologie</h3>
@@ -362,7 +370,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

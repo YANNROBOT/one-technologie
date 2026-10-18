@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="fr" data-title-en="Frequently asked questions — One Technologie">
+<html lang="fr" data-alt-url="en/faq.html" data-title-en="FAQ: quotes, deadlines, payment — One Technologie">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Questions fréquentes — One Technologie</title>
-    <meta name="description" content="Comment se passe un devis, combien de temps prend un projet, ce que One Technologie livre et comment nous travaillons avec les écoles.">
+    <title>Questions fréquentes : devis, délais, paiement — One Technologie</title>
+    <meta name="description" content="Comment se passe un devis, combien de temps prend un projet, comment payer, l’hébergement, les modifications, et notre travail avec les écoles : les réponses de One Technologie.">
     <meta name="theme-color" content="#111111">
     <link rel="canonical" href="https://onetechnologie.com/faq.html">
     <link rel="icon" href="assets/one-mark.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="Questions fréquentes — One Technologie">
-    <meta property="og:description" content="Comment se passe un devis, combien de temps prend un projet, ce que One Technologie livre et comment nous travaillons avec les écoles.">
+    <meta property="og:title" content="Questions fréquentes : devis, délais, paiement — One Technologie">
+    <meta property="og:description" content="Comment se passe un devis, combien de temps prend un projet, comment payer, l’hébergement, les modifications, et notre travail avec les écoles : les réponses de One Technologie.">
     <meta property="og:url" content="https://onetechnologie.com/faq.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="entreprise.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/faq.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/faq.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"Questions fréquentes","item":"https://onetechnologie.com/faq.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment se passe une demande de devis ?","acceptedAnswer":{"@type":"Answer","text":"Vous décrivez votre projet sur la page « Demander un devis », sur WhatsApp ou par e-mail. Nous revenons vers vous pour préciser le besoin, puis nous vous envoyons un devis qui détaille ce qui sera livré, le délai et le prix."}},{"@type":"Question","name":"Pourquoi n’y a-t-il pas de prix sur le site ?","acceptedAnswer":{"@type":"Answer","text":"Parce qu’aucun projet ne se ressemble : un logo, un site de cinq pages et un logiciel de gestion ne demandent pas le même travail. Le devis vous donne un prix pour votre projet, pas une moyenne."}},{"@type":"Question","name":"Combien de temps prend un projet ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend de son ampleur. Le délai est indiqué dans le devis, et vous suivez l’avancement étape par étape."}},{"@type":"Question","name":"Puis-je demander des modifications ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Vous validez chaque étape importante, et les retouches comprises sont précisées dans le devis."}},{"@type":"Question","name":"Comment se passe le paiement ?","acceptedAnswer":{"@type":"Answer","text":"Les modalités de paiement sont indiquées dans le devis, avant le début du travail."}},{"@type":"Question","name":"Vous occupez-vous de l’hébergement et des adresses e-mail ?","acceptedAnswer":{"@type":"Answer","text":"Oui : nom de domaine, hébergement et adresses e-mail professionnelles peuvent faire partie de votre projet de site."}},{"@type":"Question","name":"Travaillez-vous avec les écoles ?","acceptedAnswer":{"@type":"Answer","text":"Oui, c’est One Technologie Éducation. Son premier logiciel, GesSchool, gère le pointage du personnel par QR code et il est gratuit pour le moment. Nous créons aussi des sites web d’établissement."}}]},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="company">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -84,7 +92,7 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mvd5vqqs" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mvd7hpz3" width="1280" height="800" alt="" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
@@ -130,31 +138,199 @@
         <div class="faq reveal">
           <details open>
             <summary data-en="How does a quote request work?">Comment se passe une demande de devis ?</summary>
-            <p data-en="You describe your project on the “Request a quote” page, on WhatsApp or by e-mail. We come back to you to clarify what is needed, then send you a quote that details what will be delivered, the deadline and the price.">Vous décrivez votre projet sur la page « Demander un devis », sur WhatsApp ou par e-mail. Nous revenons vers vous pour préciser le besoin, puis nous vous envoyons un devis qui détaille ce qui sera livré, le délai et le prix.</p>
+            <div class="faq-a">
+              <p data-en="You describe your project on the “Request a quote” page, on WhatsApp or by e-mail. We come back to you to clarify what is needed, then send you a quote that details what will be delivered, the deadline and the price.">Vous décrivez votre projet sur la page « Demander un devis », sur WhatsApp ou par e-mail. Nous revenons vers vous pour préciser le besoin, puis nous vous envoyons un devis qui détaille ce qui sera livré, le délai et le prix.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g transform="rotate(-6 100 100)">
+    <rect x="52" y="26" width="104" height="150" rx="12" fill="#111111"/>
+    <rect x="46" y="20" width="104" height="150" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="60" y="36" width="52" height="8" rx="4" fill="#111111"/>
+    <rect x="60" y="50" width="30" height="5" rx="2.5" fill="#E9B10A"/>
+    <rect x="60" y="66" width="76" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="80" width="68" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="94" width="76" height="6" rx="3" fill="#DDD5CB"/>
+    <rect x="60" y="108" width="50" height="6" rx="3" fill="#DDD5CB"/>
+    <path d="M60 142q5 -14 10 -2t10 0 10 -4 10 2" fill="none" stroke="#E9B10A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 152H104" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+    <g class="a-pop">
+      <circle cx="128" cy="140" r="15" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="128" cy="140" r="9.5" fill="none" stroke="#111111" stroke-width="2"/>
+      <path d="M121 140l5.5 5.5 10.5 -12" fill="none" stroke="#111111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="rotate(32 164 104)">
+    <rect x="160" y="62" width="15" height="76" rx="6" fill="#111111"/>
+    <rect x="156" y="58" width="15" height="76" rx="6" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="156" y="58" width="15" height="18" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M156 134H171L163.5 151Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M161 145H166L163.5 151Z" fill="#111111"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="Why are there no prices on the site?">Pourquoi n’y a-t-il pas de prix sur le site ?</summary>
-            <p data-en="Because no two projects are alike: a logo, a five-page website and a management software do not ask for the same work. The quote gives you a price for your project, not an average.">Parce qu’aucun projet ne se ressemble : un logo, un site de cinq pages et un logiciel de gestion ne demandent pas le même travail. Le devis vous donne un prix pour votre projet, pas une moyenne.</p>
+            <div class="faq-a">
+              <p data-en="Because no two projects are alike: a logo, a five-page website and a management software do not ask for the same work. The quote gives you a price for your project, not an average.">Parce qu’aucun projet ne se ressemble : un logo, un site de cinq pages et un logiciel de gestion ne demandent pas le même travail. Le devis vous donne un prix pour votre projet, pas une moyenne.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><circle cx="94" cy="106" r="62"/></g>
+    <circle cx="94" cy="106" r="62" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="46" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="30" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="14" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="94" cy="106" r="5" fill="#111111"/>
+  </g>
+  <g class="a-pop">
+    <path d="M98 102 L166 34" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M156 34 L166 20 L170 30 L180 26 L172 42 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="How long does a project take?">Combien de temps prend un projet ?</summary>
-            <p data-en="It depends on its size. The deadline is written in the quote, and you follow the progress step by step.">Cela dépend de son ampleur. Le délai est indiqué dans le devis, et vous suivez l’avancement étape par étape.</p>
+            <div class="faq-a">
+              <p data-en="It depends on its size. The deadline is written in the quote, and you follow the progress step by step.">Cela dépend de son ampleur. Le délai est indiqué dans le devis, et vous suivez l’avancement étape par étape.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 50 l10 -8"/>
+    <path d="M174 74 l13 -1"/>
+    <path d="M160 32 l3 -12"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(8 100 100)">
+    <path d="M78 40 Q78 82 100 100 Q122 82 122 40 Z M78 160 Q78 118 100 100 Q122 118 122 160 Z" fill="#111111" transform="translate(6 6)"/>
+    <path d="M78 40 Q78 82 100 100 Q122 82 122 40 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M78 160 Q78 118 100 100 Q122 118 122 160 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M88 66 Q100 74 112 66 Q108 84 100 92 Q92 84 88 66 Z" fill="#EDE3CF"/>
+    <path d="M82 157 Q86 132 100 128 Q114 132 118 157 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <path d="M100 98 V128" stroke="#DCCDAF" stroke-width="3" stroke-linecap="round"/>
+    <rect x="66" y="166" width="68" height="14" rx="5" fill="#111111"/>
+    <rect x="60" y="22" width="80" height="16" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="60" y="160" width="80" height="16" rx="6" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="Can I ask for changes?">Puis-je demander des modifications ?</summary>
-            <p data-en="Yes. You approve each important step, and the changes included are stated in the quote.">Oui. Vous validez chaque étape importante, et les retouches comprises sont précisées dans le devis.</p>
+            <div class="faq-a">
+              <p data-en="Yes. You approve each important step, and the changes included are stated in the quote.">Oui. Vous validez chaque étape importante, et les retouches comprises sont précisées dans le devis.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 100 110)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="22" y="70" width="148" height="94" rx="12"/></g>
+    <rect x="22" y="70" width="148" height="94" rx="12" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="36" y="82" width="120" height="70" rx="6" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M48 136 Q66 96 88 118 T134 98" fill="none" stroke="#E9B10A" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="134" cy="98" r="4" fill="#111111"/>
+  </g>
+  <g class="a-bob" transform="rotate(38 150 80)">
+    <rect x="144" y="14" width="13" height="84" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="144" y="66" width="13" height="14" fill="#E9B10A" stroke="#111111" stroke-width="2.2"/>
+    <path d="M144 98 H157 L150.5 114 Z" fill="#111111" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="How do I pay?">Comment se passe le paiement ?</summary>
-            <p data-en="The payment terms are written in the quote, before any work starts.">Les modalités de paiement sont indiquées dans le devis, avant le début du travail.</p>
+            <div class="faq-a">
+              <p data-en="The payment terms are written in the quote, before any work starts.">Les modalités de paiement sont indiquées dans le devis, avant le début du travail.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-6 80 100)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="30" y="28" width="76" height="136" rx="14"/></g>
+    <rect x="30" y="28" width="76" height="136" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="58" y="35" width="20" height="5" rx="2.5" fill="#111111"/>
+    <circle cx="68" cy="68" r="14" fill="#E9B10A" stroke="#111111" stroke-width="2.4"/>
+    <path d="M60 69 l5.5 5.5 10.5 -12" fill="none" stroke="#FFFFFD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="44" y="92" width="48" height="10" rx="5" fill="#111111"/>
+    <rect x="50" y="108" width="36" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="44" y="134" width="48" height="16" rx="8" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/>
+  </g>
+  <g class="a-bob">
+    <rect x="114" y="158" width="52" height="11" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><ellipse cx="140" cy="158" rx="26" ry="8" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><rect x="114" y="144" width="52" height="11" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><ellipse cx="140" cy="144" rx="26" ry="8" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><rect x="114" y="130" width="52" height="11" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><ellipse cx="140" cy="130" rx="26" ry="8" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><rect x="114" y="116" width="52" height="11" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/><ellipse cx="140" cy="116" rx="26" ry="8" fill="#EDE3CF" stroke="#111111" stroke-width="2.4"/>
+    <path d="M136 121 V111 H145 M136 116 H143" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="Do you take care of hosting and e-mail addresses?">Vous occupez-vous de l’hébergement et des adresses e-mail ?</summary>
-            <p data-en="Yes: domain name, hosting and professional e-mail addresses can be part of your website project.">Oui : nom de domaine, hébergement et adresses e-mail professionnelles peuvent faire partie de votre projet de site.</p>
+            <div class="faq-a">
+              <p data-en="Yes: domain name, hosting and professional e-mail addresses can be part of your website project.">Oui : nom de domaine, hébergement et adresses e-mail professionnelles peuvent faire partie de votre projet de site.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 60 l-10 -7"/>
+    <path d="M24 84 h-13"/>
+    <path d="M36 40 l-6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><path d="M58 144 C34 144 28 110 50 102 C48 72 80 60 98 76 C108 52 148 56 148 88 C174 90 176 144 148 144 Z"/></g>
+    <path d="M58 144 C34 144 28 110 50 102 C48 72 80 60 98 76 C108 52 148 56 148 88 C174 90 176 144 148 144 Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="102" cy="112" r="21" fill="#E9B10A" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M102 123 V101 M93 109 L102 100 L111 109" fill="none" stroke="#FFFFFD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
           <details>
             <summary data-en="Do you work with schools?">Travaillez-vous avec les écoles ?</summary>
-            <p data-en="Yes, that is One Technologie Éducation. Its first software, GesSchool, handles staff attendance by QR code and is free for now. We also build websites for schools.">Oui, c’est One Technologie Éducation. Son premier logiciel, GesSchool, gère le pointage du personnel par QR code et il est gratuit pour le moment. Nous créons aussi des sites web d’établissement.</p>
+            <div class="faq-a">
+              <p data-en="Yes, that is One Technologie Éducation. Its first software, GesSchool, handles staff attendance by QR code and is free for now. We also build websites for schools.">Oui, c’est One Technologie Éducation. Son premier logiciel, GesSchool, gère le pointage du personnel par QR code et il est gratuit pour le moment. Nous créons aussi des sites web d’établissement.</p>
+              <span class="faq-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M176 70 l10 -6"/>
+    <path d="M180 92 h13"/>
+    <path d="M168 50 l6 -10"/>
+  </g>
+
+  <g class="a-float">
+    <path d="M54 96 H158 V178 H54 Z" fill="#111111" transform="translate(6 6)"/>
+    <path d="M100 18 V44" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M100 18 L122 24 L100 31 Z" fill="#E9B10A" stroke="#111111" stroke-width="2.4" stroke-linejoin="round"/>
+    <rect x="48" y="96" width="104" height="80" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M40 98 L100 52 L160 98 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="80" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.4"/>
+    <path d="M100 74 V80 L104 83" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+    <rect x="62" y="106" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M71 106 V122 M62 114 H80" stroke="#111111" stroke-width="1.6"/>
+    <rect x="62" y="134" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M71 134 V150 M62 142 H80" stroke="#111111" stroke-width="1.6"/>
+    <rect x="120" y="106" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M129 106 V122 M120 114 H138" stroke="#111111" stroke-width="1.6"/>
+    <rect x="120" y="134" width="18" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="2.2"/>
+    <path d="M129 134 V150 M120 142 H138" stroke="#111111" stroke-width="1.6"/>
+    <path d="M90 176 V150 A10 10 0 0 1 110 150 V176 Z" fill="#8A5A12" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="36" y="174" width="128" height="10" rx="4" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+</svg></span>
+            </div>
           </details>
         </div>
       </section>
@@ -224,7 +400,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

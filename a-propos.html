@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr" data-title-en="About — One Technologie">
+<html lang="fr" data-alt-url="en/a-propos.html" data-title-en="About — One Technologie, an Ivorian digital agency">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>À propos — One Technologie</title>
+    <title>À propos — One Technologie, agence digitale ivoirienne</title>
     <meta name="description" content="One Technologie est une entreprise ivoirienne de création numérique fondée en 2026 à Abidjan : sites web, logiciels, applications, vidéo et identité visuelle, et One Technologie Éducation pour les écoles.">
     <meta name="theme-color" content="#111111">
     <link rel="canonical" href="https://onetechnologie.com/a-propos.html">
@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="À propos — One Technologie">
+    <meta property="og:title" content="À propos — One Technologie, agence digitale ivoirienne">
     <meta property="og:description" content="One Technologie est une entreprise ivoirienne de création numérique fondée en 2026 à Abidjan : sites web, logiciels, applications, vidéo et identité visuelle, et One Technologie Éducation pour les écoles.">
     <meta property="og:url" content="https://onetechnologie.com/a-propos.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="entreprise.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/a-propos.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/a-propos.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/a-propos.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"À propos","item":"https://onetechnologie.com/a-propos.html"}]},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="company">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -84,7 +92,7 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mvd5vqqs" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mvd7hpz3" width="1280" height="800" alt="" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
@@ -229,10 +237,87 @@
           <h2 data-en="What guides our work.">Ce qui guide notre travail.</h2>
         </div>
         <div class="values">
-          <article class="value reveal"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="7.6" cy="12.3" r="1.3"/><circle cx="9.7" cy="8.3" r="1.3"/><circle cx="14" cy="7.4" r="1.3"/><circle cx="17.2" cy="10.4" r="1.3"/></g><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.4 0 2-.9 2-1.9 0-1.6 1.1-2.6 2.6-2.6H18a2.5 2.5 0 0 0 2.5-2.5c0-5.5-3.8-10-8.5-10z"/></svg><h3 data-en="Creativity">Créativité</h3><p data-en="Imagining relevant, original solutions, never a copy of the neighbour.">Imaginer des solutions pertinentes et originales, jamais la copie du voisin.</p></article>
-          <article class="value reveal"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M8 12h9v3a5 5 0 0 1-5 5c-1.7 0-3-.7-4-2z"/></g><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v9a5 5 0 0 1-5 5c-2 0-3.5-1-4.6-2.8L4.8 13a1.5 1.5 0 0 1 2.5-1.7L8 12.2"/></svg><h3 data-en="Listening">Écoute</h3><p data-en="Understanding the need before proposing a solution.">Comprendre le besoin avant de proposer une solution.</p></article>
-          <article class="value reveal"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m12 3 2.3 1.6 2.8-.2.9 2.6 2.4 1.5-.8 2.7.8 2.7-2.4 1.5-.9 2.6-2.8-.2L12 21l-2.3-1.6-2.8.2-.9-2.6-2.4-1.5.8-2.7-.8-2.7L6 7l.9-2.6 2.8.2z"/></g><path d="m12 3 2.3 1.6 2.8-.2.9 2.6 2.4 1.5-.8 2.7.8 2.7-2.4 1.5-.9 2.6-2.8-.2L12 21l-2.3-1.6-2.8.2-.9-2.6-2.4-1.5.8-2.7-.8-2.7L6 7l.9-2.6 2.8.2z"/><path d="m8.7 12.2 2.3 2.3 4.3-4.6"/></svg><h3 data-en="Commitment">Engagement</h3><p data-en="Working seriously and openly, and keeping our word on what we agreed.">Travailler avec sérieux et transparence, et tenir ce qui a été convenu.</p></article>
-          <article class="value reveal"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="M3.5 17 9.5 11l4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg><h3 data-en="Innovation">Innovation</h3><p data-en="Using the right tools and technologies for each project.">Utiliser les outils et les technologies qui conviennent à chaque projet.</p></article>
+          <article class="value reveal"><span class="value-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M100 14 v-10"/>
+    <path d="M150 30 l8 -8"/>
+    <path d="M50 30 l-8 -8"/>
+    <path d="M170 74 h12"/>
+    <path d="M30 74 h-12"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><path d="M100 24 C134 24 152 48 152 76 C152 98 136 110 128 124 V138 H72 V124 C64 110 48 98 48 76 C48 48 66 24 100 24 Z"/></g>
+    <path d="M100 24 C134 24 152 48 152 76 C152 98 136 110 128 124 V138 H72 V124 C64 110 48 98 48 76 C48 48 66 24 100 24 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M70 64 Q74 48 88 42" fill="none" stroke="#111111" stroke-width="7.4" stroke-linecap="round"/>
+    <path d="M70 64 Q74 48 88 42" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M84 120 Q84 92 92 92 Q100 92 100 106 Q100 92 108 92 Q116 92 116 120" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="72" y="138" width="56" height="12" rx="4" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="76" y="150" width="48" height="11" rx="4" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="88" y="161" width="24" height="10" rx="5" fill="#111111"/>
+  </g>
+</svg></span><h3 data-en="Creativity">Créativité</h3><p data-en="Imagining relevant, original solutions, never a copy of the neighbour.">Imaginer des solutions pertinentes et originales, jamais la copie du voisin.</p></article>
+          <article class="value reveal"><span class="value-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><path d="M82 36 H164 A12 12 0 0 1 176 48 V94 A12 12 0 0 1 164 106 H160 V124 L140 106 H82 A12 12 0 0 1 70 94 V48 A12 12 0 0 1 82 36 Z"/></g>
+    <path d="M82 36 H164 A12 12 0 0 1 176 48 V94 A12 12 0 0 1 164 106 H160 V124 L140 106 H82 A12 12 0 0 1 70 94 V48 A12 12 0 0 1 82 36 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="86" y="56" width="70" height="7" rx="3.5" fill="#111111"/>
+    <rect x="86" y="70" width="48" height="6" rx="3" fill="#DCCDAF"/>
+    <g transform="translate(6 6)" fill="#111111"><path d="M36 82 H112 A12 12 0 0 1 124 94 V136 A12 12 0 0 1 112 148 H64 L44 166 V148 H36 A12 12 0 0 1 24 136 V94 A12 12 0 0 1 36 82 Z"/></g>
+    <path d="M36 82 H112 A12 12 0 0 1 124 94 V136 A12 12 0 0 1 112 148 H64 L44 166 V148 H36 A12 12 0 0 1 24 136 V94 A12 12 0 0 1 36 82 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="52" cy="115" r="6" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <circle cx="74" cy="115" r="6" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <circle cx="96" cy="115" r="6" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  </g>
+</svg></span><h3 data-en="Listening">Écoute</h3><p data-en="Understanding the need before proposing a solution.">Comprendre le besoin avant de proposer une solution.</p></article>
+          <article class="value reveal"><span class="value-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-6 100 105)">
+    <g transform="translate(6 6)" fill="#111111"><path d="M38 74 H58 A11 11 0 1 1 80 74 H100 V93 A11 11 0 1 1 100 115 V136 H38 Z"/></g>
+    <path d="M38 74 H58 A11 11 0 1 1 80 74 H100 V93 A11 11 0 1 1 100 115 V136 H38 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M46 84 V126" stroke="#C9940A" stroke-width="5" stroke-linecap="round"/>
+    <g class="a-pop">
+      <g transform="translate(9 -7)">
+        <g transform="translate(6 6)" fill="#111111"><path d="M100 74 H162 V136 H142 A11 11 0 1 1 120 136 H100 V115 A11 11 0 1 0 100 93 Z"/></g>
+        <path d="M100 74 H162 V136 H142 A11 11 0 1 1 120 136 H100 V115 A11 11 0 1 0 100 93 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M110 84 H152" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </g>
+    <path d="M104 60 l6 -8 M114 64 l9 -5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg></span><h3 data-en="Commitment">Engagement</h3><p data-en="Working seriously and openly, and keeping our word on what we agreed.">Travailler avec sérieux et transparence, et tenir ce qui a été convenu.</p></article>
+          <article class="value reveal"><span class="value-illu" aria-hidden="true"><svg class="objet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M44 60 l-10 -6"/>
+    <path d="M36 84 h-13"/>
+    <path d="M164 150 l10 6"/>
+    <path d="M172 128 h13"/>
+  </g>
+
+  <g class="a-bob" transform="rotate(35 100 100)">
+    <path d="M86 130 Q100 178 114 130 Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M93 130 Q100 158 107 130 Z" fill="#E9B10A"/>
+    <g transform="translate(6 6)" fill="#111111"><path d="M100 22 C124 42 130 76 128 118 H72 C70 76 76 42 100 22 Z"/></g>
+    <path d="M72 98 L48 132 L72 126 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M128 98 L152 132 L128 126 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M100 22 C124 42 130 76 128 118 H72 C70 76 76 42 100 22 Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M100 22 C112 32 118 44 121 56 H79 C82 44 88 32 100 22 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="82" r="14" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="100" cy="82" r="7" fill="#EDE3CF"/>
+    <rect x="80" y="116" width="40" height="11" rx="3" fill="#8A5A12" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+</svg></span><h3 data-en="Innovation">Innovation</h3><p data-en="Using the right tools and technologies for each project.">Utiliser les outils et les technologies qui conviennent à chaque projet.</p></article>
         </div>
       </section>
 
@@ -301,7 +386,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="fr" data-title-en="GesSchool — Staff attendance by QR code | One Technologie">
+<html lang="fr" data-alt-url="en/gesschool.html" data-title-en="GesSchool — Staff attendance software for schools | One Technologie">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>GesSchool — Le pointage du personnel par QR code | One Technologie</title>
-    <meta name="description" content="GesSchool, le logiciel de pointage du personnel des écoles par QR code : présences, retards et cours non assurés suivis en direct, sur ordinateur et sur téléphone.">
+    <title>GesSchool — Logiciel de pointage du personnel des écoles | One Technologie</title>
+    <meta name="description" content="GesSchool, le logiciel de gestion des présences du personnel des écoles de Côte d’Ivoire : pointage par QR code, retards et cours non assurés en direct, sur ordinateur et téléphone. Gratuit pour le moment.">
     <meta name="theme-color" content="#2d43ed">
     <link rel="canonical" href="https://onetechnologie.com/gesschool.html">
     <link rel="icon" href="assets/one-mark-education.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="GesSchool — Le pointage du personnel par QR code | One Technologie">
-    <meta property="og:description" content="GesSchool, le logiciel de pointage du personnel des écoles par QR code : présences, retards et cours non assurés suivis en direct, sur ordinateur et sur téléphone.">
+    <meta property="og:title" content="GesSchool — Logiciel de pointage du personnel des écoles | One Technologie">
+    <meta property="og:description" content="GesSchool, le logiciel de gestion des présences du personnel des écoles de Côte d’Ivoire : pointage par QR code, retards et cours non assurés en direct, sur ordinateur et téléphone. Gratuit pour le moment.">
     <meta property="og:url" content="https://onetechnologie.com/gesschool.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="style.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="style.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/gesschool.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/gesschool.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/gesschool.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"One Technologie Éducation","item":"https://onetechnologie.com/education.html"},{"@type":"ListItem","position":3,"name":"GesSchool","item":"https://onetechnologie.com/gesschool.html"}]},{"@type":"SoftwareApplication","name":"GesSchool","url":"https://onetechnologie.com/gesschool.html","applicationCategory":"BusinessApplication","operatingSystem":"Windows, Android, iOS","inLanguage":["fr","en"],"description":"Logiciel de gestion des présences du personnel des écoles de Côte d’Ivoire : pointage par QR code, retards et cours non assurés en direct, sur ordinateur et téléphone.","offers":{"@type":"Offer","price":"0","priceCurrency":"XOF"},"publisher":{"@id":"https://onetechnologie.com/#organisation"},"image":"https://onetechnologie.com/assets/captures/admin-presences.jpg"},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="edu">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -99,8 +107,8 @@
           </div>
         </div>
         <div class="stage" data-parallax>
-          <img class="desk" src="assets/captures/admin-accueil.jpg?v=mvd5vqqs" width="2160" height="1350" alt="Accueil du logiciel GesSchool : présents du jour, taux de présence, cours du jour et graphique de la semaine." data-en-alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart.">
-          <img class="hand" src="assets/captures/mobile-accueil.jpg?v=mvd5vqqs" width="780" height="1688" alt="Accueil de l’application sur téléphone : statut du jour et bouton pour scanner." data-en-alt="Phone app home: today’s status and the scan button.">
+          <img class="desk" src="assets/captures/admin-accueil.jpg?v=mvd7hpz3" width="2160" height="1350" alt="Accueil du logiciel GesSchool : présents du jour, taux de présence, cours du jour et graphique de la semaine." data-en-alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart.">
+          <img class="hand" src="assets/captures/mobile-accueil.jpg?v=mvd7hpz3" width="780" height="1688" alt="Accueil de l’application sur téléphone : statut du jour et bouton pour scanner." data-en-alt="Phone app home: today’s status and the scan button.">
           <span class="sticker" aria-hidden="true"><b>07:18</b><i data-en="Arrival recorded">Arrivée enregistrée</i></span>
         </div>
       </section>
@@ -532,7 +540,7 @@
             </li>
           </ol>
           <figure class="device float reveal">
-            <img src="assets/captures/mobile-scan.jpg?v=mvd5vqqs" width="780" height="1688" loading="lazy" alt="Écran de scan de l’application : la caméra en plein écran et un cadre jaune autour du QR code." data-en-alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code.">
+            <img src="assets/captures/mobile-scan.jpg?v=mvd7hpz3" width="780" height="1688" loading="lazy" alt="Écran de scan de l’application : la caméra en plein écran et un cadre jaune autour du QR code." data-en-alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code.">
           </figure>
         </div>
       </section>
@@ -552,7 +560,7 @@
               <li data-en="Attendance by day, week or month.">Présences par jour, par semaine ou par mois.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="assets/captures/admin-accueil.jpg?v=mvd5vqqs" width="2160" height="1350" loading="lazy" alt="Accueil du logiciel avec la carte du jour, le taux de présence et le graphique des présences." data-en-alt="Software home with today’s card, the attendance rate and the attendance chart."></figure>
+          <figure class="shot tilt"><img src="assets/captures/admin-accueil.jpg?v=mvd7hpz3" width="2160" height="1350" loading="lazy" alt="Accueil du logiciel avec la carte du jour, le taux de présence et le graphique des présences." data-en-alt="Software home with today’s card, the attendance rate and the attendance chart."></figure>
         </div>
 
         <div class="feature flip reveal">
@@ -564,7 +572,7 @@
               <li data-en="Search, filters, Excel export and a clean printed sheet, with everyone’s photo.">Recherche, filtres, export Excel et feuille imprimée soignée, avec la photo de chacun.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="assets/captures/admin-presences.jpg?v=mvd5vqqs" width="2160" height="1350" loading="lazy" alt="Page Présences : la liste des employés d’une journée avec leur statut et leurs heures." data-en-alt="Attendance page: the day’s list of employees with their status and times."></figure>
+          <figure class="shot tilt"><img src="assets/captures/admin-presences.jpg?v=mvd7hpz3" width="2160" height="1350" loading="lazy" alt="Page Présences : la liste des employés d’une journée avec leur statut et leurs heures." data-en-alt="Attendance page: the day’s list of employees with their status and times."></figure>
         </div>
 
         <div class="feature reveal">
@@ -576,7 +584,7 @@
               <li data-en="Print a teacher’s timetable, a class’s, or everyone’s at once.">Imprimez l’emploi du temps d’un professeur, d’une classe, ou de tous à la fois.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="assets/captures/admin-emploi-du-temps.jpg?v=mvd5vqqs" width="2160" height="1350" loading="lazy" alt="Emploi du temps d’un professeur : une ligne par créneau, une colonne par jour." data-en-alt="A teacher’s timetable: one row per time slot, one column per day."></figure>
+          <figure class="shot tilt"><img src="assets/captures/admin-emploi-du-temps.jpg?v=mvd7hpz3" width="2160" height="1350" loading="lazy" alt="Emploi du temps d’un professeur : une ligne par créneau, une colonne par jour." data-en-alt="A teacher’s timetable: one row per time slot, one column per day."></figure>
         </div>
 
         <div class="feature flip reveal">
@@ -589,7 +597,7 @@
               <li data-en="Personal QR: each employee has their own code, which management scans on site.">QR personnel : chaque employé a son propre code, que la direction scanne sur place.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="assets/captures/admin-qr-codes.jpg?v=mvd5vqqs" width="2160" height="1350" loading="lazy" alt="Page QR codes : un point de pointage statique et un point dynamique." data-en-alt="QR codes page: one static check-in point and one dynamic."></figure>
+          <figure class="shot tilt"><img src="assets/captures/admin-qr-codes.jpg?v=mvd7hpz3" width="2160" height="1350" loading="lazy" alt="Page QR codes : un point de pointage statique et un point dynamique." data-en-alt="QR codes page: one static check-in point and one dynamic."></figure>
         </div>
       </section>
       <section class="part" id="tout">
@@ -621,19 +629,19 @@
         </div>
         <div class="phones">
           <figure class="phone reveal">
-            <div class="device"><img src="assets/captures/mobile-bienvenue.jpg?v=mvd5vqqs" width="780" height="1688" loading="lazy" alt="Écran de première connexion de l’application." data-en-alt="The app’s first sign-in screen."></div>
+            <div class="device"><img src="assets/captures/mobile-bienvenue.jpg?v=mvd7hpz3" width="780" height="1688" loading="lazy" alt="Écran de première connexion de l’application." data-en-alt="The app’s first sign-in screen."></div>
             <figcaption><h3 data-en="First sign-in">Première connexion</h3><p data-en="The school’s code, then a personal activation code.">Le code de l’établissement, puis un code d’activation personnel.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="assets/captures/mobile-accueil.jpg?v=mvd5vqqs" width="780" height="1688" loading="lazy" alt="Accueil de l’application : statut du jour et semaine." data-en-alt="App home: today’s status and the week."></div>
+            <div class="device"><img src="assets/captures/mobile-accueil.jpg?v=mvd7hpz3" width="780" height="1688" loading="lazy" alt="Accueil de l’application : statut du jour et semaine." data-en-alt="App home: today’s status and the week."></div>
             <figcaption><h3 data-en="The day and the week">Le jour et la semaine</h3><p data-en="Today’s status, the next class and the timetable.">Le statut du jour, le prochain cours et l’emploi du temps.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="assets/captures/mobile-historique.jpg?v=mvd5vqqs" width="780" height="1688" loading="lazy" alt="Historique de l’employé : résumé du mois et détail par jour." data-en-alt="Employee history: monthly summary and daily detail."></div>
+            <div class="device"><img src="assets/captures/mobile-historique.jpg?v=mvd7hpz3" width="780" height="1688" loading="lazy" alt="Historique de l’employé : résumé du mois et détail par jour." data-en-alt="Employee history: monthly summary and daily detail."></div>
             <figcaption><h3 data-en="History">L’historique</h3><p data-en="The month’s summary and every day’s detail.">Le résumé du mois et le détail de chaque jour.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="assets/captures/mobile-direction.jpg?v=mvd5vqqs" width="780" height="1688" loading="lazy" alt="Espace administration sur téléphone : le personnel du jour." data-en-alt="Administration area on the phone: today’s staff."></div>
+            <div class="device"><img src="assets/captures/mobile-direction.jpg?v=mvd7hpz3" width="780" height="1688" loading="lazy" alt="Espace administration sur téléphone : le personnel du jour." data-en-alt="Administration area on the phone: today’s staff."></div>
             <figcaption><h3 data-en="Management in the pocket">La direction dans la poche</h3><p data-en="The head follows the day, scans an employee’s QR code and adds staff from their phone.">Le directeur suit la journée, scanne le QR code d’un employé et ajoute du personnel depuis son téléphone.</p></figcaption>
           </figure>
         </div>
@@ -739,7 +747,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Toute votre école, au même endroit.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

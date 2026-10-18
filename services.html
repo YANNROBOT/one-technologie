@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="fr" data-title-en="Our services — Websites, software, apps, video and design | One Technologie">
+<html lang="fr" data-alt-url="en/services.html" data-title-en="Website, software, logo and video design in Abidjan — One Technologie">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Nos services — Sites web, logiciels, applications, vidéo et design | One Technologie</title>
-    <meta name="description" content="Création de sites web, logiciels sur mesure, applications web et mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale à Abidjan. Demandez un devis à One Technologie.">
+    <title>Création de sites web, logiciels, logos et vidéos à Abidjan — One Technologie</title>
+    <meta name="description" content="Sites web, logiciels sur mesure, applications web et mobiles, logo et charte graphique, design graphique, vidéo et communication digitale à Abidjan, en Côte d’Ivoire. Demandez un devis.">
     <meta name="theme-color" content="#111111">
     <link rel="canonical" href="https://onetechnologie.com/services.html">
     <link rel="icon" href="assets/one-mark.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="Nos services — Sites web, logiciels, applications, vidéo et design | One Technologie">
-    <meta property="og:description" content="Création de sites web, logiciels sur mesure, applications web et mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale à Abidjan. Demandez un devis à One Technologie.">
+    <meta property="og:title" content="Création de sites web, logiciels, logos et vidéos à Abidjan — One Technologie">
+    <meta property="og:description" content="Sites web, logiciels sur mesure, applications web et mobiles, logo et charte graphique, design graphique, vidéo et communication digitale à Abidjan, en Côte d’Ivoire. Demandez un devis.">
     <meta property="og:url" content="https://onetechnologie.com/services.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mvd5vqqs">
+    <link rel="stylesheet" href="entreprise.css?v=mvd7hpz3">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,8 +29,16 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
+      try {
+        var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
+        if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
+      } catch (e) {}
     </script>
-
+    <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/services.html">
+    <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/services.html">
+      <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://onetechnologie.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://onetechnologie.com/services.html"}]},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Création de sites web","serviceType":"Création de sites web","url":"https://onetechnologie.com/services.html#web","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}},{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Logiciels et applications sur mesure","serviceType":"Logiciels et applications sur mesure","url":"https://onetechnologie.com/services.html#logiciels","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}},{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Logo et charte graphique","serviceType":"Logo et charte graphique","url":"https://onetechnologie.com/services.html#identite","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}},{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Design graphique","serviceType":"Design graphique","url":"https://onetechnologie.com/services.html#design","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}},{"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Vidéo","serviceType":"Vidéo","url":"https://onetechnologie.com/services.html#video","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}},{"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Communication digitale","serviceType":"Communication digitale","url":"https://onetechnologie.com/services.html#communication","provider":{"@id":"https://onetechnologie.com/#organisation"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"}}}]},{"@type":"Organization","@id":"https://onetechnologie.com/#organisation","name":"One Technologie","url":"https://onetechnologie.com/","logo":"https://onetechnologie.com/assets/one-mark.svg","image":"https://onetechnologie.com/assets/partage.png","slogan":"L’innovation sans limites.","description":"Agence digitale ivoirienne basée à Abidjan : sites web, logiciels, applications mobiles, logos, chartes graphiques, design graphique, vidéo et communication digitale.","email":"contact@onetechnologie.com","telephone":"+225 01 42 90 58 25","foundingDate":"2026","founder":{"@type":"Person","name":"Konan N’sikan"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"areaServed":{"@type":"Country","name":"Côte d’Ivoire"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+225 01 42 90 58 25","email":"contact@onetechnologie.com","availableLanguage":["French","English"]},"knowsAbout":["Création de sites web","Logiciels et applications sur mesure","Logo et charte graphique","Design graphique","Vidéo","Communication digitale"]}]}</script>
   </head>
   <body class="company">
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
@@ -84,7 +92,7 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mvd5vqqs" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mvd7hpz3" width="1280" height="800" alt="" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
@@ -384,7 +392,7 @@
           <p data-en="Software, apps and websites made for schools: that is One Technologie Éducation.">Logiciels, applications et sites web faits pour les établissements scolaires : c’est One Technologie Éducation.</p>
           <a class="edu-btn" href="education.html"><span data-en="Discover One Technologie Éducation">Découvrir One Technologie Éducation</span><span class="arrow" aria-hidden="true"><svg class="one-icon arrow-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></span></a>
         </div>
-        <figure class="shot"><img src="assets/captures/admin-presences.jpg?v=mvd5vqqs" width="2160" height="1350" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
+        <figure class="shot"><img src="assets/captures/admin-presences.jpg?v=mvd7hpz3" width="2160" height="1350" loading="lazy" alt="Page Présences du logiciel GesSchool." data-en-alt="Attendance page of the GesSchool software."></figure>
       </section>
 
     </main>
@@ -452,7 +460,7 @@
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
 
-    <script src="config.js?v=mvd5vqqs"></script>
-    <script src="script.js?v=mvd5vqqs"></script>
+    <script src="config.js?v=mvd7hpz3"></script>
+    <script src="script.js?v=mvd7hpz3"></script>
   </body>
 </html>

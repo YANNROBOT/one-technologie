@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Deux pièces de puzzle qui s'emboîtent : un accord, un partenariat.">
+  <title>Partenariat — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l9 -9"/>
+    <path d="M178 50 l12 -3"/>
+    <path d="M158 16 l1 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-6 100 105)">
+    <g transform="translate(6 6)" fill="#111111"><path d="M38 74 H58 A11 11 0 1 1 80 74 H100 V93 A11 11 0 1 1 100 115 V136 H38 Z"/></g>
+    <path d="M38 74 H58 A11 11 0 1 1 80 74 H100 V93 A11 11 0 1 1 100 115 V136 H38 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M46 84 V126" stroke="#C9940A" stroke-width="5" stroke-linecap="round"/>
+    <g class="a-pop">
+      <g transform="translate(9 -7)">
+        <g transform="translate(6 6)" fill="#111111"><path d="M100 74 H162 V136 H142 A11 11 0 1 1 120 136 H100 V115 A11 11 0 1 0 100 93 Z"/></g>
+        <path d="M100 74 H162 V136 H142 A11 11 0 1 1 120 136 H100 V115 A11 11 0 1 0 100 93 Z" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M110 84 H152" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </g>
+    <path d="M104 60 l6 -8 M114 64 l9 -5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
