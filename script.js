@@ -525,6 +525,207 @@
     show(1, false);
   })();
 
+  // ---------- Éducation : demande de démonstration (une page) et devis d'un site d'école (fenêtre en trois étapes) ----------
+  // Les deux partent au même serveur que le devis (quoteUrl), qui les transmet par e-mail à One Technologie : les réponses
+  // sont rassemblées en un message, question par question (attribut data-q).
+  // Les fenêtres : un bouton data-open-dialog="<id>" ouvre la fenêtre, data-close-dialog la ferme.
+  [].forEach.call(document.querySelectorAll('[data-open-dialog]'), function (button) {
+    button.addEventListener('click', function () {
+      var dialog = document.getElementById(button.dataset.openDialog);
+      if (dialog && dialog.showModal) dialog.showModal();
+    });
+  });
+  [].forEach.call(document.querySelectorAll('dialog'), function (dialog) {
+    [].forEach.call(dialog.querySelectorAll('[data-close-dialog]'), function (button) {
+      button.addEventListener('click', function () {
+        dialog.close();
+      });
+    });
+    // Un clic sur le voile, autour de la fenêtre, la ferme aussi.
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+
+  [].forEach.call(document.querySelectorAll('form[data-edu-form]'), function (form) {
+    (function () {
+      var kind = form.dataset.eduForm;
+      var steps = [].slice.call(form.querySelectorAll('.edu-step'));
+      var bar = [].slice.call(form.querySelectorAll('.edu-steps-bar li'));
+      var step = 1;
+      var error = form.querySelector('[data-edu-error]');
+      var fallback = form.querySelector('[data-edu-fallback]');
+      var back = form.querySelector('[data-edu-back]');
+      var next = form.querySelector('[data-edu-next]');
+      var body = form.querySelector('.form-body');
+      var done = form.querySelector('[data-edu-done]');
+      var t = function (fr, english) {
+        return lang === 'en' ? english : fr;
+      };
+      var field = function (name) {
+        var input = form.querySelector('[name="' + name + '"]');
+        return input ? input.value.trim() : '';
+      };
+      var showError = function (text) {
+        error.textContent = text;
+        error.hidden = !text;
+      };
+
+      // Ce qu'il manque dans une partie du formulaire (toute la page, ou l'étape affichée).
+      var problemIn = function (zone) {
+        var missing = [].filter.call(zone.querySelectorAll('input[required], textarea[required]'), function (input) {
+          return !input.value.trim();
+        })[0];
+        if (missing) {
+          missing.focus();
+          return t('Remplissez les champs marqués d’un astérisque.', 'Please fill in the fields marked with an asterisk.');
+        }
+        var group = [].filter.call(zone.querySelectorAll('[data-required]'), function (g) {
+          return !g.querySelector('input:checked');
+        })[0];
+        if (group) return t('Choisissez une réponse à chaque question marquée d’un astérisque.', 'Please choose an answer to each question marked with an asterisk.');
+        if (zone.querySelector('[name="phone"]')) {
+          var email = field('email');
+          if (!field('phone') && !email) return t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.');
+          if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.');
+        }
+        return '';
+      };
+
+      // Les réponses, une ligne par question, dans l'ordre du formulaire.
+      var summary = function () {
+        var lines = [form.dataset.subject, ''];
+        [].forEach.call(form.querySelectorAll('[data-q]'), function (q) {
+          var answer;
+          var choices = q.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+          if (choices.length) {
+            answer = [].filter
+              .call(choices, function (input) {
+                return input.checked;
+              })
+              .map(function (input) {
+                return input.parentElement.querySelector('span').textContent.trim();
+              })
+              .join(', ');
+          } else {
+            var input = q.querySelector('input, textarea');
+            answer = input ? input.value.trim() : '';
+          }
+          if (answer) lines.push(q.dataset.q + ' : ' + answer);
+        });
+        return lines.join('\n');
+      };
+      var payload = function () {
+        var deadline = form.querySelector('input[name="deadline"]:checked');
+        return {
+          kind: kind,
+          service: 'education',
+          budget: 'a-discuter',
+          deadline: deadline ? deadline.value : 'souple',
+          name: (field('person') + ' — ' + field('school')).slice(0, 120),
+          phone: field('phone'),
+          email: field('email'),
+          message: summary().slice(0, 4000),
+          website: field('website'),
+          lang: lang,
+        };
+      };
+
+      var labels = function () {
+        if (!next) return;
+        var last = step >= steps.length;
+        next.textContent =
+          kind === 'demonstration' ? t('Demander ma démonstration', 'Request my demo') : last ? t('Envoyer ma demande', 'Send my request') : t('Continuer', 'Continue');
+      };
+      document.addEventListener('one-lang', labels);
+      var show = function (n) {
+        step = n;
+        steps.forEach(function (fieldset, i) {
+          var on = i + 1 === n;
+          fieldset.hidden = !on;
+          fieldset.classList.toggle('enter', on);
+        });
+        bar.forEach(function (item, i) {
+          item.classList.toggle('done', i + 1 < n);
+          item.classList.toggle('on', i + 1 === n);
+        });
+        if (back) back.hidden = n <= 1;
+        var scroller = form.querySelector('.edu-dialog-body');
+        if (scroller) scroller.scrollTop = 0;
+        labels();
+        showError('');
+      };
+      if (back)
+        back.addEventListener('click', function () {
+          show(step - 1);
+        });
+      // Un choix fait disparaître le message d'erreur de sa question.
+      form.addEventListener('change', function () {
+        if (!error.hidden) showError('');
+      });
+
+      // Le même message, prêt à partir par WhatsApp ou par e-mail, si l'envoi direct échoue.
+      var contactText = function () {
+        var v = payload();
+        var lines = [t('Bonjour One Technologie,', 'Hello One Technologie,'), '', v.message, ''];
+        lines.push(t('Nom : ', 'Name: ') + field('person'));
+        if (v.phone) lines.push(t('Téléphone : ', 'Phone: ') + v.phone);
+        if (v.email) lines.push('E-mail : ' + v.email);
+        return lines.join('\n');
+      };
+      [].forEach.call(form.querySelectorAll('[data-send]'), function (button) {
+        button.addEventListener('click', function () {
+          var text = encodeURIComponent(contactText());
+          if (button.dataset.send === 'email') {
+            window.location.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent(form.dataset.subject) + '&body=' + text;
+          } else {
+            window.open('https://wa.me/' + config.whatsapp + '?text=' + text, '_blank', 'noopener');
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var zone = steps.length ? steps[step - 1] : form;
+        var problem = problemIn(zone);
+        if (problem) return showError(problem);
+        if (steps.length && step < steps.length) return show(step + 1);
+        showError('');
+        fallback.hidden = true;
+        next.disabled = true;
+        fetch(config.quoteUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload()) })
+          .then(function (response) {
+            if (response.ok) return null;
+            return response
+              .json()
+              .catch(function () {
+                return {};
+              })
+              .then(function (answer) {
+                throw new Error((lang === 'fr' && answer && answer.error) || t('Votre demande n’a pas pu partir.', 'Your request could not be sent.'));
+              });
+          })
+          .then(function () {
+            body.hidden = true;
+            done.hidden = false;
+            done.focus();
+            if (!form.closest('dialog')) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          })
+          .catch(function (problem) {
+            var offline = problem instanceof TypeError;
+            showError(offline ? t('Votre demande n’a pas pu partir : vérifiez votre connexion internet, puis réessayez.', 'Your request could not be sent: check your internet connection, then try again.') : problem.message);
+            fallback.hidden = false;
+          })
+          .then(function () {
+            next.disabled = false;
+          });
+      });
+
+      if (steps.length) show(1);
+      else labels();
+    })();
+  });
+
   // ---------- Témoignages (page Réalisations) : ceux publiés, et la fenêtre pour en envoyer un ----------
   // Un témoignage envoyé est gardé sur le serveur ; il n'apparaît ici qu'après validation dans l'Espace One Technologie.
   (function () {

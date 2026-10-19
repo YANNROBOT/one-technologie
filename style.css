@@ -1079,15 +1079,16 @@ h3 {
   color: var(--ink-2);
 }
 
+/* Un petit cercle devant chaque point (demandé à la place du trait). */
 .list li::before {
   content: '';
   position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 12px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--blue-text);
+  top: 0.5em;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--blue-text);
+  border-radius: 999px;
 }
 
 .shot {
@@ -1829,6 +1830,7 @@ h3 {
 
 .btn.line {
   border-color: var(--blue);
+  background: transparent;
   color: var(--blue-text);
 }
 
@@ -3846,4 +3848,615 @@ body.edu .logo {
 .i-sun .one-icon {
   width: 19px;
   height: 19px;
+}
+
+/* ---------- Pour les lecteurs d'écran seulement ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Scènes d'objets dessinés (version Éducation de docs/illustrations) ---------- */
+/* Trois objets : un grand au centre, deux petits dans les coins. Ils flottent par les propriétés translate et scale,
+   jamais transform, qui effacerait l'inclinaison écrite dans le dessin. */
+.edu-scene {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.edu-scene .objet {
+  position: absolute;
+  height: auto;
+}
+
+.edu-scene .big {
+  top: 16%;
+  left: 14%;
+  width: 72%;
+}
+
+.edu-scene .sa {
+  top: 0;
+  left: 0;
+  width: 34%;
+}
+
+.edu-scene .sb {
+  right: 0;
+  bottom: 0;
+  width: 36%;
+}
+
+/* Dans le bandeau bleu, un disque clair derrière les objets : leurs parties bleues restent visibles. */
+.hero-scene::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  background: #e9ecfe;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+.hero-illu.edu-scene .objet.big {
+  width: 72%;
+}
+
+.hero-illu.edu-scene .objet.sa {
+  width: 34%;
+}
+
+.hero-illu.edu-scene .objet.sb {
+  width: 36%;
+}
+
+.edu-scene.in .objet .a-float,
+.edu-scene.in .objet .a-bob {
+  animation: edu-obj-float 4.4s ease-in-out infinite;
+}
+
+.edu-scene.in .sa .a-float,
+.edu-scene.in .sa .a-bob {
+  animation-delay: 0.7s;
+}
+
+.edu-scene.in .sb .a-float,
+.edu-scene.in .sb .a-bob {
+  animation-delay: 1.4s;
+}
+
+.edu-scene.in .objet .a-pop {
+  animation: edu-obj-pop 2.6s ease-in-out 0.8s infinite;
+}
+
+@keyframes edu-obj-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+@keyframes edu-obj-pop {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.07;
+  }
+}
+
+/* Hors du bandeau bleu, en thème sombre : un liseré blanc tout autour, comme un autocollant découpé,
+   pour que les traits et l'ombre noirs restent visibles. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .edu-scene:not(.hero-scene) .objet {
+    filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+  }
+}
+
+:root[data-theme='dark'] .edu-scene:not(.hero-scene) .objet {
+  filter: drop-shadow(1.6px 0 0 #f4f4f4) drop-shadow(-1.6px 0 0 #f4f4f4) drop-shadow(0 1.6px 0 #f4f4f4) drop-shadow(0 -1.6px 0 #f4f4f4);
+}
+
+/* ---------- « Un site web pour votre établissement » : une carte en deux colonnes ---------- */
+.site-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(28px, 5vw, 64px);
+  border: 1.5px solid var(--blue);
+  border-radius: 32px;
+  background: var(--surface);
+}
+
+.site-offer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.site-offer-text h2 {
+  max-width: 16ch;
+}
+
+.site-scene {
+  width: min(100%, 340px);
+}
+
+/* ---------- Choix en pastilles (formulaires de l'Éducation) ---------- */
+.edu-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.edu-choices-title {
+  width: 100%;
+  margin-bottom: 2px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.form .edu-chip {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  padding: 9px 15px;
+  border: 1.5px solid var(--hair);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.form .edu-chip:hover {
+  border-color: var(--blue-text);
+}
+
+.form .edu-chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form .edu-chip:has(input:checked) {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.form .edu-chip:has(input:focus-visible) {
+  outline: 2px solid var(--blue-text);
+  outline-offset: 2px;
+}
+
+/* Une case cochée a sa coche, pour ne pas dépendre de la seule couleur. */
+.form .edu-chip:has(input[type='checkbox']:checked)::before {
+  content: '';
+  width: 11px;
+  height: 6px;
+  margin-right: 8px;
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.edu-done-ico {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border: 1.5px solid #212121;
+  border-radius: 20px;
+  background: var(--marker);
+  color: #212121;
+  box-shadow: 5px 6px 0 0 var(--night);
+  transform: rotate(-5deg);
+}
+
+.edu-done-ico .one-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---------- La fenêtre du devis d'un site d'école ---------- */
+.edu-dialog {
+  width: min(680px, calc(100vw - 24px));
+  max-width: none;
+  max-height: min(720px, calc(100dvh - 24px));
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 32px;
+  background: transparent;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.edu-dialog::backdrop {
+  background: rgba(15, 10, 43, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.edu-dialog[open] {
+  animation: edu-dialog-in 380ms var(--ease);
+}
+
+@keyframes edu-dialog-in {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+    scale: 0.97;
+  }
+}
+
+.edu-dialog .edu-form {
+  display: flex;
+  max-height: min(720px, calc(100dvh - 24px));
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.edu-dialog-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
+  padding: 22px 22px 16px;
+  border-bottom: 1px solid var(--hair);
+}
+
+.edu-dialog-head h2 {
+  font-size: clamp(22px, 2.4vw, 26px);
+}
+
+.edu-dialog-head .note {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.edu-dialog-ico {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1.5px solid #212121;
+  border-radius: 15px;
+  background: var(--marker);
+  color: #212121;
+  box-shadow: 3px 4px 0 0 var(--night);
+  transform: rotate(-5deg);
+}
+
+.edu-dialog-ico .one-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.edu-dialog-close {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid var(--hair);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.edu-dialog-close:hover {
+  border-color: var(--blue-text);
+}
+
+.edu-dialog-close .one-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.edu-dialog .form-body {
+  min-height: 0;
+  flex: 1;
+  gap: 0;
+}
+
+.edu-steps-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 14px 22px 4px;
+  list-style: none;
+}
+
+.edu-steps-bar li {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.edu-steps-bar li::before {
+  content: '';
+  display: block;
+  height: 5px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  background: var(--hair);
+  transition: background-color 300ms ease;
+}
+
+.edu-steps-bar li.done::before {
+  background: var(--blue-text);
+}
+
+.edu-steps-bar li.on {
+  color: var(--ink);
+}
+
+.edu-steps-bar li.on::before {
+  background: var(--marker);
+}
+
+.edu-dialog-body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 14px 22px 18px;
+  overflow-y: auto;
+  scrollbar-color: var(--hair) transparent;
+  scrollbar-width: thin;
+}
+
+.edu-dialog-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.edu-dialog-body::-webkit-scrollbar-thumb {
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  background: var(--hair);
+}
+
+.edu-dialog-body::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-text);
+}
+
+.edu-step {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.edu-step[hidden] {
+  display: none;
+}
+
+.edu-step.enter {
+  animation: edu-step-in 400ms var(--ease);
+}
+
+@keyframes edu-step-in {
+  from {
+    opacity: 0;
+    translate: 18px 0;
+  }
+}
+
+.edu-dialog-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 22px 20px;
+  border-top: 1px solid var(--hair);
+}
+
+.edu-dialog-foot [data-edu-back] {
+  margin-right: auto;
+}
+
+.edu-dialog-foot [hidden] {
+  display: none;
+}
+
+.edu-dialog-foot .btn,
+.demo-send .btn {
+  min-height: 48px;
+  padding: 11px 22px;
+  font-size: 16px;
+}
+
+.edu-dialog .form-done {
+  padding: 40px 24px;
+}
+
+/* ---------- Page « Demander une démonstration » ---------- */
+.demo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(20px, 4vw, 48px);
+}
+
+.demo-side {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.demo-side h2 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.demo-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-steps li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.demo-num {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1.5px solid #212121;
+  border-radius: 13px;
+  background: var(--marker);
+  color: #212121;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  box-shadow: 3px 4px 0 0 var(--night);
+  transform: rotate(-4deg);
+}
+
+.demo-steps li:nth-child(even) .demo-num {
+  transform: rotate(4deg);
+}
+
+.demo-steps h3 {
+  font-size: 18px;
+}
+
+.demo-steps p {
+  margin-top: 3px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.demo-free {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--blue-soft);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.demo-free .one-icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--blue-text);
+}
+
+.demo-form .form-body {
+  gap: 16px;
+}
+
+.demo-group {
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--hair);
+  color: var(--blue-text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-send {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.demo-send .form-consent {
+  max-width: 34ch;
+}
+
+@media (max-width: 960px) {
+  .site-offer,
+  .demo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-scene {
+    width: min(70%, 280px);
+    grid-row: 1;
+  }
+
+  .demo-side {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .edu-dialog-head {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 18px 16px 14px;
+  }
+
+  .edu-dialog-ico {
+    display: none;
+  }
+
+  .edu-steps-bar,
+  .edu-dialog-body,
+  .edu-dialog-foot {
+    padding-inline: 16px;
+  }
+
+  .edu-steps-bar li span {
+    display: none;
+  }
+
+  .demo-send .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-scene .objet *,
+  .edu-dialog[open],
+  .edu-step.enter {
+    animation: none !important;
+  }
 }
