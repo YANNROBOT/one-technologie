@@ -1,11 +1,11 @@
 {
-  "version": "0.25.0",
-  "notes": "{\"fr\":[\"Employés : le code d'activation d'une personne pas encore activée se voit dans sa fiche. Il change toutes les 10 minutes.\",\"Fiche d'un employé : choisissez les QR codes qu'il peut scanner (tous, ceux des classes seulement, ou les autres seulement).\",\"QR codes : supprimez plusieurs QR codes à la fois, et créez le QR d'une classe avec l'emplacement de sa salle.\"],\"en\":[\"Employees: the activation code of a person not yet activated shows in their record. It changes every 10 minutes.\",\"Employee record: choose which QR codes they can scan (all, class codes only, or the other codes only).\",\"QR codes: delete several QR codes at once, and create a class QR code with the location of its room.\"]}",
-  "pub_date": "2026-10-21T08:36:06.967Z",
+  "version": "0.26.0",
+  "notes": "{\"fr\":[\"Employés et Présences : un clic sur une personne ouvre sa fiche sous le bandeau de la page, avec sa présence en graphiques. Le bouton « Retour » ramène à la liste.\",\"Photos et logo : le logo se cadre dans un carré et peut s'afficher en entier, sans être coupé. Les images se tournent d'un quart de tour et se recentrent.\"],\"en\":[\"Employees and Attendance: clicking a person opens their record under the page banner, with their attendance in charts. The “Back” button returns to the list.\",\"Photos and logo: the logo is framed in a square and can be shown in full, without being cut. Images can be turned a quarter turn and recentered.\"]}",
+  "pub_date": "2026-10-21T11:23:20.976Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXVTczMxOVl1aGM5NlV6bE95czJ6WFFsWCtvaWRCamkrUytXc01UU3BSMTBhenpucUdGNGlyRFUzam5WMUY3aDBYSkhEbmx3dlp0c3VObkRqTnQvdmdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTcxNzY0CWZpbGU6R2VzU2Nob29sXzAuMjUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNS4wCnp0eWRzbTNOamF4TER3cGJUbWtsRGl3WmZMVE9mVEduWStobzdCMU1KQVBwM2N1MHN4SmZmL0wwM2prR0Y1dGh3bmN1enV5b1ZKbFVPd1BWcWRrY0JBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.25.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWt5MmxBejRMTCtVczdkdFdrY01EcDB1QUluZExackNTVXMxdW5XWjFlTVZmV0JEUzNLeHpmaWpTZHVpdHN6bXZoWGlPTThIaUdFaXRyaElHUmtSUWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTgxNzkzCWZpbGU6R2VzU2Nob29sXzAuMjYuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNi4wCkxicjZvSk9iRXJpRU5xMzhCMkZTeWdPREh4QVYyLzFnd3dBV29id2FGdnNCTjJ5Tm5sUmMzRTIzRHZ2Z3ZlMXBsL2JBVW54UUsvOWJUZ3E0bzdWZUJRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.26.0"
     }
   }
 }
