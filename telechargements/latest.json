@@ -1,11 +1,11 @@
 {
-  "version": "0.26.0",
-  "notes": "{\"fr\":[\"Employés et Présences : un clic sur une personne ouvre sa fiche sous le bandeau de la page, avec sa présence en graphiques. Le bouton « Retour » ramène à la liste.\",\"Photos et logo : le logo se cadre dans un carré et peut s'afficher en entier, sans être coupé. Les images se tournent d'un quart de tour et se recentrent.\"],\"en\":[\"Employees and Attendance: clicking a person opens their record under the page banner, with their attendance in charts. The “Back” button returns to the list.\",\"Photos and logo: the logo is framed in a square and can be shown in full, without being cut. Images can be turned a quarter turn and recentered.\"]}",
-  "pub_date": "2026-10-21T11:23:20.976Z",
+  "version": "0.27.0",
+  "notes": "{\"fr\":[\"Employés et Présences : la fiche d'une personne est plus simple et plus claire. Ses chiffres clés sont en haut, ses journées en petites cases de couleur, et « Désactiver » et « Supprimer » sont en bas de la fiche.\"],\"en\":[\"Employees and Attendance: a person's record is simpler and clearer. Their key figures are at the top, their days in small coloured squares, and “Deactivate” and “Delete” are at the bottom of the record.\"]}",
+  "pub_date": "2026-10-21T23:53:32.603Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWt5MmxBejRMTCtVczdkdFdrY01EcDB1QUluZExackNTVXMxdW5XWjFlTVZmV0JEUzNLeHpmaWpTZHVpdHN6bXZoWGlPTThIaUdFaXRyaElHUmtSUWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTgxNzkzCWZpbGU6R2VzU2Nob29sXzAuMjYuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNi4wCkxicjZvSk9iRXJpRU5xMzhCMkZTeWdPREh4QVYyLzFnd3dBV29id2FGdnNCTjJ5Tm5sUmMzRTIzRHZ2Z3ZlMXBsL2JBVW54UUsvOWJUZ3E0bzdWZUJRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.26.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXVpTmZaWm8wMDdpMHVQSklzQ0EyaTRodmVyV21oM0dUMDcyalExNHNDaWkrVHZESmZwWlNLNFRlVG9jOTJXcFRDaHNyb2pqdk5VM2I3OTlGOEQ4endnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI2ODA1CWZpbGU6R2VzU2Nob29sXzAuMjcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNy4wCmYvSExYcC80Qm9CdlM0a3BteGxDN21CbW1YbDdRNEoxbS9LVkJTcXpWcHVhSHZFY1Q0MFYwUUIwcDBNVTlLN0NKRVRlNm1CVE8zYjhwNGZCaXg5QUNRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.27.0"
     }
   }
 }
