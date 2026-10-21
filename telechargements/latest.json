@@ -1,11 +1,11 @@
 {
-  "version": "0.24.0",
-  "notes": "{\"fr\":[\"QR codes : un QR code peut être rattaché à une classe. Un professeur pointe son cours avec le QR de sa classe ; celui d'une autre classe est refusé. Bouton « Un QR par classe » et impression de toutes les affiches d'un coup.\",\"Impressions refaites : nouvel en-tête sur toutes les feuilles, nouvelle affiche du QR, fiche d'un employé et solde de congés imprimables. Les fichiers Excel ont le même dessin, et les Congés, Fermetures et Horaires s'exportent en Excel.\"],\"en\":[\"QR codes: a QR code can be linked to a class. A teacher clocks a course with their class's QR code; another class's code is refused. “One QR per class” button and all posters printed at once.\",\"Printouts redesigned: new header on every sheet, new QR poster, printable employee record and leave balance. Excel files share the same design, and Leave, Closures and Schedules can be exported to Excel.\"]}",
-  "pub_date": "2026-10-21T06:23:09.938Z",
+  "version": "0.25.0",
+  "notes": "{\"fr\":[\"Employés : le code d'activation d'une personne pas encore activée se voit dans sa fiche. Il change toutes les 10 minutes.\",\"Fiche d'un employé : choisissez les QR codes qu'il peut scanner (tous, ceux des classes seulement, ou les autres seulement).\",\"QR codes : supprimez plusieurs QR codes à la fois, et créez le QR d'une classe avec l'emplacement de sa salle.\"],\"en\":[\"Employees: the activation code of a person not yet activated shows in their record. It changes every 10 minutes.\",\"Employee record: choose which QR codes they can scan (all, class codes only, or the other codes only).\",\"QR codes: delete several QR codes at once, and create a class QR code with the location of its room.\"]}",
+  "pub_date": "2026-10-21T08:36:06.967Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWt4a2djSjJOSWdFQU1lN05URHFOOTM4NzRKT1Zid3grMWdGVWdWYnRYaGVpZ3ZxVlFCR2diTnZ2ak1kM01Ia3lZWjg2aWJQb2paOTNvUVlJS0R3dHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTYzNzg3CWZpbGU6R2VzU2Nob29sXzAuMjQuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNC4wCjg1bWVLdkV5OGt1MlZBRms3ejJUNVhVTlJqZWJ0UzZLLzFJV2pxeit6Skg3TW1QS2Z4amlQVnJmYnFIUmFzRzJMM0hpL2RtWFgxc0N5V3VUN24vN0F3PT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.24.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXVTczMxOVl1aGM5NlV6bE95czJ6WFFsWCtvaWRCamkrUytXc01UU3BSMTBhenpucUdGNGlyRFUzam5WMUY3aDBYSkhEbmx3dlp0c3VObkRqTnQvdmdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTcxNzY0CWZpbGU6R2VzU2Nob29sXzAuMjUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNS4wCnp0eWRzbTNOamF4TER3cGJUbWtsRGl3WmZMVE9mVEduWStobzdCMU1KQVBwM2N1MHN4SmZmL0wwM2prR0Y1dGh3bmN1enV5b1ZKbFVPd1BWcWRrY0JBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.25.0"
     }
   }
 }
