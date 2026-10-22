@@ -1,11 +1,11 @@
 {
-  "version": "0.27.0",
-  "notes": "{\"fr\":[\"Employés et Présences : la fiche d'une personne est plus simple et plus claire. Ses chiffres clés sont en haut, ses journées en petites cases de couleur, et « Désactiver » et « Supprimer » sont en bas de la fiche.\"],\"en\":[\"Employees and Attendance: a person's record is simpler and clearer. Their key figures are at the top, their days in small coloured squares, and “Deactivate” and “Delete” are at the bottom of the record.\"]}",
-  "pub_date": "2026-10-21T23:53:32.603Z",
+  "version": "0.27.1",
+  "notes": "{\"fr\":[\"Fiche d'un employé : les actions (téléphone, code d'activation, désactiver, supprimer) sont en haut, à côté de « Modifier ». Une carte « Mois » permet de choisir le mois à afficher.\",\"Présences, vue Période : un clic sur une personne ouvre sa fiche sous le bandeau, comme pour une journée.\"],\"en\":[\"Employee record: the actions (phone, activation code, deactivate, delete) are at the top, next to “Edit”. A “Month” card lets you choose the month to show.\",\"Attendance, Period view: clicking a person opens their record under the banner, as for a single day.\"]}",
+  "pub_date": "2026-10-22T03:25:43.045Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXVpTmZaWm8wMDdpMHVQSklzQ0EyaTRodmVyV21oM0dUMDcyalExNHNDaWkrVHZESmZwWlNLNFRlVG9jOTJXcFRDaHNyb2pqdk5VM2I3OTlGOEQ4endnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI2ODA1CWZpbGU6R2VzU2Nob29sXzAuMjcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNy4wCmYvSExYcC80Qm9CdlM0a3BteGxDN21CbW1YbDdRNEoxbS9LVkJTcXpWcHVhSHZFY1Q0MFYwUUIwcDBNVTlLN0NKRVRlNm1CVE8zYjhwNGZCaXg5QUNRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.27.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWcxL1duMDZpakNPMVlubjd2ZXduVUR0L3luUkVmTmI0NHhVcnBPYUhpRXZHYUE3L2hGS2tLeXVyNEFOVkNocW0wdzdKbnpVd2xDV2oxUU9WakYwUkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjM5NTQxCWZpbGU6R2VzU2Nob29sXzAuMjcuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yNy4xCkxHQThjRU5Xcmw1UkM3L2J5aFFnM0J3eEtucEVXZXVYVkQ4cmxtdmd4a091bCtwMWM1UnRUVHJNSDJzYXJGaDgvYnJ3MEFVY1hnMUc0V0syNTVDV0JRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.27.1"
     }
   }
 }
