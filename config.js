@@ -9,8 +9,6 @@ window.ONE_SITE = {
   quoteUrl: 'https://gesschool.onetechnologie.com/api/public/quote',
   // Les témoignages : lus et envoyés sur le même serveur, publiés seulement après validation dans l'Espace One Technologie.
   testimonialsUrl: 'https://gesschool.onetechnologie.com/api/public/testimonials',
-  // L'Assistant One : il lit les réponses publiées par l'équipe et lui envoie les questions qu'il ne sait pas traiter.
-  assistantUrl: 'https://gesschool.onetechnologie.com/api/public/assistant',
   // Adresse et numéro proposés si l'envoi direct échoue.
   email: 'contact@onetechnologie.com',
   whatsapp: '2250142905825',
