@@ -1,11 +1,11 @@
 {
-  "version": "0.29.0",
-  "notes": "{\"fr\":[\"Nouveau logo de GesSchool : icône du logiciel, écran de démarrage et rubrique À propos.\"],\"en\":[\"New GesSchool logo: software icon, startup screen and About section.\"]}",
-  "pub_date": "2026-11-01T00:51:35.630Z",
+  "version": "0.30.0",
+  "notes": "{\"fr\":[\"Sécurité : le code d’activation passe à 8 chiffres, et les comptes en lecture seule ne voient plus les QR codes ni les codes d’activation.\",\"Paramètres → Pointage : un réglage permet de refuser les pointages faits sans connexion.\"],\"en\":[\"Security: the activation code now has 8 digits, and read-only accounts no longer see QR codes or activation codes.\",\"Settings → Check-in: a setting lets you refuse check-ins made offline.\"]}",
+  "pub_date": "2026-11-01T19:28:31.639Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWt2QU5CUGgyQUhyYkNMUU94WW5QYVJOYVlydGxzd093NHpzYW10UC95WnNMcUNDU0tyZVB5MXVWSHpIY3NjTWhrWXpJUlFhYXZEamxVVTlJYW05TmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNDk0Mjk0CWZpbGU6R2VzU2Nob29sXzAuMjkuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yOS4wCitjazZ2c1kvbnNYeXZDajNVQXp5c1QrZzJoMHBldkdLNmRoMXlBVjgvSEJNM2E2NWtKTXZ5Z05TL243SjFYVFBsbkw0M09WV1ZTZFRkcVhhUXY2bERRPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.29.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWp4V3cwZU1hT2tQUUYzWTltRHByKy9VR0ZidmtKckFOMWgyUFJMRUJCVURpb3dIaE5OOXJicHMrZXFwbVVCc2JBbmZQNGRUeHoxNkZGV2dsWThEM0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTYxMzEwCWZpbGU6R2VzU2Nob29sXzAuMzAuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMC4wClRpOFhPeVdtWlJSUTdYZk41V3RpdiszVFdpVmhGVFI2VGI3eFVXTW5BT01oL1VQWitMeWJoaWRMQjNUVW92VFY0VDlUK2dIYWJrK080M0c4K0pVYkJBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.30.0"
     }
   }
 }
