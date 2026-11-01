@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une personne sur une échelle remet en place les chiffres 404 ; le dernier 4 est tombé.">
+  <title>Page introuvable — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M186 22 l8 -7"/>
+    <path d="M192 44 l8 -1"/>
+    <path d="M184 98 l9 4"/>
+  </g>
+  <g fill="none" stroke="#111111" stroke-width="2"><circle cx="20" cy="70" r="3.5"/><circle cx="118" cy="146" r="3"/></g>
+  <rect x="84" y="14" width="96" height="74" rx="8" fill="#F0F0F0" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <g class="" transform="translate(96 26) rotate(-6 17 22) scale(1.1)"><path d="M18 0H28V28H34V37H28V44H19V37H0V29ZM19 14V28H9Z" transform="translate(4 4)" fill="#111111" fill-rule="evenodd"/><path d="M18 0H28V28H34V37H28V44H19V37H0V29ZM19 14V28H9Z" fill="#E9B10A" fill-rule="evenodd" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/></g>
+  <g transform="translate(140 24) rotate(4 15 22) scale(1.1)"><path d="M15 0a15 15 0 0 1 15 15v14a15 15 0 0 1 -30 0v-14a15 15 0 0 1 15 -15ZM15 9a6 6 0 0 0 -6 6v14a6 6 0 0 0 12 0v-14a6 6 0 0 0 -6 -6Z" transform="translate(4 4)" fill="#111111" fill-rule="evenodd"/><path d="M15 0a15 15 0 0 1 15 15v14a15 15 0 0 1 -30 0v-14a15 15 0 0 1 15 -15ZM15 9a6 6 0 0 0 -6 6v14a6 6 0 0 0 12 0v-14a6 6 0 0 0 -6 -6Z" fill="#E9B10A" fill-rule="evenodd" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/></g>
+  <g class="a-bob" transform="translate(136 106) rotate(28 17 22) scale(0.95)"><path d="M18 0H28V28H34V37H28V44H19V37H0V29ZM19 14V28H9Z" transform="translate(4 4)" fill="#111111" fill-rule="evenodd"/><path d="M18 0H28V28H34V37H28V44H19V37H0V29ZM19 14V28H9Z" fill="#E9B10A" fill-rule="evenodd" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/></g>
+  <g stroke="#111111" stroke-width="3.5" stroke-linecap="round"><path d="M42 46H66"/><path d="M42 64H66"/><path d="M42 82H66"/><path d="M42 100H66"/><path d="M42 118H66"/><path d="M42 136H66"/><path d="M42 30V156M66 30V156"/></g>
+  <path d="M50 152L52 124H66L64 152Z" fill="#8A5A12" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/><path d="M70 136L72 124H86L86 136Z" fill="#8A5A12" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="57" cy="153" rx="9" ry="4" fill="#111111"/><ellipse cx="80" cy="137" rx="9" ry="4" fill="#111111"/>
+  <rect x="62" y="70" width="16" height="22" rx="4" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M46 128V108Q48 90 62 86H78Q92 90 94 108V128Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M70 92V128" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="53" cy="62" r="5.5" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/><circle cx="87" cy="62" r="5.5" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="70" cy="58" rx="17" ry="19" fill="#111111" stroke="#111111" stroke-width="3"/>
+  <path d="M88 98Q100 84 104 66" fill="none" stroke="#111111" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 98Q100 84 104 66" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="104" cy="64" r="6.5" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M50 100Q40 108 44 118" fill="none" stroke="#111111" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 100Q40 108 44 118" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="43" cy="119" r="6.5" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M18 156H186" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+</svg>

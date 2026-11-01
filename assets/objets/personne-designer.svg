@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une designer dessine au stylet sur une tablette graphique posée sur le bureau.">
+  <title>Designer sur sa tablette — One Technologie</title>
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M186 30 l9 -6"/>
+    <path d="M178 14 l3 -10"/>
+    <path d="M20 40 l-8 -6"/>
+  </g>
+  <g fill="none" stroke="#111111" stroke-width="2"><circle cx="24" cy="96" r="3.5"/><circle cx="186" cy="150" r="3"/></g>
+  <path d="M136 122l-6 28h28l-6 -28Z" fill="#F0F0F0" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <g class="a-float" transform="rotate(-6 142 98)">
+    <rect x="110" y="66" width="74" height="60" rx="9" fill="#111111"/>
+    <rect x="104" y="60" width="74" height="60" rx="9" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="112" y="68" width="58" height="44" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M120 100q8 -22 18 -8t20 -14" fill="none" stroke="#E9B10A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="160" cy="80" r="4" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+  </g>
+  <path d="M41 100Q33 72 42 54Q62 36 82 54Q91 72 83 100Q74 103 68 90H56Q50 103 41 100Z" fill="#111111" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="54" y="84" width="16" height="24" rx="4" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M25 152V130Q27 110 51 104H73Q97 110 99 130V152Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M52 104L62 117L72 104" fill="none" stroke="#111111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="62" cy="70" rx="17" ry="19" fill="#B97A56" stroke="#111111" stroke-width="3"/>
+  <path d="M44 72Q43 48 62 49Q81 48 80 72Q74 59 65 58Q55 64 44 72Z" fill="#111111" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="57" cy="73.5" r="1.9" fill="#111111"/><circle cx="72" cy="73.5" r="1.9" fill="#111111"/>
+  <path d="M51 64q4 -2.5 8 0M66 64q4 -2.5 8 0" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 82q4.5 3.5 9 0" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 122Q106 124 116 108" fill="none" stroke="#111111" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 122Q106 124 116 108" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M116 108L130 88" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+  <path d="M116 108L129 90" stroke="#E9B10A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="116" cy="109" r="6.5" fill="#B97A56" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M18 151H186" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+  <g transform="rotate(-8 34 140)"><path d="M28 134l-4 -16M34 134v-18M40 134l5 -15" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="117" r="3" fill="#E9B10A" stroke="#111111" stroke-width="2"/><circle cx="45" cy="118" r="3" fill="#8A5A12" stroke="#111111" stroke-width="2"/><path d="M22 150l2 -16h20l2 16Z" fill="#EDE3CF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/></g>
+</svg>

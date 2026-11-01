@@ -326,6 +326,22 @@ main {
   padding: clamp(30px, 5vw, 64px) clamp(22px, 5vw, 64px) 0;
 }
 
+/* Le logo GesSchool sur son étiquette blanche : le bleu de son S ne se lirait pas sur le bandeau. */
+.product-logo {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: #fff;
+  line-height: 0;
+}
+
+.product-logo svg {
+  display: block;
+  width: 190px;
+  height: auto;
+}
+
 .cover-text {
   display: flex;
   flex-direction: column;
