@@ -1,11 +1,11 @@
 {
-  "version": "0.30.0",
-  "notes": "{\"fr\":[\"Sécurité : le code d’activation passe à 8 chiffres, et les comptes en lecture seule ne voient plus les QR codes ni les codes d’activation.\",\"Paramètres → Pointage : un réglage permet de refuser les pointages faits sans connexion.\"],\"en\":[\"Security: the activation code now has 8 digits, and read-only accounts no longer see QR codes or activation codes.\",\"Settings → Check-in: a setting lets you refuse check-ins made offline.\"]}",
-  "pub_date": "2026-11-01T19:28:31.639Z",
+  "version": "0.31.0",
+  "notes": "{\"fr\":[\"Sécurité renforcée : le logiciel n’exécute plus que son propre code et n’écrit plus que là où vous l’avez choisi. Rien ne change à l’écran.\"],\"en\":[\"Stronger security: the software only runs its own code and only writes where you chose. Nothing changes on screen.\"]}",
+  "pub_date": "2026-11-02T08:35:32.389Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOWp4V3cwZU1hT2tQUUYzWTltRHByKy9VR0ZidmtKckFOMWgyUFJMRUJCVURpb3dIaE5OOXJicHMrZXFwbVVCc2JBbmZQNGRUeHoxNkZGV2dsWThEM0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTYxMzEwCWZpbGU6R2VzU2Nob29sXzAuMzAuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMC4wClRpOFhPeVdtWlJSUTdYZk41V3RpdiszVFdpVmhGVFI2VGI3eFVXTW5BT01oL1VQWitMeWJoaWRMQjNUVW92VFY0VDlUK2dIYWJrK080M0c4K0pVYkJBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.30.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXNhdGpyWTVnVEJ6YXIzYklQQlIzSDVNUzRTZ0M0MDFDTTFnbngvMXF5dDlIbWtnSUloZEwzN1llcExJcG0wSnRlUDhaNXZ4UTlNN2RjRERQSWpTRHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjA4NTMxCWZpbGU6R2VzU2Nob29sXzAuMzEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMS4wCkJxS2MwdVV4MERPWk9OK3kraEp1aUhxc040VFFVb1FqeHpCK3J0aHUxNU9kV1UzeDVkK3NZeXI5NU00aVcvY0lEY1dLV3VvdHpiSllLS3dTLzcrQ0RRPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.31.0"
     }
   }
 }
