@@ -1,11 +1,11 @@
 {
-  "version": "0.34.0",
-  "notes": "{\"fr\":[\"Une demande d’inscription faite depuis un téléphone apparaît aussitôt : un rond bleu au bout de l’horloge du menu, sur toutes les pages, et un message.\",\"La taille d’affichage de base est maintenant « Petit » (80 %). Elle se change dans Paramètres → Préférences.\",\"Nouvelles bulles d’aide au survol des boutons.\",\"Les noms s’écrivent en majuscules et les prénoms avec une capitale, quelle que soit la saisie.\",\"Logo GesSchool : un peu plus d’écart entre les deux S.\",\"Nouvelle fenêtre « Inscription par téléphone » : le code dans une carte bleue, les demandes à côté.\"],\"en\":[\"A registration request sent from a phone shows up right away: a blue circle at the end of the menu clock, on every page, and a message.\",\"The default display size is now “Small” (80%). Change it in Settings → Preferences.\",\"New tooltips when hovering over buttons.\",\"Last names are written in capitals and first names with a capital letter, however they were typed.\",\"GesSchool logo: a little more space between the two S letters.\",\"New “Phone registration” window: the code on a blue card, with the requests beside it.\"]}",
-  "pub_date": "2026-11-04T12:31:33.174Z",
+  "version": "0.35.0",
+  "notes": "{\"fr\":[\"Paramètres → Support : le kit d’essai, avec le guide de démarrage, la fiche « Pointer avec GesSchool » pour le personnel et le questionnaire de fin d’essai, à lire ou à imprimer.\"],\"en\":[\"Settings → Support: the trial kit, with the getting started guide, the “Checking in with GesSchool” sheet for staff and the end-of-trial questionnaire, to read or print.\"]}",
+  "pub_date": "2026-11-04T15:08:29.493Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW0zb29VMkc1UmFudlFwUDczcnFweFdSYlFTYWpSQTNRYURCWjdReWdNaHhycTkwY25wVU5reE1KWHNSWFdzeERrN0RKTEhWQWJlbi9EWWNvV2JHMUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzk1NDg4CWZpbGU6R2VzU2Nob29sXzAuMzQuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zNC4wCkllQ0szOXhwSnEzK0hsdjRnZWloSy93UndQTDdqOGcwNC9IaE5mRkY3TS9FclFIaU52amhqNFBkVStZV0F2TUVKVWZzcWNlNWphdDFaQ21wWlBFREFnPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.34.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW45Sm5SWmpVbHRnQXk5aWpTWDlSMEdZNFdndTBzL2x5WXFnNmN3WmwrWXg2QlJidU1ueUdQdzNZQUZ2TVVrZlNpL3R6KzQ1ckxHYS9LTXlYZC9xZ0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODA0OTA3CWZpbGU6R2VzU2Nob29sXzAuMzUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zNS4wCmEvUmpmUmZ6UWlqalBoTmx5ZENDZXh5bDVCM3RsOWhqOWxjM3F3RUYxc2JGM0hCeFVmOEZxai9kOS9MVC9OR0tWcHc2TDQyMHdVd0I1VmxqdDJBVERBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.35.0"
     }
   }
 }
