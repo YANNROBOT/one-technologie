@@ -1,11 +1,11 @@
 {
-  "version": "0.35.0",
-  "notes": "{\"fr\":[\"Paramètres → Support : le kit d’essai, avec le guide de démarrage, la fiche « Pointer avec GesSchool » pour le personnel et le questionnaire de fin d’essai, à lire ou à imprimer.\"],\"en\":[\"Settings → Support: the trial kit, with the getting started guide, the “Checking in with GesSchool” sheet for staff and the end-of-trial questionnaire, to read or print.\"]}",
-  "pub_date": "2026-11-04T15:08:29.493Z",
+  "version": "0.36.0",
+  "notes": "{\"fr\":[\"Nouveau menu du clic droit : copier, coller, revenir en arrière, actualiser, changer la taille de l’affichage.\",\"Kit d’essai : des captures du logiciel et de l’application dans le guide et la fiche du personnel.\",\"Nouvelle affiche du QR code « Pointez ici » : l’emplacement et l’école dans un bloc bleu, les gestes en bas. Le code de l’établissement n’y est plus écrit.\"],\"en\":[\"New right-click menu: copy, paste, go back, refresh, change the display size.\",\"Trial kit: screenshots of the software and the app in the guide and the staff sheet.\",\"New “Check in here” QR code poster: the location and the school in a blue block, the steps below. The school code is no longer printed on it.\"]}",
+  "pub_date": "2026-11-04T17:23:52.504Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW45Sm5SWmpVbHRnQXk5aWpTWDlSMEdZNFdndTBzL2x5WXFnNmN3WmwrWXg2QlJidU1ueUdQdzNZQUZ2TVVrZlNpL3R6KzQ1ckxHYS9LTXlYZC9xZ0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODA0OTA3CWZpbGU6R2VzU2Nob29sXzAuMzUuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zNS4wCmEvUmpmUmZ6UWlqalBoTmx5ZENDZXh5bDVCM3RsOWhqOWxjM3F3RUYxc2JGM0hCeFVmOEZxai9kOS9MVC9OR0tWcHc2TDQyMHdVd0I1VmxqdDJBVERBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.35.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW5rV1dIK0xGMFpiWkUxZ0RDT01XUkVqaUdhOFNJbElVT0dMV3gxZDJEaWVZSEE2THl4c0I0T01CdXhNNzlkcnJnTVJPUjYwWjJsUVkxd2d5eGxBZndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODEzMDMxCWZpbGU6R2VzU2Nob29sXzAuMzYuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zNi4wCko3S0NjVnEvSjZNSkFKak9jclFNWnBKL2RlS2h0emRQSVpKM2lFWWp3Q2JXKzRKOFAwa0JHT0swU2krMWtXMlBUNlFkdEpMcW5TZXIxd0pZNnp0WUR3PT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.36.0"
     }
   }
 }
