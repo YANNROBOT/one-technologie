@@ -1,11 +1,11 @@
 {
-  "version": "0.32.1",
-  "notes": "{\"fr\":[\"Le logo GesSchool (« GS ») remplace celui de One Technologie dans la barre du haut.\"],\"en\":[\"The GesSchool logo (“GS”) replaces the One Technologie logo in the top bar.\"]}",
-  "pub_date": "2026-11-04T08:32:32.762Z",
+  "version": "0.33.0",
+  "notes": "{\"fr\":[\"Le logo GesSchool remplace celui de One Technologie sur les pages de connexion, d’inscription et du code reçu par e-mail.\"],\"en\":[\"The GesSchool logo replaces the One Technologie logo on the sign-in, sign-up and email code pages.\"]}",
+  "pub_date": "2026-11-04T09:17:08.185Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXU2aFl5eVFhL2FSQ3dDSzBLUEJqaUU2TTJsSFBVRnVNa3B3Y2M1RkZnUVdLZ2J5VUdkR0hTNE5WOEFrMFY5Z1Uyemd3emJaa3Rvc0lhRmV6MklFdUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzgxMTUyCWZpbGU6R2VzU2Nob29sXzAuMzIuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMi4xCkxmZkhURmtNVmhwYzJIRlZIa2JhVytwRlBxTjJsNGlqcU5qV25rdXladjZqd3FYL2dMTkpzbTVXK3kxbzFHKzlsZGRxLzA1UVJGUERtQ3IrMHc4d0NnPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.32.1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXRSS2lXRWZLOTFIckF0RzBaMlZsdWxZaHczZXdncSsrVjF3aGhzbXhGK3BRRWVjTS9NdjI0R2VIMEFRYkE2VE9qVkt3MEp5K2ZpcTVSL3ZGU3NoQkFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzgzODE0CWZpbGU6R2VzU2Nob29sXzAuMzMuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMy4wCnBnNTVzZTBVRFFCc256a2ZJNEJoU0VlSzFKcHVNNW9hQWZOVmdjRFNCRWZ6bEhJNkcwdWNGWlFEWDlKQ3ptT3VmdGdreHZ6K2hyMWpEcXZxZ3BIdURBPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.33.0"
     }
   }
 }
