@@ -1,11 +1,11 @@
 {
-  "version": "0.32.0",
-  "notes": "{\"fr\":[\"Inscription par téléphone : page Employés, bouton à l’icône de téléphone. Ouvrez un code d’invitation et son QR code pour quelques jours, imprimez l’affiche, puis validez les demandes du personnel.\"],\"en\":[\"Phone sign-up: Employees page, phone icon button. Open an invitation code and its QR code for a few days, print the poster, then confirm staff requests.\"]}",
-  "pub_date": "2026-11-04T07:05:14.345Z",
+  "version": "0.32.1",
+  "notes": "{\"fr\":[\"Le logo GesSchool (« GS ») remplace celui de One Technologie dans la barre du haut.\"],\"en\":[\"The GesSchool logo (“GS”) replaces the One Technologie logo in the top bar.\"]}",
+  "pub_date": "2026-11-04T08:32:32.762Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9LTWxXejJWVDFmZ3BvMTgxUVh0ZlRhQlEwZEo1UnVQc05zelByeHpEVi8rUXM3V1lUaU13YkYxU0RkbEJQMGJEdnFZOHM1NHcvaUVzTVdmc2Q5N2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzc1OTEzCWZpbGU6R2VzU2Nob29sXzAuMzIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMi4wCm9aK0tGY1FURjVXQ2p2STN3MTZWMld6aWdJcE0wNXJwQXkxVUdnU0hDMWJpU3l0KzRValI2UlpSMGYvRlZEN0J0b2FQcjNEOUk2b2xEbWVpbngvQ0FnPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.32.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXU2aFl5eVFhL2FSQ3dDSzBLUEJqaUU2TTJsSFBVRnVNa3B3Y2M1RkZnUVdLZ2J5VUdkR0hTNE5WOEFrMFY5Z1Uyemd3emJaa3Rvc0lhRmV6MklFdUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzgxMTUyCWZpbGU6R2VzU2Nob29sXzAuMzIuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zMi4xCkxmZkhURmtNVmhwYzJIRlZIa2JhVytwRlBxTjJsNGlqcU5qV25rdXladjZqd3FYL2dMTkpzbTVXK3kxbzFHKzlsZGRxLzA1UVJGUERtQ3IrMHc4d0NnPT0K",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.32.1"
     }
   }
 }
