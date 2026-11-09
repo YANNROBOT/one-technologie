@@ -4476,3 +4476,11 @@ body.edu .logo {
     animation: none !important;
   }
 }
+
+/* ---------- Grands écrans (9 novembre 2026) : la page prend toute la largeur ----------
+   Au-delà de 1 440 px, la page s'élargit avec l'écran (moins une marge de chaque côté) au lieu de s'arrêter à 1 180 px. */
+@media (min-width: 1440px) {
+  :root {
+    --page: calc(100vw - 140px);
+  }
+}

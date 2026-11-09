@@ -6980,3 +6980,20 @@ body.company .top .pill-btn.edu-pill .arrow {
     animation: none;
   }
 }
+
+/* ---------- Grands écrans (9 novembre 2026) : les grandes cartes prennent toute la largeur ----------
+   Au-delà de 1 440 px, les sections remplissent l'écran (moins la marge du bord) au lieu de s'arrêter à 1 380 px,
+   et la colonne de texte s'élargit avec l'écran, jusqu'à 1 600 px pour garder des lignes lisibles. */
+@media (min-width: 1440px) {
+  :root {
+    --wide: 100%;
+    --text: clamp(1140px, 72vw, 1600px);
+  }
+  .hero-platine {
+    width: 100%;
+  }
+  /* La barre du haut grandit un peu avec l'écran : 1 080 px jusqu'à 1 920 px de large, environ 1 430 px à 2 560. */
+  body.company .top {
+    width: min(100%, max(1080px, 56vw));
+  }
+}
