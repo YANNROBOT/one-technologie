@@ -341,16 +341,17 @@
     });
   }
 
-  // ---------- Demande de devis : quatre étapes, puis l'envoi au serveur, qui la transmet par e-mail à One Technologie ----------
-  // Dans sa propre fonction : ses noms (steps, stage, next…) ne doivent pas croiser ceux des autres parties.
+  // ---------- Demande de devis en carte de verre (« devis-verre ») ----------
+  // Quatre étapes dans une carte : le projet (plusieurs choix possibles), le budget et le délai, quelques mots, les
+  // coordonnées ; le récapitulatif de droite se remplit au fil des réponses. L'envoi part au serveur (quoteUrl), qui la
+  // garde et la transmet par e-mail. Le serveur n'accepte qu'un type de projet : le premier coché part comme « service »,
+  // et la liste complète ouvre le message.
   var form = document.getElementById('devis');
-  if (form) (function () {
+  if (form && form.classList.contains('qd-card')) (function () {
     var STEPS = 4;
     var step = 1;
-    var steps = [].slice.call(form.querySelectorAll('.quote-step'));
-    var bar = [].slice.call(form.querySelectorAll('.quote-bar li'));
-    var stage = document.querySelector('.quote-stage');
-    var count = form.querySelector('[data-step-label]');
+    var steps = [].slice.call(form.querySelectorAll('.qd-step'));
+    var bars = [].slice.call(form.querySelectorAll('[data-bar]'));
     var error = document.getElementById('form-error');
     var fallback = document.getElementById('form-fallback');
     var back = document.getElementById('devis-retour');
@@ -358,63 +359,83 @@
     var nextLabel = form.querySelector('[data-step-next]');
     var message = form.querySelector('textarea[name="message"]');
     var messageCount = document.getElementById('message-count');
+    var word = function (key) {
+      return document.querySelector('.qd-texts [data-t="' + key + '"]').textContent;
+    };
     var t = function (fr, english) {
       return lang === 'en' ? english : fr;
     };
 
-    // Arrivée depuis un service (« Demander un devis pour un site web ») : le service est déjà choisi.
-    var wantedService = (new URLSearchParams(location.search).get('service') || '').replace(/[^a-z-]/g, '');
-    var wanted = wantedService && form.querySelector('input[name="service"][value="' + wantedService + '"]');
-    if (wanted) wanted.checked = true;
+    // Arrivée depuis un service (« Demander un devis pour un site web ») : il est déjà coché.
+    var wanted = (new URLSearchParams(location.search).get('service') || '').replace(/[^a-z-]/g, '');
+    var wantedBox = wanted && form.querySelector('input[name="service"][value="' + wanted + '"]');
+    if (wantedBox) wantedBox.checked = true;
 
-    var values = function () {
-      var data = new FormData(form);
-      var out = {};
-      ['name', 'phone', 'email', 'service', 'budget', 'deadline', 'message', 'website'].forEach(function (key) {
-        out[key] = String(data.get(key) || '').trim();
+    var services = function () {
+      return [].slice.call(form.querySelectorAll('input[name="service"]:checked')).map(function (box) {
+        return box.value;
       });
-      return out;
     };
-    // Le libellé affiché du choix (dans la langue de la page).
+    var field = function (name) {
+      var el = form.querySelector('[name="' + name + '"]:checked') || form.querySelector('[name="' + name + '"]:not([type="radio"])');
+      return el ? String(el.value || '').trim() : '';
+    };
     var labelOf = function (name, value) {
       var input = form.querySelector('input[name="' + name + '"][value="' + value + '"]');
-      var spans = input ? input.parentElement.querySelectorAll('span') : [];
-      return spans.length ? spans[spans.length - 1].textContent : value;
+      var span = input && input.parentElement.querySelector('span');
+      return span ? span.textContent : value;
     };
-    var countMessage = function () {
-      var n = message.value.trim().length;
-      messageCount.textContent = n < 10 ? t('Encore quelques mots…', 'A few more words…') : n + ' ' + t('caractères', 'characters');
+    var serviceText = function () {
+      return services()
+        .map(function (v) {
+          return labelOf('service', v);
+        })
+        .join(', ');
     };
-    message.addEventListener('input', countMessage);
+    var contactText = function () {
+      return [field('name'), field('phone'), field('email')].filter(Boolean).join(' · ');
+    };
     var showError = function (text) {
       error.textContent = text;
       error.hidden = !text;
     };
 
-    // Ce qu'il manque pour quitter une étape (rien : on peut avancer).
+    // Le récapitulatif : les projets cochés tout de suite, le reste une fois l'étape passée.
+    var summary = function () {
+      var values = {
+        service: serviceText(),
+        budget: step > 2 ? labelOf('budget', field('budget')) : '',
+        deadline: step > 2 ? labelOf('deadline', field('deadline')) : '',
+        message: step > 3 ? field('message') : '',
+        contact: contactText(),
+      };
+      [].forEach.call(document.querySelectorAll('[data-sum]'), function (dd) {
+        var value = values[dd.dataset.sum];
+        dd.textContent = value || '…';
+        dd.classList.toggle('todo', !value);
+      });
+    };
+    var countMessage = function () {
+      var n = message.value.trim().length;
+      messageCount.textContent = n < 10 ? word('more') : n + ' ' + word('chars');
+    };
+    message.addEventListener('input', countMessage);
+    form.addEventListener('input', function () {
+      showError('');
+      summary();
+    });
+    form.addEventListener('change', summary);
+
     var problemAt = function (n) {
-      var v = values();
-      if (n === 1 && !v.service) return t('Choisissez le type de projet.', 'Choose the type of project.');
-      if (n === 3 && v.message.length < 10) return t('Décrivez votre projet en quelques mots.', 'Describe your project in a few words.');
+      if (n === 1 && !services().length) return t('Choisissez au moins un projet.', 'Choose at least one project.');
+      if (n === 3 && field('message').length < 10) return t('Décrivez votre projet en quelques mots.', 'Describe your project in a few words.');
       if (n === 4) {
-        if (!v.name) return t('Indiquez votre nom ou celui de votre entreprise.', 'Please enter your name or your company’s name.');
-        if (!v.phone && !v.email) return t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.');
-        if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) return t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.');
+        if (!field('name')) return t('Indiquez votre nom ou celui de votre entreprise.', 'Please enter your name or your company’s name.');
+        if (!field('phone') && !field('email')) return t('Laissez-nous un téléphone ou une adresse e-mail pour vous répondre.', 'Leave us a phone number or an e-mail address so we can answer you.');
+        if (field('email') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field('email'))) return t('Cette adresse e-mail ne semble pas complète.', 'This e-mail address does not look complete.');
       }
       return '';
     };
-
-    // Les textes qui dépendent de l'étape : refaits à chaque étape et au changement de langue.
-    var labels = function () {
-      count.textContent = t('Étape ' + step + ' sur ' + STEPS, 'Step ' + step + ' of ' + STEPS);
-      nextLabel.textContent = step === STEPS ? t('Envoyer ma demande', 'Send my request') : t('Continuer', 'Continue');
-      var v = values();
-      [].forEach.call(form.querySelectorAll('[data-recap]'), function (dd) {
-        dd.textContent = labelOf(dd.dataset.recap, v[dd.dataset.recap]);
-      });
-      countMessage();
-    };
-    document.addEventListener('one-lang', labels);
 
     var show = function (n, focus) {
       step = n;
@@ -423,57 +444,37 @@
         fieldset.hidden = !on;
         fieldset.classList.toggle('enter', on);
       });
-      bar.forEach(function (item, i) {
-        item.classList.toggle('done', i + 1 < n);
-        item.classList.toggle('on', i + 1 === n);
+      bars.forEach(function (bar, i) {
+        bar.classList.toggle('done', i + 1 < n);
+        bar.classList.toggle('on', i + 1 === n);
       });
-      if (stage) stage.dataset.active = String(n);
-      back.hidden = n === 1;
-      labels();
+      back.style.visibility = n === 1 ? 'hidden' : '';
+      nextLabel.textContent = n === STEPS ? word('send') : word('continue');
       showError('');
-      if (focus) {
-        var title = steps[n - 1].querySelector('h1');
-        title.focus({ preventScroll: true });
-        var top = form.getBoundingClientRect().top;
-        if (top < 80) window.scrollBy({ top: top - 100, behavior: 'smooth' });
-      }
+      countMessage();
+      summary();
+      if (focus) steps[n - 1].querySelector('h1').focus({ preventScroll: true });
     };
-
     back.addEventListener('click', function () {
-      show(step - 1, true);
-    });
-    [].forEach.call(form.querySelectorAll('[data-goto]'), function (button) {
-      button.addEventListener('click', function () {
-        show(Number(button.dataset.goto), true);
-      });
-    });
-    // Un service choisi fait passer tout seul à l'étape suivante, la première fois.
-    var autoAdvanced = false;
-    [].forEach.call(form.querySelectorAll('input[name="service"]'), function (input) {
-      input.addEventListener('change', function () {
-        showError('');
-        if (autoAdvanced) return;
-        autoAdvanced = true;
-        setTimeout(function () {
-          if (step === 1) show(2, true);
-        }, 260);
-      });
+      if (step > 1) show(step - 1, true);
     });
 
-    // Le même message, prêt à partir par WhatsApp ou par e-mail, si l'envoi direct échoue.
-    var messageText = function (v) {
-      var lines = [t('Bonjour One Technologie,', 'Hello One Technologie,'), '', t('Demande de devis : ', 'Quote request: ') + labelOf('service', v.service), t('Nom : ', 'Name: ') + v.name];
-      if (v.phone) lines.push(t('Téléphone : ', 'Phone: ') + v.phone);
-      if (v.email) lines.push('E-mail : ' + v.email);
-      lines.push(t('Budget : ', 'Budget: ') + labelOf('budget', v.budget), t('Délai : ', 'Deadline: ') + labelOf('deadline', v.deadline), '', v.message);
+    var fullMessage = function () {
+      var chosen = services().length > 1 ? word('chosen') + serviceText() + '\n\n' : '';
+      return chosen + field('message');
+    };
+    var messageText = function () {
+      var lines = [t('Bonjour One Technologie,', 'Hello One Technologie,'), '', t('Demande de devis : ', 'Quote request: ') + serviceText(), t('Nom : ', 'Name: ') + field('name')];
+      if (field('phone')) lines.push(t('Téléphone : ', 'Phone: ') + field('phone'));
+      if (field('email')) lines.push('E-mail : ' + field('email'));
+      lines.push(t('Budget : ', 'Budget: ') + labelOf('budget', field('budget')), t('Délai : ', 'Deadline: ') + labelOf('deadline', field('deadline')), '', field('message'));
       return lines.join('\n');
     };
     [].forEach.call(form.querySelectorAll('[data-send]'), function (button) {
       button.addEventListener('click', function () {
-        var v = values();
-        var text = encodeURIComponent(messageText(v));
+        var text = encodeURIComponent(messageText());
         if (button.dataset.send === 'email') {
-          window.location.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent(t('Demande de devis — ', 'Quote request — ') + v.name) + '&body=' + text;
+          window.location.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent(t('Demande de devis — ', 'Quote request — ') + field('name')) + '&body=' + text;
         } else {
           window.open('https://wa.me/' + config.whatsapp + '?text=' + text, '_blank', 'noopener');
         }
@@ -486,13 +487,22 @@
       var problem = problemAt(step);
       if (problem) return showError(problem);
       if (step < STEPS) return show(step + 1, true);
-      var v = values();
       showError('');
       fallback.hidden = true;
       next.disabled = true;
       next.classList.add('busy');
-      v.lang = lang;
-      fetch(config.quoteUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v) })
+      var payload = {
+        name: field('name'),
+        phone: field('phone'),
+        email: field('email'),
+        service: services()[0],
+        budget: field('budget') || 'a-discuter',
+        deadline: field('deadline') || 'souple',
+        message: fullMessage(),
+        website: field('website'),
+        lang: lang,
+      };
+      fetch(config.quoteUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         .then(function (response) {
           if (response.ok) return null;
           return response
@@ -505,15 +515,23 @@
             });
         })
         .then(function () {
-          form.querySelector('.form-body').hidden = true;
-          if (stage) stage.dataset.active = '5';
+          steps.forEach(function (fieldset) {
+            fieldset.hidden = true;
+          });
+          bars.forEach(function (bar) {
+            bar.classList.add('done');
+            bar.classList.remove('on');
+          });
+          form.querySelector('.qd-foot').hidden = true;
+          step = STEPS + 1;
+          summary();
           var done = document.getElementById('form-done');
           done.hidden = false;
           done.focus();
         })
-        .catch(function (problem) {
-          var offline = problem instanceof TypeError;
-          showError(offline ? t('Votre demande n’a pas pu partir : vérifiez votre connexion internet, puis réessayez.', 'Your request could not be sent: check your internet connection, then try again.') : problem.message);
+        .catch(function (failure) {
+          var offline = failure instanceof TypeError;
+          showError(offline ? t('Votre demande n’a pas pu partir : vérifiez votre connexion internet, puis réessayez.', 'Your request could not be sent: check your internet connection, then try again.') : failure.message);
           fallback.hidden = false;
         })
         .then(function () {
@@ -1359,7 +1377,7 @@
   // Jamais cachée en haut de page, menu ouvert, ou quand un de ses éléments a le focus (clavier).
   var lastY = window.scrollY;
   function hideBar(y) {
-    if (!document.body.classList.contains('company')) return;
+    if (!bar || !document.body.classList.contains('company')) return;
     var delta = y - lastY;
     if (Math.abs(delta) < 6) return;
     var menuOpen = bar.querySelector('[aria-expanded="true"]');
@@ -1367,7 +1385,7 @@
     bar.classList.toggle('hide', delta > 0 && y > 140 && !menuOpen && !focused);
     lastY = y;
   }
-  bar.addEventListener('focusin', function () {
+  if (bar) bar.addEventListener('focusin', function () {
     if (bar.querySelector(':focus-visible')) bar.classList.remove('hide');
   });
 
@@ -1375,7 +1393,7 @@
     queued = false;
     var y = window.scrollY;
     var h = window.innerHeight;
-    bar.classList.toggle('stuck', y > 12);
+    if (bar) bar.classList.toggle('stuck', y > 12);
     hideBar(y);
 
     if (still) return;

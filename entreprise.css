@@ -7082,3 +7082,525 @@ html:has(dialog[open]) {
   overflow: hidden;
   scrollbar-gutter: stable;
 }
+
+body.bare main > :first-child {
+  margin-top: 0;
+}
+
+/* ---------- Demander un devis : carte de verre sur le relief (choix « D », 9 novembre 2026) ----------
+   Page « nue » (classe bare) : tout l'écran en noir argenté avec le relief animé, la carte au centre. */
+body.bare main {
+  gap: 0;
+  padding: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.qd-page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  padding: 0 clamp(14px, 3vw, 40px) clamp(20px, 3vw, 40px);
+  overflow: hidden;
+  color: var(--on-dark);
+}
+.qd-page .relief.relief {
+  --relief-1: rgba(173, 181, 189, 0.3);
+  --relief-2: rgba(233, 236, 239, 0.18);
+  --relief-lines: rgba(255, 255, 255, 0.035);
+  --relief-top: #0b0d0f;
+  --relief-mid: #212529;
+  --wave-top: #6c757d;
+  --wave-bottom: #212529;
+  --wave-opacity: 0.5;
+  border-radius: 0;
+}
+.qd-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 0;
+}
+.qd-logo {
+  display: block;
+  width: 150px;
+}
+.qd-logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.qd-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qd-tools .round {
+  width: 38px;
+  height: 38px;
+}
+.qd-leave {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--on-dark-2);
+  font-size: 13px;
+  text-decoration: none;
+}
+.qd-leave i {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: background-color 200ms ease;
+}
+.qd-leave:hover {
+  color: var(--on-dark);
+}
+.qd-leave:hover i {
+  background: rgba(255, 255, 255, 0.08);
+}
+.qd-leave svg {
+  width: 15px;
+  height: 15px;
+}
+.qd-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid var(--glass-line);
+  border-radius: 30px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+.qd-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 3vw, 38px);
+}
+.qd-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 6px;
+  padding: 0;
+  list-style: none;
+}
+.qd-steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--on-dark-2);
+  font-size: 12.5px;
+  opacity: 0.7;
+}
+.qd-steps li::before {
+  content: '';
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  transition: background-color 300ms ease;
+}
+.qd-steps li.on,
+.qd-steps li.done {
+  color: var(--on-dark);
+  opacity: 1;
+}
+.qd-steps li.on::before,
+.qd-steps li.done::before {
+  background: var(--on-dark);
+}
+.qd-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.qd-step[hidden] {
+  display: none;
+}
+.qd-step.enter {
+  animation: qd-in 420ms var(--ease) both;
+}
+@keyframes qd-in {
+  from {
+    opacity: 0;
+    translate: 18px 0;
+  }
+}
+.qd-step legend {
+  padding: 0;
+}
+.qd-count {
+  color: var(--on-dark-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.qd-step h1 {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px);
+  outline: none;
+  background: var(--title-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.qd-sub {
+  margin: -4px 0 4px;
+  color: var(--on-dark-2);
+}
+.qd-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.qd-tile,
+.qd-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--on-dark);
+  font-family: var(--display);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    scale 200ms var(--ease);
+}
+.qd-tile {
+  min-height: 74px;
+  padding: 12px 40px 12px 14px;
+  border-radius: 18px;
+  font-size: 14.5px;
+  line-height: 1.2;
+}
+.qd-tile i {
+  display: grid;
+  width: 44px;
+  flex: none;
+  place-items: center;
+}
+.qd-tile .objet {
+  width: 44px;
+  height: auto;
+  filter: drop-shadow(1px 0 0 #f4f4f4) drop-shadow(-1px 0 0 #f4f4f4) drop-shadow(0 1px 0 #f4f4f4) drop-shadow(0 -1px 0 #f4f4f4);
+}
+.qd-tile input,
+.qd-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+/* La case dessinée, en haut à droite de la tuile : plusieurs projets possibles. */
+.qd-tile::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  color: #0b0d0f;
+  font-size: 12px;
+  font-weight: 700;
+}
+.qd-tile:hover,
+.qd-chip:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.09);
+  scale: 1.02;
+}
+.qd-tile:has(input:checked),
+.qd-chip:has(input:checked) {
+  border-color: var(--on-dark);
+  background: rgba(255, 255, 255, 0.15);
+}
+.qd-tile:has(input:checked)::after {
+  content: '\2713';
+  border-color: var(--on-dark);
+  background: var(--on-dark);
+}
+.qd-tile:has(input:focus-visible),
+.qd-chip:has(input:focus-visible) {
+  outline: 2px solid var(--on-dark);
+  outline-offset: 2px;
+}
+.qd-label {
+  margin: 4px 0 -2px;
+  color: var(--on-dark-2);
+  font-size: 13px;
+}
+.qd-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.qd-chip {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13.5px;
+}
+.qd-chip:has(input:checked) {
+  background: var(--on-dark);
+  color: #0b0d0f;
+}
+.qd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--on-dark-2);
+  font-size: 13px;
+}
+.qd-field textarea,
+.qd-field input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--on-dark);
+  font: inherit;
+  font-size: 14.5px;
+}
+.qd-field textarea {
+  resize: vertical;
+}
+.qd-field textarea::placeholder {
+  color: rgba(233, 236, 239, 0.45);
+}
+.qd-field textarea:focus,
+.qd-field input:focus {
+  border-color: var(--on-dark);
+  outline: none;
+}
+.qd-field .req {
+  color: #ff8a8a;
+  font-style: normal;
+}
+.qd-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.qd-fields .wide {
+  grid-column: 1 / -1;
+}
+.qd-hint {
+  margin: -4px 0 0;
+  color: var(--on-dark-2);
+  font-size: 12px;
+}
+.qd-error {
+  margin: 0;
+  color: #ff8a8a;
+  font-size: 13px;
+  font-weight: 500;
+}
+.qd-error[hidden],
+.qd-fallback[hidden],
+.qd-done[hidden],
+.qd-foot[hidden] {
+  display: none;
+}
+.qd-fallback {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--on-dark-2);
+  font-size: 13px;
+}
+.qd-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.qd-back {
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--on-dark-2);
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.qd-back:hover {
+  color: var(--on-dark);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.qd-done {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 30px 0;
+  outline: none;
+  animation: qd-in 420ms var(--ease) both;
+}
+.qd-done h1 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+  background: var(--title-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.qd-done p {
+  color: var(--on-dark-2);
+}
+.qd-done-illu .objet {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(1.5px 0 0 #f4f4f4) drop-shadow(-1.5px 0 0 #f4f4f4) drop-shadow(0 1.5px 0 #f4f4f4) drop-shadow(0 -1.5px 0 #f4f4f4);
+}
+.qd-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: clamp(24px, 3vw, 38px) 26px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.25);
+}
+.qd-side h2 {
+  margin-bottom: 8px;
+  color: var(--on-dark);
+  font-size: 19px;
+}
+.qd-side dl {
+  margin: 0;
+}
+.qd-side dl div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.qd-side dt {
+  color: var(--on-dark-2);
+  font-size: 12px;
+}
+.qd-side dd {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--on-dark);
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.qd-side dd.todo {
+  color: rgba(233, 236, 239, 0.35);
+  font-weight: 400;
+}
+.qd-side-illu {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+.qd-side-illu .objet {
+  width: 74px;
+  height: auto;
+  filter: drop-shadow(1.5px 0 0 #f4f4f4) drop-shadow(-1.5px 0 0 #f4f4f4) drop-shadow(0 1.5px 0 #f4f4f4) drop-shadow(0 -1.5px 0 #f4f4f4);
+}
+.qd-note {
+  margin-top: 10px;
+  color: var(--on-dark-2);
+  font-size: 12px;
+}
+@media (max-width: 960px) {
+  .qd-card {
+    grid-template-columns: 1fr;
+  }
+  .qd-side {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .qd-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .qd-tile {
+    min-height: 64px;
+    padding: 10px 34px 10px 10px;
+    font-size: 13px;
+  }
+  .qd-tile i,
+  .qd-tile .objet {
+    width: 34px;
+  }
+  .qd-fields {
+    grid-template-columns: 1fr;
+  }
+  .qd-leave span {
+    display: none;
+  }
+  .qd-card {
+    border-radius: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qd-step.enter,
+  .qd-done {
+    animation: none;
+  }
+}
+@media (max-width: 640px) {
+  .qd-tile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 12px 14px;
+  }
+  .qd-tile::after {
+    top: 10px;
+    right: 10px;
+  }
+  .qd-steps {
+    gap: 6px;
+  }
+  .qd-steps li {
+    overflow: hidden;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
