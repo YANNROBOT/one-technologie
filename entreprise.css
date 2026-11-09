@@ -119,7 +119,7 @@ body {
   background: var(--page);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 16.5px;
+  font-size: 14.5px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
@@ -165,12 +165,12 @@ h3 {
 }
 
 h2 {
-  font-size: clamp(34px, 4.6vw, 60px);
+  font-size: clamp(30px, 4.05vw, 53px);
   line-height: 1.02;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 19.5px;
   line-height: 1.2;
 }
 
@@ -343,7 +343,7 @@ main {
   border-radius: 999px;
   background: var(--card);
   color: var(--ink);
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -377,7 +377,7 @@ main {
   border: 1.5px solid transparent;
   border-radius: 999px;
   font-family: var(--display);
-  font-size: 16.5px;
+  font-size: 14.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -542,7 +542,7 @@ main {
   border-radius: 999px;
   color: var(--ink-2);
   font-family: var(--display);
-  font-size: 15.5px;
+  font-size: 13.5px;
   font-weight: 500;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -613,7 +613,7 @@ main {
 @media (min-width: 1181px) and (max-width: 1320px) {
   .top-nav a {
     padding-inline: 11px;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .brand {
@@ -717,7 +717,7 @@ main {
   border-radius: 16px;
   color: var(--on-dark);
   font-family: var(--display);
-  font-size: 22px;
+  font-size: 19.5px;
   font-weight: 600;
   letter-spacing: -0.02em;
   text-decoration: none;
@@ -743,7 +743,7 @@ main {
   background: #2d43ed;
   color: #ffffff;
   font-family: var(--body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0;
 }
@@ -757,7 +757,7 @@ main {
   padding: 12px 6px 2px;
   border-top: 1px solid var(--night-line);
   color: var(--on-dark-2);
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .menu-tools div {
@@ -775,7 +775,7 @@ main {
   background: transparent;
   color: var(--on-dark);
   font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -800,7 +800,7 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(42px, 6.6vw, 92px);
+  font-size: clamp(37px, 5.81vw, 81px);
   line-height: 1.02;
   letter-spacing: -0.035em;
 }
@@ -833,7 +833,7 @@ main {
 .hero-sub {
   max-width: 720px;
   color: var(--ink-2);
-  font-size: clamp(17px, 1.55vw, 19.5px);
+  font-size: clamp(15px, 1.36vw, 17px);
   line-height: 1.7;
 }
 
@@ -915,7 +915,7 @@ main {
   padding-right: 36px;
   border-right: 1px solid var(--line);
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.35;
 }
 
@@ -954,7 +954,7 @@ main {
 .marquee-track span {
   color: var(--ink);
   font-family: var(--display);
-  font-size: 22px;
+  font-size: 19.5px;
   font-weight: 600;
   letter-spacing: -0.02em;
   white-space: nowrap;
@@ -982,7 +982,7 @@ main {
 .statement {
   max-width: 980px;
   font-family: var(--display);
-  font-size: clamp(28px, 3.6vw, 50px);
+  font-size: clamp(24.5px, 3.17vw, 44px);
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.12;
@@ -1049,7 +1049,7 @@ main {
   max-width: 300px;
   margin-left: 18px;
   color: var(--on-dark-2);
-  font-size: 15.5px;
+  font-size: 13.5px;
 }
 
 .dark-section .sub-head {
@@ -1086,7 +1086,7 @@ main {
   background: transparent;
   color: rgba(244, 244, 244, 0.55);
   font-family: var(--display);
-  font-size: clamp(22px, 2.4vw, 32px);
+  font-size: clamp(19.5px, 2.11vw, 28px);
   font-weight: 600;
   letter-spacing: -0.02em;
   text-align: left;
@@ -1099,7 +1099,7 @@ main {
 .tab-list button small {
   color: var(--accent);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
@@ -1161,7 +1161,7 @@ main {
 
 .tab-panel p {
   color: var(--on-dark-2);
-  font-size: 16.5px;
+  font-size: 14.5px;
 }
 
 .tab-panel ul {
@@ -1175,7 +1175,7 @@ main {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.07);
   color: var(--on-dark);
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .tab-panel .pill-btn {
@@ -1209,7 +1209,7 @@ main {
   outline-offset: -9px;
   background: var(--accent);
   color: #111111;
-  font-size: clamp(19px, 2vw, 25px);
+  font-size: clamp(16.5px, 1.76vw, 22px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -1240,7 +1240,7 @@ main {
   align-items: center;
   gap: 12px;
   color: #111111;
-  font-size: 20px;
+  font-size: 17.5px;
   opacity: 1;
 }
 
@@ -1273,7 +1273,7 @@ main {
 .section-head p {
   max-width: 560px;
   color: var(--ink-2);
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .split-head {
@@ -1329,7 +1329,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -1366,7 +1366,7 @@ main {
 
 .live-card h3 {
   margin-top: 6px;
-  font-size: clamp(38px, 4vw, 56px);
+  font-size: clamp(33.5px, 3.52vw, 49.5px);
   letter-spacing: -0.04em;
   line-height: 1;
 }
@@ -1377,7 +1377,7 @@ main {
 
 .live-card p {
   max-width: 46ch;
-  font-size: 16px;
+  font-size: 14px;
   opacity: 0.78;
 }
 
@@ -1393,7 +1393,7 @@ main {
 .live-facts li {
   padding: 7px 13px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 600;
 }
 
@@ -1485,7 +1485,7 @@ main {
   background: #f2f2f2;
   color: #5f5f5f;
   font-family: var(--mono);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -1560,22 +1560,22 @@ main {
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
 .case-info h3 {
-  font-size: 30px;
+  font-size: 26.5px;
 }
 
 .case-info p {
   color: var(--on-dark-2);
-  font-size: 15.5px;
+  font-size: 13.5px;
 }
 
 .case-resume {
   color: var(--on-dark-2);
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -1593,7 +1593,7 @@ main {
 .numbers b {
   display: block;
   font-family: var(--display);
-  font-size: clamp(54px, 7vw, 92px);
+  font-size: clamp(47.5px, 6.16vw, 81px);
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -1613,7 +1613,7 @@ main {
   display: block;
   margin-top: 10px;
   color: var(--ink-2);
-  font-size: 17px;
+  font-size: 15px;
 }
 
 /* ---------- Notre méthode : la carte grise et le rond sombre ---------- */
@@ -1637,12 +1637,12 @@ main {
 }
 
 .how-card h2 {
-  font-size: clamp(34px, 3.4vw, 46px);
+  font-size: clamp(30px, 2.99vw, 40.5px);
 }
 
 .how-card > p {
   color: var(--ink-2);
-  font-size: 15.5px;
+  font-size: 13.5px;
   text-align: right;
 }
 
@@ -1710,7 +1710,7 @@ main {
 .how-card .count b {
   display: block;
   font-family: var(--display);
-  font-size: clamp(70px, 8vw, 110px);
+  font-size: clamp(61.5px, 7.04vw, 97px);
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 0.9;
@@ -1720,7 +1720,7 @@ main {
   display: block;
   margin-top: 10px;
   color: var(--ink-2);
-  font-size: 14.5px;
+  font-size: 13px;
 }
 
 .circle {
@@ -1743,7 +1743,7 @@ main {
 
 .circle > b {
   font-family: var(--display);
-  font-size: 20px;
+  font-size: 17.5px;
   font-weight: 600;
 }
 
@@ -1796,17 +1796,17 @@ main {
   border-radius: 999px;
   background: #ffffff;
   font-family: var(--display);
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 600;
 }
 
 .step-card h3 {
-  font-size: clamp(26px, 2.6vw, 34px);
+  font-size: clamp(23px, 2.29vw, 30px);
 }
 
 .step-card p {
   max-width: 34ch;
-  font-size: 15.5px;
+  font-size: 13.5px;
 }
 
 .step-dots {
@@ -1845,7 +1845,7 @@ main {
   border-radius: 12px;
   background: var(--night-2);
   font-family: var(--display);
-  font-size: 19px;
+  font-size: 16.5px;
   font-weight: 600;
   text-align: center;
 }
@@ -1875,7 +1875,7 @@ main {
   align-items: flex-start;
   gap: 12px;
   color: var(--on-dark-2);
-  font-size: 16.5px;
+  font-size: 14.5px;
 }
 
 .compare .us-list li {
@@ -1911,7 +1911,7 @@ main {
 .quote-card blockquote {
   color: rgba(244, 244, 244, 0.82);
   font-family: var(--display);
-  font-size: clamp(22px, 2.2vw, 28px);
+  font-size: clamp(19.5px, 1.94vw, 24.5px);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -1931,13 +1931,13 @@ main {
   justify-content: center;
   gap: 10px;
   color: var(--on-dark-2);
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .quote-card p b {
   color: #ffffff;
   font-family: var(--display);
-  font-size: 19px;
+  font-size: 16.5px;
   font-weight: 600;
 }
 
@@ -1975,7 +1975,7 @@ main {
 }
 
 .edu-island h2 {
-  font-size: clamp(30px, 3.4vw, 44px);
+  font-size: clamp(26.5px, 2.99vw, 38.5px);
 }
 
 .edu-island .shot {
@@ -2000,7 +2000,7 @@ main {
   background: #2d43ed;
   color: #ffffff;
   font-family: var(--display);
-  font-size: 16.5px;
+  font-size: 14.5px;
   font-weight: 600;
   text-decoration: none;
   transition: transform 250ms var(--ease);
@@ -2031,7 +2031,7 @@ main {
 }
 
 .page-top .hero-head h1 {
-  font-size: clamp(40px, 5.6vw, 76px);
+  font-size: clamp(35px, 4.93vw, 67px);
   line-height: 1.04;
   letter-spacing: -0.035em;
 }
@@ -2053,7 +2053,7 @@ main {
   border-radius: 999px;
   background: var(--mist);
   color: var(--ink);
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 200ms ease;
@@ -2130,12 +2130,12 @@ main {
 .svc-top small {
   color: var(--ink-3);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
 .svc h2 {
-  font-size: clamp(28px, 2.8vw, 38px);
+  font-size: clamp(24.5px, 2.46vw, 33.5px);
 }
 
 .svc > p {
@@ -2155,7 +2155,7 @@ main {
   gap: 10px;
   padding: 9px 0;
   border-top: 1px solid var(--line);
-  font-size: 15.5px;
+  font-size: 13.5px;
 }
 
 .svc li::before {
@@ -2188,7 +2188,7 @@ main {
   border-radius: 999px;
   background: var(--mist);
   color: var(--ink);
-  font: 600 14.5px var(--body);
+  font: 600 13px var(--body);
   cursor: pointer;
   transition: background-color 200ms ease;
 }
@@ -2258,13 +2258,13 @@ main {
 
 .facts dt {
   color: var(--ink-3);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .facts dd {
   font-family: var(--display);
-  font-size: 19px;
+  font-size: 16.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.25;
@@ -2388,7 +2388,7 @@ main {
 
 .value p {
   opacity: 0.75;
-  font-size: 15.5px;
+  font-size: 13.5px;
 }
 
 /* Contact et formulaire */
@@ -2442,14 +2442,14 @@ main {
 .contact-cards small {
   display: block;
   color: var(--ink-3);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
 .contact-cards b {
   display: block;
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
@@ -2474,12 +2474,12 @@ main {
 }
 
 .form h2 {
-  font-size: clamp(28px, 3vw, 38px);
+  font-size: clamp(24.5px, 2.64vw, 33.5px);
 }
 
 .note {
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .form label,
@@ -2487,7 +2487,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -2538,13 +2538,13 @@ main {
   border-radius: 14px;
   background: #fde8e8;
   color: #a11a1a;
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .form-consent {
   color: var(--ink-3);
-  font-size: 13.5px;
+  font-size: 12px;
 }
 
 .form-fallback {
@@ -2554,7 +2554,7 @@ main {
   padding-top: 14px;
   border-top: 1px dashed var(--line);
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .form-done {
@@ -2715,7 +2715,7 @@ main {
   position: relative;
   padding: 22px 50px 22px 0;
   font-family: var(--display);
-  font-size: clamp(18px, 1.8vw, 21px);
+  font-size: clamp(16px, 1.58vw, 18.5px);
   font-weight: 600;
   letter-spacing: -0.01em;
   list-style: none;
@@ -2739,7 +2739,7 @@ main {
   background: var(--night);
   color: #ffffff;
   font-family: var(--body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   transform: translateY(-50%);
   transition: transform 300ms var(--ease);
@@ -2809,7 +2809,7 @@ main {
 }
 
 .legal h2 {
-  font-size: clamp(22px, 2.2vw, 28px);
+  font-size: clamp(19.5px, 1.94vw, 24.5px);
 }
 
 .legal p {
@@ -2824,7 +2824,7 @@ main {
   border-radius: 18px;
   background: var(--card);
   color: var(--ink);
-  font-size: 15px;
+  font-size: 13px;
   overflow-wrap: anywhere;
 }
 
@@ -2841,7 +2841,7 @@ main {
 }
 
 .legal-brief h2 {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: clamp(17.5px, 1.76vw, 21px);
 }
 
 .legal-brief ul {
@@ -2857,7 +2857,7 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1.45;
 }
@@ -2890,7 +2890,7 @@ main {
 }
 
 .legal-more-body h2 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .legal .legal-more-body section + section {
@@ -2924,7 +2924,7 @@ main {
 
 .end-cta h2 {
   max-width: 900px;
-  font-size: clamp(44px, 7vw, 100px);
+  font-size: clamp(38.5px, 6.16vw, 88px);
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -2951,7 +2951,7 @@ main {
 .end-brand p {
   max-width: 34ch;
   color: var(--on-dark-2);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .end-col {
@@ -2963,13 +2963,13 @@ main {
 .end-col b {
   margin-bottom: 4px;
   font-family: var(--display);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .end-col a {
   color: var(--on-dark-2);
-  font-size: 15px;
+  font-size: 13px;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
@@ -2987,7 +2987,7 @@ main {
   padding-top: 22px;
   border-top: 1px solid var(--night-line);
   color: var(--on-dark-2);
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .end-bottom a {
@@ -3010,7 +3010,7 @@ main {
   background: var(--accent);
   color: #111111;
   font-family: var(--display);
-  font-size: 15.5px;
+  font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
   transition: transform 220ms var(--ease);
@@ -3266,13 +3266,13 @@ main {
 .peek-text b {
   color: #2d43ed;
   font-family: var(--display);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .peek-text span {
   color: #4b4f66;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 @media (hover: hover) {
@@ -3298,7 +3298,7 @@ main {
 @media (max-width: 560px) {
   .top .pill-btn.edu-pill span:first-child {
     display: inline;
-    font-size: 14.5px;
+    font-size: 13px;
   }
 
   .top .pill-btn.edu-pill {
@@ -3333,7 +3333,7 @@ main {
   }
 
   .top .pill-btn.edu-pill span:first-child {
-    font-size: 13.5px;
+    font-size: 12px;
   }
 }
 
@@ -3370,7 +3370,7 @@ main {
   max-width: 18ch;
   margin-top: 12px;
   font-family: var(--display);
-  font-size: clamp(24px, 2.2vw, 32px);
+  font-size: clamp(21px, 1.94vw, 28px);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.08;
@@ -3455,7 +3455,7 @@ main {
   padding: 0;
   list-style: none;
   color: var(--ink-2);
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .quote-promises li {
@@ -3496,7 +3496,7 @@ main {
   margin-bottom: 8px;
   color: var(--ink-2);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -3513,7 +3513,7 @@ main {
 
 .quote-bar li {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 11px;
   font-weight: 600;
 }
 
@@ -3574,7 +3574,7 @@ main {
 }
 
 .quote-step h1 {
-  font-size: clamp(24px, 2.3vw, 32px);
+  font-size: clamp(21px, 2.02vw, 28px);
   letter-spacing: -0.03em;
   line-height: 1.06;
   outline: none;
@@ -3582,7 +3582,7 @@ main {
 
 .quote-step .note {
   margin: 6px 0 14px;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .quote-form input,
@@ -3615,7 +3615,7 @@ main {
   border: 1.5px solid transparent;
   border-radius: 16px;
   background: var(--card);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.25;
   cursor: pointer;
@@ -3704,7 +3704,7 @@ main {
 .chip-title {
   width: 100%;
   margin-bottom: 4px;
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -3717,7 +3717,7 @@ main {
   border: 1.5px solid transparent;
   border-radius: 999px;
   background: var(--card);
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 500;
   cursor: pointer;
   transition:
@@ -3738,7 +3738,7 @@ main {
 .quote-hint {
   margin-top: 8px;
   color: var(--ink-3);
-  font-size: 13.5px;
+  font-size: 12px;
 }
 
 /* Étape 4 : le rappel des choix */
@@ -3765,13 +3765,13 @@ main {
 }
 
 .quote-recap dd {
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.3;
 }
 
 .quote-recap dt {
   color: var(--ink-3);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -3786,7 +3786,7 @@ main {
   background: none;
   color: var(--ink-2);
   font: inherit;
-  font-size: 13px;
+  font-size: 11.5px;
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
@@ -3860,7 +3860,7 @@ main {
 }
 
 .quote-cta h2 {
-  font-size: clamp(34px, 4.4vw, 58px);
+  font-size: clamp(30px, 3.87vw, 51px);
   letter-spacing: -0.035em;
   line-height: 1.04;
 }
@@ -3869,7 +3869,7 @@ main {
   max-width: 52ch;
   margin: 14px 0 26px;
   color: #343A40;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .pill-btn.ink {
@@ -3947,12 +3947,12 @@ main {
   }
 
   .quote-art-title {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .quote-promises {
     grid-column: 1 / -1;
-    font-size: 14px;
+    font-size: 12.5px;
   }
 
   .quote-bar li span {
@@ -3991,7 +3991,7 @@ main {
 
   .quote-form .choice {
     min-height: 54px;
-    font-size: 13px;
+    font-size: 11.5px;
   }
 
   .quote-recap {
@@ -4225,7 +4225,7 @@ main {
   padding: 6px 14px;
   border-radius: 999px;
   background: var(--card);
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 600;
 }
 
@@ -4270,7 +4270,7 @@ main {
 
 .proj-duo p {
   font-family: var(--display);
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(17.5px, 1.76vw, 23px);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -4306,7 +4306,7 @@ main {
   padding: 16px 18px;
   border-radius: 18px;
   background: var(--mist);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -4345,12 +4345,12 @@ main {
 
 .proj-made-grid h3 {
   color: var(--on-dark);
-  font-size: 20px;
+  font-size: 17.5px;
 }
 
 .proj-made-grid p {
   color: var(--on-dark-2);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .proj-illu {
@@ -4381,7 +4381,7 @@ main {
   border-radius: 999px;
   background: var(--mist);
   font-family: var(--display);
-  font-size: 16.5px;
+  font-size: 14.5px;
   font-weight: 600;
 }
 
@@ -4414,7 +4414,7 @@ main {
 .proj-phones figcaption {
   padding: 12px 16px;
   color: #343A40;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .proj-phones {
@@ -4501,7 +4501,7 @@ main {
   background: var(--tint);
   color: #111111;
   font-family: var(--display);
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 600;
 }
 
@@ -4542,7 +4542,7 @@ main {
 
 .testi-card blockquote {
   font-family: var(--display);
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(17.5px, 1.94vw, 24.5px);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.35;
@@ -4553,19 +4553,19 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 12px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .testi-card figcaption .testi-face-img {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .testi-card figcaption b {
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .testi-card figcaption span:last-child:not(.testi-face-img) {
@@ -4585,7 +4585,7 @@ main {
 }
 
 .testi-empty h3 {
-  font-size: 22px;
+  font-size: 19.5px;
 }
 
 .testi-empty p {
@@ -4638,12 +4638,12 @@ main {
 }
 
 .testi-form-head h2 {
-  font-size: 24px;
+  font-size: 21px;
 }
 
 .testi-form-head p {
   color: #343A40;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .testi-form-illu {
@@ -4688,7 +4688,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -4771,7 +4771,7 @@ main {
 .testi-photo-text small {
   display: block;
   color: var(--ink-3);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 400;
 }
 
@@ -4782,7 +4782,7 @@ main {
   background: none;
   color: var(--ink-2);
   font: inherit;
-  font-size: 14px;
+  font-size: 12.5px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -4948,7 +4948,7 @@ main {
 .testi-count {
   color: var(--ink-2);
   font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4965,7 +4965,7 @@ main {
 
 .testi-bar li {
   color: var(--ink-3);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
@@ -5064,7 +5064,7 @@ main {
   }
 
   .testi-form-head h2 {
-    font-size: 21px;
+    font-size: 18.5px;
   }
 
   .testi-form-body {
@@ -5460,7 +5460,7 @@ body.company::before {
 }
 
 .hero-platine .hero-title {
-  font-size: clamp(40px, 5.2vw, 74px);
+  font-size: clamp(35px, 4.58vw, 65px);
 }
 
 .hero-platine .hero-sub {
@@ -5514,7 +5514,7 @@ body.company::before {
 .hero-card-top small {
   color: var(--ink-3);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11.5px;
 }
 
 .hero-card-ico {
@@ -5536,14 +5536,14 @@ body.company::before {
 .hero-card b {
   margin-top: 10px;
   font-family: var(--display);
-  font-size: 21px;
+  font-size: 18.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .hero-card-text {
   color: var(--ink-2);
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 
@@ -5815,14 +5815,14 @@ body.company::before {
 
 .facts-bar b {
   font-family: var(--display);
-  font-size: 22px;
+  font-size: 19.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .facts-bar span {
   color: var(--ink-2);
-  font-size: 13.5px;
+  font-size: 12px;
 }
 
 @media (max-width: 760px) {
@@ -5849,7 +5849,7 @@ body.company::before {
 .view-strike {
   color: var(--ink-3);
   font-family: var(--display);
-  font-size: clamp(24px, 2.8vw, 38px);
+  font-size: clamp(21px, 2.46vw, 33.5px);
   font-weight: 600;
   line-height: 1.2;
   text-decoration: line-through;
@@ -5870,7 +5870,7 @@ body.company::before {
 .view-big {
   color: var(--on-dark);
   font-family: var(--display);
-  font-size: clamp(22px, 2.4vw, 32px);
+  font-size: clamp(19.5px, 2.11vw, 28px);
   font-weight: 600;
   line-height: 1.22;
 }
@@ -5955,7 +5955,7 @@ body.company::before {
 }
 
 .svc-slide h3 {
-  font-size: 26px;
+  font-size: 23px;
 }
 
 .svc-slide > p {
@@ -5976,7 +5976,7 @@ body.company::before {
   border: 1px solid var(--glass-edge);
   border-radius: 999px;
   color: var(--on-dark-2);
-  font-size: 13px;
+  font-size: 11.5px;
 }
 
 .svc-slide .pill-btn {
@@ -6150,16 +6150,16 @@ body.company::before {
 .frise-num {
   color: var(--ink-3);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11.5px;
 }
 
 .frise-step h3 {
-  font-size: 21px;
+  font-size: 18.5px;
 }
 
 .frise-step p {
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 @media (max-width: 900px) {
@@ -6218,7 +6218,7 @@ body.company::before {
   border-radius: 999px;
   background: transparent;
   color: var(--on-dark-2);
-  font: 600 15px var(--display);
+  font: 600 13px var(--display);
   cursor: pointer;
   transition:
     background-color 300ms ease,
@@ -6251,7 +6251,7 @@ body.company::before {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .switch-panel li svg {
@@ -6299,7 +6299,7 @@ body.company::before {
 
 .duo-one b {
   font-family: var(--display);
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(24.5px, 2.64vw, 35px);
   font-weight: 600;
 }
 
@@ -6333,7 +6333,7 @@ body.company::before {
 }
 
 .duo-edu h2 {
-  font-size: clamp(22px, 2.4vw, 32px);
+  font-size: clamp(19.5px, 2.11vw, 28px);
   line-height: 1.15;
 }
 
@@ -6372,7 +6372,7 @@ body.company::before {
 }
 
 .end-cta h2 {
-  font-size: clamp(48px, 8.4vw, 124px);
+  font-size: clamp(42px, 7.39vw, 109px);
 }
 
 :root .end .relief.relief {
@@ -6466,11 +6466,11 @@ body.company::before {
   color: var(--ink);
 }
 .fan-label small {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-3);
 }
 .fan-label b {
-  font: 600 clamp(14px, 1.25vw, 16px)/1.2 var(--display);
+  font: 600 clamp(12.5px, 1.1vw, 14px)/1.2 var(--display);
 }
 .fan-go {
   position: absolute;
@@ -6654,5 +6654,329 @@ body.company .top .pill-btn.edu-pill .arrow {
 @media (prefers-reduced-motion: reduce) {
   body.company .top {
     transition: none;
+  }
+}
+
+/* ---------- Bandeau « en bref » plus petit (9 novembre 2026) ---------- */
+.facts-bar {
+  width: min(900px, calc(100% - 40px));
+  padding: 12px 8px;
+}
+.facts-bar b {
+  font-size: 17px;
+}
+.facts-bar span {
+  font-size: 12px;
+}
+@media (min-width: 761px) {
+  .facts-bar span {
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Accueil : « Le problème / Notre réponse » sur son propre fond (9 novembre 2026) ----------
+   Une section claire à part (sombre en thème sombre) ; la réponse dans une carte noire. */
+.view-section {
+  position: relative;
+  width: 100%;
+  max-width: var(--wide);
+  margin-inline: auto;
+  padding: clamp(56px, 7vw, 100px) clamp(18px, 7vw, 90px);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(60% 80% at 85% 20%, rgba(255, 255, 255, 0.9), transparent 70%),
+    linear-gradient(160deg, #f8f9fa, #dee2e6);
+}
+:root[data-theme='dark'] .view-section {
+  background:
+    radial-gradient(60% 80% at 85% 20%, rgba(255, 255, 255, 0.06), transparent 70%),
+    linear-gradient(160deg, #212529, #121417);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .view-section {
+    background:
+      radial-gradient(60% 80% at 85% 20%, rgba(255, 255, 255, 0.06), transparent 70%),
+      linear-gradient(160deg, #212529, #121417);
+  }
+}
+.view-section .view-strike {
+  text-decoration-color: currentColor;
+}
+.view-section .view-answer {
+  --glass-line: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--glass-line);
+  background: linear-gradient(145deg, #2b3035, #0b0d0f);
+  box-shadow: 0 40px 70px -34px rgba(0, 0, 0, 0.6);
+  color: var(--on-dark);
+}
+.view-section .view-answer .tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--on-dark);
+}
+
+/* ---------- Accueil : les services en carrousel qui défile seul, sur toute la largeur ---------- */
+.svc-section {
+  padding-bottom: clamp(40px, 4.5vw, 60px);
+}
+.svc-section .sub-head {
+  margin-top: 0;
+}
+.svc-section .svc-carousel {
+  margin-inline: calc(clamp(18px, 7vw, 90px) * -1);
+  max-width: none;
+}
+.svc-section .svc-nav {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  background: var(--on-dark);
+  color: #0b0d0f;
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.7);
+  transition:
+    scale 200ms ease,
+    background-color 200ms ease;
+}
+.svc-section .svc-nav:hover {
+  scale: 1.08;
+  background: #ffffff;
+}
+.svc-section .svc-nav:focus-visible {
+  outline: 3px solid var(--on-dark);
+  outline-offset: 3px;
+}
+.svc-section .svc-nav.prev {
+  left: clamp(12px, 3vw, 44px);
+}
+.svc-section .svc-nav.next {
+  right: clamp(12px, 3vw, 44px);
+}
+.svc-section .svc-nav svg {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 760px) {
+  .svc-section .svc-nav {
+    display: grid;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------- Accueil : nos outils, le titre à gauche, la rangée qui défile à droite ---------- */
+.tools-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(20px, 3vw, 44px);
+  margin-top: clamp(50px, 6vw, 80px);
+  padding-top: clamp(30px, 3.5vw, 44px);
+  border-top: 1px solid var(--glass-edge);
+}
+.tools-title {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 240px;
+  margin: 0;
+  color: var(--on-dark);
+  font-size: clamp(19px, 1.9vw, 24px);
+  line-height: 1.15;
+}
+.tools-title small {
+  color: var(--on-dark-2);
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.tools-roll {
+  overflow: hidden;
+  padding: 14px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.tools-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: tools-slide 70s linear infinite;
+}
+.tools-roll:hover .tools-track,
+.tools-roll:focus-within .tools-track {
+  animation-play-state: paused;
+}
+/* Deux fois la même liste : un demi-tour plus la moitié de l'écart, et la rangée reprend sans saut. */
+@keyframes tools-slide {
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
+}
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  border: 1px solid var(--glass-edge);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--on-dark-2);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    scale 260ms var(--ease),
+    color 260ms ease,
+    background-color 260ms ease,
+    border-color 260ms ease;
+}
+.tool i {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  background: #ffffff;
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition:
+    filter 260ms ease,
+    opacity 260ms ease;
+}
+.tool svg {
+  width: 21px;
+  height: 21px;
+}
+/* Au survol (ou au clavier) : l'outil prend sa couleur et grossit un peu. */
+.tool:hover,
+.tool:focus-visible {
+  scale: 1.1;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--on-dark);
+}
+.tool:hover i,
+.tool:focus-visible i {
+  filter: none;
+  opacity: 1;
+}
+.tool:focus-visible {
+  outline: 2px solid var(--on-dark);
+  outline-offset: 2px;
+}
+@media (max-width: 760px) {
+  .tools-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .tools-title {
+    max-width: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tools-track {
+    animation: none;
+  }
+  .tools-roll {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tools-track [aria-hidden='true'] {
+    display: none;
+  }
+}
+
+/* La fiche d'un outil, en fenêtre. */
+.tool-dialog {
+  width: min(540px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  padding: clamp(24px, 3vw, 34px);
+  overflow: auto;
+  border: 1px solid var(--glass-line);
+  border-radius: 28px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.55);
+}
+.tool-dialog[open] {
+  animation: tool-in 320ms var(--ease);
+}
+@keyframes tool-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+    translate: 0 12px;
+  }
+}
+.tool-dialog::backdrop {
+  background: rgba(11, 13, 15, 0.55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.tool-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-color: var(--line);
+  color: var(--ink);
+}
+.tool-close svg {
+  width: 16px;
+  height: 16px;
+}
+.tool-body article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.tool-body i {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+}
+.tool-body i svg {
+  width: 36px;
+  height: 36px;
+}
+.tool-body small {
+  margin-top: 6px;
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tool-body h3 {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 28px);
+}
+.tool-body p {
+  margin: 0;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+.tool-body .tool-usage {
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--ink);
+  border-radius: 0 12px 12px 0;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  color: var(--ink);
+}
+.tool-dialog > .pill-btn {
+  margin-top: 20px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-dialog[open] {
+    animation: none;
   }
 }

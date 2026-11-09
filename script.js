@@ -1208,7 +1208,8 @@
     });
     var current = -1;
     function go(i) {
-      var slide = slides[Math.max(0, Math.min(slides.length - 1, i))];
+      // Les flèches et le défilement automatique font le tour : après la dernière carte, retour à la première.
+      var slide = slides[(i + slides.length) % slides.length];
       track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior: still ? 'auto' : 'smooth' });
     }
     function mark() {
@@ -1261,7 +1262,88 @@
     });
     track.scrollLeft = slides[1].offsetLeft - (track.clientWidth - slides[1].offsetWidth) / 2;
     mark();
+
+    // Défilement automatique (data-autoplay) : une carte toutes les 4,5 secondes. Il s'arrête tant que la souris
+    // est sur le carrousel, qu'un de ses éléments a le focus, qu'on le touche, ou qu'il n'est pas à l'écran.
+    if (!box.hasAttribute('data-autoplay') || still) return;
+    var hovered = false;
+    var focused = false;
+    var touched = false;
+    var visible = false;
+    var timer = 0;
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        if (hovered || focused || touched || !visible || document.hidden) return;
+        go(current + 1);
+      }, 4500);
+    }
+    box.addEventListener('mouseenter', function () {
+      hovered = true;
+    });
+    box.addEventListener('mouseleave', function () {
+      hovered = false;
+      restart();
+    });
+    box.addEventListener('focusin', function () {
+      focused = true;
+    });
+    box.addEventListener('focusout', function () {
+      focused = false;
+    });
+    track.addEventListener(
+      'touchstart',
+      function () {
+        touched = true;
+      },
+      { passive: true },
+    );
+    track.addEventListener('touchend', function () {
+      setTimeout(function () {
+        touched = false;
+        restart();
+      }, 1500);
+    });
+    box.addEventListener('click', restart);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+      }, { threshold: 0.35 }).observe(box);
+    } else {
+      visible = true;
+    }
+    restart();
   });
+
+  // ---------- Accueil : la fiche d'un outil s'ouvre en fenêtre au clic ----------
+  (function () {
+    var dialog = document.querySelector('[data-tool-dialog]');
+    var body = dialog && dialog.querySelector('[data-tool-body]');
+    if (!dialog || !body || typeof dialog.showModal !== 'function') return;
+    var opener = null;
+    [].forEach.call(document.querySelectorAll('[data-tool]'), function (button) {
+      button.addEventListener('click', function () {
+        var note = document.querySelector('[data-tool-note="' + button.getAttribute('data-tool') + '"]');
+        if (!note) return;
+        body.innerHTML = '';
+        body.appendChild(note.cloneNode(true));
+        var title = body.querySelector('h3');
+        dialog.setAttribute('aria-label', title ? title.textContent : '');
+        opener = button.getAttribute('aria-hidden') === 'true' ? null : button;
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector('[data-tool-close]').addEventListener('click', function () {
+      dialog.close();
+    });
+    // Un clic à côté de la fenêtre la ferme.
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      if (opener) opener.focus({ preventScroll: true });
+    });
+  })();
 
   // ---------- Accueil : l'interrupteur « le prestataire habituel / One Technologie » ----------
   [].forEach.call(document.querySelectorAll('[data-switch]'), function (box) {
