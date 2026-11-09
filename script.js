@@ -1284,11 +1284,28 @@
   var steps = document.querySelector('[data-progress]');
   var queued = false;
 
+  // Barre du haut de One Technologie : elle se cache quand on descend, revient dès qu'on remonte.
+  // Jamais cachée en haut de page, menu ouvert, ou quand un de ses éléments a le focus (clavier).
+  var lastY = window.scrollY;
+  function hideBar(y) {
+    if (!document.body.classList.contains('company')) return;
+    var delta = y - lastY;
+    if (Math.abs(delta) < 6) return;
+    var menuOpen = bar.querySelector('[aria-expanded="true"]');
+    var focused = bar.querySelector(':focus-visible');
+    bar.classList.toggle('hide', delta > 0 && y > 140 && !menuOpen && !focused);
+    lastY = y;
+  }
+  bar.addEventListener('focusin', function () {
+    if (bar.querySelector(':focus-visible')) bar.classList.remove('hide');
+  });
+
   function onScroll() {
     queued = false;
     var y = window.scrollY;
     var h = window.innerHeight;
     bar.classList.toggle('stuck', y > 12);
+    hideBar(y);
 
     if (still) return;
     // Couverture : l'écran et le téléphone glissent l'un sur l'autre.

@@ -6556,3 +6556,103 @@ body.company::before {
     transition: none;
   }
 }
+
+/* ---------- Barre du haut resserrée (9 novembre 2026) ----------
+   Plus basse, logo et boutons plus petits ; elle se cache quand on descend et revient dès qu'on remonte
+   (classe « hide » posée par script.js, jamais quand le menu est ouvert ou qu'un élément de la barre a le focus). */
+body.company .top,
+body.company .top.stuck {
+  padding: 16px clamp(20px, 2.6vw, 42px);
+  gap: 12px;
+  transition:
+    translate 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 250ms var(--ease);
+}
+body.company .top::before,
+body.company .top.stuck::before {
+  inset: 5px clamp(10px, 1.6vw, 24px);
+}
+/* De l'air entre la barre et la première section de la page. */
+body.company main > :first-child {
+  margin-top: clamp(14px, 1.8vw, 26px);
+}
+/* Moins large : la pilule ne prend plus toute la largeur de l'écran. */
+body.company .top {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+}
+body.company .top.hide {
+  translate: 0 -110%;
+}
+body.company .brand {
+  width: 148px;
+}
+/* Le symbole et le « ne » du logo à la couleur de l'encre : noirs sur le fond clair, blancs en thème sombre. */
+body.company .top .brand-logo path.logo-gold {
+  fill: var(--logo-ink);
+}
+body.company .top .brand-logo path.logo-gold-line {
+  stroke: var(--logo-ink);
+}
+body.company .top-nav {
+  padding: 3px;
+}
+body.company .top-nav a {
+  padding: 6px 13px;
+  font-size: 14.5px;
+}
+body.company .top-actions {
+  gap: 8px;
+}
+body.company .top-tools .round,
+body.company .menu-btn {
+  width: 36px;
+  height: 36px;
+}
+body.company .top-tools .round span {
+  font-size: 12.5px;
+}
+body.company .top-tools .round svg {
+  width: 17px;
+  height: 17px;
+}
+body.company .top .pill-btn.edu-pill {
+  min-height: 38px;
+  padding: 4px 4px 4px 15px;
+  gap: 9px;
+  font-size: 14.5px;
+}
+body.company .top .pill-btn.edu-pill .arrow {
+  width: 30px;
+  height: 30px;
+}
+@media (min-width: 1181px) and (max-width: 1320px) {
+  body.company .top-nav a {
+    padding-inline: 10px;
+    font-size: 14px;
+  }
+  body.company .brand {
+    width: 136px;
+  }
+}
+@media (max-width: 560px) {
+  body.company .brand {
+    width: 118px;
+  }
+  body.company .top .pill-btn.edu-pill span:first-child {
+    font-size: 13.5px;
+  }
+  body.company .top .pill-btn.edu-pill {
+    padding-left: 12px;
+  }
+}
+@media (max-width: 340px) {
+  body.company .brand {
+    width: 104px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.company .top {
+    transition: none;
+  }
+}
