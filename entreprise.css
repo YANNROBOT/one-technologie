@@ -4536,8 +4536,9 @@ main {
   fill: var(--mist-2);
 }
 
+/* Les étoiles des avis en jaune (demandé le 9 novembre 2026) : la seule touche de jaune de la partie entreprise. */
 .testi-card-stars .on svg {
-  fill: var(--accent);
+  fill: #fab005;
 }
 
 .testi-card blockquote {
@@ -4840,7 +4841,7 @@ main {
 .testi-stars-row[data-value='3'] label:nth-of-type(-n + 3) .one-icon,
 .testi-stars-row[data-value='4'] label:nth-of-type(-n + 4) .one-icon,
 .testi-stars-row[data-value='5'] label:nth-of-type(-n + 5) .one-icon {
-  color: #ADB5BD;
+  color: #fab005;
   fill: currentColor;
 }
 
@@ -6310,7 +6311,10 @@ body.company::before {
 .duo-edu {
   margin-left: -70px;
   padding-left: calc(clamp(28px, 4vw, 56px) + 70px);
-  background: #2d43ed;
+  background-color: #2d43ed;
+  /* Le quadrillage de cahier de One Technologie Éducation. */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
   color: #ffffff;
   text-decoration: none;
   clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%);
@@ -6319,7 +6323,7 @@ body.company::before {
 
 .duo-edu:hover,
 .duo-edu:focus-visible {
-  background: #2438d6;
+  background-color: #2438d6;
 }
 
 .duo-edu .brand-logo {
@@ -6327,9 +6331,13 @@ body.company::before {
   height: auto;
 }
 
+/* Le logo sur le bleu : traits et lettres en blanc, l'intérieur du rond laisse voir le bleu. */
 .duo-edu .brand-logo path,
 .duo-edu .brand-logo text {
   fill: #ffffff;
+}
+.duo-edu .brand-logo path[fill='white'] {
+  fill: transparent;
 }
 
 .duo-edu h2 {
@@ -7038,4 +7046,39 @@ body.company .top .pill-btn.edu-pill .arrow {
 }
 .frise-section.pin .frise-line {
   background: transparent;
+}
+
+/* ---------- Flèches des boutons (9 novembre 2026) : partout la même animation ----------
+   La flèche, tournée vers le haut à droite, se redresse au survol ou au clavier. Les boutons pilule le faisaient
+   déjà (rotation du rond) ; même chose pour « Découvrir One Technologie Éducation », le bandeau partagé et l'éventail. */
+.arrow-icon {
+  transition: transform 300ms var(--ease);
+}
+.edu-btn:hover .arrow-icon,
+.edu-btn:focus-visible .arrow-icon,
+.duo-edu:hover .arrow-icon,
+.duo-edu:focus-visible .arrow-icon,
+.fan-card:hover .fan-go .arrow-icon,
+.fan-card:focus-visible .fan-go .arrow-icon {
+  transform: rotate(0deg);
+}
+.pill-btn:focus-visible .arrow,
+.duo-card:hover .pill-btn .arrow,
+.duo-card:focus-visible .pill-btn .arrow {
+  transform: rotate(45deg);
+}
+.pill-btn.edu-pill:focus-visible .arrow {
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrow-icon {
+    transition: none;
+  }
+}
+
+/* ---------- Fenêtres (9 novembre 2026) : tant qu'une fenêtre est ouverte, la page ne défile plus ----------
+   Un clic à côté ne la ferme plus non plus (script.js) : on la ferme par sa croix, ses boutons ou la touche Échap. */
+html:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
 }

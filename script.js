@@ -529,6 +529,7 @@
   // Les deux partent au même serveur que le devis (quoteUrl), qui les transmet par e-mail à One Technologie : les réponses
   // sont rassemblées en un message, question par question (attribut data-q).
   // Les fenêtres : un bouton data-open-dialog="<id>" ouvre la fenêtre, data-close-dialog la ferme.
+  // Un clic à côté ne ferme pas une fenêtre (demandé le 9 novembre 2026) : sa croix, ses boutons ou la touche Échap.
   [].forEach.call(document.querySelectorAll('[data-open-dialog]'), function (button) {
     button.addEventListener('click', function () {
       var dialog = document.getElementById(button.dataset.openDialog);
@@ -540,10 +541,6 @@
       button.addEventListener('click', function () {
         dialog.close();
       });
-    });
-    // Un clic sur le voile, autour de la fenêtre, la ferme aussi.
-    dialog.addEventListener('click', function (event) {
-      if (event.target === dialog) dialog.close();
     });
   });
 
@@ -940,10 +937,6 @@
     [].forEach.call(dialog.querySelectorAll('[data-testi-close]'), function (button) {
       button.addEventListener('click', close);
     });
-    // Un clic sur le fond sombre, autour de la fenêtre, la ferme.
-    dialog.addEventListener('click', function (event) {
-      if (event.target === dialog) close();
-    });
 
     // La photo : recadrée au centre en carré de 200 px, puis écrite en texte (JPEG), avant l'envoi.
     var setPhoto = function (value) {
@@ -1335,10 +1328,6 @@
     });
     dialog.querySelector('[data-tool-close]').addEventListener('click', function () {
       dialog.close();
-    });
-    // Un clic à côté de la fenêtre la ferme.
-    dialog.addEventListener('click', function (event) {
-      if (event.target === dialog) dialog.close();
     });
     dialog.addEventListener('close', function () {
       if (opener) opener.focus({ preventScroll: true });

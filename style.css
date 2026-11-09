@@ -4484,3 +4484,10 @@ body.edu .logo {
     --page: calc(100vw - 140px);
   }
 }
+
+/* ---------- Fenêtres (9 novembre 2026) : tant qu'une fenêtre est ouverte, la page ne défile plus ----------
+   Un clic à côté ne la ferme plus non plus (script.js) : on la ferme par sa croix, ses boutons ou la touche Échap. */
+html:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
