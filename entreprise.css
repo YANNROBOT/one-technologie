@@ -6997,3 +6997,45 @@ body.company .top .pill-btn.edu-pill .arrow {
     width: min(100%, max(1080px, 56vw));
   }
 }
+
+/* ---------- « Notre façon de travailler » racontée au défilement (9 novembre 2026) ----------
+   Classe « pin » posée par script.js sur les grands écrans (pas sur téléphone, écran trop bas ou mouvement réduit) :
+   la section devient haute et sa scène reste collée à l'écran pendant qu'on fait défiler. Chaque étape apparaît
+   (--a), le trait noir s'allonge jusqu'à elle (--fill), puis l'entoure (--r) ; et ainsi de suite. */
+.frise-section.pin {
+  height: 380vh;
+}
+.frise-section.pin .frise-stage {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+.frise-illu {
+  position: relative;
+  /* Fond plein : le trait passe derrière le cercle au lieu de se voir au travers. */
+  background: var(--glass-bg), var(--card);
+}
+.frise-illu::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(from 270deg, var(--ink) calc(var(--r, 0) * 360deg), transparent 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+  pointer-events: none;
+}
+.js .frise-section.pin .frise-step.reveal {
+  opacity: var(--a, 0);
+  transform: translateY(calc((1 - var(--a, 0)) * 26px)) scale(calc(0.92 + var(--a, 0) * 0.08));
+  transition: none;
+}
+.frise-section.pin .frise-line i {
+  transition: none;
+}
+.frise-section.pin .frise-line {
+  background: transparent;
+}

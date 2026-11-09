@@ -1397,12 +1397,57 @@
       stage.style.setProperty('--shift', shift.toFixed(3));
     }
     // Étapes : le trait bleu descend avec la lecture.
-    if (steps) {
+    if (steps && pin && pin.classList.contains('pin')) {
+      friseStory();
+    } else if (steps) {
       var r = steps.getBoundingClientRect();
       var fill = Math.max(0, Math.min(1, (h * 0.62 - r.top) / r.height));
       steps.style.setProperty('--fill', fill.toFixed(3));
     }
   }
+
+  // « Notre façon de travailler » racontée au défilement : la scène reste à l'écran (classe « pin ») et
+  // l'avancée dans la section joue l'histoire. Pour chaque étape k, de T = k à T = k + 1 : elle apparaît,
+  // le trait noir s'allonge jusqu'à elle, puis l'entoure. La dernière étape reste un instant affichée seule.
+  var pin = document.querySelector('[data-frise-pin]');
+  var friseSteps = pin ? [].slice.call(pin.querySelectorAll('.frise-step')) : [];
+  var pinMedia = window.matchMedia('(min-width: 901px) and (min-height: 640px)');
+  function clamp01(x) {
+    return Math.max(0, Math.min(1, x));
+  }
+  function friseStory() {
+    var box = pin.getBoundingClientRect();
+    var span = pin.offsetHeight - window.innerHeight;
+    var p = span > 0 ? clamp01(-box.top / span) : 1;
+    var t = p * (friseSteps.length + 0.4);
+    var fill = 0;
+    friseSteps.forEach(function (step, k) {
+      var a = clamp01((t - k) / 0.3);
+      var line = k === 0 ? 1 : clamp01((t - k - 0.3) / 0.35);
+      var ring = clamp01((t - k - (k === 0 ? 0.3 : 0.65)) / 0.35);
+      if (k > 0) fill += line / (friseSteps.length - 1);
+      step.classList.add('in');
+      step.style.setProperty('--a', a.toFixed(3));
+      step.querySelector('.frise-illu').style.setProperty('--r', ring.toFixed(3));
+    });
+    steps.style.setProperty('--fill', fill.toFixed(3));
+  }
+  function frisePin() {
+    if (!pin) return;
+    var on = pinMedia.matches && !still;
+    pin.classList.toggle('pin', on);
+    if (!on) {
+      friseSteps.forEach(function (step) {
+        step.style.removeProperty('--a');
+        step.querySelector('.frise-illu').style.removeProperty('--r');
+      });
+    }
+  }
+  frisePin();
+  if (pinMedia.addEventListener) pinMedia.addEventListener('change', function () {
+    frisePin();
+    onScroll();
+  });
 
   window.addEventListener(
     'scroll',
