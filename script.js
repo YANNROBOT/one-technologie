@@ -1071,6 +1071,22 @@
     });
   })();
 
+  // ---------- Accueil : l'éventail des réalisations s'ouvre seul sur un écran tactile (pas de survol) ----------
+  (function () {
+    var fan = document.querySelector('[data-fan]');
+    if (!fan || !window.matchMedia('(hover: none)').matches || !('IntersectionObserver' in window)) return;
+    var watch = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          fan.classList.add('open');
+          watch.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    watch.observe(fan);
+  })();
+
   // ---------- Les réalisations de l'accueil s'empilent : la carte recouverte recule un peu ----------
   (function () {
     var cards = [].slice.call(document.querySelectorAll('.cases.stack .case'));
@@ -1173,6 +1189,96 @@
     start();
   });
 
+
+  // ---------- Accueil : le carrousel des services (la carte la plus proche du centre est mise en avant) ----------
+  [].forEach.call(document.querySelectorAll('[data-carousel]'), function (box) {
+    var track = box.querySelector('[data-carousel-track]');
+    var slides = [].slice.call(track.children);
+    var dotsBox = box.querySelector('[data-carousel-dots]');
+    var en = document.documentElement.lang === 'en';
+    var dots = slides.map(function (slide, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', (en ? 'Service ' : 'Service ') + (i + 1));
+      dot.addEventListener('click', function () {
+        go(i);
+      });
+      dotsBox.appendChild(dot);
+      return dot;
+    });
+    var current = -1;
+    function go(i) {
+      var slide = slides[Math.max(0, Math.min(slides.length - 1, i))];
+      track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior: still ? 'auto' : 'smooth' });
+    }
+    function mark() {
+      var middle = track.scrollLeft + track.clientWidth / 2;
+      var best = 0;
+      var gap = Infinity;
+      slides.forEach(function (slide, i) {
+        var d = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - middle);
+        if (d < gap) {
+          gap = d;
+          best = i;
+        }
+      });
+      if (best === current) return;
+      current = best;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-on', i === best);
+      });
+      dots.forEach(function (dot, i) {
+        dot.setAttribute('aria-current', String(i === best));
+      });
+    }
+    var waiting = false;
+    track.addEventListener(
+      'scroll',
+      function () {
+        if (waiting) return;
+        waiting = true;
+        requestAnimationFrame(function () {
+          waiting = false;
+          mark();
+        });
+      },
+      { passive: true },
+    );
+    box.querySelector('[data-carousel-prev]').addEventListener('click', function () {
+      go(current - 1);
+    });
+    box.querySelector('[data-carousel-next]').addEventListener('click', function () {
+      go(current + 1);
+    });
+    // Au clavier : le focus sur un lien d'une carte la ramène au centre.
+    track.addEventListener('focusin', function (event) {
+      var i = slides.indexOf(event.target.closest('.svc-slide'));
+      if (i >= 0 && i !== current) go(i);
+    });
+    window.addEventListener('resize', function () {
+      current = -1;
+      mark();
+    });
+    track.scrollLeft = slides[1].offsetLeft - (track.clientWidth - slides[1].offsetWidth) / 2;
+    mark();
+  });
+
+  // ---------- Accueil : l'interrupteur « le prestataire habituel / One Technologie » ----------
+  [].forEach.call(document.querySelectorAll('[data-switch]'), function (box) {
+    var buttons = [].slice.call(box.querySelectorAll('[data-switch-to]'));
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var to = button.getAttribute('data-switch-to');
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b === button));
+        });
+        [].forEach.call(box.querySelectorAll('[data-switch-panel]'), function (panel) {
+          panel.hidden = panel.getAttribute('data-switch-panel') !== to;
+        });
+      });
+    });
+  });
+
   var bar = document.querySelector('.bar');
   var stage = document.querySelector('[data-parallax]');
   var steps = document.querySelector('[data-progress]');
@@ -1210,4 +1316,44 @@
   );
   window.addEventListener('resize', onScroll);
   onScroll();
+
+  // ---------- Dessin platine : un reflet de lumière suit la souris sur le verre ----------
+  // Seulement avec une souris (pas au doigt) et si l'appareil ne demande pas moins de mouvement. Le reflet est une
+  // couche de fond ajoutée par la classe « glare-on » (entreprise.css), placée par --gx et --gy.
+  (function () {
+    if (still || !matchMedia('(pointer: fine)').matches || !document.body.classList.contains('company')) return;
+    var cible = null;
+    var x = 0;
+    var y = 0;
+    var prevu = false;
+    var place = function () {
+      prevu = false;
+      if (!cible) return;
+      var r = cible.getBoundingClientRect();
+      cible.style.setProperty('--gx', (x - r.left).toFixed(0) + 'px');
+      cible.style.setProperty('--gy', (y - r.top).toFixed(0) + 'px');
+    };
+    document.addEventListener(
+      'pointermove',
+      function (e) {
+        var verre = e.target.closest ? e.target.closest('.glass, .how-card, .svc, .value, .testi-card, .contact-cards a, .tab-panel, .case-info, .faq details') : null;
+        if (verre !== cible) {
+          if (cible) cible.classList.remove('glare-on');
+          cible = verre;
+          if (cible) cible.classList.add('glare-on');
+        }
+        x = e.clientX;
+        y = e.clientY;
+        if (cible && !prevu) {
+          prevu = true;
+          requestAnimationFrame(place);
+        }
+      },
+      { passive: true },
+    );
+    document.addEventListener('pointerleave', function () {
+      if (cible) cible.classList.remove('glare-on');
+      cible = null;
+    });
+  })();
 })();
