@@ -7657,3 +7657,81 @@ body.bare main {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+/* ---------- Lien « Espace client » ---------- */
+/* Dans la barre, un rond discret à côté du bouton « Éducation » (la barre n'a pas la place d'un libellé) :
+   son nom s'affiche dessous au survol ou au clavier. Le lien en toutes lettres est dans le menu et le pied de page. */
+body.company .client-link {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+body.company .client-link svg {
+  width: 17px;
+  height: 17px;
+}
+body.company .client-link span {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-ink);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  translate: -50% -4px;
+  pointer-events: none;
+  transition: opacity 160ms ease, translate 160ms ease;
+}
+body.company .client-link:hover,
+body.company .client-link:focus-visible {
+  border-color: var(--ink);
+  background: var(--glass-flat);
+}
+body.company .client-link:hover span,
+body.company .client-link:focus-visible span {
+  opacity: 1;
+  translate: -50% 0;
+}
+@media (max-width: 1180px) {
+  body.company .client-link {
+    display: none;
+  }
+}
+/* Au-delà de 1 320 px, la barre garde sa largeur : le menu se resserre un peu pour laisser la place du rond. */
+@media (min-width: 1321px) {
+  body.company .top-nav a {
+    padding-inline: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.company .client-link span {
+    transition: none;
+  }
+}
+
+/* Page Contact : la ligne pour les clients, sous les coordonnées. */
+.client-line {
+  margin: 22px 0 0;
+  color: var(--ink-2);
+  font-size: 14.5px;
+  text-align: center;
+}
+.client-line a {
+  color: var(--ink);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}

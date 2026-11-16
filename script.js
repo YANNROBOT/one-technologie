@@ -29,6 +29,10 @@
 
   function applyLanguage() {
     if (!altUrl) translatePage();
+    // L'espace client est une autre adresse : le lien lui passe la langue du site.
+    document.querySelectorAll('a[data-client-link]').forEach(function (link) {
+      link.href = 'https://client.onetechnologie.com/client/?lang=' + lang;
+    });
     syncPicks();
     // Le bouton montre la langue vers laquelle on bascule. Les pages de l'Éducation en ont un second
     // dans le pied de page, pour les téléphones.
@@ -955,6 +959,18 @@
     [].forEach.call(dialog.querySelectorAll('[data-testi-close]'), function (button) {
       button.addEventListener('click', close);
     });
+
+    // Lien reçu depuis l'espace client (?temoignage=1&nom=…) : la fenêtre s'ouvre, le nom est déjà rempli (texte seulement).
+    try {
+      var asked = new URLSearchParams(location.search);
+      if (asked.get('temoignage') === '1') {
+        open();
+        var givenName = (asked.get('nom') || '').trim().slice(0, 80);
+        if (givenName) form.querySelector('input[name="name"]').value = givenName;
+      }
+    } catch (e) {
+      /* navigateur sans URLSearchParams : la fenêtre s'ouvre par son bouton */
+    }
 
     // La photo : recadrée au centre en carré de 200 px, puis écrite en texte (JPEG), avant l'envoi.
     var setPhoto = function (value) {
