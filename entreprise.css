@@ -7735,3 +7735,79 @@ body.company .client-link:focus-visible span {
   font-weight: 600;
   text-underline-offset: 3px;
 }
+
+/* ---------- Barre du haut : de l'air au-dessus, et plus petite encore (16 novembre 2026) ----------
+   Demandé par l'utilisateur. La pilule descend de 12 px sous le bord de l'écran ; le logo, les liens et les
+   boutons perdent environ un dixième. */
+body.company .top,
+body.company .top.stuck {
+  padding-block: 19px 9px;
+}
+body.company .top::before,
+body.company .top.stuck::before {
+  inset-block: 12px 3px;
+}
+body.company .brand {
+  width: 132px;
+}
+body.company .top-nav {
+  padding: 2px;
+}
+body.company .top-nav a {
+  padding: 5px 11px;
+  font-size: 13.5px;
+}
+body.company .top-actions {
+  gap: 7px;
+}
+body.company .top-tools .round,
+body.company .menu-btn,
+body.company .client-link {
+  width: 32px;
+  height: 32px;
+}
+body.company .top-tools .round span {
+  font-size: 11.5px;
+}
+body.company .top-tools .round svg,
+body.company .client-link svg {
+  width: 15px;
+  height: 15px;
+}
+body.company .top .pill-btn.edu-pill {
+  min-height: 34px;
+  padding: 3px 3px 3px 13px;
+  gap: 8px;
+  font-size: 13.5px;
+}
+body.company .top .pill-btn.edu-pill .arrow {
+  width: 27px;
+  height: 27px;
+}
+@media (min-width: 1181px) and (max-width: 1320px) {
+  body.company .top-nav a {
+    padding-inline: 9px;
+    font-size: 13px;
+  }
+  body.company .brand {
+    width: 124px;
+  }
+}
+@media (min-width: 1321px) {
+  body.company .top-nav a {
+    padding-inline: 11px;
+  }
+}
+@media (max-width: 560px) {
+  body.company .brand {
+    width: 110px;
+  }
+  body.company .top .pill-btn.edu-pill span:first-child {
+    font-size: 13px;
+  }
+}
+@media (max-width: 340px) {
+  body.company .brand {
+    width: 100px;
+  }
+}
