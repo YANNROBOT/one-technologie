@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="La fenêtre d'un site web et sa version sur téléphone, un curseur clique sur le bouton.">
+  <title>Sites web — One Technologie</title>
+  <g transform="translate(-1 4.5) translate(100 100) scale(0.86) translate(-100 -100)">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M168 30 l8 -8"/>
+    <path d="M176 50 l11 -2"/>
+    <path d="M156 18 l2 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-4 96 96)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="18" y="34" width="140" height="108" rx="12"/></g>
+    <rect x="18" y="34" width="140" height="108" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M18 56V46A12 12 0 0 1 30 34H146A12 12 0 0 1 158 46V56Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="31" cy="45" r="3.4" fill="#E9B10A" stroke="#111111" stroke-width="1.5"/><circle cx="42" cy="45" r="3.4" fill="#EDE3CF" stroke="#111111" stroke-width="1.5"/><circle cx="53" cy="45" r="3.4" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="64" y="40" width="82" height="10" rx="5" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="30" y="66" width="60" height="8" rx="4" fill="#111111"/>
+    <rect x="30" y="80" width="44" height="8" rx="4" fill="#111111"/>
+    <rect x="30" y="96" width="54" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="30" y="105" width="42" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="30" y="118" width="40" height="14" rx="7" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <rect x="40" y="123" width="20" height="4" rx="2" fill="#FFFFFD"/>
+    <rect x="100" y="66" width="46" height="66" rx="8" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <circle cx="132" cy="80" r="6.5" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <path d="M102 130 L116 104 L126 117 L134 108 L144 120 V130 Z" fill="#8A5A12" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <g class="a-bob" transform="rotate(8 158 136)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="136" y="96" width="44" height="80" rx="10"/></g>
+    <rect x="136" y="96" width="44" height="80" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="152" y="101" width="12" height="3.5" rx="1.75" fill="#111111"/>
+    <rect x="142" y="110" width="32" height="22" rx="4" fill="#EDE3CF" stroke="#111111" stroke-width="2"/>
+    <path d="M143 131 L152 118 L158 125 L162 120 L173 131 Z" fill="#8A5A12" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+    <rect x="142" y="138" width="26" height="5" rx="2.5" fill="#111111"/>
+    <rect x="142" y="147" width="20" height="4" rx="2" fill="#DDD5CB"/>
+    <rect x="142" y="157" width="24" height="10" rx="5" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+  </g>
+  <g class="a-pop">
+    <path d="M50 118 l-6 -6 M60 112 v-9 M70 118 l6 -6" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M58 124 V152 L65 145 L71 157 L77 154 L71 142 L81 142 Z" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>

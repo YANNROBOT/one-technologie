@@ -1370,12 +1370,19 @@
       },
       { passive: true },
     );
-    box.querySelector('[data-carousel-prev]').addEventListener('click', function () {
-      go(current - 1);
-    });
-    box.querySelector('[data-carousel-next]').addEventListener('click', function () {
-      go(current + 1);
-    });
+    // Les flèches sont facultatives : la couverture de l'accueil n'en a plus (17 novembre 2026).
+    var prev = box.querySelector('[data-carousel-prev]');
+    var next = box.querySelector('[data-carousel-next]');
+    if (prev) {
+      prev.addEventListener('click', function () {
+        go(current - 1);
+      });
+    }
+    if (next) {
+      next.addEventListener('click', function () {
+        go(current + 1);
+      });
+    }
     // Au clavier : le focus sur un lien d'une carte la ramène au centre.
     track.addEventListener('focusin', function (event) {
       var i = slides.indexOf(event.target.closest('.svc-slide'));
@@ -1388,7 +1395,8 @@
     track.scrollLeft = slides[1].offsetLeft - (track.clientWidth - slides[1].offsetWidth) / 2;
     mark();
 
-    // Défilement automatique (data-autoplay) : une carte toutes les 4,5 secondes. Il s'arrête tant que la souris
+    // Défilement automatique (data-autoplay) : une carte toutes les 4,5 secondes, ou au rythme donné en millisecondes
+    // (data-autoplay="3000" sur l'accueil). Il s'arrête tant que la souris
     // est sur le carrousel, qu'un de ses éléments a le focus, qu'on le touche, ou qu'il n'est pas à l'écran.
     if (!box.hasAttribute('data-autoplay') || still) return;
     var hovered = false;
@@ -1396,12 +1404,13 @@
     var touched = false;
     var visible = false;
     var timer = 0;
+    var every = Number(box.getAttribute('data-autoplay')) || 4500;
     function restart() {
       clearInterval(timer);
       timer = setInterval(function () {
         if (hovered || focused || touched || !visible || document.hidden) return;
         go(current + 1);
-      }, 4500);
+      }, every);
     }
     box.addEventListener('mouseenter', function () {
       hovered = true;

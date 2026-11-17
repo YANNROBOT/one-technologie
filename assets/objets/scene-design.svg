@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une affiche en cours de création, avec l'outil plume, des pastilles de couleur et un pinceau.">
+  <title>Design graphique — One Technologie</title>
+  <g transform="translate(-9.4 10.8) translate(100 100) scale(0.86) translate(-100 -100)">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M170 34 l8 -8"/>
+    <path d="M178 54 l11 -2"/>
+    <path d="M160 20 l2 -11"/>
+  </g>
+
+  <g class="a-float" transform="rotate(-5 104 92)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="58" y="22" width="96" height="134" rx="6"/></g>
+    <rect x="58" y="22" width="96" height="134" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M58 66 V28 A6 6 0 0 1 64 22 H148 A6 6 0 0 1 154 28 V66 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="68" y="32" width="54" height="8" rx="4" fill="#FFFFFD"/>
+    <rect x="68" y="46" width="34" height="6" rx="3" fill="#FFFFFD"/>
+    <circle cx="106" cy="92" r="17" fill="#EDE3CF" stroke="#111111" stroke-width="2.5"/>
+    <path d="M106.0 83.0 L108.4 88.8 L114.6 89.2 L109.8 93.2 L111.3 99.3 L106.0 96.0 L100.7 99.3 L102.2 93.2 L97.4 89.2 L103.6 88.8 Z" fill="#E9B10A" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="68" y="120" width="72" height="7" rx="3.5" fill="#111111"/>
+    <rect x="68" y="132" width="46" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="68" y="142" width="32" height="8" rx="4" fill="#8A5A12" stroke="#111111" stroke-width="2"/>
+    <rect x="48" y="14" width="26" height="10" rx="2" transform="rotate(-22 61 19)" fill="#FBF5E6" stroke="#111111" stroke-width="2"/>
+  </g>
+  <g class="a-pop">
+    <path d="M30 160 C46 120 96 186 126 146" fill="none" stroke="#111111" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M30 160 L22 132 M126 146 L150 128" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="22" cy="132" r="4.5" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <circle cx="150" cy="128" r="4.5" fill="#E9B10A" stroke="#111111" stroke-width="2"/>
+    <rect x="25" y="155" width="10" height="10" rx="1.5" fill="#FFFFFF" stroke="#111111" stroke-width="2.4"/>
+    <rect x="121" y="141" width="10" height="10" rx="1.5" fill="#FFFFFF" stroke="#111111" stroke-width="2.4"/>
+  </g>
+  <g class="a-float">
+    <g transform="translate(6 6)" fill="#111111"><circle cx="34" cy="62" r="11"/><circle cx="30" cy="90" r="11"/><circle cx="34" cy="118" r="11"/></g>
+    <circle cx="34" cy="62" r="11" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="30" cy="90" r="11" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="34" cy="118" r="11" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <g class="a-bob" transform="rotate(34 168 118)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="162" y="96" width="12" height="70" rx="5"/></g>
+    <rect x="162" y="96" width="12" height="70" rx="5" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="160" y="84" width="16" height="16" rx="3" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M160 84 Q160 64 168 54 Q176 64 176 84 Z" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>

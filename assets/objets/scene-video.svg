@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Une caméra de tournage, un clap de cinéma ouvert et un bouton lecture.">
+  <title>Vidéo — One Technologie</title>
+  <g transform="translate(0.9 3) translate(100 100) scale(0.88) translate(-100 -100)">
+  <g class="a-burst" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round">
+    <path d="M30 52 l-9 -8"/>
+    <path d="M22 74 h-12"/>
+    <path d="M46 34 l-3 -12"/>
+  </g>
+
+  <g class="a-float" transform="rotate(8 140 80)">
+    <g transform="translate(6 6)" fill="#111111"><rect x="102" y="52" width="80" height="60" rx="8"/></g>
+    <rect x="102" y="52" width="80" height="60" rx="8" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="110" y="66" width="40" height="6" rx="3" fill="#111111"/>
+    <rect x="110" y="78" width="60" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="110" y="88" width="48" height="5" rx="2.5" fill="#DDD5CB"/>
+    <rect x="110" y="98" width="30" height="5" rx="2.5" fill="#DDD5CB"/>
+    <g transform="rotate(-16 104 50)">
+      <rect x="102" y="36" width="80" height="14" rx="3" fill="#FFFFFF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M114 36 L104 50 M132 36 L122 50 M150 36 L140 50 M168 36 L158 50 M182 40 L176 50" stroke="#111111" stroke-width="6"/>
+    </g>
+  </g>
+  <g transform="translate(-6 10) scale(0.86)">
+    <circle cx="56" cy="62" r="22" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="56" cy="62" r="5.5" fill="#111111"/>
+    <g fill="#111111"><circle cx="56" cy="49" r="3.6"/><circle cx="67" cy="66" r="3.6"/><circle cx="45" cy="66" r="3.6"/></g>
+    <circle cx="102" cy="60" r="18" fill="#EDE3CF" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="102" cy="60" r="4.5" fill="#111111"/>
+    <g fill="#111111"><circle cx="102" cy="50" r="3.2"/><circle cx="111" cy="64" r="3.2"/><circle cx="93" cy="64" r="3.2"/></g>
+    <g transform="translate(6 6)" fill="#111111"><path d="M132 108 L164 94 L164 146 L132 132 Z"/></g>
+    <path d="M132 108 L164 94 L164 146 L132 132 Z" fill="#FBF5E6" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(6 6)" fill="#111111"><rect x="24" y="86" width="112" height="68" rx="14"/></g>
+    <rect x="24" y="86" width="112" height="68" rx="14" fill="#E9B10A" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="38" y="98" width="40" height="26" rx="5" fill="#FBF5E6" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M53 104 L66 111 L53 118 Z" fill="#E9B10A" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="118" cy="104" r="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="118" cy="104" r="2.4" fill="#C9940A"/>
+    <rect x="38" y="134" width="56" height="7" rx="3.5" fill="#FFFFFD"/>
+    <path d="M80 154 V166 M66 182 L80 166 L94 182" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="a-pop">
+    <g transform="translate(6 6)" fill="#111111"><circle cx="152" cy="146" r="22"/></g>
+    <circle cx="152" cy="146" r="22" fill="#8A5A12" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M145 134 L164 146 L145 158 Z" fill="#FFFFFD" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>
