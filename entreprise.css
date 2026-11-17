@@ -7838,7 +7838,7 @@ body.company .top .pill-btn.edu-pill .arrow {
    Demandé par l'utilisateur. Quatre états, posés par script.js sur .top :
    - en haut de page (pas de « stuck ») : la barre entière, sans fond, sans bordure ni ombre ;
    - « hide » : on descend, elle est cachée ;
-   - « mini » : on remonte, seule la tête du logo (le rond et sa couronne) reste, dans une pastille de verre ;
+   - « mini » : on remonte, seule la tête du logo (le rond et sa couronne) reste, dans une pastille de verre, au centre ;
    - « mini open » : pastille survolée, touchée ou atteinte au clavier, le verre s'étire jusqu'à la barre entière.
    Le fond fait 64 px de haut, 12 px sous le bord de l'écran ; la pastille est le même fond, découpé en rond
    (clip-path), ce qui donne l'étirement. Lien de la page ouverte : son texte à l'encre, sans pilule ni point. */
@@ -7878,7 +7878,7 @@ body.company .top.stuck::before {
 }
 body.company .top.mini:not(.open)::before,
 body.company .top.hide::before {
-  clip-path: inset(6px calc(100% - 58px) 6px 6px round 999px);
+  clip-path: inset(6px calc(50% - 26px) round 999px);
 }
 body.company .top.mini:not(.open)::before {
   transition:
@@ -7922,17 +7922,18 @@ body.company .top.hide > .top-nav,
 body.company .top.hide > .top-actions {
   transition-delay: 380ms;
 }
-body.company .top.mini:not(.open) > .top-nav {
-  translate: -28px 0;
+/* La pastille est au centre : le logo et les boutons se resserrent vers elle en s'effaçant. */
+body.company .top.mini:not(.open) > .brand {
+  translate: 48px 0;
 }
 body.company .top.mini:not(.open) > .top-actions {
-  translate: -56px 0;
+  translate: -48px 0;
 }
 /* La pastille : la tête du logo, un vrai bouton (« Ouvrir le menu »). */
 body.company .bar-pill {
   position: absolute;
   top: 18px;
-  left: calc(clamp(10px, 1.6vw, 24px) + 6px);
+  left: calc(50% - 26px);
   z-index: 1;
   display: grid;
   width: 52px;
@@ -8194,11 +8195,251 @@ body.company .bar-pill .crown {
   body.company .lang-btn svg {
     transition: none;
   }
-  body.company .top.mini:not(.open) > .top-nav,
+  body.company .top.mini:not(.open) > .brand,
   body.company .top.mini:not(.open) > .top-actions {
     translate: none;
   }
   body.company .lang-list {
     animation: none;
+  }
+}
+
+/* ---------- Accueil : couverture « titre et carrousel » (17 novembre 2026, d'après une image envoyée par l'utilisateur) ----------
+   Tout est centré : la pastille, le titre, la phrase, puis le carrousel des six services, ses points et les boutons.
+   Chaque service est une carte en deux parties : un grand carré sombre qui porte son dessin, à cheval sur un panneau
+   clair qui porte son nom, sa phrase, le lien et ses exemples. Le carrousel est celui de script.js (data-carousel). */
+.hero-platine.wb-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 20px);
+  min-height: 0;
+  padding: clamp(30px, 3.4vw, 52px) 0 clamp(118px, 11vw, 150px);
+  overflow: hidden;
+}
+.wb-hero .hero-head {
+  align-items: center;
+  gap: 12px;
+  max-width: none;
+  margin: 0;
+  padding-inline: clamp(18px, 4vw, 60px);
+  text-align: center;
+}
+.wb-hero .hero-title {
+  max-width: 21ch;
+  font-size: clamp(30px, 3.5vw, 50px);
+}
+.wb-hero .hero-sub {
+  max-width: 560px;
+  font-size: 14.5px;
+}
+.wb-carousel {
+  width: 100%;
+  margin-top: 0;
+}
+.wb-carousel .svc-track {
+  align-items: stretch;
+  gap: 30px;
+  padding: 12px calc(50% - min(340px, 43vw)) 16px;
+}
+.wb-carousel .svc-slide {
+  position: relative;
+  display: grid;
+  width: min(680px, 86vw);
+  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-rows: auto auto auto 1fr;
+  gap: 8px 28px;
+  padding: 0 28px 0 0;
+  border-radius: 0;
+  color: var(--ink);
+  opacity: 0.32;
+  scale: 0.88;
+}
+.wb-carousel .svc-slide.is-on {
+  opacity: 1;
+  scale: 1;
+}
+/* Le panneau clair, derrière : il commence au milieu du carré et s'arrête un peu avant son haut et son bas. */
+.wb-carousel .svc-slide::before {
+  content: '';
+  position: absolute;
+  inset: 14px 0 14px 70px;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--ink) 9%, transparent);
+  border-radius: 34px;
+  background: color-mix(in srgb, var(--btn-ink) 58%, transparent);
+}
+/* Le carré sombre, avec le dessin du service. */
+.wb-carousel .svc-slide-top {
+  position: relative;
+  display: grid;
+  grid-row: 1 / -1;
+  grid-column: 1;
+  width: 230px;
+  height: 230px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 46px;
+  background:
+    radial-gradient(120% 90% at 30% 12%, rgba(255, 255, 255, 0.14), transparent 60%),
+    linear-gradient(150deg, #32373c, #0b0d0f 70%);
+  box-shadow:
+    0 26px 44px -22px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.wb-carousel .svc-slide-top small {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  color: rgba(233, 236, 239, 0.6);
+  font-size: 12px;
+}
+.wb-carousel .svc-slide-illu {
+  line-height: 0;
+}
+/* Sur le sombre, le dessin prend un fin liseré blanc, comme un autocollant. */
+.wb-carousel .svc-slide-illu .objet {
+  width: 128px;
+  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff);
+  transition: scale 500ms var(--ease);
+}
+.wb-carousel .svc-slide.is-on:hover .svc-slide-illu .objet {
+  scale: 1.07;
+}
+.wb-carousel .svc-slide h3 {
+  grid-row: 1;
+  grid-column: 2;
+  margin-top: 36px;
+  font-size: 23px;
+}
+.wb-carousel .svc-slide > p {
+  grid-row: 2;
+  grid-column: 2;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.wb-carousel .svc-slide .pill-btn {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: start;
+  min-height: 0;
+  margin-top: 2px;
+  padding: 0;
+  gap: 9px;
+  background: none;
+  box-shadow: none;
+  color: var(--ink);
+  font-size: 13.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.wb-carousel .svc-slide .pill-btn .arrow {
+  width: 24px;
+  height: 24px;
+  background: var(--btn);
+  color: var(--btn-ink);
+}
+.wb-carousel .svc-slide .pill-btn .arrow svg {
+  width: 12px;
+  height: 12px;
+}
+.wb-carousel .svc-slide ul {
+  grid-row: 4;
+  grid-column: 2;
+  align-self: end;
+  margin-bottom: 34px;
+}
+.wb-carousel .svc-slide li {
+  border-color: color-mix(in srgb, var(--ink) 16%, transparent);
+  color: var(--ink-2);
+}
+/* Les flèches : deux ronds pleins, à cheval sur les bords de la carte du centre. */
+.wb-carousel .svc-nav {
+  top: 50%;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: var(--btn);
+  color: var(--btn-ink);
+  transition: scale 200ms ease;
+}
+.wb-carousel .svc-nav:hover {
+  scale: 1.1;
+}
+.wb-carousel .svc-nav.prev {
+  left: calc(50% - min(340px, 43vw) - 20px);
+}
+.wb-carousel .svc-nav.next {
+  right: calc(50% - min(340px, 43vw) - 20px);
+}
+.wb-carousel .svc-dots button {
+  background: color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.wb-carousel .svc-dots button[aria-current='true'] {
+  background: var(--ink);
+}
+.wb-hero .wb-actions {
+  justify-content: center;
+  margin-top: 4px;
+  padding-inline: 18px;
+}
+/* La section sombre du dessous ne porte plus que les outils. */
+.svc-section .tools-row {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+@media (max-width: 760px) {
+  .hero-platine.wb-hero {
+    padding-bottom: 96px;
+  }
+  .wb-carousel .svc-track {
+    gap: 14px;
+    padding-inline: calc(50% - 41vw);
+  }
+  .wb-carousel .svc-slide {
+    width: 82vw;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 8px;
+    padding: 0 18px 22px;
+  }
+  .wb-carousel .svc-slide::before {
+    inset: 60px 0 0;
+    border-radius: 28px;
+  }
+  .wb-carousel .svc-slide-top {
+    grid-row: auto;
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    border-radius: 34px;
+  }
+  .wb-carousel .svc-slide-illu .objet {
+    width: 86px;
+  }
+  .wb-carousel .svc-slide h3,
+  .wb-carousel .svc-slide > p,
+  .wb-carousel .svc-slide .pill-btn,
+  .wb-carousel .svc-slide ul {
+    grid-row: auto;
+    grid-column: 1;
+  }
+  .wb-carousel .svc-slide h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .wb-carousel .svc-slide ul {
+    margin-bottom: 0;
+  }
+  .wb-carousel .svc-nav {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wb-carousel .svc-slide-illu .objet,
+  .wb-carousel .svc-nav {
+    transition: none;
   }
 }

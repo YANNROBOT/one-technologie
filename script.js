@@ -1487,16 +1487,16 @@
   var steps = document.querySelector('[data-progress]');
   var queued = false;
 
-  // Barre du haut de One Technologie (16 novembre 2026, demandé par l'utilisateur), quatre états :
+  // Barre du haut des deux parties du site (16 novembre 2026, demandé par l'utilisateur), quatre états :
   //  - en haut de page : la barre entière, sans fond (pas de classe « stuck ») ;
   //  - on descend : elle se cache (« hide ») ; juste sous le haut de page, elle reste entière, avec son fond ;
-  //  - on remonte : seule la « tête du logo » reste, dans une pastille de verre (« mini ») ;
+  //  - on remonte : seule la « tête du logo » reste, dans une pastille de verre au centre (« mini ») ;
   //  - pastille survolée, touchée ou atteinte au clavier : elle s'étire jusqu'à la barre entière (« mini open »).
   // Elle se replie 300 ms après le départ du curseur, jamais tant qu'une de ses listes est ouverte (langue, menu,
   // aperçu de l'Éducation sous le curseur) ni tant qu'un de ses éléments a le focus clavier.
-  // Les pages de l'Éducation gardent leur barre ; la page « Demander un devis » n'en a pas.
+  // Les pages de l'Éducation suivent la même logique (17 novembre 2026) ; la page « Demander un devis » n'a pas de barre.
   var lastY = window.scrollY;
-  var pill = bar && document.body.classList.contains('company') ? bar.querySelector('.bar-pill') : null;
+  var pill = bar ? bar.querySelector('.bar-pill') : null;
   var barMode = '';
   var barHovered = false;
   var touchOpen = false;
@@ -1548,12 +1548,12 @@
   }
   if (pill) {
     // L'animation d'arrivée du logo (couronne, puis sourire) est jouée une fois ; ensuite, le survol fait sauter la couronne.
-    var brand = bar.querySelector('.brand');
+    var brand = bar.querySelector('.brand, .logo');
     var logoDone = function () {
       brand.classList.add('logo-done');
     };
     brand.addEventListener('animationend', function (event) {
-      if (event.animationName === 'smile-draw') logoDone();
+      if (event.animationName === 'smile-draw' || event.animationName === 'smile-in') logoDone();
     });
     setTimeout(logoDone, 4000);
     var pointerKind = '';
