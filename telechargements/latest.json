@@ -1,11 +1,11 @@
 {
-  "version": "0.37.0",
-  "notes": "{\"fr\":[\"Sécurité renforcée : la connexion avec Google demande une confirmation sur cet ordinateur (appareil déjà reconnu, ou code reçu par e-mail).\",\"Les modifications faites sans connexion ne sont envoyées que par le compte qui les a faites ; se déconnecter les abandonne.\",\"Protection renforcée contre les essais répétés de mots de passe et de codes, et restauration d’une sauvegarde mieux contrôlée.\"],\"en\":[\"Stronger security: signing in with Google asks for a confirmation on this computer (device already recognised, or code received by email).\",\"Changes made offline are only sent by the account that made them; signing out discards them.\",\"Stronger protection against repeated password and code attempts, and tighter checks when restoring a backup.\"]}",
-  "pub_date": "2026-11-16T15:20:35.767Z",
+  "version": "0.38.0",
+  "notes": "{\"fr\":[\"GesSchool change de nom : le logiciel s’appelle désormais Ponctua, avec un nouveau logo. Rien d’autre ne change : votre compte, vos données et vos sauvegardes sont conservés.\",\"L’application du téléphone prend le même nom et le même logo.\"],\"en\":[\"GesSchool has a new name: the software is now called Ponctua, with a new logo. Nothing else changes: your account, your data and your backups are kept.\",\"The phone app takes the same name and the same logo.\"]}",
+  "pub_date": "2026-11-17T17:40:54.714Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOXVFNzNPVHR2bzUrdnNsK3NXL21YQkZuVVRnUGZIekMrcGN0REIzNGsrVXkyZERrVGdaYWduQXVXOFNhRDRYMzlWYzRUcWFSeVZvNFNmNHBtQXBtR3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODQyNDM1CWZpbGU6R2VzU2Nob29sXzAuMzcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zNy4wCkVoNXNGMjlrM0FjYUt6MFlpRUdzTndxejkyUXl4ME5TWTRieFZXaHdzbWFkTHJwR2EwcTNuZFJZektCMkNMWWpaSmg3S3VVR2YwNmh4RU5RQ0Z2SUNBPT0K",
-      "url": "https://yannrobot.github.io/one-technologie/telechargements/GesSchool-installation.exe?v=0.37.0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVScGRVNjQ2dGduOW9TRXNJRzVHbUpwcUpQYkVsRHRLWVZUK0RMTm9QaDZ4TjlNNE05SEErcEFqZXFVV0FZSTZaV2lsVUpMTFl5dkp6Z1ZEdFZUSnNlczN6VjdsTWxwYWdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTM3MjQ2CWZpbGU6UG9uY3R1YV8wLjM4LjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuMzguMApGck01M0FQL3RxNXlZMWtPY1hUOXg3dEhLTllicUhjUWJwK3JTZW5LRFQrSVhDRTE0d0RSWE1DVzI5R21hRTE5Rk1oemZ1S1duSnFkWmFVZ2E0N3lEQT09Cg==",
+      "url": "https://yannrobot.github.io/one-technologie/telechargements/Ponctua-installation.exe?v=0.38.0"
     }
   }
 }

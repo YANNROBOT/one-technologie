@@ -326,8 +326,10 @@ main {
   padding: clamp(30px, 5vw, 64px) clamp(22px, 5vw, 64px) 0;
 }
 
-/* Le logo GesSchool sur son étiquette blanche : le bleu de son S ne se lirait pas sur le bandeau. */
+/* Le logo Ponctua sur son étiquette blanche : le bleu de sa montre ne se lirait pas sur le bandeau.
+   Ses lettres prennent la couleur du texte (currentColor) : ici, toujours l'encre sombre. */
 .product-logo {
+  color: #212121;
   display: inline-block;
   margin-bottom: 18px;
   padding: 12px 18px;
@@ -2298,7 +2300,7 @@ button.btn {
   height: 28px;
 }
 
-/* Grille des fonctions de GesSchool */
+/* Grille des fonctions de Ponctua */
 .feats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
