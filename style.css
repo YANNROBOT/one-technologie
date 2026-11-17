@@ -4491,3 +4491,14 @@ html:has(dialog[open]) {
   overflow: hidden;
   scrollbar-gutter: stable;
 }
+
+/* Bloc hors de l'écran (classe posée par script.js) : ses animations en boucle sont en pause, pour ne pas recalculer
+   à chaque image des dessins que personne ne voit. Elles reprennent là où elles en étaient. */
+.offscreen,
+.offscreen::before,
+.offscreen::after,
+.offscreen *,
+.offscreen *::before,
+.offscreen *::after {
+  animation-play-state: paused !important;
+}

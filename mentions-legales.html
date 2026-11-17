@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="entreprise.css?v=mwjrbku5">
+    <link rel="stylesheet" href="entreprise.css?v=mwk0duk2">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,12 +29,25 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // Filet de sécurité : tant que script.js n'a pas fini (classe « anim-ok »), les textes et blocs animés restent
+      // cachés. S'il ne s'exécute pas (réseau coupé, erreur) ou tarde trop, on retire « js » : tout s'affiche, sans animation.
+      (function (r) {
+        var check = function () {
+          if (!r.classList.contains('anim-ok')) r.classList.remove('js');
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(check, 0);
+        });
+        setTimeout(check, 6000);
+      })(document.documentElement);
       // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
       try {
         var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
         if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
       } catch (e) {}
     </script>
+    <script defer src="config.js?v=mwk0duk2"></script>
+    <script defer src="script.js?v=mwk0duk2"></script>
     <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/mentions-legales.html">
     <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/mentions-legales.html">
     <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/mentions-legales.html">
@@ -44,6 +57,19 @@
     <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
 
     <header class="top bar" id="haut">
+      <!-- La « tête du logo » : quand on remonte la page, seule cette pastille reste ; au survol, au toucher ou au clavier,
+           elle s'étire jusqu'à la barre entière (classes « mini » et « open » posées par script.js). -->
+      <button class="bar-pill" type="button" aria-label="Ouvrir le menu" data-en-aria-label="Open the menu"><span aria-hidden="true"><svg viewBox="-6 -6 356 403" xmlns="http://www.w3.org/2000/svg">
+<path fill="black" d="M1419,253.05h-56.78c.43,2.65,1.25,4.97,2.47,6.94,1.22,1.96,2.71,3.59,4.47,4.86,1.76,1.28,3.67,2.23,5.74,2.87,2.08.64,4.18.96,6.3.96,3.51,0,6.78-.85,9.81-2.55,3.03-1.7,5.13-4.15,6.3-7.34l21.69-.16c0,5.43-1.09,10.18-3.27,14.28-2.18,4.1-5.1,7.52-8.77,10.29-3.67,2.76-7.82,4.86-12.44,6.3-4.62,1.44-9.44,2.16-14.43,2.16-5.43,0-10.77-.88-16.03-2.64-5.27-1.76-10-4.39-14.2-7.9-4.2-3.5-7.57-7.97-10.12-13.4-2.55-5.42-3.83-11.8-3.83-19.14s1.25-13.53,3.75-18.9c2.49-5.37,5.79-9.81,9.88-13.32,4.09-3.51,8.72-6.14,13.87-7.9,5.16-1.76,10.39-2.63,15.71-2.63,4.79,0,9.47.69,14.04,2.07,4.57,1.38,8.66,3.46,12.28,6.22,3.61,2.77,6.64,6.2,9.09,10.29,2.45,4.09,3.88,8.85,4.31,14.27h.16v14.36ZM1396.03,238.69c-.22-1.91-.83-3.64-1.83-5.18-1.01-1.54-2.23-2.82-3.67-3.83-1.44-1.01-3.03-1.8-4.79-2.39-1.76-.59-3.59-.88-5.51-.88-3.4,0-6.7.99-9.88,2.95-3.19,1.97-5.53,5.08-7.02,9.33h32.7Z"/>
+<path fill="white" d="M144,388.5c-78.02,0-141.5-63.48-141.5-141.5S65.98,105.5,144,105.5s141.5,63.48,141.5,141.5-63.48,141.5-141.5,141.5Z"/>
+<path fill="black" d="M144,108c37.13,0,72.03,14.46,98.29,40.71s40.71,61.16,40.71,98.29-14.46,72.03-40.71,98.29-61.16,40.71-98.29,40.71-72.03-14.46-98.29-40.71S5,284.13,5,247s14.46-72.03,40.71-98.29,61.16-40.71,98.29-40.71M144,103C64.47,103,0,167.47,0,247s64.47,144,144,144,144-64.47,144-144S223.53,103,144,103h0Z"/>
+<path fill="white" d="M153,382.5c-73.06,0-132.5-61.68-132.5-137.5S79.94,107.5,153,107.5s132.5,61.68,132.5,137.5-59.44,137.5-132.5,137.5Z"/>
+<path fill="black" d="M153,110c34.69,0,67.31,14.02,91.86,39.48,24.59,25.51,38.14,59.43,38.14,95.52s-13.54,70.02-38.14,95.52c-24.55,25.46-57.17,39.48-91.86,39.48s-67.31-14.02-91.86-39.48c-24.59-25.51-38.14-59.43-38.14-95.52s13.54-70.02,38.14-95.52c24.55-25.46,57.17-39.48,91.86-39.48M153,105c-74.56,0-135,62.68-135,140s60.44,140,135,140,135-62.68,135-140-60.44-140-135-140h0Z"/>
+<path fill="white" stroke="black" stroke-width="8" stroke-miterlimit="10" d="M83.5,301.5s69.74,52,136.37,0"/>
+<path fill="black" d="M211,291s11,7,15,18"/>
+<path fill="black" d="M93,292s-11,7-15,18"/>
+<path class="crown" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
+</svg></span></button>
       <a class="brand" href="index.html" aria-label="One Technologie, accueil" data-en-aria-label="One Technologie, home"><svg class="brand-logo" viewBox="0 0 1419 391" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie">
 <path fill="black" d="M555.82,201.53h-30.62v-22.97h86.61v22.97h-30.62v88.68h-25.36v-88.68Z"/>
 <path fill="black" d="M686.61,253.05h-56.78c.43,2.65,1.25,4.97,2.47,6.94,1.22,1.96,2.71,3.59,4.47,4.86,1.76,1.28,3.67,2.23,5.74,2.87,2.08.64,4.18.96,6.3.96,3.51,0,6.78-.85,9.81-2.55,3.03-1.7,5.13-4.15,6.3-7.34l21.69-.16c0,5.43-1.09,10.18-3.27,14.28-2.18,4.1-5.1,7.52-8.77,10.29-3.67,2.76-7.82,4.86-12.44,6.3-4.62,1.44-9.44,2.16-14.43,2.16-5.43,0-10.77-.88-16.03-2.64-5.27-1.76-10-4.39-14.2-7.9-4.2-3.5-7.57-7.97-10.12-13.4-2.55-5.42-3.83-11.8-3.83-19.14s1.25-13.53,3.75-18.9c2.49-5.37,5.79-9.81,9.88-13.32,4.09-3.51,8.72-6.14,13.87-7.9,5.16-1.76,10.39-2.63,15.71-2.63,4.79,0,9.47.69,14.04,2.07,4.57,1.38,8.66,3.46,12.28,6.22,3.61,2.77,6.64,6.2,9.09,10.29,2.45,4.09,3.88,8.85,4.31,14.27h.16v14.36ZM663.64,238.69c-.22-1.91-.83-3.64-1.83-5.18-1.01-1.54-2.23-2.82-3.67-3.83-1.44-1.01-3.03-1.8-4.79-2.39-1.76-.59-3.59-.88-5.51-.88-3.4,0-6.7.99-9.88,2.95-3.19,1.97-5.53,5.08-7.02,9.33h32.7Z"/>
@@ -65,7 +91,7 @@
 <path class="logo-gold-line" fill="white" stroke="black" stroke-width="8" stroke-miterlimit="10" d="M83.5,301.5s69.74,52,136.37,0"/>
 <path class="logo-gold" fill="black" d="M211,291s11,7,15,18"/>
 <path class="logo-gold" fill="black" d="M93,292s-11,7-15,18"/>
-<path class="logo-gold" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
+<path class="logo-gold crown" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
 <text class="logo-motto" x="464.9" y="369.4" textLength="640" lengthAdjust="spacingAndGlyphs" fill="black" font-family="Outfit, 'Segoe UI', sans-serif" font-size="45" font-weight="500" letter-spacing="3.6">L’innovation sans limites.</text>
 </svg></a>
       <nav class="top-nav" aria-label="Pages" data-en-aria-label="Pages">
@@ -92,14 +118,21 @@
 <path d="M12.1698 34.0132C12.1698 34.0132 10.7304 34.9289 10.207 36.368Z" fill="#2D43ED"/>
 </svg></span></a>
           <a class="peek-card" id="apercu-edu" href="education.html" tabindex="-1" aria-hidden="true">
-            <img src="assets/apercu-education.jpg?v=mwjrbku5" width="1280" height="800" alt="" decoding="async">
+            <img src="assets/apercu-education.jpg?v=mwk0duk2" width="1280" height="800" alt="" loading="lazy" fetchpriority="low" decoding="async">
             <span class="peek-text"><b>One Technologie Éducation</b><span data-en="Software, apps and websites for schools">Logiciels, applications et sites web pour les écoles</span></span>
           </a>
         </div>
         <!-- L'espace client : une autre adresse, dans un nouvel onglet ; le script lui passe la langue du site. -->
         <a class="client-link" href="https://client.onetechnologie.com/" target="_blank" rel="noopener" data-client-link><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="8" r="3.7"/></g><circle cx="12" cy="8" r="3.7"/><path d="M5 20.2c.5-3.9 3.3-6 7-6s6.5 2.1 7 6"/></svg><span data-en="Client area">Espace client</span></a>
         <div class="top-tools">
-          <button class="round" type="button" id="lang" aria-label="Switch to English"><span>EN</span></button>
+          <!-- La langue : une liste de deux choix ; chaque page existe en français et en anglais (data-alt-url). -->
+          <div class="lang-pick">
+            <button class="lang-btn" type="button" id="lang" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list" aria-label="Langue : français" data-en-aria-label="Language: English"><span data-en="EN">FR</span><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m5.5 9.5 6.5 6.5 6.5-6.5"/></svg></button>
+            <ul class="lang-list" id="lang-list" role="listbox" tabindex="-1" hidden aria-label="Langue" data-en-aria-label="Language">
+              <li role="option" id="lang-fr" data-lang="fr" lang="fr" aria-selected="true">Français<span class="lang-tick" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m4.5 12.5 5 5 10-11"/></svg></span></li>
+              <li role="option" id="lang-en" data-lang="en" lang="en" aria-selected="false">English<span class="lang-tick" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m4.5 12.5 5 5 10-11"/></svg></span></li>
+            </ul>
+          </div>
           <button class="round" type="button" id="theme" aria-label="Changer de thème" data-en-aria-label="Switch theme">
             <span class="i-moon"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M20 14.2A8.3 8.3 0 0 1 9.8 4 8.3 8.3 0 1 0 20 14.2z"/></g><path d="M20 14.2A8.3 8.3 0 0 1 9.8 4 8.3 8.3 0 1 0 20 14.2z"/></svg></span><span class="i-sun"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="4"/></g><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5"/></svg></span>
           </button>
@@ -155,7 +188,7 @@
             <h2 data-en="Intellectual property">Propriété intellectuelle</h2>
             <p data-en="The texts, illustrations, icons, screenshots, logos and names One Technologie, One Technologie Éducation and GesSchool belong to One Technologie. They may not be copied, modified or reused without its written permission.">Les textes, illustrations, icônes, captures d’écran, logos et noms One Technologie, One Technologie Éducation et GesSchool appartiennent à One Technologie. Ils ne peuvent être copiés, modifiés ni réutilisés sans son accord écrit.</p>
             <p data-en="The projects presented in Our work were made by One Technologie; the names, logos and content of its clients remain their property.">Les projets présentés dans Réalisations ont été réalisés par One Technologie ; les noms, logos et contenus de ses clients restent leur propriété.</p>
-            <p data-en="The logos of the tools we use (design software, languages, services) belong to their respective owners and are shown only to indicate the tools used. Some come from Simple Icons (CC0 licence) and Lobe Icons (MIT licence). The Outfit, Inter and JetBrains Mono fonts are published under the SIL Open Font License.">Les logos des outils que nous utilisons (logiciels de création, langages, services) appartiennent à leurs propriétaires et ne sont montrés que pour indiquer les outils employés. Certains proviennent de Simple Icons (licence CC0) et de Lobe Icons (licence MIT). Les polices Outfit, Inter et JetBrains Mono sont publiées sous licence SIL Open Font License.</p>
+            <p data-en="The logos of the tools we use (design software, languages, services) belong to their respective owners and are shown only to indicate the tools used. Some come from Simple Icons (CC0 licence) and Lobe Icons (MIT licence). The Outfit, Inter and JetBrains Mono fonts are published under the SIL Open Font License.">Les logos des outils que nous utilisons (logiciels de création, langages, services) appartiennent à leurs propriétaires et ne sont montrés que pour indiquer les outils employés. Certains proviennent de Simple Icons (licence CC0) et de Lobe Icons (licence MIT). Les polices Outfit, Inter et JetBrains Mono sont publiées sous la licence SIL Open Font License.</p>
           </section>
 
           <section>
@@ -219,7 +252,7 @@
 <path class="logo-gold-line" fill="white" stroke="black" stroke-width="8" stroke-miterlimit="10" d="M83.5,301.5s69.74,52,136.37,0"/>
 <path class="logo-gold" fill="black" d="M211,291s11,7,15,18"/>
 <path class="logo-gold" fill="black" d="M93,292s-11,7-15,18"/>
-<path class="logo-gold" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
+<path class="logo-gold crown" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
 <text class="logo-motto" x="464.9" y="369.4" textLength="640" lengthAdjust="spacingAndGlyphs" fill="black" font-family="Outfit, 'Segoe UI', sans-serif" font-size="45" font-weight="500" letter-spacing="3.6">L’innovation sans limites.</text>
 </svg>
           <p data-en="Websites, software, apps, video and visual identity, from Abidjan, Côte d’Ivoire.">Sites web, logiciels, applications, vidéo et identité visuelle, depuis Abidjan, Côte d’Ivoire.</p>
@@ -229,7 +262,7 @@
           <a href="services.html">Services</a>
           <a href="realisations.html" data-en="Our work">Réalisations</a>
           <a href="a-propos.html" data-en="About">À propos</a>
-          <a href="faq.html" data-en="Questions">Questions fréquentes</a>
+          <a href="faq.html" data-en="FAQ">Questions fréquentes</a>
           <a href="https://client.onetechnologie.com/" target="_blank" rel="noopener" data-client-link data-en="Client area">Espace client</a>
         </nav>
         <nav class="end-col" aria-label="One Technologie Éducation">
@@ -249,8 +282,5 @@
       </div>
       <p class="end-bottom"><span>© 2026 One Technologie · <span data-en="Innovation without limits.">L’innovation sans limites.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
-
-    <script src="config.js?v=mwjrbku5"></script>
-    <script src="script.js?v=mwjrbku5"></script>
   </body>
 </html>

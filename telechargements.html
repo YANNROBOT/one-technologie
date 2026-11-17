@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Télécharger GesSchool pour Windows, Android et iPhone — One Technologie</title>
-    <meta name="description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone.">
+    <meta name="description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone. Gratuit pour le moment.">
     <meta name="theme-color" content="#2d43ed">
     <link rel="canonical" href="https://onetechnologie.com/telechargements.html">
     <link rel="icon" href="assets/one-mark-education.svg" type="image/svg+xml">
@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="One Technologie">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:title" content="Télécharger GesSchool pour Windows, Android et iPhone — One Technologie">
-    <meta property="og:description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone.">
+    <meta property="og:description" content="Téléchargez le logiciel GesSchool pour Windows et installez l’application GesSchool sur téléphone Android ou iPhone. Gratuit pour le moment.">
     <meta property="og:url" content="https://onetechnologie.com/telechargements.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="style.css?v=mwjrbku5">
+    <link rel="stylesheet" href="style.css?v=mwk0duk2">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -29,12 +29,25 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // Filet de sécurité : tant que script.js n'a pas fini (classe « anim-ok »), les textes et blocs animés restent
+      // cachés. S'il ne s'exécute pas (réseau coupé, erreur) ou tarde trop, on retire « js » : tout s'affiche, sans animation.
+      (function (r) {
+        var check = function () {
+          if (!r.classList.contains('anim-ok')) r.classList.remove('js');
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(check, 0);
+        });
+        setTimeout(check, 6000);
+      })(document.documentElement);
       // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
       try {
         var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
         if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
       } catch (e) {}
     </script>
+    <script defer src="config.js?v=mwk0duk2"></script>
+    <script defer src="script.js?v=mwk0duk2"></script>
     <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/telechargements.html">
     <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/telechargements.html">
     <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/telechargements.html">
@@ -45,7 +58,7 @@
 
     <!-- One Technologie Éducation : pas de menu, seulement le chemin du retour vers One Technologie. -->
     <header class="top bar" id="haut">
-      <a class="logo" href="education.html" aria-label="One Technologie Éducation, présentation" data-en-aria-label="One Technologie Éducation, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
+      <a class="logo" href="education.html" aria-label="One Technologie Éducation, présentation" data-en-aria-label="One Technologie Education, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
 <path d="M21.3794 52.8593C9.833 52.8593 0.439697 43.466 0.439697 31.9196C0.439697 20.3732 9.833 10.9799 21.3794 10.9799C32.9257 10.9799 42.319 20.3732 42.319 31.9196C42.319 43.466 32.9257 52.8593 21.3794 52.8593Z" fill="white"/>
 <path d="M21.3794 11.4197C26.8553 11.4197 32.0023 13.5517 35.874 17.4233C39.7456 21.295 41.8776 26.4437 41.8776 31.9179C41.8776 37.392 39.7456 42.5407 35.874 46.4124C32.0023 50.284 26.8536 52.416 21.3794 52.416C15.9053 52.416 10.7566 50.284 6.8849 46.4124C3.01324 42.5407 0.879522 37.3955 0.879522 31.9196C0.879522 26.4437 3.01148 21.2968 6.88314 17.4251C10.7548 13.5534 15.9035 11.4215 21.3777 11.4215M21.3794 10.5402C9.57096 10.5402 0 20.1129 0 31.9196C0 43.7263 9.57096 53.299 21.3794 53.299C33.1879 53.299 42.7589 43.7281 42.7589 31.9196C42.7589 20.1112 33.1879 10.5402 21.3794 10.5402Z" fill="#2D43ED"/>
 <path d="M22.7145 51.9692C11.9052 51.9692 3.11169 42.8415 3.11169 31.6241C3.11169 20.4067 11.9052 11.279 22.7145 11.279C33.5238 11.279 42.3173 20.4067 42.3173 31.6241C42.3173 42.8415 33.5238 51.9692 22.7145 51.9692Z" fill="white"/>
@@ -97,7 +110,7 @@
         <div class="hero-text">
           <p class="eyebrow on-blue" data-en="Downloads">Téléchargements</p>
           <h1><span class="line"><span class="up" data-en="Install">Installer</span></span><span class="line"><mark class="swipe up">GesSchool.</mark></span></h1>
-          <p class="lead" data-en="The software for management, the app for staff. Both are free for now, in French and in English.">Le logiciel pour la direction, l’application pour le personnel. Les deux sont gratuits pour le moment, en français et en anglais.</p>
+          <p class="lead" data-en="The software for management, the app for staff. Both are free for now, in French and English.">Le logiciel pour la direction, l’application pour le personnel. Gratuits pour le moment, en français et en anglais.</p>
         </div>
         <div class="hero-illu in" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250">
   <!-- éclats -->
@@ -151,16 +164,16 @@
             <span class="tag" data-en="On the computer">Sur ordinateur</span>
             <h3 data-en="GesSchool software">Le logiciel GesSchool</h3>
             <dl class="facts">
-              <div><dt data-en="For">Pour qui</dt><dd data-en="Management, deputy head, secretariat">La direction, le censeur, le secrétariat</dd></div>
+              <div><dt data-en="Who for">Pour qui</dt><dd data-en="Management, deputy head, secretariat">La direction, le censeur, le secrétariat</dd></div>
               <div><dt data-en="System">Système</dt><dd>Windows 10 · Windows 11</dd></div>
-              <div><dt data-en="Size">Taille</dt><dd data-en="About 3 MB">Environ 3 Mo</dd></div>
+              <div><dt data-en="Size">Taille</dt><dd data-en="About 4 MB">Environ 4 Mo</dd></div>
             </dl>
             <a class="btn blue" id="dl-logiciel" href="#" aria-disabled="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15z"/></g><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/></svg><span data-state-ready="Télécharger pour Windows" data-state-ready-en="Download for Windows" data-state-soon="Bientôt disponible" data-state-soon-en="Coming soon">Bientôt disponible</span></a>
             <ol class="mini">
               <li data-en="Open the downloaded file.">Ouvrez le fichier téléchargé.</li>
               <li data-en="If Windows shows a warning, choose “More info”, then “Run anyway”.">Si Windows affiche une mise en garde, choisissez « Informations complémentaires », puis « Exécuter quand même ».</li>
               <li data-en="Choose the language, then follow the steps.">Choisissez la langue, puis suivez les étapes.</li>
-              <li data-en="Afterwards, the software offers its updates by itself.">Ensuite, le logiciel propose ses mises à jour tout seul.</li>
+              <li data-en="Afterwards, the software offers its own updates.">Ensuite, le logiciel propose lui-même ses mises à jour.</li>
             </ol>
           </article>
 
@@ -169,7 +182,7 @@
             <span class="tag" data-en="On the phone">Sur téléphone</span>
             <h3 data-en="GesSchool app">L’application GesSchool</h3>
             <dl class="facts">
-              <div><dt data-en="For">Pour qui</dt><dd data-en="Teachers, administrative staff, and management on the move">Les professeurs, le personnel administratif, et la direction en déplacement</dd></div>
+              <div><dt data-en="Who for">Pour qui</dt><dd data-en="Teachers, administrative staff and management on the move">Les professeurs, le personnel administratif et la direction en déplacement</dd></div>
               <div><dt data-en="System">Système</dt><dd>Android · iPhone</dd></div>
               <div><dt data-en="Store">Boutique</dt><dd data-en="None needed">Aucune, rien à chercher</dd></div>
             </dl>
@@ -177,7 +190,7 @@
             <ol class="mini">
               <li data-en="Open this page on your phone and tap the button.">Ouvrez cette page sur votre téléphone et touchez le bouton.</li>
               <li data-en="Android: menu ⋮, then “Install app”.">Android : menu ⋮, puis « Installer l’application ».</li>
-              <li data-en="iPhone: in Safari, Share button, then “Add to Home Screen”.">iPhone : dans Safari, bouton Partager, puis « Sur l’écran d’accueil ».</li>
+              <li data-en="iPhone: in Safari, the Share button, then “Add to Home Screen”.">iPhone : dans Safari, bouton Partager, puis « Sur l’écran d’accueil ».</li>
             </ol>
           </article>
         </div>
@@ -192,7 +205,7 @@
 
     </main>
 
-    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Écrire à One Technologie Éducation sur WhatsApp" data-en-aria-label="Write to One Technologie Éducation on WhatsApp">
+    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Écrire à One Technologie Éducation sur WhatsApp" data-en-aria-label="Message One Technologie Education on WhatsApp">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 9.1c.2 2.4 2.5 4.9 5.6 5.7l1.2-1.3-1.7-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-1.7Z" fill="currentColor" stroke="none"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -244,7 +257,7 @@
         </nav>
         <nav class="end-col" aria-label="One Technologie">
           <b>One Technologie</b>
-          <a href="index.html" data-en="Back to One Technologie">Retour sur One Technologie</a>
+          <a href="index.html" data-en="Back to One Technologie">Retour à One Technologie</a>
           <a href="demonstration.html" data-en="Request a demo">Demander une démonstration</a>
           <a href="confidentialite.html" data-en="Privacy">Confidentialité</a>
           <a href="mentions-legales.html" data-en="Legal notices">Mentions légales</a>
@@ -265,8 +278,5 @@
       </div>
       <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Toute votre école, au même endroit.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Haut de page ↑</a></p>
     </footer>
-
-    <script src="config.js?v=mwjrbku5"></script>
-    <script src="script.js?v=mwjrbku5"></script>
   </body>
 </html>

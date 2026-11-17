@@ -37,8 +37,17 @@
     // Le bouton montre la langue vers laquelle on bascule. Les pages de l'Éducation en ont un second
     // dans le pied de page, pour les téléphones.
     document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
+      // La liste de la barre du haut de l'entreprise montre, elle, la langue en cours, et coche son choix.
+      if (button.hasAttribute('aria-haspopup')) {
+        button.firstElementChild.textContent = lang === 'en' ? 'EN' : 'FR';
+        button.setAttribute('aria-label', lang === 'en' ? 'Language: English' : 'Langue : français');
+        return;
+      }
       button.firstElementChild.textContent = lang === 'en' ? 'FR' : 'EN';
       button.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
+    });
+    document.querySelectorAll('#lang-list [data-lang]').forEach(function (option) {
+      option.setAttribute('aria-selected', String(option.dataset.lang === lang));
     });
     updateDownloads();
     // Pour les textes construits par le script (le formulaire de devis).
@@ -62,18 +71,97 @@
     document.title = TITLES[lang];
   }
 
+  function switchLanguage(next) {
+    if (next === lang) return;
+    store.set('one-site.lang', next);
+    if (altUrl) {
+      window.location.href = altUrl + window.location.search + window.location.hash;
+      return;
+    }
+    lang = next;
+    applyLanguage();
+  }
   document.querySelectorAll('#lang, [data-lang-btn]').forEach(function (button) {
+    if (button.hasAttribute('aria-haspopup')) return;
     button.addEventListener('click', function () {
-      var next = lang === 'en' ? 'fr' : 'en';
-      store.set('one-site.lang', next);
-      if (altUrl) {
-        window.location.href = altUrl + window.location.search + window.location.hash;
-        return;
-      }
-      lang = next;
-      applyLanguage();
+      switchLanguage(lang === 'en' ? 'fr' : 'en');
     });
   });
+
+  // La liste de langue de la barre du haut (pages de l'entreprise) : « Français » et « English », le choix en cours coché.
+  // Flèches haut et bas, Entrée ou Espace pour choisir, Échap ou un clic ailleurs pour fermer.
+  (function () {
+    var button = document.querySelector('#lang[aria-haspopup]');
+    var list = document.getElementById('lang-list');
+    if (!button || !list) return;
+    var options = [].slice.call(list.querySelectorAll('[role="option"]'));
+    var active = 0;
+    var mark = function (index) {
+      active = (index + options.length) % options.length;
+      options.forEach(function (option, i) {
+        option.classList.toggle('is-active', i === active);
+      });
+      list.setAttribute('aria-activedescendant', options[active].id);
+    };
+    var setOpen = function (open, focusButton) {
+      if (list.hidden === !open) return;
+      list.hidden = !open;
+      button.setAttribute('aria-expanded', String(open));
+      button.parentElement.classList.toggle('open', open);
+      if (open) {
+        mark(
+          Math.max(
+            0,
+            options.findIndex(function (o) {
+              return o.dataset.lang === lang;
+            }),
+          ),
+        );
+        list.focus();
+      } else if (focusButton) {
+        button.focus();
+      }
+      // La barre du haut ne se replie pas tant que la liste est ouverte : elle réévalue son état.
+      document.dispatchEvent(new Event('one-bar-popup'));
+    };
+    var choose = function (option) {
+      setOpen(false, true);
+      switchLanguage(option.dataset.lang);
+    };
+    button.addEventListener('click', function () {
+      setOpen(list.hidden);
+    });
+    button.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        setOpen(true);
+      }
+    });
+    options.forEach(function (option, i) {
+      option.addEventListener('click', function () {
+        choose(option);
+      });
+      option.addEventListener('mousemove', function () {
+        if (active !== i) mark(i);
+      });
+    });
+    list.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown') mark(active + 1);
+      else if (event.key === 'ArrowUp') mark(active - 1);
+      else if (event.key === 'Home') mark(0);
+      else if (event.key === 'End') mark(options.length - 1);
+      else if (event.key === 'Enter' || event.key === ' ') choose(options[active]);
+      else if (event.key === 'Escape') setOpen(false, true);
+      else if (event.key === 'Tab') {
+        setOpen(false);
+        return;
+      } else return;
+      event.preventDefault();
+    });
+    document.addEventListener('click', function (event) {
+      if (!list.hidden && !button.parentElement.contains(event.target)) setOpen(false);
+    });
+  })();
 
   // ---------- Thème clair ou sombre ----------
   document.querySelectorAll('#theme, [data-theme-btn]').forEach(function (button) {
@@ -112,7 +200,9 @@
   applyLanguage();
 
   // ---------- Animations ----------
-  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Sans la classe « js » (retirée par le filet de sécurité du <head> quand le script a trop tardé), la page est déjà
+  // affichée telle quelle : rien ne s'anime, comme avec « moins de mouvement ».
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches || !root.classList.contains('js');
 
   // Couverture : le titre monte, puis le surligneur passe.
   requestAnimationFrame(function () {
@@ -150,7 +240,11 @@
   // Les titres sont découpés en mots (.w), qui arrivent l'un après l'autre ; les pastilles et les sous-titres
   // arrivent en fondu. Un changement de langue remet le texte d'un bloc : il s'affiche alors simplement.
   (function () {
-    if (still || !('IntersectionObserver' in window) || !document.body.classList.contains('company')) return;
+    if (still || !('IntersectionObserver' in window) || !document.body.classList.contains('company')) {
+      // Les textes ne s'animeront pas : la feuille de style ne les cache plus en attendant.
+      root.classList.add('texts-off');
+      return;
+    }
     var split = function (el) {
       var i = 0;
       var walk = function (node) {
@@ -1125,17 +1219,21 @@
     var ticking = false;
     var update = function () {
       ticking = false;
+      // Toutes les mesures d'abord, puis les écritures (sinon chaque carte relancerait une mise en page).
+      var boxes = cards.map(function (card) {
+        return card.getBoundingClientRect();
+      });
       cards.forEach(function (card, k) {
-        var next = cards[k + 1];
         var progress = 0;
-        if (next) {
-          var a = card.getBoundingClientRect();
-          var b = next.getBoundingClientRect();
+        if (k + 1 < cards.length) {
+          var a = boxes[k];
           // 0 quand la suivante est encore sous la carte, 1 quand elle l'a entièrement recouverte.
-          progress = Math.min(Math.max((a.bottom - b.top) / a.height, 0), 1);
+          progress = Math.min(Math.max((a.bottom - boxes[k + 1].top) / a.height, 0), 1);
         }
-        card.style.setProperty('--s', String(1 - progress * 0.06));
-        card.style.setProperty('--o', String(1 - progress * 0.45));
+        var s = String(1 - progress * 0.06);
+        var o = String(1 - progress * 0.45);
+        if (card._s !== s) card.style.setProperty('--s', (card._s = s));
+        if (card._o !== o) card.style.setProperty('--o', (card._o = o));
       });
     };
     window.addEventListener(
@@ -1389,43 +1487,166 @@
   var steps = document.querySelector('[data-progress]');
   var queued = false;
 
-  // Barre du haut de One Technologie : elle se cache quand on descend, revient dès qu'on remonte.
-  // Jamais cachée en haut de page, menu ouvert, ou quand un de ses éléments a le focus (clavier).
+  // Barre du haut de One Technologie (16 novembre 2026, demandé par l'utilisateur), quatre états :
+  //  - en haut de page : la barre entière, sans fond (pas de classe « stuck ») ;
+  //  - on descend : elle se cache (« hide ») ; juste sous le haut de page, elle reste entière, avec son fond ;
+  //  - on remonte : seule la « tête du logo » reste, dans une pastille de verre (« mini ») ;
+  //  - pastille survolée, touchée ou atteinte au clavier : elle s'étire jusqu'à la barre entière (« mini open »).
+  // Elle se replie 300 ms après le départ du curseur, jamais tant qu'une de ses listes est ouverte (langue, menu,
+  // aperçu de l'Éducation sous le curseur) ni tant qu'un de ses éléments a le focus clavier.
+  // Les pages de l'Éducation gardent leur barre ; la page « Demander un devis » n'en a pas.
   var lastY = window.scrollY;
+  var pill = bar && document.body.classList.contains('company') ? bar.querySelector('.bar-pill') : null;
+  var barMode = '';
+  var barHovered = false;
+  var touchOpen = false;
+  var closeTimer = 0;
+  function barBusy() {
+    return bar.querySelector('[aria-expanded="true"]') || bar.querySelector(':focus-visible');
+  }
+  function setBarOpen(open) {
+    if (bar.classList.contains('open') === open) return;
+    bar.classList.toggle('open', open);
+    if (!open) touchOpen = false;
+  }
+  function setBarMode(mode) {
+    if (barMode === mode) return;
+    barMode = mode;
+    bar.classList.toggle('hide', mode === 'hide');
+    bar.classList.toggle('mini', mode === 'mini');
+    if (mode !== 'mini') setBarOpen(false);
+  }
+  function closeBarSoon() {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(function () {
+      if (!barHovered && !touchOpen && !barBusy()) setBarOpen(false);
+    }, 300);
+  }
   function hideBar(y) {
-    if (!bar || !document.body.classList.contains('company')) return;
+    if (!pill) return;
+    if (y <= 12) {
+      lastY = y;
+      setBarMode('top');
+      return;
+    }
+    if (!barMode || barMode === 'top') {
+      // Page ouverte au milieu (rechargement, ancre) ou on vient de quitter le haut de page.
+      if (!barMode) setBarMode('mini');
+      else if (y > lastY) setBarMode('full');
+    }
     var delta = y - lastY;
     if (Math.abs(delta) < 6) return;
-    var menuOpen = bar.querySelector('[aria-expanded="true"]');
-    var focused = bar.querySelector(':focus-visible');
-    bar.classList.toggle('hide', delta > 0 && y > 140 && !menuOpen && !focused);
     lastY = y;
+    // Ouverte au doigt : elle se replie dès qu'on fait défiler.
+    if (touchOpen) setBarOpen(false);
+    if (delta > 0) {
+      if (barBusy() || (barHovered && bar.classList.contains('open'))) return;
+      setBarMode(y > 80 ? 'hide' : 'full');
+    } else if (barMode === 'hide') {
+      setBarMode('mini');
+    }
   }
-  if (bar) bar.addEventListener('focusin', function () {
-    if (bar.querySelector(':focus-visible')) bar.classList.remove('hide');
-  });
+  if (pill) {
+    // L'animation d'arrivée du logo (couronne, puis sourire) est jouée une fois ; ensuite, le survol fait sauter la couronne.
+    var brand = bar.querySelector('.brand');
+    var logoDone = function () {
+      brand.classList.add('logo-done');
+    };
+    brand.addEventListener('animationend', function (event) {
+      if (event.animationName === 'smile-draw') logoDone();
+    });
+    setTimeout(logoDone, 4000);
+    var pointerKind = '';
+    pill.addEventListener('pointerdown', function (event) {
+      pointerKind = event.pointerType;
+    });
+    pill.addEventListener('click', function () {
+      setBarOpen(true);
+      if (pointerKind === 'touch' || pointerKind === 'pen') touchOpen = true;
+      pointerKind = '';
+    });
+    // Au clavier, la pastille ouvre la barre et passe la main au logo (la pastille disparaît de la barre ouverte).
+    pill.addEventListener('focus', function () {
+      if (!pill.matches(':focus-visible')) return;
+      setBarOpen(true);
+      brand.focus();
+    });
+    bar.addEventListener('pointerenter', function (event) {
+      if (event.pointerType !== 'mouse') return;
+      barHovered = true;
+      clearTimeout(closeTimer);
+      if (barMode === 'mini') setBarOpen(true);
+    });
+    bar.addEventListener('pointerleave', function (event) {
+      if (event.pointerType !== 'mouse') return;
+      barHovered = false;
+      closeBarSoon();
+    });
+    bar.addEventListener('focusin', function () {
+      if (!bar.querySelector(':focus-visible')) return;
+      clearTimeout(closeTimer);
+      if (barMode === 'hide') setBarMode('mini');
+      if (barMode === 'mini') setBarOpen(true);
+    });
+    bar.addEventListener('focusout', function () {
+      setTimeout(function () {
+        if (!bar.querySelector(':focus-visible')) closeBarSoon();
+      }, 0);
+    });
+    // Un toucher ailleurs replie la barre ouverte au doigt.
+    document.addEventListener(
+      'pointerdown',
+      function (event) {
+        if (touchOpen && !bar.contains(event.target)) setBarOpen(false);
+      },
+      { passive: true },
+    );
+    // Une liste de la barre qui se ferme (langue, menu) : la barre se replie si plus rien ne la retient.
+    document.addEventListener('one-bar-popup', function () {
+      if (bar.classList.contains('open')) closeBarSoon();
+    });
+    if (burger)
+      burger.addEventListener('click', function () {
+        setTimeout(function () {
+          if (bar.classList.contains('open')) closeBarSoon();
+        }, 0);
+      });
+  }
+
+  // Une variable CSS n'est réécrite que si sa valeur change : une écriture identique ferait quand même recalculer
+  // les styles de l'élément à chaque image du défilement.
+  function setVar(el, name, value) {
+    var key = '_v' + name;
+    if (el[key] === value) return;
+    el[key] = value;
+    el.style.setProperty(name, value);
+  }
 
   function onScroll() {
     queued = false;
+    // Toutes les mesures d'abord (une seule mise en page), puis toutes les écritures.
     var y = window.scrollY;
     var h = window.innerHeight;
+    var stageTop = !still && stage ? stage.getBoundingClientRect().top : 0;
+    var pinned = !still && steps && pin && pin.classList.contains('pin');
+    var frise = pinned ? friseMeasure() : 0;
+    var stepsBox = !still && steps && !pinned ? steps.getBoundingClientRect() : null;
+
     if (bar) bar.classList.toggle('stuck', y > 12);
     hideBar(y);
 
     if (still) return;
     // Couverture : l'écran et le téléphone glissent l'un sur l'autre.
     if (stage) {
-      var box = stage.getBoundingClientRect();
-      var shift = Math.max(-1, Math.min(1, (h * 0.5 - box.top) / h));
-      stage.style.setProperty('--shift', shift.toFixed(3));
+      var shift = Math.max(-1, Math.min(1, (h * 0.5 - stageTop) / h));
+      setVar(stage, '--shift', shift.toFixed(3));
     }
     // Étapes : le trait bleu descend avec la lecture.
-    if (steps && pin && pin.classList.contains('pin')) {
-      friseStory();
-    } else if (steps) {
-      var r = steps.getBoundingClientRect();
-      var fill = Math.max(0, Math.min(1, (h * 0.62 - r.top) / r.height));
-      steps.style.setProperty('--fill', fill.toFixed(3));
+    if (pinned) {
+      friseStory(frise);
+    } else if (stepsBox) {
+      var fill = Math.max(0, Math.min(1, (h * 0.62 - stepsBox.top) / stepsBox.height));
+      setVar(steps, '--fill', fill.toFixed(3));
     }
   }
 
@@ -1438,10 +1659,16 @@
   function clamp01(x) {
     return Math.max(0, Math.min(1, x));
   }
-  function friseStory() {
+  var friseIllus = friseSteps.map(function (step) {
+    return step.querySelector('.frise-illu');
+  });
+  // Avancée dans la section, de 0 à 1 (lecture seule).
+  function friseMeasure() {
     var box = pin.getBoundingClientRect();
     var span = pin.offsetHeight - window.innerHeight;
-    var p = span > 0 ? clamp01(-box.top / span) : 1;
+    return span > 0 ? clamp01(-box.top / span) : 1;
+  }
+  function friseStory(p) {
     var t = p * (friseSteps.length + 0.4);
     var fill = 0;
     friseSteps.forEach(function (step, k) {
@@ -1449,20 +1676,21 @@
       var line = k === 0 ? 1 : clamp01((t - k - 0.3) / 0.35);
       var ring = clamp01((t - k - (k === 0 ? 0.3 : 0.65)) / 0.35);
       if (k > 0) fill += line / (friseSteps.length - 1);
-      step.classList.add('in');
-      step.style.setProperty('--a', a.toFixed(3));
-      step.querySelector('.frise-illu').style.setProperty('--r', ring.toFixed(3));
+      if (!step.classList.contains('in')) step.classList.add('in');
+      setVar(step, '--a', a.toFixed(3));
+      setVar(friseIllus[k], '--r', ring.toFixed(3));
     });
-    steps.style.setProperty('--fill', fill.toFixed(3));
+    setVar(steps, '--fill', fill.toFixed(3));
   }
   function frisePin() {
     if (!pin) return;
     var on = pinMedia.matches && !still;
     pin.classList.toggle('pin', on);
     if (!on) {
-      friseSteps.forEach(function (step) {
+      friseSteps.forEach(function (step, k) {
         step.style.removeProperty('--a');
-        step.querySelector('.frise-illu').style.removeProperty('--r');
+        friseIllus[k].style.removeProperty('--r');
+        step['_v--a'] = friseIllus[k]['_v--r'] = undefined;
       });
     }
   }
@@ -1523,4 +1751,33 @@
       cible = null;
     });
   })();
+
+  // ---------- Les animations en boucle d'un bloc qui n'est pas à l'écran sont mises en pause ----------
+  // Classe « offscreen » (les deux feuilles de style) : le navigateur ne recalcule plus ces dessins à chaque image
+  // quand personne ne les voit ; ils reprennent là où ils en étaient quand le bloc revient à l'écran.
+  (function () {
+    if (still || !('IntersectionObserver' in window)) return;
+    var blocks = [].slice.call(document.querySelectorAll('main > *:not(dialog), body > footer'));
+    // Les dessins animés (parties « a-… ») sont aussi suivis un par un : une longue section (la liste des services)
+    // reste à l'écran pendant longtemps, mais la plupart de ses dessins n'y sont pas.
+    [].forEach.call(document.querySelectorAll('svg [class^="a-"], svg [class*=" a-"]'), function (part) {
+      var svg = part.closest('svg');
+      while (svg && svg.parentElement && svg.parentElement.closest('svg')) svg = svg.parentElement.closest('svg');
+      if (svg && blocks.indexOf(svg) < 0) blocks.push(svg);
+    });
+    var watch = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('offscreen', !entry.isIntersecting);
+        });
+      },
+      { rootMargin: '150px 0px' },
+    );
+    [].forEach.call(blocks, function (block) {
+      watch.observe(block);
+    });
+  })();
+
+  // Le script est allé jusqu'au bout : le filet de sécurité du <head> ne retirera pas « js ».
+  root.classList.add('anim-ok');
 })();

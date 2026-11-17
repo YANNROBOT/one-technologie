@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="../style.css?v=mwjrbku5">
+    <link rel="stylesheet" href="../style.css?v=mwk0duk2">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -30,12 +30,25 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // Filet de sécurité : tant que script.js n'a pas fini (classe « anim-ok »), les textes et blocs animés restent
+      // cachés. S'il ne s'exécute pas (réseau coupé, erreur) ou tarde trop, on retire « js » : tout s'affiche, sans animation.
+      (function (r) {
+        var check = function () {
+          if (!r.classList.contains('anim-ok')) r.classList.remove('js');
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(check, 0);
+        });
+        setTimeout(check, 6000);
+      })(document.documentElement);
       // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
       try {
         var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
         if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
       } catch (e) {}
     </script>
+    <script defer src="../config.js?v=mwk0duk2"></script>
+    <script defer src="../script.js?v=mwk0duk2"></script>
     <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/education.html">
     <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/education.html">
     <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/education.html">
@@ -46,7 +59,7 @@
 
     <!-- One Technologie Éducation : pas de menu, seulement le chemin du retour vers One Technologie. -->
     <header class="top bar" id="haut">
-      <a class="logo" href="education.html" aria-label="One Technologie Éducation, overview" data-en-aria-label="One Technologie Éducation, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
+      <a class="logo" href="education.html" aria-label="One Technologie Education, overview" data-en-aria-label="One Technologie Education, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
 <path d="M21.3794 52.8593C9.833 52.8593 0.439697 43.466 0.439697 31.9196C0.439697 20.3732 9.833 10.9799 21.3794 10.9799C32.9257 10.9799 42.319 20.3732 42.319 31.9196C42.319 43.466 32.9257 52.8593 21.3794 52.8593Z" fill="white"/>
 <path d="M21.3794 11.4197C26.8553 11.4197 32.0023 13.5517 35.874 17.4233C39.7456 21.295 41.8776 26.4437 41.8776 31.9179C41.8776 37.392 39.7456 42.5407 35.874 46.4124C32.0023 50.284 26.8536 52.416 21.3794 52.416C15.9053 52.416 10.7566 50.284 6.8849 46.4124C3.01324 42.5407 0.879522 37.3955 0.879522 31.9196C0.879522 26.4437 3.01148 21.2968 6.88314 17.4251C10.7548 13.5534 15.9035 11.4215 21.3777 11.4215M21.3794 10.5402C9.57096 10.5402 0 20.1129 0 31.9196C0 43.7263 9.57096 53.299 21.3794 53.299C33.1879 53.299 42.7589 43.7281 42.7589 31.9196C42.7589 20.1112 33.1879 10.5402 21.3794 10.5402Z" fill="#2D43ED"/>
 <path d="M22.7145 51.9692C11.9052 51.9692 3.11169 42.8415 3.11169 31.6241C3.11169 20.4067 11.9052 11.279 22.7145 11.279C33.5238 11.279 42.3173 20.4067 42.3173 31.6241C42.3173 42.8415 33.5238 51.9692 22.7145 51.9692Z" fill="white"/>
@@ -98,7 +111,7 @@
         <div class="hero-text">
           <p class="eyebrow on-blue">One Technologie Éducation</p>
           <h1><span class="line"><span class="up" data-en="Your whole school,">Your whole school,</span></span><span class="line"><mark class="swipe up" data-en="in one place.">in one place.</mark></span></h1>
-          <p class="lead" data-en="The part of One Technologie dedicated to schools: software, apps and websites designed for schools in Côte d’Ivoire, easy to use and reliable on a weak connection.">The part of One Technologie dedicated to schools: software, apps and websites designed for schools in Côte d’Ivoire, easy to use and reliable on a weak connection.</p>
+          <p class="lead" data-en="Software, apps and websites for schools in Côte d’Ivoire: simple to use and reliable even on a weak connection.">Software, apps and websites for schools in Côte d’Ivoire: simple to use and reliable even on a weak connection.</p>
         </div>
         <div class="hero-illu edu-scene hero-scene in" aria-hidden="true"><svg class="objet big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
   <g class="a-burst" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round">
@@ -182,7 +195,7 @@
             <ul class="list">
               <li data-en="Software for management, app for teachers and staff.">Software for management, app for teachers and staff.</li>
               <li data-en="Attendance, lateness and classes not taught, calculated automatically.">Attendance, lateness and classes not taught, calculated automatically.</li>
-              <li data-en="Location check, one phone per account, works offline.">Location check, one phone per account, works offline.</li>
+              <li data-en="Location checked, one phone per account, works offline.">Location checked, one phone per account, works offline.</li>
               <li data-en="Leave, closures, public holidays, backups and support included.">Leave, closures, public holidays, backups and support included.</li>
             </ul>
             <div class="actions">
@@ -190,7 +203,7 @@
               <a class="btn line" href="telechargements.html"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15z"/></g><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/></svg><span data-en="Download">Download</span></a>
             </div>
           </div>
-          <figure class="shot tilt"><img src="../assets/captures/admin-accueil.jpg?v=mwjrbku5" width="2160" height="1350" loading="lazy" alt="GesSchool software home." data-en-alt="GesSchool software home."></figure>
+          <figure class="shot tilt"><img decoding="async" src="../assets/captures/admin-accueil.jpg?v=mwk0duk2" width="2160" height="1350" loading="lazy" alt="GesSchool software home." data-en-alt="GesSchool software home."></figure>
         </div>
       </section>
 
@@ -198,24 +211,24 @@
         <div class="part-head reveal">
           <h2>Vacataire Pro</h2>
           <p class="slogan" data-en="One timetable. Every school. No confusion.">One timetable. Every school. No confusion.</p>
-          <p class="intro" data-en="A part-time teacher often works in several schools. Their timetables arrive as a photo, a PDF, a WhatsApp message or a word in the corridor, and sometimes clash. This app, planned for later under a provisional name, will gather all their classes in one calendar.">A part-time teacher often works in several schools. Their timetables arrive as a photo, a PDF, a WhatsApp message or a word in the corridor, and sometimes clash. This app, planned for later under a provisional name, will gather all their classes in one calendar.</p>
+          <p class="intro" data-en="A part-time teacher often works in several schools, with scattered timetables that sometimes clash. This app, planned for later (provisional name), will gather all their classes in one calendar.">A part-time teacher often works in several schools, with scattered timetables that sometimes clash. This app, planned for later (provisional name), will gather all their classes in one calendar.</p>
         </div>
 
         <div class="values three">
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 10V7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5V10z"/></g><rect x="4" y="5" width="16" height="15.5" rx="2.5"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 17.3h.01M12 17.3h.01"/></svg></span>
             <h3 data-en="A single calendar">A single calendar</h3>
-            <p data-en="Every class, every group and every school in one view, by day, week or month.">Every class, every group and every school in one view, by day, week or month.</p>
+            <p data-en="Every class and every school in one view: day, week or month.">Every class and every school in one view: day, week or month.</p>
           </article>
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 17l.8-3.4L14 4.4a1.7 1.7 0 0 1 2.4 0l.7.7a1.7 1.7 0 0 1 0 2.4L7.9 16.7z"/></g><path d="M4 17l.8-3.4L14 4.4a1.7 1.7 0 0 1 2.4 0l.7.7a1.7 1.7 0 0 1 0 2.4L7.9 16.7z"/><path d="M4 20.5h16"/></svg></span>
             <h3 data-en="Two ways to fill it">Two ways to fill it</h3>
-            <p data-en="The teacher enters their hours, or the school sends them directly. A class received twice is never duplicated silently.">The teacher enters their hours, or the school sends them directly. A class received twice is never duplicated silently.</p>
+            <p data-en="The teacher enters their hours, or the school sends them. A class received twice is never silently duplicated.">The teacher enters their hours, or the school sends them. A class received twice is never silently duplicated.</p>
           </article>
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 4 21 19.5H3z"/></g><path d="M12 4 21 19.5H3z"/><path d="M12 10v4.5M12 17.2h.01"/></svg></span>
             <h3 data-en="Clashes flagged">Clashes flagged</h3>
-            <p data-en="Two classes at the same time, or too little time to travel from one school to the other: the app warns before it becomes a problem.">Two classes at the same time, or too little time to travel from one school to the other: the app warns before it becomes a problem.</p>
+            <p data-en="Two classes at the same time, or too little time to change schools: the app warns you in advance.">Two classes at the same time, or too little time to change schools: the app warns you in advance.</p>
           </article>
         </div>
 
@@ -432,7 +445,7 @@
             <div class="form-done" hidden tabindex="-1" data-edu-done>
               <span class="edu-done-ico" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="8.5"/></g><circle cx="12" cy="12" r="8.5"/><path d="m8 12.3 2.7 2.7 5.3-5.6"/></svg></span>
               <h2 data-en="Thank you, your request has been sent">Thank you, your request has been sent</h2>
-              <p data-en="We will get back to you quickly to prepare the quote for your school’s website.">We will get back to you quickly to prepare the quote for your school’s website.</p>
+              <p data-en="We will contact you soon to prepare your quote.">We will contact you soon to prepare your quote.</p>
               <button class="btn line" type="button" data-close-dialog data-en="Close">Close</button>
             </div>
           </form>
@@ -453,7 +466,7 @@
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 4 4 9.5h16z"/></g><path d="M12 4 4 9.5h16z"/><path d="M5.5 9.5v11M18.5 9.5v11M3 20.5h18"/><path d="M10 20.5V15h4v5.5"/><path d="M12 2v2"/></svg></span>
             <h3 data-en="The reality of schools">The reality of schools</h3>
-            <p data-en="An unstable connection, one computer for the office, phones for everyone: our tools are built for that.">An unstable connection, one computer for the office, phones for everyone: our tools are built for that.</p>
+            <p data-en="An unstable connection, one computer in the office, phones for everyone: our tools are built for that.">An unstable connection, one computer in the office, phones for everyone: our tools are built for that.</p>
           </article>
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/></g><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/><path d="m8.8 12 2.3 2.3 4.1-4.4"/></svg></span>
@@ -463,7 +476,7 @@
           <article class="value reveal">
             <span class="value-icon" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="9.5" r="3.2"/><rect x="4.9" y="10.3" width="2.7" height="4.3" rx="1.3"/><rect x="16.4" y="10.3" width="2.7" height="4.3" rx="1.3"/></g><circle cx="12" cy="9.5" r="3.2"/><path d="M6.3 10.3V9.5a5.7 5.7 0 0 1 11.4 0v.8"/><rect x="4.9" y="10.3" width="2.7" height="4.3" rx="1.3"/><rect x="16.4" y="10.3" width="2.7" height="4.3" rx="1.3"/><path d="M17.7 14.6v.3a1.9 1.9 0 0 1-1.9 1.9h-1.6"/><path d="M13.3 16.8h.01"/><path d="M5 21.3c.8-1.9 3.2-2.8 7-2.8s6.2.9 7 2.8"/></svg></span>
             <h3 data-en="By your side">By your side</h3>
-            <p data-en="Setting up, training your team, then support inside the software.">Setting up, training your team, then support inside the software.</p>
+            <p data-en="Set-up, training for your team, then support inside the software.">Set-up, training for your team, then support inside the software.</p>
           </article>
         </div>
       </section>
@@ -471,7 +484,7 @@
       <section class="part">
         <div class="quote reveal">
           <h2 data-en="GesSchool is free for now">GesSchool is free for now</h2>
-          <p class="intro" data-en="No subscription and nothing to pay: download the software, create your school’s account and start checking in.">No subscription and nothing to pay: download the software, create your school’s account and start checking in.</p>
+          <p class="intro" data-en="No subscription, nothing to pay: download the software, create your school’s account and start checking in.">No subscription, nothing to pay: download the software, create your school’s account and start checking in.</p>
           <div class="actions">
             <a class="btn blue" href="telechargements.html"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15z"/></g><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/></svg><span data-en="Download GesSchool">Download GesSchool</span></a>
             <a class="btn line" href="demonstration.html" data-en="Request a demo">Request a demo</a>
@@ -481,7 +494,7 @@
 
     </main>
 
-    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Write to One Technologie Éducation on WhatsApp" data-en-aria-label="Write to One Technologie Éducation on WhatsApp">
+    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Message One Technologie Education on WhatsApp" data-en-aria-label="Message One Technologie Education on WhatsApp">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 9.1c.2 2.4 2.5 4.9 5.6 5.7l1.2-1.3-1.7-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-1.7Z" fill="currentColor" stroke="none"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -554,8 +567,5 @@
       </div>
       <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Your whole school, in one place.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Back to top ↑</a></p>
     </footer>
-
-    <script src="../config.js?v=mwjrbku5"></script>
-    <script src="../script.js?v=mwjrbku5"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>GesSchool — Staff attendance software for schools | One Technologie</title>
-    <meta name="description" content="GesSchool, staff attendance software for schools in Côte d’Ivoire: QR code check-in, lateness and missed classes live, on computer and phone. Free for now.">
+    <meta name="description" content="GesSchool, staff attendance software for schools in Côte d’Ivoire: QR code check-in, lateness and missed classes live. Free for now.">
     <meta name="theme-color" content="#2d43ed">
     <link rel="canonical" href="https://onetechnologie.com/en/gesschool.html">
     <link rel="icon" href="../assets/one-mark-education.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="GesSchool — Staff attendance software for schools | One Technologie">
-    <meta property="og:description" content="GesSchool, staff attendance software for schools in Côte d’Ivoire: QR code check-in, lateness and missed classes live, on computer and phone. Free for now.">
+    <meta property="og:description" content="GesSchool, staff attendance software for schools in Côte d’Ivoire: QR code check-in, lateness and missed classes live. Free for now.">
     <meta property="og:url" content="https://onetechnologie.com/en/gesschool.html">
     <meta property="og:image" content="https://onetechnologie.com/assets/partage.png">
     <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="../style.css?v=mwjrbku5">
+    <link rel="stylesheet" href="../style.css?v=mwk0duk2">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -30,12 +30,25 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // Filet de sécurité : tant que script.js n'a pas fini (classe « anim-ok »), les textes et blocs animés restent
+      // cachés. S'il ne s'exécute pas (réseau coupé, erreur) ou tarde trop, on retire « js » : tout s'affiche, sans animation.
+      (function (r) {
+        var check = function () {
+          if (!r.classList.contains('anim-ok')) r.classList.remove('js');
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(check, 0);
+        });
+        setTimeout(check, 6000);
+      })(document.documentElement);
       // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
       try {
         var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
         if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
       } catch (e) {}
     </script>
+    <script defer src="../config.js?v=mwk0duk2"></script>
+    <script defer src="../script.js?v=mwk0duk2"></script>
     <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/gesschool.html">
     <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/gesschool.html">
     <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/gesschool.html">
@@ -46,7 +59,7 @@
 
     <!-- One Technologie Éducation : pas de menu, seulement le chemin du retour vers One Technologie. -->
     <header class="top bar" id="haut">
-      <a class="logo" href="education.html" aria-label="One Technologie Éducation, overview" data-en-aria-label="One Technologie Éducation, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
+      <a class="logo" href="education.html" aria-label="One Technologie Education, overview" data-en-aria-label="One Technologie Education, overview"><svg class="brand-logo" viewBox="0 0 242 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Technologie Spécial Éducation">
 <path d="M21.3794 52.8593C9.833 52.8593 0.439697 43.466 0.439697 31.9196C0.439697 20.3732 9.833 10.9799 21.3794 10.9799C32.9257 10.9799 42.319 20.3732 42.319 31.9196C42.319 43.466 32.9257 52.8593 21.3794 52.8593Z" fill="white"/>
 <path d="M21.3794 11.4197C26.8553 11.4197 32.0023 13.5517 35.874 17.4233C39.7456 21.295 41.8776 26.4437 41.8776 31.9179C41.8776 37.392 39.7456 42.5407 35.874 46.4124C32.0023 50.284 26.8536 52.416 21.3794 52.416C15.9053 52.416 10.7566 50.284 6.8849 46.4124C3.01324 42.5407 0.879522 37.3955 0.879522 31.9196C0.879522 26.4437 3.01148 21.2968 6.88314 17.4251C10.7548 13.5534 15.9035 11.4215 21.3777 11.4215M21.3794 10.5402C9.57096 10.5402 0 20.1129 0 31.9196C0 43.7263 9.57096 53.299 21.3794 53.299C33.1879 53.299 42.7589 43.7281 42.7589 31.9196C42.7589 20.1112 33.1879 10.5402 21.3794 10.5402Z" fill="#2D43ED"/>
 <path d="M22.7145 51.9692C11.9052 51.9692 3.11169 42.8415 3.11169 31.6241C3.11169 20.4067 11.9052 11.279 22.7145 11.279C33.5238 11.279 42.3173 20.4067 42.3173 31.6241C42.3173 42.8415 33.5238 51.9692 22.7145 51.9692Z" fill="white"/>
@@ -116,23 +129,23 @@
             <span class="line"><span class="up" data-en="Staff attendance,">Staff attendance,</span></span>
             <span class="line"><mark class="swipe up" data-en="simple at last.">simple at last.</mark></span>
           </h1>
-          <p class="lead" data-en="GesSchool: teachers and staff check in with their phone by scanning a QR code, and management follows attendance, lateness and missed classes live.">GesSchool: teachers and staff check in with their phone by scanning a QR code, and management follows attendance, lateness and missed classes live.</p>
+          <p class="lead" data-en="Teachers and staff check in by scanning a QR code with their phone. Management follows attendance, lateness and missed classes live.">Teachers and staff check in by scanning a QR code with their phone. Management follows attendance, lateness and missed classes live.</p>
           <div class="actions">
             <a class="btn yellow" href="telechargements.html"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15z"/></g><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/></svg><span data-en="Download GesSchool">Download GesSchool</span></a>
             <a class="btn ghost" href="#fonctionnement" data-en="See how it works">See how it works</a>
           </div>
         </div>
         <div class="stage" data-parallax>
-          <img class="desk" src="../assets/captures/admin-accueil.jpg?v=mwjrbku5" width="2160" height="1350" alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart." data-en-alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart.">
-          <img class="hand" src="../assets/captures/mobile-accueil.jpg?v=mwjrbku5" width="780" height="1688" alt="Phone app home: today’s status and the scan button." data-en-alt="Phone app home: today’s status and the scan button.">
+          <img class="desk" src="../assets/captures/admin-accueil.jpg?v=mwk0duk2" width="2160" height="1350" alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart." data-en-alt="GesSchool software home: staff present today, attendance rate, today’s classes and the weekly chart.">
+          <img class="hand" src="../assets/captures/mobile-accueil.jpg?v=mwk0duk2" width="780" height="1688" alt="Phone app home: today’s status and the scan button." data-en-alt="Phone app home: today’s status and the scan button.">
           <span class="sticker" aria-hidden="true"><b>07:18</b><i data-en="Arrival recorded">Arrival recorded</i></span>
         </div>
       </section>
       <section class="part" id="en-bref">
         <div class="part-head reveal">
           <p class="eyebrow" data-en="In short">In short</p>
-          <h2 data-en="Know who is there, who is late and which class did not take place">Know who is there, who is late and which class did not take place</h2>
-          <p class="intro" data-en="No more paper registers and end-of-month recounts. Each scan is checked, stamped with the official time and shown to management straight away.">No more paper registers and end-of-month recounts. Each scan is checked, stamped with the official time and shown to management straight away.</p>
+          <h2 data-en="Who is here, who is late, which classes are missed">Who is here, who is late, which classes are missed</h2>
+          <p class="intro" data-en="No more paper register. Each scan is checked, stamped with the official time and shown to management at once.">No more paper register. Each scan is checked, stamped with the official time and shown to management at once.</p>
         </div>
         <div class="tiles">
           <article class="tile reveal">
@@ -274,7 +287,7 @@
     </g>
 </svg></div>
             <h3 data-en="Check-in by QR code">Check-in by QR code</h3>
-            <p data-en="A poster or a screen at the entrance, a phone, one scan. Arrival is recorded in a second.">A poster or a screen at the entrance, a phone, one scan. Arrival is recorded in a second.</p>
+            <p data-en="A poster or a screen at the entrance, one scan with the phone: the arrival is recorded.">A poster or a screen at the entrance, one scan with the phone: the arrival is recorded.</p>
           </article>
           <article class="tile reveal">
             <div class="illu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-26 40 806 570" role="img" aria-label="L'école est entourée de sa zone de pointage. Le téléphone lié au compte, dans la zone, est accepté ; un autre téléphone, hors de la zone, est refusé.">
@@ -384,7 +397,7 @@
   </g>
 </svg></div>
             <h3 data-en="On site, with their own phone">On site, with their own phone</h3>
-            <p data-en="The location is checked and each account is tied to one phone: nobody checks in for a colleague.">The location is checked and each account is tied to one phone: nobody checks in for a colleague.</p>
+            <p data-en="Location checked, one phone per account: nobody checks in for a colleague.">Location checked, one phone per account: nobody checks in for a colleague.</p>
           </article>
           <article class="tile reveal">
             <div class="illu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="28 52 724 548" role="img" aria-label="Un emploi du temps de la semaine : la plupart des cours sont assurés, un cours a commencé avec 12 minutes de retard et un cours a été manqué. Au premier plan, un réveil montre le retard de 10 h 00 à 10 h 12.">
@@ -440,7 +453,7 @@
     </g>
 </svg></div>
             <h3 data-en="Lateness and missed classes, calculated">Lateness and missed classes, calculated</h3>
-            <p data-en="Check-in follows each teacher’s timetable. Lateness, early departures and classes not taught add up by themselves.">Check-in follows each teacher’s timetable. Lateness, early departures and classes not taught add up by themselves.</p>
+            <p data-en="Check-in follows the timetable. Lateness, early departures and classes not taught are counted automatically.">Check-in follows the timetable. Lateness, early departures and classes not taught are counted automatically.</p>
           </article>
           <article class="tile reveal">
             <div class="illu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="38 38 776 504" role="img" aria-label="Le logiciel GesSchool reste utilisable sans internet : le nuage est barré, les modifications sont gardées sur le poste (3 en attente) et seront synchronisées au retour de la connexion.">
@@ -518,8 +531,8 @@
     <path fill="#5D5F68" d="M171.1700096130371 451.0V439.359375H173.25623512268066V444.1712589263916H178.67376327514648V439.359375H180.75998878479004V451.0H178.67376327514648V445.92811584472656H173.25623512268066V451.0Z M186.7974967956543 451.1762504577637Q185.52562522888184 451.1762504577637 184.58750200271606 450.61234426498413Q183.6493787765503 450.0484380722046 183.13672304153442 449.03421926498413Q182.62406730651855 448.0200004577637 182.62406730651855 446.6762504577637Q182.62406730651855 445.3175001144409 183.13672304153442 444.30078125Q183.6493787765503 443.2840623855591 184.58750200271606 442.72015619277954Q185.52562522888184 442.15625 186.7974967956543 442.15625Q188.07436847686768 442.15625 189.01217937469482 442.72015619277954Q189.94999027252197 443.2840623855591 190.46264600753784 444.30078125Q190.9753017425537 445.3175001144409 190.9753017425537 446.6762504577637Q190.9753017425537 448.0200004577637 190.46264600753784 449.03421926498413Q189.94999027252197 450.0484380722046 189.01217937469482 450.61234426498413Q188.07436847686768 451.1762504577637 186.7974967956543 451.1762504577637ZM186.7974967956543 449.52751636505127Q187.5087537765503 449.52751636505127 187.97922658920288 449.1447010040283Q188.44969940185547 448.76188564300537 188.68095111846924 448.113600730896Q188.912202835083 447.4653158187866 188.912202835083 446.6706256866455Q188.912202835083 445.8681230545044 188.68095111846924 445.2190566062927Q188.44969940185547 444.56999015808105 187.97922658920288 444.18748712539673Q187.5087537765503 443.8049840927124 186.7974967956543 443.8049840927124Q186.08842754364014 443.8049840927124 185.62154865264893 444.18748712539673Q185.15466976165771 444.56999015808105 184.92341804504395 445.21655654907227Q184.69216632843018 445.8631229400635 184.69216632843018 446.6706256866455Q184.69216632843018 447.4653158187866 184.92341804504395 448.113600730896Q185.15466976165771 448.76188564300537 185.62154865264893 449.1447010040283Q186.08842754364014 449.52751636505127 186.7974967956543 449.52751636505127Z M192.7487564086914 451.0V442.265625H194.71560668945312V443.72749519348145H194.80935668945312Q195.04873180389404 442.96781158447266 195.63326454162598 442.5570306777954Q196.2177972793579 442.14624977111816 196.968111038208 442.14624977111816Q197.1412353515625 442.14624977111816 197.35186052322388 442.1624994277954Q197.56248569488525 442.17874908447266 197.7099847793579 442.20624828338623V444.07310485839844Q197.5856122970581 444.0321683883667 197.30326986312866 443.99951219558716Q197.02092742919922 443.9668560028076 196.75373935699463 443.9668560028076Q196.18779945373535 443.9668560028076 195.7381100654602 444.20888805389404Q195.28842067718506 444.45092010498047 195.03388833999634 444.87701511383057Q194.77935600280762 445.30311012268066 194.77935600280762 445.8631114959717V451.0Z M202.40374279022217 451.1762504577637Q201.40124702453613 451.1762504577637 200.62609386444092 450.8878140449524Q199.8509407043457 450.5993776321411 199.357036113739 450.0457854270935Q198.86313152313232 449.4921932220459 198.7096939086914 448.70281982421875L200.6109209060669 448.3459463119507Q200.78717136383057 448.99157428741455 201.2462363243103 449.30641889572144Q201.70530128479004 449.6212635040283 202.4443655014038 449.6212635040283Q203.19530963897705 449.6212635040283 203.63562631607056 449.32063484191895Q204.07594299316406 449.02000617980957 204.07594299316406 448.57937717437744Q204.07594299316406 448.1993741989136 203.78625440597534 447.9534344673157Q203.49656581878662 447.7074947357178 202.89593887329102 447.57874393463135L201.40906524658203 447.257493019104Q200.17094230651855 446.9903049468994 199.56188106536865 446.38077449798584Q198.95281982421875 445.77124404907227 198.95281982421875 444.8099956512451Q198.95281982421875 444.0009355545044 199.39860010147095 443.4056239128113Q199.84438037872314 442.81031227111816 200.63672161102295 442.4832811355591Q201.42906284332275 442.15625 202.47405815124512 442.15625Q203.46530437469482 442.15625 204.17998838424683 442.4370307922363Q204.89467239379883 442.71781158447266 205.33701419830322 443.2228102684021Q205.77935600280762 443.72780895233154 205.95216941833496 444.40968132019043L204.1415662765503 444.76311779022217Q203.9900026321411 444.3084297180176 203.5987515449524 443.991708278656Q203.20750045776367 443.67498683929443 202.5015573501587 443.67498683929443Q201.85530185699463 443.67498683929443 201.42154836654663 443.9570212364197Q200.98779487609863 444.2390556335449 200.98779487609863 444.68749713897705Q200.98779487609863 445.067813873291 201.2732663154602 445.31719064712524Q201.55873775482178 445.5665674209595 202.2259292602539 445.7125062942505L203.71217250823975 446.0250062942505Q204.9531078338623 446.289381980896 205.55576276779175 446.8750071525574Q206.1584177017212 447.46063232421875 206.1584177017212 448.3843812942505Q206.1584177017212 449.2118787765503 205.67982578277588 449.8404712677002Q205.20123386383057 450.4690637588501 204.35498666763306 450.8226571083069Q203.50873947143555 451.1762504577637 202.40374279022217 451.1762504577637Z M213.95123100280762 439.359375V451.0H211.9206314086914V439.359375Z M216.1081314086914 451.0V442.265625H218.13873100280762V451.0ZM217.12561893463135 441.02999210357666Q216.6399974822998 441.02999210357666 216.29187488555908 440.70296950594206Q215.94375228881836 440.3759469083075 215.94375228881836 439.91811527161906Q215.94375228881836 439.4509401321411 216.29187488555908 439.12797355651855Q216.6399974822998 438.805006980896 217.12561893463135 438.805006980896Q217.61543696267265 438.805006980896 217.96396132877896 439.12767222949435Q218.31248569488525 439.45033747809276 218.31248569488525 439.91796827316284Q218.31248569488525 440.37624645233154 217.96396132877896 440.7031192779541Q217.61543696267265 441.02999210357666 217.12561893463135 441.02999210357666Z M224.06249713897705 454.453125Q223.01218795776367 454.453125 222.23625326156616 454.1873445510864Q221.46031856536865 453.92156410217285 220.96485090255737 453.46328496932983Q220.4693832397461 453.0050058364868 220.24938106536865 452.43000984191895L221.97216987609863 451.8137550354004Q222.10904693603516 452.0581302642822 222.3540482521057 452.3136010169983Q222.59904956817627 452.56907176971436 223.011239528656 452.73891735076904Q223.42342948913574 452.90876293182373 224.0568723678589 452.90876293182373Q225.00250148773193 452.90876293182373 225.57000589370728 452.46782302856445Q226.13751029968262 452.0268831253052 226.13751029968262 451.0893774032593V449.43499851226807H225.97094917297363Q225.81688690185547 449.75249576568604 225.52907514572144 450.0849962234497Q225.2412633895874 450.4174966812134 224.75282526016235 450.64406061172485Q224.2643871307373 450.8706245422363 223.51063346862793 450.8706245422363Q222.50594425201416 450.8706245422363 221.68969345092773 450.397029876709Q220.8734426498413 449.92343521118164 220.39328622817993 448.9759349822998Q219.91312980651855 448.02843475341797 219.91312980651855 446.6106243133545Q219.91312980651855 445.17469024658203 220.39672327041626 444.1814088821411Q220.88031673431396 443.1881275177002 221.69906759262085 442.6721887588501Q222.51781845092773 442.15625 223.52500915527344 442.15625Q224.2984495162964 442.15625 224.79813718795776 442.4139070510864Q225.29782485961914 442.67156410217285 225.59516763687134 443.036563873291Q225.89251041412354 443.4015636444092 226.04938507080078 443.7118730545044H226.15688610076904V442.265625H228.15123558044434V451.0268831253052Q228.15123558044434 452.18844413757324 227.61951780319214 452.9496922492981Q227.08780002593994 453.71094036102295 226.16405248641968 454.0820326805115Q225.2403049468994 454.453125 224.06249713897705 454.453125ZM224.0768699645996 449.266263961792Q224.74437522888184 449.266263961792 225.20547246932983 448.9479808807373Q225.66656970977783 448.6296977996826 225.90704011917114 448.02906942367554Q226.14751052856445 447.42844104766846 226.14751052856445 446.5906238555908Q226.14751052856445 445.7621822357178 225.9095401763916 445.1423349380493Q225.67156982421875 444.52248764038086 225.21047258377075 444.17498540878296Q224.74937534332275 443.82748317718506 224.0768699645996 443.82748317718506Q223.3921766281128 443.82748317718506 222.92748546600342 444.1899857521057Q222.46279430389404 444.55248832702637 222.22763633728027 445.1748356819153Q221.9924783706665 445.7971830368042 221.9924783706665 446.5906238555908Q221.9924783706665 447.3962526321411 222.23013639450073 447.99938106536865Q222.46779441833496 448.6025094985962 222.93248558044434 448.9343867301941Q223.3971767425537 449.266263961792 224.0768699645996 449.266263961792Z M232.33404350280762 445.88374519348145V451.0H230.3034439086914V442.265625H232.22873306274414L232.25623226165771 444.42499828338623H232.09748077392578Q232.45935726165771 443.2928075790405 233.17232704162598 442.72452878952026Q233.88529682159424 442.15625 234.95341873168945 442.15625Q235.85310554504395 442.15625 236.52419900894165 442.5406241416931Q237.19529247283936 442.92499828338623 237.5677924156189 443.65968561172485Q237.94029235839844 444.3943729400635 237.94029235839844 445.44750022888184V451.0H235.90969276428223V445.7587423324585Q235.90969276428223 444.88029956817627 235.45406484603882 444.38170289993286Q234.9984369277954 443.88310623168945 234.19968223571777 443.88310623168945Q233.66186618804932 443.88310623168945 233.23920679092407 444.11857652664185Q232.81654739379883 444.35404682159424 232.57529544830322 444.8001437187195Q232.33404350280762 445.2462406158447 232.33404350280762 445.88374519348145Z M243.94999885559082 451.1762504577637Q242.63656330108643 451.1762504577637 241.68484592437744 450.62359380722046Q240.73312854766846 450.07093715667725 240.2215666770935 449.06312465667725Q239.71000480651855 448.05531215667725 239.71000480651855 446.6862506866455Q239.71000480651855 445.3396883010864 240.21547269821167 444.32046937942505Q240.72094058990479 443.3012504577637 241.6456265449524 442.72875022888184Q242.5703125 442.15625 243.81687259674072 442.15625Q244.61905574798584 442.15625 245.33983516693115 442.4148426055908Q246.06061458587646 442.67343521118164 246.61842679977417 443.2104654312134Q247.17623901367188 443.7474956512451 247.49592685699463 444.58062076568604Q247.81561470031738 445.41374588012695 247.81561470031738 446.56562328338623V447.1993713378906H240.66875457763672V445.82062911987305H246.80187511444092L245.8531370162964 446.2300052642822Q245.8531370162964 445.4887504577637 245.62438535690308 444.93046474456787Q245.39563369750977 444.37217903137207 244.94594287872314 444.06077003479004Q244.49625205993652 443.749361038208 243.82812213897705 443.749361038208Q243.15999221801758 443.749361038208 242.69030094146729 444.06577014923096Q242.220609664917 444.3821792602539 241.97435760498047 444.9104642868042Q241.72810554504395 445.4387493133545 241.72810554504395 446.0850019454956V447.03999519348145Q241.72810554504395 447.86812591552734 242.00920152664185 448.4370365142822Q242.29029750823975 449.0059471130371 242.79873895645142 449.2945432662964Q243.3071804046631 449.58313941955566 243.9774980545044 449.58313941955566Q244.42281341552734 449.58313941955566 244.78703451156616 449.4557948112488Q245.15125560760498 449.3284502029419 245.41375732421875 449.0754795074463Q245.67625904083252 448.8225088119507 245.81501007080078 448.4503183364868L247.68061447143555 448.83656787872314Q247.47186470031738 449.53781604766846 246.96217823028564 450.06453371047974Q246.4524917602539 450.591251373291 245.6898374557495 450.88375091552734Q244.92718315124512 451.1762504577637 243.94999885559082 451.1762504577637Z"/>
     <path fill="#212121" d="M175.565 484.286Q173.667 484.286 172.08100000000002 483.623Q170.495 482.96 169.403 481.712L172.042 479.099Q172.536 479.827 173.485 480.27549999999997Q174.434 480.724 175.5 480.724Q176.449 480.724 177.1575 480.38599999999997Q177.86599999999999 480.048 178.269 479.424Q178.672 478.8 178.672 477.955Q178.672 477.084 178.2625 476.473Q177.853 475.862 177.0925 475.5305Q176.332 475.199 175.266 475.199Q174.772 475.199 174.23250000000002 475.264Q173.693 475.329 173.342 475.459L175.136 473.197Q175.864 472.989 176.527 472.846Q177.19 472.703 177.749 472.703Q179.153 472.703 180.27749999999997 473.366Q181.402 474.029 182.05849999999998 475.238Q182.715 476.447 182.715 478.098Q182.715 479.931 181.8245 481.32849999999996Q180.934 482.726 179.32850000000002 483.506Q177.723 484.286 175.565 484.286ZM173.342 475.459V473.184L177.814 467.945L182.377 467.919L177.736 473.21ZM170.547 469.115V465.644H182.377V467.919L179.179 469.115Z M196.105 484.286Q194.051 484.286 192.4585 483.44100000000003Q190.86599999999999 482.596 189.956 481.09450000000004Q189.046 479.593 189.046 477.682Q189.046 475.784 189.9365 474.2955Q190.827 472.807 192.3675 471.9425Q193.908 471.078 195.819 471.078Q197.69099999999997 471.078 199.1275 471.8905Q200.564 472.703 201.38299999999998 474.133Q202.202 475.563 202.202 477.396Q202.202 477.747 202.163 478.124Q202.124 478.501 202.01999999999998 478.982L191.12599999999998 479.021V476.291L200.32999999999998 476.252L198.61399999999998 477.409Q198.588 476.317 198.2695 475.5955Q197.951 474.874 197.3465 474.497Q196.742 474.12 195.845 474.12Q194.909 474.12 194.21999999999997 474.549Q193.53099999999998 474.978 193.16049999999998 475.7645Q192.79 476.551 192.79 477.656Q192.79 478.774 193.1865 479.57349999999997Q193.583 480.373 194.324 480.7955Q195.065 481.218 196.09199999999998 481.218Q197.028 481.218 197.78199999999998 480.8995Q198.536 480.581 199.108 479.931L201.292 482.115Q200.356 483.194 199.02999999999997 483.74Q197.70399999999998 484.286 196.105 484.286Z M212.47199999999998 484.0V476.811Q212.47199999999998 475.81 211.861 475.20550000000003Q211.24999999999997 474.601 210.30418367346937 474.601Q209.66068367346938 474.601 209.16184183673468 474.874Q208.66299999999998 475.147 208.38349999999997 475.64750000000004Q208.10399999999998 476.148 208.10399999999998 476.811L206.557 476.057Q206.557 474.562 207.21349999999998 473.45050000000003Q207.86999999999998 472.339 209.02564720812182 471.7215Q210.18129441624365 471.104 211.6451472081218 471.104Q213.03099999999998 471.104 214.11649999999997 471.767Q215.20199999999997 472.43 215.82599999999996 473.522Q216.45 474.614 216.45 475.914V484.0ZM204.12599999999998 484.0V471.364H208.10399999999998V484.0Z M229.21599999999998 484.26Q227.474 484.26 226.1025 483.402Q224.731 482.544 223.9445 481.062Q223.158 479.58 223.158 477.695Q223.158 475.797 223.9445 474.3085Q224.731 472.82 226.1025 471.962Q227.474 471.104 229.21599999999998 471.104Q230.48999999999998 471.104 231.517 471.59799999999996Q232.54399999999998 472.092 233.1875 472.96299999999997Q233.831 473.834 233.922 474.952V480.412Q233.831 481.53 233.194 482.40099999999995Q232.557 483.272 231.52349999999998 483.76599999999996Q230.48999999999998 484.26 229.21599999999998 484.26ZM230.022 480.672Q231.296 480.672 232.076 479.8335Q232.856 478.995 232.856 477.682Q232.856 476.798 232.505 476.12850000000003Q232.154 475.459 231.517 475.07550000000003Q230.88 474.692 230.035 474.692Q229.203 474.692 228.566 475.07550000000003Q227.929 475.459 227.55849999999998 476.135Q227.188 476.811 227.188 477.682Q227.188 478.553 227.552 479.229Q227.916 479.905 228.5595 480.2885Q229.203 480.672 230.022 480.672ZM232.68699999999998 484.0V480.607L233.285 477.526L232.68699999999998 474.471V471.364H236.6V484.0Z M241.202 484.0V466.138H245.17999999999998V484.0ZM238.34199999999998 474.744V471.364H248.04V474.744Z M251.576 484.0V466.138H255.55399999999997V484.0ZM248.71599999999998 474.744V471.364H258.414V474.744Z M266.3829999999999 484.286Q264.32899999999995 484.286 262.7365 483.44100000000003Q261.14399999999995 482.596 260.2339999999999 481.09450000000004Q259.32399999999996 479.593 259.32399999999996 477.682Q259.32399999999996 475.784 260.21449999999993 474.2955Q261.10499999999996 472.807 262.64549999999997 471.9425Q264.186 471.078 266.097 471.078Q267.96899999999994 471.078 269.40549999999996 471.8905Q270.8419999999999 472.703 271.66099999999994 474.133Q272.47999999999996 475.563 272.47999999999996 477.396Q272.47999999999996 477.747 272.4409999999999 478.124Q272.40199999999993 478.501 272.29799999999994 478.982L261.40399999999994 479.021V476.291L270.60799999999995 476.252L268.89199999999994 477.409Q268.86599999999993 476.317 268.5474999999999 475.5955Q268.2289999999999 474.874 267.6244999999999 474.497Q267.0199999999999 474.12 266.12299999999993 474.12Q265.18699999999995 474.12 264.49799999999993 474.549Q263.80899999999997 474.978 263.4385 475.7645Q263.0679999999999 476.551 263.0679999999999 477.656Q263.0679999999999 478.774 263.46449999999993 479.57349999999997Q263.86099999999993 480.373 264.602 480.7955Q265.34299999999996 481.218 266.36999999999995 481.218Q267.3059999999999 481.218 268.05999999999995 480.8995Q268.81399999999996 480.581 269.38599999999997 479.931L271.56999999999994 482.115Q270.63399999999996 483.194 269.308 483.74Q267.98199999999997 484.286 266.3829999999999 484.286Z M282.75 484.0V476.811Q282.75 475.81 282.139 475.20550000000003Q281.528 474.601 280.5821836734694 474.601Q279.93868367346937 474.601 279.4398418367347 474.874Q278.941 475.147 278.6615 475.64750000000004Q278.382 476.148 278.382 476.811L276.835 476.057Q276.835 474.562 277.4915 473.45050000000003Q278.148 472.339 279.30364720812184 471.7215Q280.45929441624367 471.104 281.9231472081218 471.104Q283.309 471.104 284.3945 471.767Q285.48 472.43 286.10400000000004 473.522Q286.728 474.614 286.728 475.914V484.0ZM274.404 484.0V471.364H278.382V484.0Z M291.06999999999994 484.0V466.138H295.04799999999994V484.0ZM288.21 474.744V471.364H297.90799999999996V474.744Z M305.87699999999995 484.286Q303.823 484.286 302.2305 483.44100000000003Q300.638 482.596 299.72799999999995 481.09450000000004Q298.818 479.593 298.818 477.682Q298.818 475.784 299.70849999999996 474.2955Q300.599 472.807 302.1395 471.9425Q303.68 471.078 305.591 471.078Q307.46299999999997 471.078 308.8995 471.8905Q310.33599999999996 472.703 311.155 474.133Q311.974 475.563 311.974 477.396Q311.974 477.747 311.93499999999995 478.124Q311.89599999999996 478.501 311.792 478.982L300.89799999999997 479.021V476.291L310.102 476.252L308.38599999999997 477.409Q308.35999999999996 476.317 308.0414999999999 475.5955Q307.72299999999996 474.874 307.1184999999999 474.497Q306.51399999999995 474.12 305.61699999999996 474.12Q304.681 474.12 303.99199999999996 474.549Q303.303 474.978 302.9325 475.7645Q302.56199999999995 476.551 302.56199999999995 477.656Q302.56199999999995 478.774 302.95849999999996 479.57349999999997Q303.35499999999996 480.373 304.096 480.7955Q304.837 481.218 305.864 481.218Q306.79999999999995 481.218 307.554 480.8995Q308.308 480.581 308.88 479.931L311.06399999999996 482.115Q310.128 483.194 308.802 483.74Q307.476 484.286 305.87699999999995 484.286Z"/></g>
 </svg></div>
-            <h3 data-en="Works even without a connection">Works even without a connection</h3>
-            <p data-en="The software stays usable when the connection drops. Changes are sent as soon as it comes back.">The software stays usable when the connection drops. Changes are sent as soon as it comes back.</p>
+            <h3 data-en="Works even offline">Works even offline</h3>
+            <p data-en="The software keeps working offline. Changes are sent as soon as the connection is back.">The software keeps working offline. Changes are sent as soon as the connection is back.</p>
           </article>
         </div>
       </section>
@@ -539,24 +552,24 @@
             <li class="reveal">
               <div>
                 <h3 data-en="The employee scans it with the app">The employee scans it with the app</h3>
-                <p data-en="They open the app on their phone and frame the QR code.">They open the app on their phone and frame the QR code.</p>
+                <p data-en="They open the app and frame the QR code.">They open the app and frame the QR code.</p>
               </div>
             </li>
             <li class="reveal">
               <div>
                 <h3 data-en="GesSchool checks">GesSchool checks</h3>
-                <p data-en="The right phone, on site, at the right moment of the timetable. The time kept is the official one, not the phone’s.">The right phone, on site, at the right moment of the timetable. The time kept is the official one, not the phone’s.</p>
+                <p data-en="The right phone, on site, at the right time. The official time is used, not the phone’s.">The right phone, on site, at the right time. The official time is used, not the phone’s.</p>
               </div>
             </li>
             <li class="reveal">
               <div>
                 <h3 data-en="Management sees it at once">Management sees it at once</h3>
-                <p data-en="The check-in appears on the software’s home page, with the lateness if there is any.">The check-in appears on the software’s home page, with the lateness if there is any.</p>
+                <p data-en="The check-in appears on the software’s home page, with any lateness.">The check-in appears on the software’s home page, with any lateness.</p>
               </div>
             </li>
           </ol>
           <figure class="device float reveal">
-            <img src="../assets/captures/mobile-scan.jpg?v=mwjrbku5" width="780" height="1688" loading="lazy" alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code." data-en-alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code.">
+            <img decoding="async" src="../assets/captures/mobile-scan.jpg?v=mwk0duk2" width="780" height="1688" loading="lazy" alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code." data-en-alt="The app’s scan screen: full-screen camera and a yellow frame around the QR code.">
           </figure>
         </div>
       </section>
@@ -564,7 +577,7 @@
         <div class="part-head reveal">
           <p class="eyebrow" data-en="The software">The software</p>
           <h2 data-en="The head’s desk, on the computer">The head’s desk, on the computer</h2>
-          <p class="intro" data-en="Installed on Windows like any other software, or opened in a browser. It updates itself: a window offers each new version.">Installed on Windows like any other software, or opened in a browser. It updates itself: a window offers each new version.</p>
+          <p class="intro" data-en="Installed on Windows or opened in a browser. It offers each new version by itself.">Installed on Windows or opened in a browser. It offers each new version by itself.</p>
         </div>
 
         <div class="feature reveal">
@@ -576,7 +589,7 @@
               <li data-en="Attendance by day, week or month.">Attendance by day, week or month.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="../assets/captures/admin-accueil.jpg?v=mwjrbku5" width="2160" height="1350" loading="lazy" alt="Software home with today’s card, the attendance rate and the attendance chart." data-en-alt="Software home with today’s card, the attendance rate and the attendance chart."></figure>
+          <figure class="shot tilt"><img decoding="async" src="../assets/captures/admin-accueil.jpg?v=mwk0duk2" width="2160" height="1350" loading="lazy" alt="Software home with today’s card, the attendance rate and the attendance chart." data-en-alt="Software home with today’s card, the attendance rate and the attendance chart."></figure>
         </div>
 
         <div class="feature flip reveal">
@@ -585,10 +598,10 @@
             <ul class="list">
               <li data-en="For each employee: arrival, departure, lateness, start and end of each class.">For each employee: arrival, departure, lateness, start and end of each class.</li>
               <li data-en="Manual check-in when a phone is broken, recorded in the log.">Manual check-in when a phone is broken, recorded in the log.</li>
-              <li data-en="Search, filters, Excel export and a clean printed sheet, with everyone’s photo.">Search, filters, Excel export and a clean printed sheet, with everyone’s photo.</li>
+              <li data-en="Search, filters, Excel export and a printed sheet with photos.">Search, filters, Excel export and a printed sheet with photos.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="../assets/captures/admin-presences.jpg?v=mwjrbku5" width="2160" height="1350" loading="lazy" alt="Attendance page: the day’s list of employees with their status and times." data-en-alt="Attendance page: the day’s list of employees with their status and times."></figure>
+          <figure class="shot tilt"><img decoding="async" src="../assets/captures/admin-presences.jpg?v=mwk0duk2" width="2160" height="1350" loading="lazy" alt="Attendance page: the day’s list of employees with their status and times." data-en-alt="Attendance page: the day’s list of employees with their status and times."></figure>
         </div>
 
         <div class="feature reveal">
@@ -596,11 +609,11 @@
             <h3 data-en="Each teacher’s timetable">Each teacher’s timetable</h3>
             <ul class="list">
               <li data-en="One grid per week: time slot, subject, class, room.">One grid per week: time slot, subject, class, room.</li>
-              <li data-en="Two classes at the same time in the same room are refused.">Two classes at the same time in the same room are refused.</li>
-              <li data-en="Print a teacher’s timetable, a class’s, or everyone’s at once.">Print a teacher’s timetable, a class’s, or everyone’s at once.</li>
+              <li data-en="No clashes: a class is refused if the teacher, class or room is not free.">No clashes: a class is refused if the teacher, class or room is not free.</li>
+              <li data-en="Printing by teacher, by class or for everyone.">Printing by teacher, by class or for everyone.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="../assets/captures/admin-emploi-du-temps.jpg?v=mwjrbku5" width="2160" height="1350" loading="lazy" alt="A teacher’s timetable: one row per time slot, one column per day." data-en-alt="A teacher’s timetable: one row per time slot, one column per day."></figure>
+          <figure class="shot tilt"><img decoding="async" src="../assets/captures/admin-emploi-du-temps.jpg?v=mwk0duk2" width="2160" height="1350" loading="lazy" alt="A teacher’s timetable: one row per time slot, one column per day." data-en-alt="A teacher’s timetable: one row per time slot, one column per day."></figure>
         </div>
 
         <div class="feature flip reveal">
@@ -608,12 +621,12 @@
             <h3 data-en="Check-in QR codes">Check-in QR codes</h3>
             <ul class="list">
               <li data-en="Static QR: a poster to print and put at the entrance.">Static QR: a poster to print and put at the entrance.</li>
-              <li data-en="Dynamic QR: it changes every 30 seconds on a screen. A photo of the code is useless.">Dynamic QR: it changes every 30 seconds on a screen. A photo of the code is useless.</li>
+              <li data-en="Dynamic QR: on a screen, it changes every 30 seconds; a photo is useless.">Dynamic QR: on a screen, it changes every 30 seconds; a photo is useless.</li>
               <li data-en="Display only: a tablet shows the QR code without giving access to the software.">Display only: a tablet shows the QR code without giving access to the software.</li>
-              <li data-en="Personal QR: each employee has their own code, which management scans on site.">Personal QR: each employee has their own code, which management scans on site.</li>
+              <li data-en="Personal QR: each employee’s own code, scanned on site by management.">Personal QR: each employee’s own code, scanned on site by management.</li>
             </ul>
           </div>
-          <figure class="shot tilt"><img src="../assets/captures/admin-qr-codes.jpg?v=mwjrbku5" width="2160" height="1350" loading="lazy" alt="QR codes page: one static check-in point and one dynamic." data-en-alt="QR codes page: one static check-in point and one dynamic."></figure>
+          <figure class="shot tilt"><img decoding="async" src="../assets/captures/admin-qr-codes.jpg?v=mwk0duk2" width="2160" height="1350" loading="lazy" alt="QR codes page: one static check-in point and one dynamic." data-en-alt="QR codes page: one static check-in point and one dynamic."></figure>
         </div>
       </section>
       <section class="part" id="tout">
@@ -624,16 +637,16 @@
         </div>
         <div class="feats four">
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="9" cy="8" r="3.3"/></g><circle cx="9" cy="8" r="3.3"/><path d="M2.8 20.2c.4-3.7 2.9-5.7 6.2-5.7s5.8 2 6.2 5.7"/><path d="M15.8 5a3.2 3.2 0 0 1 0 6"/><path d="M17.6 14.9c2 .7 3.3 2.4 3.6 5.3"/></svg></span><h3 data-en="Staff">Staff</h3><p data-en="Record with photo, automatic staff number, list import, activation codes.">Record with photo, automatic staff number, list import, activation codes.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="8.5"/></g><circle cx="12" cy="12" r="8.5"/><path d="M12 7.3V12l3.1 2"/></svg></span><h3 data-en="Working hours">Working hours</h3><p data-en="The school’s hours, a break in the day, and a schedule for one person.">The school’s hours, a break in the day, and a schedule for one person.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M3.5 13V10A2.5 2.5 0 0 1 6 7.5h12a2.5 2.5 0 0 1 2.5 2.5v3z"/></g><rect x="3.5" y="7.5" width="17" height="12.5" rx="2.5"/><path d="M9 7.5V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2"/><path d="M3.5 13h17M12 12v2.2"/></svg></span><h3 data-en="Leave and permissions">Leave and permissions</h3><p data-en="Full or half day, no overlap, with each person’s balance for the year.">Full or half day, no overlap, with each person’s balance for the year.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 10V7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5V10z"/></g><rect x="4" y="5" width="16" height="15.5" rx="2.5"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="m9.7 13 4.6 4.6M14.3 13l-4.6 4.6"/></svg></span><h3 data-en="Closures and public holidays">Closures and public holidays</h3><p data-en="Côte d’Ivoire public holidays in one click, school holidays, and a view of the whole year.">Côte d’Ivoire public holidays in one click, school holidays, and a view of the whole year.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m3.5 6.5 1.8 1.8 3.2-3.5M3.5 13l1.8 1.8 3.2-3.5"/><path d="M12 7h8.5M12 13.5h8.5M12 19.5h8.5M4 19.5h4"/></svg></span><h3 data-en="Classes, rooms and subjects">Classes, rooms and subjects</h3><p data-en="Classes created by level, from nursery to final year, and rooms numbered automatically.">Classes created by level, from nursery to final year, and rooms numbered automatically.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="8.5"/></g><circle cx="12" cy="12" r="8.5"/><path d="M12 7.3V12l3.1 2"/></svg></span><h3 data-en="Working hours">Working hours</h3><p data-en="The school’s hours, a daily break and personal schedules.">The school’s hours, a daily break and personal schedules.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M3.5 13V10A2.5 2.5 0 0 1 6 7.5h12a2.5 2.5 0 0 1 2.5 2.5v3z"/></g><rect x="3.5" y="7.5" width="17" height="12.5" rx="2.5"/><path d="M9 7.5V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2"/><path d="M3.5 13h17M12 12v2.2"/></svg></span><h3 data-en="Leave and permissions">Leave and permissions</h3><p data-en="Full or half day, no overlap, and each person’s yearly balance.">Full or half day, no overlap, and each person’s yearly balance.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M4 10V7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5V10z"/></g><rect x="4" y="5" width="16" height="15.5" rx="2.5"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="m9.7 13 4.6 4.6M14.3 13l-4.6 4.6"/></svg></span><h3 data-en="Closures and public holidays">Closures and public holidays</h3><p data-en="Côte d’Ivoire public holidays in one click, school holidays and a view of the whole year.">Côte d’Ivoire public holidays in one click, school holidays and a view of the whole year.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="m3.5 6.5 1.8 1.8 3.2-3.5M3.5 13l1.8 1.8 3.2-3.5"/><path d="M12 7h8.5M12 13.5h8.5M12 19.5h8.5M4 19.5h4"/></svg></span><h3 data-en="Classes, rooms and subjects">Classes, rooms and subjects</h3><p data-en="Classes created by level, from pre-school to final year; rooms numbered automatically.">Classes created by level, from pre-school to final year; rooms numbered automatically.</p></article>
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><rect x="7" y="14" width="10" height="6.5" rx="1"/></g><path d="M7 9V4h10v5"/><path d="M7 17H5.5A1.5 1.5 0 0 1 4 15.5v-5A1.5 1.5 0 0 1 5.5 9h13a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H17"/><rect x="7" y="14" width="10" height="6.5" rx="1"/><path d="M16.5 12h.01"/></svg></span><h3 data-en="Printing and Excel">Printing and Excel</h3><p data-en="Clean sheets, with your school’s name and logo.">Clean sheets, with your school’s name and logo.</p></article>
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="12" r="4"/></g><path d="M4.5 12a7.5 7.5 0 1 0 2.4-5.5L4.5 8.8"/><path d="M4.5 4.5v4.3h4.3"/><path d="M12 8.3V12l2.6 1.6"/></svg></span><h3 data-en="The log">The log</h3><p data-en="Who did what, and when. Sensitive actions are flagged, nothing is erased.">Who did what, and when. Sensitive actions are flagged, nothing is erased.</p></article>
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="9.5" cy="8" r="3.5"/></g><circle cx="9.5" cy="8" r="3.5"/><path d="M3 20.2c.4-3.8 3-5.9 6.5-5.9 1.6 0 3 .4 4.1 1.2"/><circle cx="18" cy="16.8" r="2.2"/><path d="M18 12.9v1.2M18 19.5v1.2M14.6 14.9l1 .6M20.4 18.2l1 .6M14.6 18.8l1-.6M20.4 15.5l1-.6"/></svg></span><h3 data-en="Several administrators">Several administrators</h3><p data-en="One account per person, with editing rights or read-only.">One account per person, with editing rights or read-only.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/></g><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/><path d="m8.8 12 2.3 2.3 4.1-4.4"/></svg></span><h3 data-en="Protected sign-in">Protected sign-in</h3><p data-en="A code sent by email on a new device, and the list of connected devices.">A code sent by email on a new device, and the list of connected devices.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/></g><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6z"/><path d="m8.8 12 2.3 2.3 4.1-4.4"/></svg></span><h3 data-en="Protected sign-in">Protected sign-in</h3><p data-en="A code sent by e-mail on a new device, and the list of connected devices.">A code sent by e-mail on a new device, and the list of connected devices.</p></article>
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><ellipse cx="12" cy="6.3" rx="7" ry="2.8"/></g><ellipse cx="12" cy="6.3" rx="7" ry="2.8"/><path d="M5 6.3v5.7c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6.3"/><path d="M5 12v5.7c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V12"/></svg></span><h3 data-en="Backups">Backups</h3><p data-en="A copy every day, online and on your computer, kept 30 days.">A copy every day, online and on your computer, kept 30 days.</p></article>
-          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m3.5 7.5 8.5 6 8.5-6V7.5a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2z"/></g><rect x="3.5" y="5.5" width="17" height="13.5" rx="2"/><path d="m3.8 7.7 8.2 5.8 8.2-5.8"/></svg></span><h3 data-en="The daily summary">The daily summary</h3><p data-en="Every evening, an email with absences, lateness and classes not taught.">Every evening, an email with absences, lateness and classes not taught.</p></article>
+          <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><path d="m3.5 7.5 8.5 6 8.5-6V7.5a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2z"/></g><rect x="3.5" y="5.5" width="17" height="13.5" rx="2"/><path d="m3.8 7.7 8.2 5.8 8.2-5.8"/></svg></span><h3 data-en="The daily summary">The daily summary</h3><p data-en="Every evening, an e-mail: absences, lateness, classes not taught.">Every evening, an e-mail: absences, lateness, classes not taught.</p></article>
           <article class="feat reveal"><span class="oi" aria-hidden="true"><svg class="one-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"><circle cx="12" cy="9.5" r="3.2"/><rect x="4.9" y="10.3" width="2.7" height="4.3" rx="1.3"/><rect x="16.4" y="10.3" width="2.7" height="4.3" rx="1.3"/></g><circle cx="12" cy="9.5" r="3.2"/><path d="M6.3 10.3V9.5a5.7 5.7 0 0 1 11.4 0v.8"/><rect x="4.9" y="10.3" width="2.7" height="4.3" rx="1.3"/><rect x="16.4" y="10.3" width="2.7" height="4.3" rx="1.3"/><path d="M17.7 14.6v.3a1.9 1.9 0 0 1-1.9 1.9h-1.6"/><path d="M13.3 16.8h.01"/><path d="M5 21.3c.8-1.9 3.2-2.8 7-2.8s6.2.9 7 2.8"/></svg></span><h3 data-en="Support">Support</h3><p data-en="A question, a problem, an idea: write to us from the software.">A question, a problem, an idea: write to us from the software.</p></article>
         </div>
       </section>
@@ -641,24 +654,24 @@
         <div class="part-head reveal">
           <p class="eyebrow" data-en="The app">The app</p>
           <h2 data-en="Every employee’s phone">Every employee’s phone</h2>
-          <p class="intro" data-en="It installs from the phone’s browser, on Android and iPhone alike, without going through an app store.">It installs from the phone’s browser, on Android and iPhone alike, without going through an app store.</p>
+          <p class="intro" data-en="It installs from the phone’s browser, on Android and iPhone alike, with no app store.">It installs from the phone’s browser, on Android and iPhone alike, with no app store.</p>
         </div>
         <div class="phones">
           <figure class="phone reveal">
-            <div class="device"><img src="../assets/captures/mobile-bienvenue.jpg?v=mwjrbku5" width="780" height="1688" loading="lazy" alt="The app’s first sign-in screen." data-en-alt="The app’s first sign-in screen."></div>
+            <div class="device"><img decoding="async" src="../assets/captures/mobile-bienvenue.jpg?v=mwk0duk2" width="780" height="1688" loading="lazy" alt="The app’s first sign-in screen." data-en-alt="The app’s first sign-in screen."></div>
             <figcaption><h3 data-en="First sign-in">First sign-in</h3><p data-en="The school’s code, then a personal activation code.">The school’s code, then a personal activation code.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="../assets/captures/mobile-accueil.jpg?v=mwjrbku5" width="780" height="1688" loading="lazy" alt="App home: today’s status and the week." data-en-alt="App home: today’s status and the week."></div>
+            <div class="device"><img decoding="async" src="../assets/captures/mobile-accueil.jpg?v=mwk0duk2" width="780" height="1688" loading="lazy" alt="App home: today’s status and the week." data-en-alt="App home: today’s status and the week."></div>
             <figcaption><h3 data-en="The day and the week">The day and the week</h3><p data-en="Today’s status, the next class and the timetable.">Today’s status, the next class and the timetable.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="../assets/captures/mobile-historique.jpg?v=mwjrbku5" width="780" height="1688" loading="lazy" alt="Employee history: monthly summary and daily detail." data-en-alt="Employee history: monthly summary and daily detail."></div>
+            <div class="device"><img decoding="async" src="../assets/captures/mobile-historique.jpg?v=mwk0duk2" width="780" height="1688" loading="lazy" alt="Employee history: monthly summary and daily detail." data-en-alt="Employee history: monthly summary and daily detail."></div>
             <figcaption><h3 data-en="History">History</h3><p data-en="The month’s summary and every day’s detail.">The month’s summary and every day’s detail.</p></figcaption>
           </figure>
           <figure class="phone reveal">
-            <div class="device"><img src="../assets/captures/mobile-direction.jpg?v=mwjrbku5" width="780" height="1688" loading="lazy" alt="Administration area on the phone: today’s staff." data-en-alt="Administration area on the phone: today’s staff."></div>
-            <figcaption><h3 data-en="Management in the pocket">Management in the pocket</h3><p data-en="The head follows the day, scans an employee’s QR code and adds staff from their phone.">The head follows the day, scans an employee’s QR code and adds staff from their phone.</p></figcaption>
+            <div class="device"><img decoding="async" src="../assets/captures/mobile-direction.jpg?v=mwk0duk2" width="780" height="1688" loading="lazy" alt="Administration area on the phone: today’s staff." data-en-alt="Administration area on the phone: today’s staff."></div>
+            <figcaption><h3 data-en="Management in the pocket">Management in the pocket</h3><p data-en="The head follows the day, scans an employee’s QR code and adds staff.">The head follows the day, scans an employee’s QR code and adds staff.</p></figcaption>
           </figure>
         </div>
       </section>
@@ -666,20 +679,20 @@
         <div class="part-head">
           <p class="eyebrow" data-en="Coming next">Coming next</p>
           <h2 data-en="What comes next">What comes next</h2>
-          <p class="intro" data-en="GesSchool gains new features every week. Here is what is planned next, with no date announced yet.">GesSchool gains new features every week. Here is what is planned next, with no date announced yet.</p>
+          <p class="intro" data-en="GesSchool gains new features every week. Here is what is planned, with no date yet.">GesSchool gains new features every week. Here is what is planned, with no date yet.</p>
         </div>
         <ul class="next-grid">
           <li><strong data-en="Supporting documents">Supporting documents</strong><span data-en="Attach a document to an absence.">Attach a document to an absence.</span></li>
           <li><strong data-en="Leave requests">Leave requests</strong><span data-en="The employee asks from their phone, management answers.">The employee asks from their phone, management answers.</span></li>
           <li><strong data-en="Notifications">Notifications</strong><span data-en="An alert for a late arrival or a class not taught.">An alert for a late arrival or a class not taught.</span></li>
           <li><strong data-en="Replacements">Replacements</strong><span data-en="Hand a class over to another teacher.">Hand a class over to another teacher.</span></li>
-                    <li><strong data-en="Pay for part-time teachers">Pay for part-time teachers</strong><span data-en="Hours actually taught, ready for payroll.">Hours actually taught, ready for payroll.</span></li>
+          <li><strong data-en="Pay for part-time teachers">Pay for part-time teachers</strong><span data-en="Hours actually taught, ready for payroll.">Hours actually taught, ready for payroll.</span></li>
         </ul>
       </section>
       <section class="part">
         <div class="quote reveal">
           <h2 data-en="Ready to try GesSchool?">Ready to try GesSchool?</h2>
-          <p class="intro" data-en="GesSchool is free for now. Download the software and the app, or ask us for a demonstration in your school.">GesSchool is free for now. Download the software and the app, or ask us for a demonstration in your school.</p>
+          <p class="intro" data-en="GesSchool is free for now. Download it, or ask us for a demo at your school.">GesSchool is free for now. Download it, or ask us for a demo at your school.</p>
           <div class="actions">
             <a class="btn blue" href="telechargements.html" data-en="Download GesSchool">Download GesSchool</a>
             <a class="btn line" href="demonstration.html" data-en="Request a demo">Request a demo</a>
@@ -689,7 +702,7 @@
 
     </main>
 
-    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Write to One Technologie Éducation on WhatsApp" data-en-aria-label="Write to One Technologie Éducation on WhatsApp">
+    <a class="wa-float" href="https://wa.me/2250142905825?text=Bonjour%20One%20Technologie%20%C3%89ducation%2C" rel="noopener" target="_blank" aria-label="Message One Technologie Education on WhatsApp" data-en-aria-label="Message One Technologie Education on WhatsApp">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 9.1c.2 2.4 2.5 4.9 5.6 5.7l1.2-1.3-1.7-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-1.7Z" fill="currentColor" stroke="none"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -762,8 +775,5 @@
       </div>
       <p class="end-bottom"><span>© 2026 One Technologie Éducation · <span data-en="Your whole school, in one place.">Your whole school, in one place.</span></span><a class="top-link" href="#haut" data-en="Back to top ↑">Back to top ↑</a></p>
     </footer>
-
-    <script src="../config.js?v=mwjrbku5"></script>
-    <script src="../script.js?v=mwjrbku5"></script>
   </body>
 </html>

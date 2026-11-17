@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="../entreprise.css?v=mwjrbku5">
+    <link rel="stylesheet" href="../entreprise.css?v=mwk0duk2">
     <script>
       // Thème choisi avant l'affichage, pour éviter un éclair blanc en thème sombre.
       try {
@@ -30,12 +30,25 @@
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
       document.documentElement.classList.add('js');
+      // Filet de sécurité : tant que script.js n'a pas fini (classe « anim-ok »), les textes et blocs animés restent
+      // cachés. S'il ne s'exécute pas (réseau coupé, erreur) ou tarde trop, on retire « js » : tout s'affiche, sans animation.
+      (function (r) {
+        var check = function () {
+          if (!r.classList.contains('anim-ok')) r.classList.remove('js');
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(check, 0);
+        });
+        setTimeout(check, 6000);
+      })(document.documentElement);
       // La langue choisie avec le bouton FR / EN : la page s'ouvre directement dans cette langue.
       try {
         var r = document.documentElement, l = localStorage.getItem('one-site.lang'), alt = r.getAttribute('data-alt-url');
         if (alt && (l === 'fr' || l === 'en') && l !== r.lang) location.replace(alt + location.search + location.hash);
       } catch (e) {}
     </script>
+    <script defer src="../config.js?v=mwk0duk2"></script>
+    <script defer src="../script.js?v=mwk0duk2"></script>
     <link rel="alternate" hreflang="fr" href="https://onetechnologie.com/devis.html">
     <link rel="alternate" hreflang="en" href="https://onetechnologie.com/en/devis.html">
     <link rel="alternate" hreflang="x-default" href="https://onetechnologie.com/devis.html">
@@ -71,7 +84,7 @@
 <path class="logo-gold-line" fill="white" stroke="black" stroke-width="8" stroke-miterlimit="10" d="M83.5,301.5s69.74,52,136.37,0"/>
 <path class="logo-gold" fill="black" d="M211,291s11,7,15,18"/>
 <path class="logo-gold" fill="black" d="M93,292s-11,7-15,18"/>
-<path class="logo-gold" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
+<path class="logo-gold crown" fill="black" d="M181.27,36.69l-28.27,68.31s71.22,4.95,109.11,63.47l82.04-65.47-74.18,2,11.04-78-62,46L198,0l-16.73,36.69Z"/>
 <text class="logo-motto" x="464.9" y="369.4" textLength="640" lengthAdjust="spacingAndGlyphs" fill="black" font-family="Outfit, 'Segoe UI', sans-serif" font-size="45" font-weight="500" letter-spacing="3.6">L’innovation sans limites.</text>
 </svg></a>
           <div class="qd-tools">
@@ -311,7 +324,7 @@
             <fieldset class="qd-step" data-step="2" hidden>
               <legend><span class="qd-count" data-en="Step 2 of 4">Step 2 of 4</span></legend>
               <h1 tabindex="-1" data-en="Your budget and timeline">Your budget and timeline</h1>
-              <p class="qd-sub" data-en="A rough idea is enough: it helps us suggest the right solution.">A rough idea is enough: it helps us suggest the right solution.</p>
+              <p class="qd-sub" data-en="A rough idea is enough to suggest the right solution.">A rough idea is enough to suggest the right solution.</p>
               <p class="qd-label" data-en="Budget in mind">Budget in mind</p>
               <div class="qd-chips">
                 <label class="qd-chip"><input type="radio" name="budget" value="a-discuter" checked><span data-en="To be discussed">To be discussed</span></label>
@@ -332,7 +345,7 @@
             <fieldset class="qd-step" data-step="3" hidden>
               <legend><span class="qd-count" data-en="Step 3 of 4">Step 3 of 4</span></legend>
               <h1 tabindex="-1" data-en="Tell us about your project">Tell us about your project</h1>
-              <p class="qd-sub" data-en="A few lines are enough: what you want to do, for whom, and what matters to you.">A few lines are enough: what you want to do, for whom, and what matters to you.</p>
+              <p class="qd-sub" data-en="A few lines are enough: what you want, for whom, and what matters to you.">A few lines are enough: what you want, for whom, and what matters to you.</p>
               <label class="qd-field"><span class="sr-only" data-en="Your project">Your project</span><textarea name="message" rows="6" maxlength="4000" placeholder="Your project in a few lines…" data-en-placeholder="Your project in a few lines…"></textarea></label>
               <p class="qd-hint" id="message-count" aria-live="polite"></p>
             </fieldset>
@@ -340,7 +353,7 @@
             <fieldset class="qd-step" data-step="4" hidden>
               <legend><span class="qd-count" data-en="Step 4 of 4">Step 4 of 4</span></legend>
               <h1 tabindex="-1" data-en="How can we reach you?">How can we reach you?</h1>
-              <p class="qd-sub" data-en="Leave us a phone number or an e-mail address: either is enough.">Leave us a phone number or an e-mail address: either is enough.</p>
+              <p class="qd-sub" data-en="Leave a phone number or an e-mail address: either one is enough.">Leave a phone number or an e-mail address: either one is enough.</p>
               <div class="qd-fields">
                 <label class="qd-field wide"><span><span data-en="Name or company">Name or company</span> <i class="req" aria-hidden="true">*</i></span><input name="name" type="text" autocomplete="organization" maxlength="120"></label>
                 <label class="qd-field"><span data-en="Phone / WhatsApp">Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
@@ -371,7 +384,7 @@
   </g>
 </svg></span>
               <h1 data-en="Thank you, your request has been sent">Thank you, your request has been sent</h1>
-              <p data-en="We have received it and will get back to you as soon as possible.">We have received it and will get back to you as soon as possible.</p>
+              <p data-en="We will get back to you as soon as possible.">We will get back to you as soon as possible.</p>
               <a class="pill-btn accent" href="index.html"><span data-en="Back to the home page">Back to the home page</span><span class="arrow" aria-hidden="true"><svg class="one-icon arrow-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="icon-tint" stroke="none"></g><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></span></a>
             </div>
 
@@ -459,8 +472,5 @@
       </div>
 
     </main>
-
-    <script src="../config.js?v=mwjrbku5"></script>
-    <script src="../script.js?v=mwjrbku5"></script>
   </body>
 </html>
