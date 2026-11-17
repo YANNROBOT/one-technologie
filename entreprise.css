@@ -1292,176 +1292,7 @@ main {
   gap: 16px;
 }
 
-/* ---------- Déjà en ligne : une carte par projet en ligne, ses captures en bas ---------- */
-.live {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 16px;
-  width: 100%;
-  max-width: var(--text);
-  margin: 0 auto;
-}
-
-.live-card {
-  position: relative;
-  display: flex;
-  min-height: 640px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-  padding: clamp(26px, 3vw, 38px) clamp(26px, 3vw, 38px) 0;
-  overflow: hidden;
-  border-radius: var(--radius);
-}
-
-.live-card.dark {
-  background: var(--deep);
-  color: var(--on-dark);
-}
-
-.live-card.tint {
-  background: var(--tint);
-  color: #111111;
-}
-
-.live-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.live-dot {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 12px 5px 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #111111;
-}
-
-.live-dot::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #111111;
-  animation: live-blink 1.8s ease-in-out infinite;
-}
-
-@keyframes live-blink {
-  50% {
-    opacity: 0.25;
-  }
-}
-
-.live-url {
-  font-family: var(--mono);
-  font-weight: 500;
-  opacity: 0.7;
-}
-
-.live-card h3 {
-  margin-top: 6px;
-  font-size: clamp(33.5px, 3.52vw, 49.5px);
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.live-card.dark h3 {
-  color: var(--accent);
-}
-
-.live-card p {
-  max-width: 46ch;
-  font-size: 14px;
-  opacity: 0.78;
-}
-
-.live-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 2px 0 6px;
-  padding: 0;
-  list-style: none;
-}
-
-.live-facts li {
-  padding: 7px 13px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 600;
-}
-
-.live-card.dark .live-facts li {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.live-card.tint .live-facts li {
-  background: rgba(255, 255, 255, 0.65);
-}
-
-/* Les captures sortent par le bas de la carte. */
-.live-shots {
-  position: relative;
-  align-self: stretch;
-  height: 270px;
-  margin-top: auto;
-}
-
-.live-shots img {
-  position: absolute;
-  display: block;
-}
-
-.live-shots.gesschool .desk {
-  left: 0;
-  top: 34px;
-  width: 86%;
-  border-radius: 14px 14px 0 0;
-  box-shadow: 0 -18px 40px -20px rgba(0, 0, 0, 0.6);
-  transition: transform 700ms var(--ease);
-}
-
-.live-shots.gesschool .phone {
-  right: 2%;
-  top: 0;
-  width: 27%;
-  border: 6px solid #111111;
-  border-radius: 24px;
-  transform: rotate(5deg);
-  transition: transform 700ms var(--ease);
-}
-
-.live-card:hover .live-shots.gesschool .desk {
-  transform: translateY(-8px);
-}
-
-.live-card:hover .live-shots.gesschool .phone {
-  transform: rotate(2deg) translateY(-12px);
-}
-
-.live-shots.site .browser {
-  position: absolute;
-  left: 4%;
-  right: 4%;
-  top: 34px;
-  overflow: hidden;
-  border-radius: 14px 14px 0 0;
-  background: #ffffff;
-  box-shadow: 0 -18px 40px -22px rgba(0, 0, 0, 0.35);
-  transform: rotate(-2deg);
-  transition: transform 700ms var(--ease);
-}
-
-.live-card:hover .live-shots.site .browser {
-  transform: rotate(0deg) translateY(-8px);
-}
-
+/* Barre de navigateur des captures (pages des projets). */
 .browser-bar {
   display: flex;
   align-items: center;
@@ -1487,12 +1318,6 @@ main {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 500;
-}
-
-.live-shots.site .browser img {
-  position: static;
-  width: 100%;
-  height: auto;
 }
 
 /* ---------- Réalisations : grande image, panneau sombre à droite ---------- */
@@ -3070,20 +2895,10 @@ main {
 @media (max-width: 760px) {
   .svcs,
   .duo,
-  .live,
   .numbers,
   .compare,
   .form-pair {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .live-card {
-    min-height: 0;
-  }
-
-  .live-shots {
-    height: 220px;
-    margin-top: 10px;
   }
 
   .case {
@@ -6048,39 +5863,6 @@ body.company::before {
   }
 }
 
-/* Bloc 4 : les projets en ligne, posés en perspective sur le relief ; ils se redressent au survol. */
-.live-panel {
-  padding: clamp(60px, 7vw, 100px) clamp(18px, 4vw, 60px);
-}
-
-.live-3d {
-  perspective: 1600px;
-}
-
-.live-3d .live-card {
-  rotate: y 9deg;
-  transform-origin: right center;
-  box-shadow: 0 50px 80px -40px rgba(0, 0, 0, 0.55);
-  transition: rotate 600ms var(--ease);
-}
-
-.live-3d .live-card + .live-card {
-  rotate: y -9deg;
-  transform-origin: left center;
-}
-
-.live-3d .live-card:hover,
-.live-3d .live-card:focus-within {
-  rotate: y 0deg;
-}
-
-@media (max-width: 900px) {
-  .live-3d .live-card,
-  .live-3d .live-card + .live-card {
-    rotate: none;
-  }
-}
-
 /* Bloc 6 : chaque chiffre dans sa carte de verre, avec un dessin. */
 .number-card {
   display: flex;
@@ -8517,5 +8299,163 @@ body.company .bar-pill .crown {
   }
   .duo-edu h2 {
     text-wrap: balance;
+  }
+}
+
+/* ---------- Accueil : « Déjà en ligne », dans le langage de la couverture (17 novembre 2026, proposition) ----------
+   Tout est centré : la pastille, le titre, une phrase, puis une carte par projet en ligne. Chaque carte : un cadre noir aux
+   coins très arrondis (dégradé, reflet, liseré clair, sans ombre portée) qui tient la vraie capture du projet, posé sur un
+   panneau clair qu'il dépasse en haut ; dessous, une ligne discrète « En ligne · adresse », le nom, une phrase et le bouton. */
+.live-panel {
+  padding: clamp(60px, 7vw, 100px) clamp(18px, 4vw, 60px);
+}
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.live-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(18px, 2vw, 26px) clamp(26px, 2.6vw, 34px);
+  isolation: isolate;
+  text-align: center;
+}
+/* Le panneau clair, derrière : il commence au premier tiers du cadre. */
+.live-item::before {
+  content: '';
+  position: absolute;
+  inset: clamp(70px, 8.5vw, 116px) 0 0;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  border-radius: 34px;
+  background: color-mix(in srgb, var(--btn-ink) 64%, transparent);
+  box-shadow: 0 18px 40px -30px rgba(11, 13, 15, 0.35);
+}
+/* Le cadre noir, comme le carré des services : la capture y est posée avec une petite marge. */
+.live-frame {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 34px;
+  background:
+    radial-gradient(90% 70% at 22% 8%, rgba(255, 255, 255, 0.16), transparent 62%),
+    radial-gradient(80% 60% at 80% 110%, rgba(173, 181, 189, 0.12), transparent 70%),
+    linear-gradient(155deg, #3a3f45, #16191c 46%, #0b0d0f);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -14px 26px -18px rgba(255, 255, 255, 0.08);
+  transition: translate 500ms var(--ease);
+}
+.live-frame::after {
+  content: '';
+  position: absolute;
+  top: -38%;
+  left: -24%;
+  width: 92%;
+  height: 74%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.13), transparent);
+  pointer-events: none;
+}
+.live-frame img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: top center;
+}
+.live-item:hover .live-frame,
+.live-item:focus-within .live-frame {
+  translate: 0 -5px;
+}
+/* Une seule ligne fine : le point qui clignote, « En ligne », l'adresse. */
+.live-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 10px;
+  margin-top: 22px;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.live-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+.live-dot::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: live-blink 1.8s ease-in-out infinite;
+}
+@keyframes live-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+.live-url {
+  font-family: var(--mono);
+}
+.live-item h3 {
+  margin-top: 8px;
+  font-size: clamp(24px, 2.2vw, 30px);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.live-text {
+  max-width: 42ch;
+  margin-top: 6px;
+  text-wrap: balance;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+/* Le bouton tout en bas : les deux cartes gardent leurs boutons à la même hauteur. */
+.live-item .pill-btn {
+  margin-top: auto;
+}
+.live-text {
+  margin-bottom: 20px;
+}
+@media (max-width: 760px) {
+  .live-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .live-frame {
+    padding: 8px;
+    border-radius: 28px;
+  }
+  .live-frame img {
+    border-radius: 21px;
+  }
+  .live-item::before {
+    border-radius: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-frame {
+    transition: none;
+  }
+  .live-item:hover .live-frame,
+  .live-item:focus-within .live-frame {
+    translate: none;
   }
 }
